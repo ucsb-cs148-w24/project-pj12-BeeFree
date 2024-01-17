@@ -8,4 +8,4 @@ Ziming Wang: MikeW1121 \
 Anushka Vijay: anushkavijay \
 Mujia Chen: mujiaaa \
 Peter Liang: hongye-liang \
-Sunhu Choi: SunhuChoi \
+Sunhu Choi: SunhuChoi
