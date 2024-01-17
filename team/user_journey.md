@@ -7,3 +7,12 @@ This group of high school students did poorly on an exam and realized they need 
 > Single mother, Piera Jhon, working two jobs struggles to keep their children in check; needs an engaging way to control her children's screen time while away:
 
 She realized that, while she was away, her children were spending too much time behind a screen rather than playing outside. She wanted a way to limit their screen time remotely, and found our app. She created a group with accounts for each of her children and was able to monitor her children's screen time with her account. The app subsequently blocked apps on the childrens' devices after a certain amount of time.
+
+# List: As a user, I can ...
+- block apps from being opened on my phone
+- create my own time limits for certain apps' screen time on my phone
+- create an account to save my settings
+- see and monitor my own screen time and other relevant information
+- create a group with my friends and monitor and limit each others' screen times
+- set privacy settings regarding what statistics my friends can see
+- create parental controls for my childrens' devices
