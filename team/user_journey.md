@@ -8,7 +8,7 @@ This group of high school students did poorly on an exam and realized they need 
 
 She realized that, while she was away, her children were spending too much time behind a screen rather than playing outside. She wanted a way to limit their screen time remotely, and found our app. She created a group with accounts for each of her children and was able to monitor her children's screen time with her account. The app subsequently blocked apps on the childrens' devices after a certain amount of time.
 
-# List: As a user, I can ...
+## List: As a user, I can ...
 - block apps from being opened on my phone
 - create my own time limits for certain apps' screen time on my phone
 - create an account to save my settings
