@@ -1,6 +1,7 @@
 # Agreements
 
 ## Names
+
 Karankumar Mageswaran, Anushka Vijay, Sunhu Choi, Mike Wang, Kavi Iyer, Hongye Liang, Mujia Chen
 
 ## Team Agreements
