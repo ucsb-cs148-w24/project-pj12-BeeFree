@@ -1,4 +1,4 @@
-App Blocker
+# App Blocker
 
 We're making an application that allows you to set limits on what websites/apps you can access.
 
