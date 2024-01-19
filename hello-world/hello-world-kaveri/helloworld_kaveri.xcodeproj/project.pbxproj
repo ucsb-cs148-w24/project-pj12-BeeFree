@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A74CB4482B59F3E500CBD04E /* helloworld_kaveriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74CB4472B59F3E500CBD04E /* helloworld_kaveriApp.swift */; };
+		A74CB44A2B59F3E500CBD04E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74CB4492B59F3E500CBD04E /* ContentView.swift */; };
+		A74CB44C2B59F3E700CBD04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74CB44B2B59F3E700CBD04E /* Assets.xcassets */; };
+		A74CB44F2B59F3E700CBD04E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74CB44E2B59F3E700CBD04E /* Preview Assets.xcassets */; };
+		A74CB4592B59F3E700CBD04E /* helloworld_kaveriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74CB4582B59F3E700CBD04E /* helloworld_kaveriTests.swift */; };
+		A74CB4632B59F3E700CBD04E /* helloworld_kaveriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74CB4622B59F3E700CBD04E /* helloworld_kaveriUITests.swift */; };
+		A74CB4652B59F3E700CBD04E /* helloworld_kaveriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74CB4642B59F3E700CBD04E /* helloworld_kaveriUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A74CB4552B59F3E700CBD04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A74CB43C2B59F3E500CBD04E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A74CB4432B59F3E500CBD04E;
+			remoteInfo = helloworld_kaveri;
+		};
+		A74CB45F2B59F3E700CBD04E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A74CB43C2B59F3E500CBD04E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A74CB4432B59F3E500CBD04E;
+			remoteInfo = helloworld_kaveri;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A74CB4442B59F3E500CBD04E /* helloworld_kaveri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworld_kaveri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74CB4472B59F3E500CBD04E /* helloworld_kaveriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloworld_kaveriApp.swift; sourceTree = "<group>"; };
+		A74CB4492B59F3E500CBD04E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A74CB44B2B59F3E700CBD04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A74CB44E2B59F3E700CBD04E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A74CB4542B59F3E700CBD04E /* helloworld_kaveriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helloworld_kaveriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74CB4582B59F3E700CBD04E /* helloworld_kaveriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloworld_kaveriTests.swift; sourceTree = "<group>"; };
+		A74CB45E2B59F3E700CBD04E /* helloworld_kaveriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helloworld_kaveriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74CB4622B59F3E700CBD04E /* helloworld_kaveriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloworld_kaveriUITests.swift; sourceTree = "<group>"; };
+		A74CB4642B59F3E700CBD04E /* helloworld_kaveriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloworld_kaveriUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A74CB4412B59F3E500CBD04E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A74CB4512B59F3E700CBD04E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A74CB45B2B59F3E700CBD04E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A74CB43B2B59F3E500CBD04E = {
+			isa = PBXGroup;
+			children = (
+				A74CB4462B59F3E500CBD04E /* helloworld_kaveri */,
+				A74CB4572B59F3E700CBD04E /* helloworld_kaveriTests */,
+				A74CB4612B59F3E700CBD04E /* helloworld_kaveriUITests */,
+				A74CB4452B59F3E500CBD04E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A74CB4452B59F3E500CBD04E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A74CB4442B59F3E500CBD04E /* helloworld_kaveri.app */,
+				A74CB4542B59F3E700CBD04E /* helloworld_kaveriTests.xctest */,
+				A74CB45E2B59F3E700CBD04E /* helloworld_kaveriUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A74CB4462B59F3E500CBD04E /* helloworld_kaveri */ = {
+			isa = PBXGroup;
+			children = (
+				A74CB4472B59F3E500CBD04E /* helloworld_kaveriApp.swift */,
+				A74CB4492B59F3E500CBD04E /* ContentView.swift */,
+				A74CB44B2B59F3E700CBD04E /* Assets.xcassets */,
+				A74CB44D2B59F3E700CBD04E /* Preview Content */,
+			);
+			path = helloworld_kaveri;
+			sourceTree = "<group>";
+		};
+		A74CB44D2B59F3E700CBD04E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A74CB44E2B59F3E700CBD04E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A74CB4572B59F3E700CBD04E /* helloworld_kaveriTests */ = {
+			isa = PBXGroup;
+			children = (
+				A74CB4582B59F3E700CBD04E /* helloworld_kaveriTests.swift */,
+			);
+			path = helloworld_kaveriTests;
+			sourceTree = "<group>";
+		};
+		A74CB4612B59F3E700CBD04E /* helloworld_kaveriUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A74CB4622B59F3E700CBD04E /* helloworld_kaveriUITests.swift */,
+				A74CB4642B59F3E700CBD04E /* helloworld_kaveriUITestsLaunchTests.swift */,
+			);
+			path = helloworld_kaveriUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A74CB4432B59F3E500CBD04E /* helloworld_kaveri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A74CB4682B59F3E700CBD04E /* Build configuration list for PBXNativeTarget "helloworld_kaveri" */;
+			buildPhases = (
+				A74CB4402B59F3E500CBD04E /* Sources */,
+				A74CB4412B59F3E500CBD04E /* Frameworks */,
+				A74CB4422B59F3E500CBD04E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = helloworld_kaveri;
+			productName = helloworld_kaveri;
+			productReference = A74CB4442B59F3E500CBD04E /* helloworld_kaveri.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A74CB4532B59F3E700CBD04E /* helloworld_kaveriTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A74CB46B2B59F3E700CBD04E /* Build configuration list for PBXNativeTarget "helloworld_kaveriTests" */;
+			buildPhases = (
+				A74CB4502B59F3E700CBD04E /* Sources */,
+				A74CB4512B59F3E700CBD04E /* Frameworks */,
+				A74CB4522B59F3E700CBD04E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A74CB4562B59F3E700CBD04E /* PBXTargetDependency */,
+			);
+			name = helloworld_kaveriTests;
+			productName = helloworld_kaveriTests;
+			productReference = A74CB4542B59F3E700CBD04E /* helloworld_kaveriTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A74CB45D2B59F3E700CBD04E /* helloworld_kaveriUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A74CB46E2B59F3E700CBD04E /* Build configuration list for PBXNativeTarget "helloworld_kaveriUITests" */;
+			buildPhases = (
+				A74CB45A2B59F3E700CBD04E /* Sources */,
+				A74CB45B2B59F3E700CBD04E /* Frameworks */,
+				A74CB45C2B59F3E700CBD04E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A74CB4602B59F3E700CBD04E /* PBXTargetDependency */,
+			);
+			name = helloworld_kaveriUITests;
+			productName = helloworld_kaveriUITests;
+			productReference = A74CB45E2B59F3E700CBD04E /* helloworld_kaveriUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A74CB43C2B59F3E500CBD04E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					A74CB4432B59F3E500CBD04E = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					A74CB4532B59F3E700CBD04E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = A74CB4432B59F3E500CBD04E;
+					};
+					A74CB45D2B59F3E700CBD04E = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = A74CB4432B59F3E500CBD04E;
+					};
+				};
+			};
+			buildConfigurationList = A74CB43F2B59F3E500CBD04E /* Build configuration list for PBXProject "helloworld_kaveri" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A74CB43B2B59F3E500CBD04E;
+			productRefGroup = A74CB4452B59F3E500CBD04E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A74CB4432B59F3E500CBD04E /* helloworld_kaveri */,
+				A74CB4532B59F3E700CBD04E /* helloworld_kaveriTests */,
+				A74CB45D2B59F3E700CBD04E /* helloworld_kaveriUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A74CB4422B59F3E500CBD04E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74CB44F2B59F3E700CBD04E /* Preview Assets.xcassets in Resources */,
+				A74CB44C2B59F3E700CBD04E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A74CB4522B59F3E700CBD04E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A74CB45C2B59F3E700CBD04E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A74CB4402B59F3E500CBD04E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74CB44A2B59F3E500CBD04E /* ContentView.swift in Sources */,
+				A74CB4482B59F3E500CBD04E /* helloworld_kaveriApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A74CB4502B59F3E700CBD04E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74CB4592B59F3E700CBD04E /* helloworld_kaveriTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A74CB45A2B59F3E700CBD04E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74CB4652B59F3E700CBD04E /* helloworld_kaveriUITestsLaunchTests.swift in Sources */,
+				A74CB4632B59F3E700CBD04E /* helloworld_kaveriUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A74CB4562B59F3E700CBD04E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A74CB4432B59F3E500CBD04E /* helloworld_kaveri */;
+			targetProxy = A74CB4552B59F3E700CBD04E /* PBXContainerItemProxy */;
+		};
+		A74CB4602B59F3E700CBD04E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A74CB4432B59F3E500CBD04E /* helloworld_kaveri */;
+			targetProxy = A74CB45F2B59F3E700CBD04E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A74CB4662B59F3E700CBD04E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A74CB4672B59F3E700CBD04E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A74CB4692B59F3E700CBD04E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"helloworld_kaveri/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atru.helloworld-kaveri";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A74CB46A2B59F3E700CBD04E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"helloworld_kaveri/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atru.helloworld-kaveri";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A74CB46C2B59F3E700CBD04E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atru.helloworld-kaveriTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/helloworld_kaveri.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/helloworld_kaveri";
+			};
+			name = Debug;
+		};
+		A74CB46D2B59F3E700CBD04E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atru.helloworld-kaveriTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/helloworld_kaveri.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/helloworld_kaveri";
+			};
+			name = Release;
+		};
+		A74CB46F2B59F3E700CBD04E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atru.helloworld-kaveriUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = helloworld_kaveri;
+			};
+			name = Debug;
+		};
+		A74CB4702B59F3E700CBD04E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atru.helloworld-kaveriUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = helloworld_kaveri;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A74CB43F2B59F3E500CBD04E /* Build configuration list for PBXProject "helloworld_kaveri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A74CB4662B59F3E700CBD04E /* Debug */,
+				A74CB4672B59F3E700CBD04E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A74CB4682B59F3E700CBD04E /* Build configuration list for PBXNativeTarget "helloworld_kaveri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A74CB4692B59F3E700CBD04E /* Debug */,
+				A74CB46A2B59F3E700CBD04E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A74CB46B2B59F3E700CBD04E /* Build configuration list for PBXNativeTarget "helloworld_kaveriTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A74CB46C2B59F3E700CBD04E /* Debug */,
+				A74CB46D2B59F3E700CBD04E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A74CB46E2B59F3E700CBD04E /* Build configuration list for PBXNativeTarget "helloworld_kaveriUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A74CB46F2B59F3E700CBD04E /* Debug */,
+				A74CB4702B59F3E700CBD04E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A74CB43C2B59F3E500CBD04E /* Project object */;
+}
