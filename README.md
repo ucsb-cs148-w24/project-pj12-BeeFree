@@ -20,5 +20,5 @@ We are not currently planning on restricting our userbase to @ucsb.edu email add
 
 
 ### Tech Stack 
-We have decided to use Swift to create an iOS mobile application. We will use Firebase and GoogleAuth for user login.
+We have decided to use Swift to create an iOS mobile application. We will use Firebase and GoogleAuth for user login, and DynamoDB for storage.
 
