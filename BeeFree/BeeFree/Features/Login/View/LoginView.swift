@@ -21,7 +21,7 @@ struct LoginView: View {
                 // form fields
                 
                 // sign in button
-                
+                                
                 Spacer()
                 
                 // sign up button

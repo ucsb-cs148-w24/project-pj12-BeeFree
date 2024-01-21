@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         Text("Home page content here")
-            .foregroundColor(.gray)
+            .foregroundColor(Color("DynamicGray"))
     }
 }
 
