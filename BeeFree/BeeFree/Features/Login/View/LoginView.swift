@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 struct LoginView: View {
     var body: some View {
