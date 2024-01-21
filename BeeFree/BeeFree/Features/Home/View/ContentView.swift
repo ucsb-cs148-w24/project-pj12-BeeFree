@@ -17,18 +17,18 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [Color("Sky"), Color("Background")],
-                startPoint: .top,
-                endPoint: .center
+                colors: [Color("DarkerSky"), Color("Sky")],
+                startPoint: .bottomLeading,
+                endPoint: .topTrailing
             )
             .edgesIgnoringSafeArea(.all)
-            
+
             
             // CREDIT: https://stackoverflow.com/questions/63636548/having-trouble-creating-a-star-animation-in-swiftui
             GeometryReader { gp in
                 ForEach(0..<8) {_ in
                     ForEach(0..<5) { _ in
-                        Circle().fill(isDarkMode ? .white : .white)
+                        Circle().fill(isDarkMode ? .black : .white)
                             .frame(width: 3, height: 3)
                             .position(x: calculateRandom(in: gp.size.width),
                                       y: calculateRandom(in: gp.size.height))
