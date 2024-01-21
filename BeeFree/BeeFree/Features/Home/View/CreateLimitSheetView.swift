@@ -31,7 +31,7 @@ struct CreateLimitSheetView: View {
                             }
                             .bold()
                             .font(.title3)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(Color("AccentColor"))
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
                     }
                 }
@@ -42,6 +42,7 @@ struct CreateLimitSheetView: View {
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
+        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
 }
 

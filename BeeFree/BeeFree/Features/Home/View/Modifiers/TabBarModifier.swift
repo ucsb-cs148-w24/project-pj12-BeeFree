@@ -31,7 +31,7 @@ struct TabBarModifier: View {
                         Spacer()
                             .frame(height: 10)
                         Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
-                            .foregroundColor(selectedTab == tab ? .yellow : .gray)
+                            .foregroundColor(selectedTab == tab ? Color("AccentColor") : Color("DynamicGray"))
                             .font(.system(size: 26))
                             .onTapGesture {
                                 selectedTab = tab
@@ -42,7 +42,7 @@ struct TabBarModifier: View {
                             Text("Home")
                                 .bold()
                                 .font(.system(size: 12))
-                                .foregroundColor(selectedTab == tab ? .yellow : .gray)
+                                .foregroundColor(selectedTab == tab ? Color("AccentColor") : Color("DynamicGray"))
                                 .onTapGesture {
                                     selectedTab = tab
                                 }
@@ -53,7 +53,7 @@ struct TabBarModifier: View {
                             Text("Summary")
                                 .bold()
                                 .font(.system(size: 12))
-                                .foregroundColor(selectedTab == tab ? .yellow : .gray)
+                                .foregroundColor(selectedTab == tab ? Color("AccentColor") : Color("DynamicGray"))
                                 .onTapGesture {
                                     selectedTab = tab
                                 }
@@ -64,7 +64,7 @@ struct TabBarModifier: View {
                             Text("Sharing")
                                 .bold()
                                 .font(.system(size: 12))
-                                .foregroundColor(selectedTab == tab ? .yellow : .gray)
+                                .foregroundColor(selectedTab == tab ? Color("AccentColor") : Color("DynamicGray"))
                                 .onTapGesture {
                                     selectedTab = tab
                                 }

@@ -31,7 +31,7 @@ struct ProfileSheetView: View {
                             }
                             .bold()
                             .font(.title3)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(Color("AccentColor"))
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
                     }
                 }
@@ -41,7 +41,7 @@ struct ProfileSheetView: View {
                         HStack{
                             Image(systemName: "person.circle.fill")
                                 .resizable()
-                                .foregroundColor(.gray)
+                                .foregroundColor(Color("DynamicGray"))
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 48, height: 48)
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16))
@@ -83,6 +83,7 @@ struct ProfileSheetView: View {
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
+        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
 }
 
