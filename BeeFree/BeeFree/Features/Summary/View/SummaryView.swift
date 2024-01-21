@@ -10,7 +10,7 @@ import SwiftUI
 struct SummaryView: View {
     var body: some View {
         Text("Summary page content here")
-            .foregroundColor(.gray)    }
+            .foregroundColor(Color("DynamicGray"))    }
 }
 
 #Preview {

@@ -10,7 +10,7 @@ import SwiftUI
 struct SharingView: View {
     var body: some View {
         Text("Sharing page content here")
-            .foregroundColor(.gray)
+            .foregroundColor(Color("DynamicGray"))
     }
 }
 
