@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct SummaryView: View {
+    @Binding var isDarkMode : Bool
     var body: some View {
-        Text("Summary page content here")
-            .foregroundColor(Color("DynamicGray"))    }
+        VStack {
+            ScreenTimeGoalView(isDarkMode: $isDarkMode)
+            AppScreenTimeView(isDarkMode: $isDarkMode)
+            Spacer()
+        }
+    }
 }
 
 #Preview {
-    SummaryView()
+    SummaryView(isDarkMode: .constant(false))
 }

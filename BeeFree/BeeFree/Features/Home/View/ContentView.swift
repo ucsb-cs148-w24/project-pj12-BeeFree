@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.colorScheme) private var colorScheme
-    @State private var run = false
-    @State private var selectedTab: Tab = .home
-    @State private var isDarkMode = false
-    @State private var isPresented = false
+    @Environment(\.colorScheme) var colorScheme
+    @State var run = false
+    @State var selectedTab: Tab = .home
+    @State var isDarkMode = false
+    @State var isPresented = false
     
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [Color("DarkerSky"), Color("Sky")],
-                startPoint: .bottomLeading,
-                endPoint: .topTrailing
+                colors: [Color("Sky"), Color("Background")],
+                startPoint: .top,
+                endPoint: .center
             )
             .edgesIgnoringSafeArea(.all)
 
@@ -47,21 +47,20 @@ struct ContentView: View {
             VStack {
                 TitleBarModifier(selectedTab: $selectedTab,
                          isDarkMode: $isDarkMode)
+                
+                // Main Page Content
+                if (selectedTab == .home) {
+                    HomeView()
+                }
+                else if (selectedTab == .summary) {
+                    SummaryView(isDarkMode: $isDarkMode)
+                }
+                else if (selectedTab == .sharing) {
+                    SharingView()
+                }
+                // Tab Selector
+                TabBarModifier(selectedTab: $selectedTab)
             }
-            
-            // Main Page Content
-            if (selectedTab == .home) {
-                HomeView()
-            }
-            else if (selectedTab == .summary) {
-                SummaryView()
-            }
-            else if (selectedTab == .sharing) {
-                SharingView()
-            }
-            
-            // Tab Selector
-            TabBarModifier(selectedTab: $selectedTab)
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
