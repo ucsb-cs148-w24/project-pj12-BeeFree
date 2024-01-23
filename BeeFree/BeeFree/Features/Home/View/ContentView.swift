@@ -58,7 +58,7 @@ struct ContentView: View {
                     .coordinateSpace(name: "scroll")
                     .navigationBarTitle(
                         ( selectedTab == .home
-                        ? "Bee Free" :
+                        ? "Home" :
                           ( selectedTab == .summary
                           ? "Summary" : "Sharing")), displayMode: .inline)
                     .navigationBarHidden(barHidden)

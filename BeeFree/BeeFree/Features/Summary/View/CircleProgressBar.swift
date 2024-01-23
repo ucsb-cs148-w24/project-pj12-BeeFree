@@ -31,7 +31,7 @@ struct CircleProgressBar: View {
                 )
                 .rotationEffect(.degrees(-90))
                 // 1
-                .animation(.easeOut, value: progress)
+                .animation(.easeIn, value: progress)
 
         }.frame(width: size, height: size)
     }

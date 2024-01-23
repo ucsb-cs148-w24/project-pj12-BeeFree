@@ -13,15 +13,13 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             ForEach($apps, id: \.self) { $app in
-                RoundedRectangle(cornerRadius: 12)
+                Rectangle()
                     .fill(Color("LighterSky"))
-                    .frame(height: 60)
-                    .padding(5)
+                    .background(.ultraThinMaterial)
+                    .frame(height: 90)
+                    .cornerRadius(16.0)
+                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
             }
         }
     }
-}
-
-#Preview {
-    HomeView(isDarkMode: .constant(false))
 }

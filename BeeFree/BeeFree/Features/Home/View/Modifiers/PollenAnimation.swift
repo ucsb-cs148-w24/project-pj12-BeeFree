@@ -15,7 +15,7 @@ struct PollenAnimation: View {
             GeometryReader { gp in
                 ForEach(0..<8) {_ in
                     ForEach(0..<5) { _ in
-                        Circle().fill(isDarkMode ? .black : .white)
+                        Circle().fill(isDarkMode ? Color("DarkerSky") : .white)
                             .frame(width: 3, height: 3)
                             .position(x: calculateRandom(in: gp.size.width),
                                       y: calculateRandom(in: gp.size.height))
