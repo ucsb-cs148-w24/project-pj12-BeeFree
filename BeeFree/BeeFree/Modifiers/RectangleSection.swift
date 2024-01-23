@@ -12,11 +12,12 @@ struct RectangleSection: View {
     var height : CGFloat
     var body: some View {
         Rectangle()
-            .fill(isDarkMode ? Color("LighterSky") : Color("LighterSky"))
+            .fill(Color("LighterSky"))
+            .background(.ultraThinMaterial)
             .frame(maxWidth: .infinity)
             .frame(height: height)
-            .cornerRadius(10.0)
-            .padding(20)
+            .cornerRadius(16.0)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
     }
 }
 

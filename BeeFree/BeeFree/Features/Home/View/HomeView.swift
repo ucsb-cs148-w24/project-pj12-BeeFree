@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var isDarkMode : Bool
+    @State private var apps = ["Instagram", "Reddit", "Youtube", "TikTok"]
     var body: some View {
-        Text("Home page content here")
-            .foregroundColor(Color("DynamicGray"))
+        VStack(spacing: 0) {
+            ForEach($apps, id: \.self) { $app in
+                AppLimitDisplay(isDarkMode: $isDarkMode, appName: app)
+            }
+        }
+        .padding()
     }
-}
-
-#Preview {
-    HomeView()
 }
