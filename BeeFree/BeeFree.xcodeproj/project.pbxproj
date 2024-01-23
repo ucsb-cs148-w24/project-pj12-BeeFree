@@ -47,6 +47,10 @@
 		9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3F2B5C767200EB61B2 /* SharingView.swift */; };
 		9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E422B5C769300EB61B2 /* SummaryView.swift */; };
 		9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E442B5C777A00EB61B2 /* LoginView.swift */; };
+		9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */; };
+		9EA34C742B5F255A00F1208D /* AppScreenTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */; };
+		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
+		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		9E395E3F2B5C767200EB61B2 /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
 		9E395E422B5C769300EB61B2 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9E395E442B5C777A00EB61B2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeGoalView.swift; sourceTree = "<group>"; };
+		9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenTimeView.swift; sourceTree = "<group>"; };
+		9EA34C752B5F260400F1208D /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleProgressBar.swift; path = BeeFree/Features/Summary/View/CircleProgressBar.swift; sourceTree = SOURCE_ROOT; };
+		9EA34C782B5F29A300F1208D /* RectangleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				9E395E422B5C769300EB61B2 /* SummaryView.swift */,
+				9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */,
+				9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +313,8 @@
 		9E395E332B5C747E00EB61B2 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				9EA34C752B5F260400F1208D /* CircleProgressBar.swift */,
+				9EA34C782B5F29A300F1208D /* RectangleSection.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -420,15 +432,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E395E3C2B5C75DC00EB61B2 /* CreateLimitSheetView.swift in Sources */,
+				9EA34C742B5F255A00F1208D /* AppScreenTimeView.swift in Sources */,
 				9E395E3E2B5C766000EB61B2 /* HomeView.swift in Sources */,
 				9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */,
 				9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */,
 				9E395E0E2B5C6FFA00EB61B2 /* BeeFreeApp.swift in Sources */,
 				9E395E382B5C758C00EB61B2 /* TabBarModifier.swift in Sources */,
+				9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */,
 				9E395E362B5C757500EB61B2 /* TitleBarModifier.swift in Sources */,
 				9E395E3A2B5C75C300EB61B2 /* ProfileSheetView.swift in Sources */,
+				9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */,
 				9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */,
 				9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */,
+				9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
