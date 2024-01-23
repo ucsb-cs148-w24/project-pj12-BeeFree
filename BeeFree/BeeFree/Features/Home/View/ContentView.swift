@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var selectedTab: Tab = .home
     @State var isDarkMode = false
     @State var isPresented = false
+    @State private var barHidden = true
     
     var body: some View {
         ZStack {
@@ -32,7 +33,7 @@ struct ContentView: View {
                             .frame(width: 3, height: 3)
                             .position(x: calculateRandom(in: gp.size.width),
                                       y: calculateRandom(in: gp.size.height))
-                            .blur(radius: run ? 4 : 2)
+                            .blur(radius: run ? 5 : 3)
                     }
                 }
             }
@@ -45,21 +46,49 @@ struct ContentView: View {
             
             VStack {
                 ZStack {
-                    ScrollView {
-                        // Top bar
-                        TitleBarModifier(selectedTab: $selectedTab,
-                                         isDarkMode: $isDarkMode)
-                        // Main Page Content
-                        if (selectedTab == .home) {
-                            HomeView(isDarkMode: $isDarkMode)
+                    NavigationView {
+                        ScrollView {
+                            VStack {
+                                // Top bar
+                                TitleBarModifier(selectedTab: $selectedTab,
+                                                 isDarkMode: $isDarkMode)
+                                // Main Page Content
+                                if (selectedTab == .home) {
+                                    HomeView(isDarkMode: $isDarkMode)
+                                }
+                                else if (selectedTab == .summary) {
+                                    SummaryView(isDarkMode: $isDarkMode)
+                                }
+                                else if (selectedTab == .sharing) {
+                                    SharingView()
+                                }
+                            }
+                            .background(GeometryReader {
+                                Color.clear.preference(key: ViewOffsetKey.self,
+                                                       value: -$0.frame(in: .named("scroll")).origin.y)
+                                })
+                                .onPreferenceChange(ViewOffsetKey.self) {
+                                    if !barHidden && $0 < 50 {
+                                        barHidden = true
+                                        print("<< hiding")
+                                    } else if barHidden && $0 > 50{
+                                        barHidden = false
+                                        print(">> showing")
+                                    }
+                                }
                         }
-                        else if (selectedTab == .summary) {
-                            SummaryView(isDarkMode: $isDarkMode)
-                        }
-                        else if (selectedTab == .sharing) {
-                            SharingView()
-                        }
+                        .background(Color("Sky"))
+                        .coordinateSpace(name: "scroll")
+                        .navigationBarTitle(
+                            ( selectedTab == .home 
+                            ? "Bee Free" :
+                              ( selectedTab == .summary
+                              ? "Summary" : "Sharing")), displayMode: .inline)
+                        .navigationBarHidden(barHidden)
+                        .toolbarBackground(.ultraThinMaterial)
                     }
+                    .animation(.default, value: barHidden)
+                    .edgesIgnoringSafeArea(.all)
                     // Tab Selector
                     TabBarModifier(selectedTab: $selectedTab)
                         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -72,6 +101,14 @@ struct ContentView: View {
 
     func calculateRandom(in value: CGFloat) -> CGFloat {
         return CGFloat(Int.random(in: 10..<Int(value) - 10))
+    }
+}
+
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
     }
 }
 
