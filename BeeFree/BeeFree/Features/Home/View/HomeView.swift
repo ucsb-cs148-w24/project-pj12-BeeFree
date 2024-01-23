@@ -9,17 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var isDarkMode : Bool
-    @State private var apps = ["Instagram", "Reddit", "Youtube", "TikTok", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+    @State private var apps = ["Instagram", "Reddit", "Youtube", "TikTok"]
     var body: some View {
         VStack(spacing: 0) {
             ForEach($apps, id: \.self) { $app in
-                Rectangle()
-                    .fill(Color("LighterSky"))
-                    .background(.ultraThinMaterial)
-                    .frame(height: 90)
-                    .cornerRadius(16.0)
-                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                AppLimitDisplay(isDarkMode: $isDarkMode, appName: app)
             }
         }
+        .padding()
     }
 }

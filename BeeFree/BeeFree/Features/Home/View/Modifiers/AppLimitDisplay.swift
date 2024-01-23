@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct AppLimitDisplay: View {
+    @Binding var isDarkMode : Bool
+    @State var appName : String
     var body: some View {
-        Text("Hello World")
+        RectangleSection(isDarkMode: $isDarkMode, height: 81)
     }
 }
 
 #Preview {
-    AppLimitDisplay()
+    AppLimitDisplay(isDarkMode: .constant(false), appName: "Bee Free")
 }
