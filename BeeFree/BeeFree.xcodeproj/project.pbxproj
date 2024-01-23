@@ -52,6 +52,7 @@
 		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 		9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */; };
+		9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		9EA34C752B5F260400F1208D /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleProgressBar.swift; path = BeeFree/Features/Summary/View/CircleProgressBar.swift; sourceTree = SOURCE_ROOT; };
 		9EA34C782B5F29A300F1208D /* RectangleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleSection.swift; sourceTree = "<group>"; };
 		9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLimitDisplay.swift; sourceTree = "<group>"; };
+		9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				9E395E352B5C757500EB61B2 /* TitleBarModifier.swift */,
 				9E395E372B5C758C00EB61B2 /* TabBarModifier.swift */,
 				9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */,
+				9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */,
 				9E395E362B5C757500EB61B2 /* TitleBarModifier.swift in Sources */,
 				9E395E3A2B5C75C300EB61B2 /* ProfileSheetView.swift in Sources */,
+				9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */,
 				9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */,
 				9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */,
 				9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */,
