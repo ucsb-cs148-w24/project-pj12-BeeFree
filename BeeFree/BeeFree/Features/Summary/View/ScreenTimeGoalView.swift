@@ -10,9 +10,16 @@ import SwiftUI
 struct ScreenTimeGoalView: View {
     @Binding var isDarkMode : Bool
     var body: some View {
-        ZStack{
-            RectangleSection(isDarkMode: $isDarkMode)
-            CircleProgressBar(progress: 0.33, size: 125)
+        ZStack {
+            VStack {
+//                Text("Today's Screen Time")
+                HStack {
+                    Spacer()
+                    CircleProgressBar(progress: 0.33, size: 125)
+                }
+                .padding([.leading, .trailing], 50)
+            }
+            RectangleSection(isDarkMode: $isDarkMode, height: 200)
         }
     }
 }

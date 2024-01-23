@@ -10,7 +10,7 @@ import SwiftUI
 struct AppScreenTimeView: View {
     @Binding var isDarkMode : Bool
     var body: some View {
-        RectangleSection(isDarkMode: $isDarkMode)
+        RectangleSection(isDarkMode: $isDarkMode, height: 200)
     }
 }
 
