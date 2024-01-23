@@ -13,6 +13,7 @@ struct RectangleSection: View {
     var body: some View {
         Rectangle()
             .fill(isDarkMode ? Color("LighterSky") : Color("LighterSky"))
+            .background(.ultraThinMaterial)
             .frame(maxWidth: .infinity)
             .frame(height: height)
             .cornerRadius(10.0)

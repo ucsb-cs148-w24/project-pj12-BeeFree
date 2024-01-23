@@ -43,25 +43,30 @@ struct ContentView: View {
             }
             
             
-            // Top bar
             VStack {
-                TitleBarModifier(selectedTab: $selectedTab,
-                         isDarkMode: $isDarkMode)
-                
-                // Main Page Content
-                if (selectedTab == .home) {
-                    HomeView()
+                ZStack {
+                    ScrollView {
+                        // Top bar
+                        TitleBarModifier(selectedTab: $selectedTab,
+                                         isDarkMode: $isDarkMode)
+                        // Main Page Content
+                        if (selectedTab == .home) {
+                            HomeView(isDarkMode: $isDarkMode)
+                        }
+                        else if (selectedTab == .summary) {
+                            SummaryView(isDarkMode: $isDarkMode)
+                        }
+                        else if (selectedTab == .sharing) {
+                            SharingView()
+                        }
+                    }
+                    // Tab Selector
+                    TabBarModifier(selectedTab: $selectedTab)
+                        .frame(maxHeight: .infinity, alignment: .bottom)
                 }
-                else if (selectedTab == .summary) {
-                    SummaryView(isDarkMode: $isDarkMode)
-                }
-                else if (selectedTab == .sharing) {
-                    SharingView()
-                }
-                // Tab Selector
-                TabBarModifier(selectedTab: $selectedTab)
             }
         }
+        
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 

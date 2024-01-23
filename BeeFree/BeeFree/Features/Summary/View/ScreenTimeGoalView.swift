@@ -11,6 +11,7 @@ struct ScreenTimeGoalView: View {
     @Binding var isDarkMode : Bool
     var body: some View {
         ZStack {
+            RectangleSection(isDarkMode: $isDarkMode, height: 200)
             VStack {
 //                Text("Today's Screen Time")
                 HStack {
@@ -19,7 +20,6 @@ struct ScreenTimeGoalView: View {
                 }
                 .padding([.leading, .trailing], 50)
             }
-            RectangleSection(isDarkMode: $isDarkMode, height: 200)
         }
     }
 }

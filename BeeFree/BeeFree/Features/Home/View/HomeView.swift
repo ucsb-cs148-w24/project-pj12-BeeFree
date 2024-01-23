@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var isDarkMode : Bool
     var body: some View {
-        Text("Home page content here")
-            .foregroundColor(Color("DynamicGray"))
+        VStack {
+            AppLimitList(isDarkMode: $isDarkMode)
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(isDarkMode: .constant(false))
 }

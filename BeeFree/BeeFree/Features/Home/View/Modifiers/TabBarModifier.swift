@@ -22,11 +22,9 @@ struct TabBarModifier: View {
     
     var body: some View {
         VStack {
-            Spacer()
             HStack {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     Spacer()
-                    
                     VStack {
                         Spacer()
                             .frame(height: 10)
