@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-
+import FirebaseCore
+import Firebase
 @main
 struct BeeFreeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView(showSignInView: .constant(true))
         }
     }
 }

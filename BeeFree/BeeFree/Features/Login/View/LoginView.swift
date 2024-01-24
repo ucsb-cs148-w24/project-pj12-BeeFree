@@ -7,35 +7,55 @@
 
 import SwiftUI
 import FirebaseCore
+import Firebase
+import GoogleSignInSwift
+import GoogleSignIn
 
+struct GoogleSignInResultModel {
+    let idToken: String
+    let accessToken: String
+}
+
+@MainActor
+final class LoginviewModel: ObservableObject{
+    func signInGoogle() async throws{
+        guard let topVC = LoginUtilities.shared.topViewController()else{
+            throw URLError(.cannotFindHost)
+        }
+        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
+        guard let idToken = gidSignInResult.user.idToken?.tokenString else{
+            throw URLError(.badServerResponse)
+        }
+        let accessToken = gidSignInResult.user.accessToken.tokenString
+        let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken)
+        try await AuthManager.shared.signInWithGoogle(tokens: tokens)
+        
+        
+
+    }
+}
 struct LoginView: View {
+    @StateObject private var viewModel = LoginviewModel()
+    @Binding var showSignInView: Bool
     var body: some View {
-        NavigationStack {
-            VStack {
-                // image
-                Image(systemName: "timelapse")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50, alignment: .center)
-                    .padding(EdgeInsets(top: 128, leading: 16, bottom: 16, trailing: 16))
-                    .foregroundColor(.yellow)
-                // form fields
-                
-                // sign in button
-                                
-                Spacer()
-                
-                // sign up button
-                Text("Sign Up")
-                    .bold()
-                    .foregroundColor(.yellow)
-                    .padding(EdgeInsets(top: 128, leading: 16, bottom: 64, trailing: 16))
+
+        VStack {
+            
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)){
+                Task{
+                    do{
+                        try await viewModel.signInGoogle()
+                        showSignInView = false
+                    }catch{
+                        print(error)
+                    }
+                }
             }
         }
     }
 }
 
 #Preview {
-    LoginView()
+    LoginView(showSignInView: .constant(true))
 }
 
