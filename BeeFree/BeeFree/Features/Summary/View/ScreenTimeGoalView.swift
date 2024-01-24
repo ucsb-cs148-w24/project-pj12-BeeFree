@@ -1,17 +1,8 @@
-//
-//  ScreenTimeGoalView.swift
-//  BeeFree
-//
-//  Created by Karankumar Mageswaran on 1/22/24.
-//
 import SwiftUI
 
 struct ScreenTimeGoalView: View {
     @Binding var isDarkMode : Bool
-    //var percents: [Double] = []
-    @State var percents: [Double] = []
-    
-    
+    let percents: [Double] = [0.4, 0.5, 0.1]
     var body: some View {
         ZStack {
             RectangleSection(isDarkMode: $isDarkMode, height: 200)
@@ -19,7 +10,12 @@ struct ScreenTimeGoalView: View {
 //                Text("Today's Screen Time")
                 HStack {
                     Spacer()
-                    CircleProgressBar(percents: .constant([0.5, 0.3, 0.2]))
+                    // get some percents from firebase
+                    // use function to convert percent[] to trim[]
+                    // pass in trim instead
+                    
+                    let trims = calculateTrims(inputPercents: percents)
+                    CircleProgressBar(percents: trims)
                 }
                 .padding([.leading, .trailing], 50)
             }
