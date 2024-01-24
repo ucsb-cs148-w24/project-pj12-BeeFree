@@ -1,4 +1,5 @@
 //
+//
 //  TitleBarModifier.swift
 //  BeeFree
 //
@@ -34,6 +35,19 @@ struct TitleBarModifier: View {
                     .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
                 }
                 else if(selectedTab == .summary) {
+                    Group {
+                        Text("Bee ")
+                            .foregroundColor(Color("DynamicYellow"))
+                            .font(.largeTitle)
+                            .bold() +
+                        Text("Free")
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                            .bold()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
+                    
                     Text(Date().formatted(.dateTime.weekday(.wide).month().day()))
                         .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                         .font(.footnote)
@@ -82,6 +96,21 @@ struct TitleBarModifier: View {
                         CreateLimitSheetView(isDarkMode: $isDarkMode)
                     }
                     
+                }
+                else if (selectedTab == .summary) {
+                    Button(action: {self.isCreateLimitPresented.toggle()}) {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .opacity(0.5)
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 27, height: 27)
+                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                    }
+                    .sheet(isPresented: $isCreateLimitPresented) {
+                        // Create a sheet view to create a limit
+                        CreateLimitSheetView(isDarkMode: $isDarkMode)
+                    }
                 }
                 else if (selectedTab == .sharing) {
                     Image(systemName: "person.2.badge.gearshape.fill")
