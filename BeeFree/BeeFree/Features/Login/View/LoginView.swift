@@ -18,7 +18,10 @@ struct GoogleSignInResultModel {
 
 @MainActor
 final class LoginviewModel: ObservableObject{
-    func signInGoogle() async throws{
+    @Published var isNewUser = false
+    @Published var firstName = ""
+    
+    func signInGoogle() async throws {
         guard let topVC = LoginUtilities.shared.topViewController()else{
             throw URLError(.cannotFindHost)
         }
@@ -30,9 +33,31 @@ final class LoginviewModel: ObservableObject{
         let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken)
         try await AuthManager.shared.signInWithGoogle(tokens: tokens)
         
+        let authResult = try await AuthManager.shared.signInWithGoogle(tokens: tokens)
         
+        //self.isNewUser = try await UserDB.shared.checkExistUser(uid: authResult.uid) replaced by below
+        let userExists = try? await UserDB.shared.checkExistUser(uid: authResult.uid)
+
+        isNewUser = !(userExists ?? false)
+
+        
+    }
+    
+      func submitFirstName() async {
+        // logic to submit first name to firestore
+        guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
+            return
+        }
+        
+        do{
+            try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
+            
+        } catch {
+            print(error)
+        }
 
     }
+    
 }
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
@@ -40,17 +65,28 @@ struct LoginView: View {
     var body: some View {
 
         VStack {
-            
-            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)){
-                Task{
-                    do{
-                        try await viewModel.signInGoogle()
+            if viewModel.isNewUser {
+                TextField("Please enter your First Name", text: $viewModel.firstName)
+                Button("Submit"){
+                    Task {
+                        await viewModel.submitFirstName()
                         showSignInView = false
-                    }catch{
-                        print(error)
+                        
+                    }
+                }
+            } else {
+                GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)){
+                    Task{
+                        do{
+                            try await viewModel.signInGoogle()
+                            showSignInView = false
+                        }catch{
+                            print(error)
+                        }
                     }
                 }
             }
+            
         }
     }
 }

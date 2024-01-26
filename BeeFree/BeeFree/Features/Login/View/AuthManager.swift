@@ -48,6 +48,8 @@ final class AuthManager{
     
     func signIn(credential: AuthCredential) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().signIn(with: credential)
+        
+        //try await UserDB.shared.createNewUser(auth: authDataResult)
         return AuthDataResultModel(user: authDataResult.user)
     }
 }

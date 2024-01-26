@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseCore
 final class LoginUtilities{
     
     static let shared = LoginUtilities();
@@ -14,6 +15,7 @@ final class LoginUtilities{
     
     @MainActor
     func topViewController(controller: UIViewController? = nil) -> UIViewController?{
+        FirebaseApp.configure()
         let controller = controller ?? UIApplication.shared.keyWindow?.rootViewController
         if let navigationController = controller as? UINavigationController{
             return topViewController(controller: navigationController.visibleViewController)
