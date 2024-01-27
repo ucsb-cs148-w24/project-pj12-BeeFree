@@ -6,12 +6,25 @@
 //
 
 import SwiftUI
+import FamilyControls
 
 @main
 struct BeeFreeApp: App {
+    let center = AuthorizationCenter.shared
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                ContentView()
+            }
+            .onAppear {
+                Task {
+                    do {
+                        try await center.requestAuthorization(for: .individual)
+                    } catch {
+                        print("Failed to enroll user with error: \(error)")
+                    }
+                }
+            }
         }
     }
 }
