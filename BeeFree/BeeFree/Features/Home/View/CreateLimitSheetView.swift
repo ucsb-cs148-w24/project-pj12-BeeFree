@@ -6,24 +6,43 @@
 //
 
 import SwiftUI
-import FamilyControls
-import DeviceActivity
 
 struct CreateLimitSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     @Binding var isDarkMode: Bool
     
-    let center = AuthorizationCenter.shared
-    @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
-
-    @State var filter = DeviceActivityFilter()
-    
-    @State var isPresented = false
-    @State var selection = FamilyActivitySelection()
-    
     var body: some View {
-        Text("Hello, World!")
+        NavigationStack {
+            VStack {
+                // Title Stack
+                ZStack {
+                    HStack {
+                        Text("Create App Limit")
+                            .bold()
+                            .font(.title2)
+                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
+                    }
+                    HStack {
+                        Spacer()
+                        Text("Done")
+                            .onTapGesture {
+                                dismiss()
+                            }
+                            .bold()
+                            .font(.title3)
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
+                    }
+                }
+                // Settings
+                Form {
+                }
+                Spacer()
+            }
+        }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
 }
 
