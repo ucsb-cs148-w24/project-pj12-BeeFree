@@ -61,37 +61,44 @@ final class LoginviewModel: ObservableObject{
 }
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
+    @State private var showSummaryView = false
     @Binding var showSignInView: Bool
     var body: some View {
-
-        VStack {
-            if viewModel.isNewUser {
-                TextField("Please enter your First Name", text: $viewModel.firstName)
-                Button("Submit"){
-                    Task {
-                        await viewModel.submitFirstName()
-                        showSignInView = false
-                        
+        NavigationView{
+            VStack {
+                if viewModel.isNewUser {
+                    TextField("Please enter your First Name", text: $viewModel.firstName)
+                    Button("Submit"){
+                        Task {
+                            await viewModel.submitFirstName()
+                            showSummaryView = true
+                            
+                        }
                     }
-                }
-            } else {
-                GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)){
-                    Task{
-                        do{
-                            try await viewModel.signInGoogle()
-                            showSignInView = false
-                        }catch{
-                            print(error)
+                } else {
+                    GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)){
+                        Task{
+                            do{
+                                try await viewModel.signInGoogle()
+                                showSummaryView = true
+                            }catch{
+                                print(error)
+                            }
                         }
                     }
                 }
+                
             }
             
+            NavigationLink(destination: ContentView(), isActive: $showSummaryView) {EmptyView()}
+
         }
+        
     }
 }
 
 #Preview {
     LoginView(showSignInView: .constant(true))
 }
+
 
