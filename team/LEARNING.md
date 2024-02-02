@@ -21,3 +21,4 @@
 ### Post and Comment Documentations in Slack:
 - Sunhu posted multiple videos and webpage links for Swift and Firebase implementation in Swift tutorials in the mobile_help channel.
 - Mike and Peter commented on the Swift video links in the mobile help channel, adding more links to it and bonus information on their perspectives on the videos sent.
+- Kavi sent a comment with a video link to help aid others learn how to use Figma for design mockups in the mobile help channel. 
