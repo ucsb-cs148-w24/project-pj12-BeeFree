@@ -30,7 +30,8 @@ struct ContentView: View {
                                     HomeView(isDarkMode: $isDarkMode)
                                 }
                                 else if (selectedTab == .summary) {
-                                    SummaryView(isDarkMode: $isDarkMode, selectedTimePeriod: 0)
+                                    SummaryView(isDarkMode: $isDarkMode,
+                                    selectedTimePeriod: 0)
                                 }
                                 else if (selectedTab == .sharing) {
                                     SharingView()

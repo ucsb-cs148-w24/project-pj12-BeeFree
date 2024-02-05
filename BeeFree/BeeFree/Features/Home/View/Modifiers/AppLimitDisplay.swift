@@ -11,7 +11,19 @@ struct AppLimitDisplay: View {
     @Binding var isDarkMode : Bool
     @State var appName : String
     var body: some View {
-        RectangleSection(isDarkMode: $isDarkMode, height: 81)
+        Text(appName)
+            .fixedSize(horizontal: false, vertical: true)
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity)
+            .frame(height:81)
+            .padding()
+            .background(Rectangle()
+                .fill(Color("LighterSky"))
+                .background(.ultraThinMaterial)
+                .frame(maxWidth: .infinity)
+                .cornerRadius(16.0)
+                .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)))
+
     }
 }
 

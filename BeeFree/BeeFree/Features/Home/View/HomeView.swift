@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var isDarkMode : Bool
-    @State private var apps = ["Instagram", "Reddit", "Youtube", "TikTok"]
+    @State private var apps = ["Instagram", "Reddit", "Youtube", "TikTok", "Test App", "Test App", "Test App", "Test App", "Test App", "Test App", "Test App"]
     var body: some View {
         VStack(spacing: 0) {
             ForEach($apps, id: \.self) { $app in
