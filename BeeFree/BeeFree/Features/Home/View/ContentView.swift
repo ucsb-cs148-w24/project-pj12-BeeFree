@@ -1,3 +1,4 @@
+
 //
 //  ContentView.swift
 //  BeeFree
@@ -86,3 +87,4 @@ struct ViewOffsetKey: PreferenceKey {
 #Preview {
     ContentView()
 }
+

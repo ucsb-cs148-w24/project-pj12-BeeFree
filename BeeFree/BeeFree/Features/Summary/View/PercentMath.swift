@@ -30,7 +30,16 @@ func getGoal(uid : String) -> Binding<[Double]>{
 func calculateTrims(inputPercents : [Double]) -> Binding<[Double]>{
     // go into firebase
     // get users goals, get users usage
+    var trims: [Double] = []
+    var sum: Double = 0.0
+    for percent in inputPercents{
+        sum += percent
+        trims.append(sum)
+    }
     
-    var returnval : [Double] = [0.0]
-    return Binding(get : {returnval}, set: {returnval = $0})
+    for i in stride(from:trims.count, to:0, by:-1){
+        
+    }
+    // var returnval : [Double] = [0.5]
+    return Binding(get : {trims}, set: {trims = $0})
 }

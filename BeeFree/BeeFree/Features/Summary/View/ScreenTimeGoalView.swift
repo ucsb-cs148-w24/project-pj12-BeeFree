@@ -5,7 +5,7 @@ struct ScreenTimeGoalView: View {
     let percents: [Double] = [0.4, 0.5, 0.1]
     var body: some View {
         ZStack {
-            RectangleSection(isDarkMode: $isDarkMode, height: 200)
+           RectangleSection(isDarkMode: $isDarkMode, height: 200)
             VStack {
 //                Text("Today's Screen Time")
                 HStack {
@@ -15,7 +15,9 @@ struct ScreenTimeGoalView: View {
                     // pass in trim instead
                     
                     let trims = calculateTrims(inputPercents: percents)
-                    CircleProgressBar(percents: trims)
+                    CircleProgressBar(trims: trims)
+                    
+                    
                 }
                 .padding([.leading, .trailing], 50)
             }

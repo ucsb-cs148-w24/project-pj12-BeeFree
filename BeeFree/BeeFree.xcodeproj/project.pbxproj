@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11515ADE2B65C0F5000C82FA /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11515ADD2B65C0F5000C82FA /* PieChartView.swift */; };
 		116D87452B5CAD85006CB8C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 116D87442B5CAD85006CB8C3 /* GoogleService-Info.plist */; };
 		116D87482B5CAEBD006CB8C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87472B5CAEBD006CB8C3 /* FirebaseAnalytics */; };
 		116D874A2B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87492B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -56,7 +57,40 @@
 		9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		11327EC42B65B8CE003FA0C6 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11327EDB2B65B8EC003FA0C6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		11327EB92B65B8CE003FA0C6 /* device_monitor_api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = device_monitor_api.swift; sourceTree = "<group>"; };
+		11327EBB2B65B8CE003FA0C6 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
+		11327EBD2B65B8CE003FA0C6 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
+		11327EBF2B65B8CE003FA0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11327EC02B65B8CE003FA0C6 /* device_monitor_api.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = device_monitor_api.entitlements; sourceTree = "<group>"; };
+		11327ECE2B65B8EC003FA0C6 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		11327ED12B65B8EC003FA0C6 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		11327ED32B65B8EC003FA0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11327ED42B65B8EC003FA0C6 /* device_monitory_api.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = device_monitory_api.entitlements; sourceTree = "<group>"; };
+		11515ADD2B65C0F5000C82FA /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		116D87442B5CAD85006CB8C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1174357F2B60899600E5F6E7 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		119588FD2B61CEB1003F5C31 /* PercentMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentMath.swift; sourceTree = "<group>"; };
@@ -118,6 +152,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11327EB82B65B8CE003FA0C6 /* device monitor api */ = {
+			isa = PBXGroup;
+			children = (
+				11327EB92B65B8CE003FA0C6 /* device_monitor_api.swift */,
+				11327EBB2B65B8CE003FA0C6 /* TotalActivityReport.swift */,
+				11327EBD2B65B8CE003FA0C6 /* TotalActivityView.swift */,
+				11327EBF2B65B8CE003FA0C6 /* Info.plist */,
+				11327EC02B65B8CE003FA0C6 /* device_monitor_api.entitlements */,
+			);
+			path = "device monitor api";
+			sourceTree = "<group>";
+		};
+		11327ECD2B65B8EC003FA0C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11327ECE2B65B8EC003FA0C6 /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11327ED02B65B8EC003FA0C6 /* device monitory api */ = {
+			isa = PBXGroup;
+			children = (
+				11327ED12B65B8EC003FA0C6 /* DeviceActivityMonitorExtension.swift */,
+				11327ED32B65B8EC003FA0C6 /* Info.plist */,
+				11327ED42B65B8EC003FA0C6 /* device_monitory_api.entitlements */,
+			);
+			path = "device monitory api";
+			sourceTree = "<group>";
+		};
 		1174357C2B6088A600E5F6E7 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				9E395E0C2B5C6FFA00EB61B2 /* BeeFree */,
+				11327EB82B65B8CE003FA0C6 /* device monitor api */,
+				11327ED02B65B8EC003FA0C6 /* device monitory api */,
+				11327ECD2B65B8EC003FA0C6 /* Frameworks */,
 				9E395E0B2B5C6FFA00EB61B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -299,6 +366,7 @@
 				119588FD2B61CEB1003F5C31 /* PercentMath.swift */,
 				9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */,
 				1174357F2B60899600E5F6E7 /* SummaryView.swift */,
+				11515ADD2B65C0F5000C82FA /* PieChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,6 +423,8 @@
 				9E395E062B5C6FFA00EB61B2 /* Sources */,
 				9E395E072B5C6FFA00EB61B2 /* Frameworks */,
 				9E395E082B5C6FFA00EB61B2 /* Resources */,
+				11327EC42B65B8CE003FA0C6 /* Embed ExtensionKit Extensions */,
+				11327EDB2B65B8EC003FA0C6 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -454,6 +524,7 @@
 				9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */,
 				9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */,
 				117435802B60899600E5F6E7 /* SummaryView.swift in Sources */,
+				11515ADE2B65C0F5000C82FA /* PieChartView.swift in Sources */,
 				9E395E0E2B5C6FFA00EB61B2 /* BeeFreeApp.swift in Sources */,
 				9E395E382B5C758C00EB61B2 /* TabBarModifier.swift in Sources */,
 				9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */,
@@ -593,6 +664,7 @@
 		9E395E192B5C6FFB00EB61B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -621,6 +693,7 @@
 		9E395E1A2B5C6FFB00EB61B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
