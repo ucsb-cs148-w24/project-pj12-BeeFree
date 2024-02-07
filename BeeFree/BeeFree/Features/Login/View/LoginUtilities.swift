@@ -15,7 +15,7 @@ final class LoginUtilities{
     
     @MainActor
     func topViewController(controller: UIViewController? = nil) -> UIViewController?{
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         let controller = controller ?? UIApplication.shared.keyWindow?.rootViewController
         if let navigationController = controller as? UINavigationController{
             return topViewController(controller: navigationController.visibleViewController)
