@@ -28,15 +28,6 @@ struct BeeFreeApp: App {
             ZStack {
                 viewControllerWrapper()
             }
-            .onAppear {
-                Task {
-                    do {
-                        try await center.requestAuthorization(for: .individual)
-                    } catch {
-                        print("Failed to enroll user with error: \(error)")
-                    }
-                }
-            }
         }
     }
 }

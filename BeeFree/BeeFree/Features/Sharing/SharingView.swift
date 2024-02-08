@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SharingView: View {
     var body: some View {
-        Text("Sharing coming soon!")
+        Text("")
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
     }
 }
