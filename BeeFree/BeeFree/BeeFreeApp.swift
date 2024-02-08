@@ -12,7 +12,6 @@ import FirebaseAppCheck
 
 @main
 struct BeeFreeApp: App {
-    
     init() {
         // Configure Firebase
         FirebaseApp.configure()
@@ -24,7 +23,17 @@ struct BeeFreeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView(showSignInView: .constant(true))
+                viewControllerWrapper()
         }
+    }
+}
+
+
+struct viewControllerWrapper :UIViewControllerRepresentable{
+    func makeUIViewController(context: Context) -> some UIViewController {
+        welcomeViewController()
+    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
     }
 }
