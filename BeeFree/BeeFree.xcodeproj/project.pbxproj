@@ -45,7 +45,6 @@
 		277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
 		27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
 		43536EBF2B70ADC000207E52 /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
-		43536EC32B70DACC00207E52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43536EC22B70DACC00207E52 /* GoogleService-Info.plist */; };
 		9E395E0E2B5C6FFA00EB61B2 /* BeeFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */; };
 		9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0F2B5C6FFA00EB61B2 /* ContentView.swift */; };
 		9E395E122B5C6FFB00EB61B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E112B5C6FFB00EB61B2 /* Assets.xcassets */; };
@@ -64,6 +63,7 @@
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 		9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */; };
 		9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
+		A72315032B756B6000B9CA4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A72315022B756B5F00B9CA4D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +72,6 @@
 		277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		27F771522B60A02E00A428F5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		43536EBE2B70ADC000207E52 /* UserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
-		43536EC22B70DACC00207E52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43536EC42B71D09000207E52 /* BeeFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeeFree.entitlements; sourceTree = "<group>"; };
 		9E395E0A2B5C6FFA00EB61B2 /* BeeFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeApp.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		9EA34C782B5F29A300F1208D /* RectangleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleSection.swift; sourceTree = "<group>"; };
 		9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLimitDisplay.swift; sourceTree = "<group>"; };
 		9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenAnimation.swift; sourceTree = "<group>"; };
+		A72315022B756B5F00B9CA4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 			children = (
 				43536EC42B71D09000207E52 /* BeeFree.entitlements */,
 				276C378D2B60A31D00F7BC5A /* Info.plist */,
-				43536EC22B70DACC00207E52 /* GoogleService-Info.plist */,
+				A72315022B756B5F00B9CA4D /* GoogleService-Info.plist */,
 				9E395E1B2B5C735300EB61B2 /* Features */,
 				9E395E332B5C747E00EB61B2 /* Modifiers */,
 				9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */,
@@ -343,8 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E395E152B5C6FFB00EB61B2 /* Preview Assets.xcassets in Resources */,
+				A72315032B756B6000B9CA4D /* GoogleService-Info.plist in Resources */,
 				9E395E122B5C6FFB00EB61B2 /* Assets.xcassets in Resources */,
-				43536EC32B70DACC00207E52 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

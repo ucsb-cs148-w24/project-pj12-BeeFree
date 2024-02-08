@@ -32,8 +32,7 @@ struct ContentView: View {
                                     }
                                     else if (selectedTab == .summary) {
                                         ZStack {
-                                            SummaryView(isDarkMode: $isDarkMode,
-                                                        selectedTimePeriod: 0)
+                                            SummaryView(isDarkMode: $isDarkMode)
                                                 .overlay(Text("Summary coming soon!")
                                                     .frame(maxWidth: .infinity,
                                                            minHeight:
