@@ -28,15 +28,6 @@ struct BeeFreeApp: App {
             ZStack {
                 viewControllerWrapper()
             }
-            .onAppear {
-                Task {
-                    do {
-                        try await center.requestAuthorization(for: .individual)
-                    } catch {
-                        print("Failed to enroll user with error: \(error)")
-                    }
-                }
-            }
         }
     }
 }
@@ -44,7 +35,7 @@ struct BeeFreeApp: App {
 
 struct viewControllerWrapper :UIViewControllerRepresentable{
     func makeUIViewController(context: Context) -> some UIViewController {
-        welcomeViewController()
+        WelcomeViewController()
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         

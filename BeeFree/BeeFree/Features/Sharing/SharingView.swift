@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SharingView: View {
     var body: some View {
-        Text("Sharing page content here")
-            .foregroundColor(Color("DynamicGray"))
+        Text("")
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
     }
 }
 

@@ -87,7 +87,7 @@ final class LoginviewModel: ObservableObject{
 
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
-    @State private var isAuthenticated = false
+    @State var isAuthenticated = false
     @Binding var showSignInView: Bool
     var body: some View {
         NavigationView {
@@ -158,8 +158,9 @@ struct LoginView: View {
                     }
                     .padding()
                 }
-                // Controlled NavigationLink
-                NavigationLink(destination: ContentView(), isActive: $isAuthenticated) {
+                NavigationLink(destination: ContentView()
+                    .navigationBarBackButtonHidden(true),
+                    isActive: $isAuthenticated) {
                     EmptyView()
                 }
             }

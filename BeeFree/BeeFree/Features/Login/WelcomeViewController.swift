@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class welcomeViewController: UIViewController{
+class WelcomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -31,7 +31,7 @@ class welcomeViewController: UIViewController{
         ])
         
         let welcomeLabel = UILabel()
-        welcomeLabel.text = "Welcome to\nBee Free"
+        welcomeLabel.text = "Welcome to Bee Free!"
         welcomeLabel.textAlignment = .center
         welcomeLabel.numberOfLines = 0
         welcomeLabel.textColor = UIColor.blue
@@ -44,7 +44,7 @@ class welcomeViewController: UIViewController{
         ])
         
         let swipeLabel = UILabel()
-        swipeLabel.text = "swipe up to bee free\nfrom your addiction"
+        swipeLabel.text = "Swipe up to be free\nfrom your screen"
         swipeLabel.textAlignment = .center
         swipeLabel.numberOfLines = 0 // Allows for multiple lines
         swipeLabel.textColor = UIColor.blue
