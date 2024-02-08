@@ -44,7 +44,7 @@ struct BeeFreeApp: App {
 
 struct viewControllerWrapper :UIViewControllerRepresentable{
     func makeUIViewController(context: Context) -> some UIViewController {
-        welcomeViewController()
+        WelcomeViewController()
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         

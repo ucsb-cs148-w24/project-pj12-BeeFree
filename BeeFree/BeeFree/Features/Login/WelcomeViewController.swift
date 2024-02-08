@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class welcomeViewController: UIViewController{
+class WelcomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

@@ -13,6 +13,7 @@ struct AppLimitDisplay: View {
     var body: some View {
         Text(appName)
             .fixedSize(horizontal: false, vertical: true)
+            .foregroundColor(Color("DynamicGray"))
             .multilineTextAlignment(.leading)
             .frame(maxWidth: .infinity)
             .frame(height:81)
