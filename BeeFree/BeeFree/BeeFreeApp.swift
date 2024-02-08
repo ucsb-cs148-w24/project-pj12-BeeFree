@@ -25,9 +25,8 @@ struct BeeFreeApp: App {
     let center = AuthorizationCenter.shared
     var body: some Scene {
         WindowGroup {
-                viewControllerWrapper()
             ZStack {
-                ContentView()
+                viewControllerWrapper()
             }
             .onAppear {
                 Task {
