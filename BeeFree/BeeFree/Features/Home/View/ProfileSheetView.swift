@@ -83,7 +83,7 @@ struct ProfileSheetView: View {
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
-        .background(Color("Background").edgesIgnoringSafeArea(.all))
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

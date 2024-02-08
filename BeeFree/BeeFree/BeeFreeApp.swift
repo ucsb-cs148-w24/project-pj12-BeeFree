@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseCore
 import Firebase
 import FirebaseAppCheck
+import FamilyControls
 
 @main
 struct BeeFreeApp: App {
@@ -21,9 +22,22 @@ struct BeeFreeApp: App {
         AppCheck.setAppCheckProviderFactory(providerFactory)
     }
     
+    let center = AuthorizationCenter.shared
     var body: some Scene {
         WindowGroup {
                 viewControllerWrapper()
+            ZStack {
+                ContentView()
+            }
+            .onAppear {
+                Task {
+                    do {
+                        try await center.requestAuthorization(for: .individual)
+                    } catch {
+                        print("Failed to enroll user with error: \(error)")
+                    }
+                }
+            }
         }
     }
 }

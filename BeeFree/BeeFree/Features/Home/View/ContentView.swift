@@ -5,7 +5,7 @@
 //  Created by Karankumar Mageswaran on 1/20/24.
 //
 
-import SwiftUI
+import SwiftUI 
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -30,7 +30,8 @@ struct ContentView: View {
                                     HomeView(isDarkMode: $isDarkMode)
                                 }
                                 else if (selectedTab == .summary) {
-                                    SummaryView(isDarkMode: $isDarkMode, selectedTimePeriod: 0)
+                                    SummaryView(isDarkMode: $isDarkMode,
+                                    selectedTimePeriod: 0)
                                 }
                                 else if (selectedTab == .sharing) {
                                     SharingView()
