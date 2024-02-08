@@ -6,15 +6,27 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import Firebase
+import FirebaseAppCheck
 import FamilyControls
 
 @main
 struct BeeFreeApp: App {
+    init() {
+        // Configure Firebase
+        FirebaseApp.configure()
+        
+        // Initialize the App Check with the debug provider
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+    }
+    
     let center = AuthorizationCenter.shared
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView()
+                viewControllerWrapper()
             }
             .onAppear {
                 Task {
@@ -26,5 +38,15 @@ struct BeeFreeApp: App {
                 }
             }
         }
+    }
+}
+
+
+struct viewControllerWrapper :UIViewControllerRepresentable{
+    func makeUIViewController(context: Context) -> some UIViewController {
+        welcomeViewController()
+    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
     }
 }
