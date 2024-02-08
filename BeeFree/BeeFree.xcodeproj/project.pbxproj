@@ -64,6 +64,9 @@
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 		9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */; };
 		9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
+		9EE42ED82B752967005B06BE /* BeeFreeDeviceActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42ED72B752967005B06BE /* BeeFreeDeviceActivityModel.swift */; };
+		9EE42EDB2B752D63005B06BE /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42EDA2B752D63005B06BE /* BeeFreeSchedule.swift */; };
+		9EE42EDD2B752D6F005B06BE /* BeeFreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42EDC2B752D6F005B06BE /* BeeFreeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,9 @@
 		9EA34C782B5F29A300F1208D /* RectangleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleSection.swift; sourceTree = "<group>"; };
 		9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLimitDisplay.swift; sourceTree = "<group>"; };
 		9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenAnimation.swift; sourceTree = "<group>"; };
+		9EE42ED72B752967005B06BE /* BeeFreeDeviceActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeDeviceActivityModel.swift; sourceTree = "<group>"; };
+		9EE42EDA2B752D63005B06BE /* BeeFreeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeSchedule.swift; sourceTree = "<group>"; };
+		9EE42EDC2B752D6F005B06BE /* BeeFreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,7 @@
 				43536EC42B71D09000207E52 /* BeeFree.entitlements */,
 				276C378D2B60A31D00F7BC5A /* Info.plist */,
 				43536EC22B70DACC00207E52 /* GoogleService-Info.plist */,
+				9EE42ED62B75294C005B06BE /* ScreenTime */,
 				9E395E1B2B5C735300EB61B2 /* Features */,
 				9E395E332B5C747E00EB61B2 /* Modifiers */,
 				9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */,
@@ -242,6 +249,16 @@
 				9EA34C782B5F29A300F1208D /* RectangleSection.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		9EE42ED62B75294C005B06BE /* ScreenTime */ = {
+			isa = PBXGroup;
+			children = (
+				9EE42ED72B752967005B06BE /* BeeFreeDeviceActivityModel.swift */,
+				9EE42EDA2B752D63005B06BE /* BeeFreeSchedule.swift */,
+				9EE42EDC2B752D6F005B06BE /* BeeFreeModel.swift */,
+			);
+			path = ScreenTime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +378,7 @@
 				9E395E3E2B5C766000EB61B2 /* HomeView.swift in Sources */,
 				9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */,
 				9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */,
+				9EE42EDD2B752D6F005B06BE /* BeeFreeModel.swift in Sources */,
 				9E395E0E2B5C6FFA00EB61B2 /* BeeFreeApp.swift in Sources */,
 				9E395E382B5C758C00EB61B2 /* TabBarModifier.swift in Sources */,
 				27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */,
@@ -368,12 +386,14 @@
 				9E395E362B5C757500EB61B2 /* TitleBarModifier.swift in Sources */,
 				43536EBF2B70ADC000207E52 /* UserDB.swift in Sources */,
 				9E395E3A2B5C75C300EB61B2 /* ProfileSheetView.swift in Sources */,
+				9EE42EDB2B752D63005B06BE /* BeeFreeSchedule.swift in Sources */,
 				277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */,
 				9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */,
 				9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */,
 				9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */,
 				9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */,
 				9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */,
+				9EE42ED82B752967005B06BE /* BeeFreeDeviceActivityModel.swift in Sources */,
 				9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BeeFree/Preview Content\"";
-				DEVELOPMENT_TEAM = PUMSBRCBC2;
+				DEVELOPMENT_TEAM = X6L44JDG2E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeeFree/Info.plist;
@@ -523,7 +543,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeKaranumar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeDebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -540,7 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BeeFree/Preview Content\"";
-				DEVELOPMENT_TEAM = PUMSBRCBC2;
+				DEVELOPMENT_TEAM = X6L44JDG2E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeeFree/Info.plist;
@@ -554,7 +574,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeKaranumar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeRelease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

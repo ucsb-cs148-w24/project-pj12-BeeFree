@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import DeviceActivity
+import ManagedSettings
+import FamilyControls
 
 struct SummaryView: View {
     @Binding var isDarkMode : Bool
     @State var selectedTimePeriod = 0
+    
+    @EnvironmentObject var store: ManagedSettingsStore
+    @EnvironmentObject var model: BeeFreeModel
+    
     var body: some View {
         VStack {
             Picker("Time Period", selection: $selectedTimePeriod) {

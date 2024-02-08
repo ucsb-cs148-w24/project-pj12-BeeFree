@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import DeviceActivity
+import ManagedSettings
+import FamilyControls
 
 struct CreateLimitSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -15,6 +18,10 @@ struct CreateLimitSheetView: View {
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
     @State private var savedTime: (hours: Int, minutes: Int, seconds: Int)?
+    @State private var isDiscouragedPresented = false
+
+    @EnvironmentObject var store: ManagedSettingsStore
+    @EnvironmentObject var model: BeeFreeModel
     
     var body: some View {
         NavigationStack {
@@ -42,7 +49,16 @@ struct CreateLimitSheetView: View {
                 }
                 // Settings
                 Form {
-                    Section(header: Text("Set Time")) {
+                    Section(header: Text("Applications")) {
+                        Button("Select Apps to Discourage") {
+                            isDiscouragedPresented = true
+                        }
+                        .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
+                    }                
+                    .onChange(of: model.selectionToDiscourage) {
+                        BeeFreeModel.shared.setShieldRestrictions()
+                    }
+                    Section(header: Text("Time Limit")) {
                         HStack{
                             Picker("Hours", selection: $hours) {
                                 ForEach(0..<24, id: \.self) { hour in
@@ -79,6 +95,7 @@ struct CreateLimitSheetView: View {
                         }
                     }
                 }
+
                 Spacer()
             }
         }
