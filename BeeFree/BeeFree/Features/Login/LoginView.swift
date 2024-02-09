@@ -16,13 +16,15 @@ struct GoogleSignInResultModel {
     let accessToken: String
 }
 
+@available(iOSApplicationExtension, unavailable)
+
 @MainActor
 final class LoginviewModel: ObservableObject{
     @Published var isNewUser = false
     @Published var firstName = ""
     @Published var uid:String = ""
 
-
+    @available(iOSApplicationExtension, unavailable)
     func signInGoogle(completion: @escaping (Bool) -> Void) async {
             do {
                 guard let topVC = LoginUtilities.shared.topViewController() else {
@@ -84,7 +86,7 @@ final class LoginviewModel: ObservableObject{
 }
 
 
-
+@available(iOSApplicationExtension, unavailable)
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
     @State var isAuthenticated = false
@@ -140,6 +142,7 @@ struct LoginView: View {
                     // Google Sign-in Button
                     Button(action: {
                         Task {
+                            
                             await viewModel.signInGoogle { success in
                                 isAuthenticated = success
                             }
@@ -169,8 +172,3 @@ struct LoginView: View {
         }
     }   
 }
-
-#Preview {
-    LoginView(showSignInView: .constant(true))
-}
-

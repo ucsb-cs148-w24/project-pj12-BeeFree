@@ -25,7 +25,7 @@ final class UserDB{
     private init() { }
     
     func createNewUser(auth: AuthDataResultModel, firstName: String) async throws{
-        var userData: [String: Any] = [
+        let userData: [String: Any] = [
             "userID" : auth.uid,
             "email" : auth.email ?? "",
             "firstName" : firstName

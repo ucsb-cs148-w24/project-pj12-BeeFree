@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FamilyControls
+import ManagedSettings
+import DeviceActivity
 
 struct TitleBarModifier: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -14,6 +17,8 @@ struct TitleBarModifier: View {
     @State private var isCreateLimitPresented = false
     @State private var isAccountSettingsPresented = false
     
+    @EnvironmentObject var store: ManagedSettingsStore
+    @EnvironmentObject var model: BeeFreeModel
     
     var body: some View {
         HStack {
@@ -80,6 +85,8 @@ struct TitleBarModifier: View {
                     .sheet(isPresented: $isCreateLimitPresented) {
                         // Create a sheet view to create a limit
                         CreateLimitSheetView(isDarkMode: $isDarkMode)
+                            .environmentObject(model)
+                            .environmentObject(store)
                     }
                     
                 }

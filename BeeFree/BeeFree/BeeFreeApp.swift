@@ -10,6 +10,10 @@ import FirebaseCore
 import Firebase
 import FirebaseAppCheck
 import FamilyControls
+import DeviceActivity
+import ManagedSettings
+import UserNotifications
+import UserNotificationsUI
 
 @main
 struct BeeFreeApp: App {
@@ -20,13 +24,27 @@ struct BeeFreeApp: App {
         // Initialize the App Check with the debug provider
         let providerFactory = AppCheckDebugProviderFactory()
         AppCheck.setAppCheckProviderFactory(providerFactory)
-    }
+    };
     
-    let center = AuthorizationCenter.shared
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    
+    let authcenter = AuthorizationCenter.shared
+    
+    @StateObject var store = ManagedSettingsStore()
+    @StateObject var model = BeeFreeModel.shared
+    
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                viewControllerWrapper()
+            ContentView()
+                .environmentObject(store)
+                .environmentObject(model)
+//            ZStack {viewControllerWrapper()}
+                .onAppear {
+                Task {
+                    do {
+                        try await authcenter.requestAuthorization(for: .individual)
+                    } catch {print("Failed to enroll user with error: \(error)")}
+                }
             }
         }
     }
@@ -39,5 +57,13 @@ struct viewControllerWrapper :UIViewControllerRepresentable{
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    // Make this request when the app launches
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+//        BeeFreeSchedule.setSchedule()
+        return true
     }
 }

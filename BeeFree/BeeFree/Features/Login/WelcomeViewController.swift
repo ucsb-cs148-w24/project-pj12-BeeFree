@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 import SwiftUI
+import DeviceActivity
+import FamilyControls
+import ManagedSettings
 
 class WelcomeViewController: UIViewController{
+    
+    @available(iOSApplicationExtension, unavailable)
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -17,8 +22,9 @@ class WelcomeViewController: UIViewController{
         setupSwipe()
     }
     
+    @available(iOSApplicationExtension, unavailable)
     private func setupSubViews(){
-        let logoImageView = UIImageView(image: UIImage(named:"appicon"))
+        let logoImageView = UIImageView(image: UIImage(named:"AppIcon"))
         logoImageView.contentMode = .scaleAspectFit
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +40,7 @@ class WelcomeViewController: UIViewController{
         welcomeLabel.text = "Welcome to Bee Free!"
         welcomeLabel.textAlignment = .center
         welcomeLabel.numberOfLines = 0
-        welcomeLabel.textColor = UIColor.blue
+        welcomeLabel.textColor = UIColor(Color("Sky"))
         view.addSubview(welcomeLabel)
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -44,10 +50,10 @@ class WelcomeViewController: UIViewController{
         ])
         
         let swipeLabel = UILabel()
-        swipeLabel.text = "Swipe up to be free\nfrom your screen"
+        swipeLabel.text = "Swipe up to continue"
         swipeLabel.textAlignment = .center
         swipeLabel.numberOfLines = 0 // Allows for multiple lines
-        swipeLabel.textColor = UIColor.blue
+        swipeLabel.textColor = UIColor(Color("DynamicGray"))
         view.addSubview(swipeLabel)
         swipeLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -58,12 +64,14 @@ class WelcomeViewController: UIViewController{
         ])
     }
     
+    @available(iOSApplicationExtension, unavailable)
     private func setupSwipe(){
         let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUp))
         swipeUpGesture.direction = .up
         view.addGestureRecognizer(swipeUpGesture)
     }
-
+    
+    @available(iOSApplicationExtension, unavailable)
     @objc private func handleSwipeUp() {
         // Transition to the LoginView
         let loginView = LoginView(showSignInView: .constant(false))

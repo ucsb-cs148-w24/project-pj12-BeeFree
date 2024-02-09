@@ -6,14 +6,20 @@
 //
 
 import SwiftUI 
+import DeviceActivity
+import ManagedSettings
+import FamilyControls
 
 struct ContentView: View {
-    @Environment(\.colorScheme) var colorScheme
+//    @Environment(\.colorScheme) var colorScheme
     @State var selectedTab: Tab = .home
     @State var isDarkMode = false
     @State var isPresented = false
     @State private var barHidden = true
     
+    @EnvironmentObject var store : ManagedSettingsStore
+    @EnvironmentObject var model : BeeFreeModel
+
     var body: some View {
         VStack {
             ZStack {
@@ -21,19 +27,27 @@ struct ContentView: View {
                     GeometryReader { proxy in
                         ScrollView {
                             ZStack{
-                                PollenAnimation(isDarkMode: $isDarkMode)
+                                //PollenAnimation(isDarkMode: $isDarkMode)
                                 VStack {
                                     // Top bar
                                     TitleBarModifier(selectedTab: $selectedTab,
                                                      isDarkMode: $isDarkMode)
+                                    .environmentObject(model)
+                                    .environmentObject(store)
+
                                     // Main Page Content
                                     if (selectedTab == .home) {
-                                        HomeView(isDarkMode: $isDarkMode)
+                                        HomeView(isDarkMode: $isDarkMode,
+                                                 set: $model.setOfApps)
+                                            .environmentObject(model)
+                                            .environmentObject(store)
                                     }
                                     else if (selectedTab == .summary) {
                                         ZStack {
                                             SummaryView(isDarkMode: $isDarkMode,
                                                         selectedTimePeriod: 0)
+                                            .environmentObject(model)
+                                            .environmentObject(store)
                                                 .overlay(Text("Summary coming soon!")
                                                     .frame(maxWidth: .infinity,
                                                            minHeight:
@@ -47,6 +61,8 @@ struct ContentView: View {
                                     else if (selectedTab == .sharing) {
                                         ZStack{
                                             SharingView()
+                                                .environmentObject(model)
+                                                .environmentObject(store)
                                                 .overlay(Text("Sharing coming soon!")
                                                     .offset(y: 262.4)
                                                     .frame(maxWidth: .infinity,
@@ -70,7 +86,8 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                        }.scrollDisabled(selectedTab == .home ? false : true)
+                        }
+                        .scrollDisabled(selectedTab == .home ? false : true)
                     }
                     .background(LinearGradient(
                         colors: [Color("Sky"), Color("DarkerSky")],
@@ -110,4 +127,6 @@ struct ViewOffsetKey: PreferenceKey {
 
 #Preview {
     ContentView()
+        .environmentObject(ManagedSettingsStore())
+        .environmentObject(BeeFreeModel.shared)
 }

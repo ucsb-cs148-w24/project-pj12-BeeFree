@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 import FirebaseCore
+
+
 final class LoginUtilities{
     
     static let shared = LoginUtilities();
     private init(){}
     
     @MainActor
+    
+    @available(iOSApplicationExtension, unavailable)
     func topViewController(controller: UIViewController? = nil) -> UIViewController?{
         //FirebaseApp.configure()
         let controller = controller ?? UIApplication.shared.keyWindow?.rootViewController
