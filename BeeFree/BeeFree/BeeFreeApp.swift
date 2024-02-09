@@ -30,22 +30,16 @@ struct BeeFreeApp: App {
     
     let authcenter = AuthorizationCenter.shared
     
-    @StateObject var store = ManagedSettingsStore()
-    @StateObject var model = BeeFreeModel.shared
-    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environmentObject(store)
-                .environmentObject(model)
-//            ZStack {viewControllerWrapper()}
+        WindowGroup{
+            ZStack{viewControllerWrapper()}
                 .onAppear {
-                Task {
-                    do {
-                        try await authcenter.requestAuthorization(for: .individual)
-                    } catch {print("Failed to enroll user with error: \(error)")}
+                    Task {
+                        do {
+                            try await authcenter.requestAuthorization(for: .individual)
+                        } catch {print("Failed to enroll user with error: \(error)")}
+                    }
                 }
-            }
         }
     }
 }
