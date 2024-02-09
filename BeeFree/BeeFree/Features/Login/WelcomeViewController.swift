@@ -8,8 +8,12 @@
 import Foundation
 import UIKit
 import SwiftUI
+import DeviceActivity
+import FamilyControls
+import ManagedSettings
 
 class WelcomeViewController: UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

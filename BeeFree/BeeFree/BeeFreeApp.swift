@@ -12,6 +12,8 @@ import FirebaseAppCheck
 import FamilyControls
 import DeviceActivity
 import ManagedSettings
+import UserNotifications
+import UserNotificationsUI
 
 @main
 struct BeeFreeApp: App {
@@ -24,27 +26,26 @@ struct BeeFreeApp: App {
         AppCheck.setAppCheckProviderFactory(providerFactory)
     };
     
-    //@UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     
-    let center = AuthorizationCenter.shared
+    let authcenter = AuthorizationCenter.shared
     
     @StateObject var store = ManagedSettingsStore()
     @StateObject var model = BeeFreeModel.shared
     
     var body: some Scene {
         WindowGroup {
-            VStack{
-                ContentView()
-                    .environmentObject(model)
-                    .environmentObject(store)
-            }
-            .onAppear {
+            ContentView()
+                .environmentObject(store)
+                .environmentObject(model)
+//            ZStack {viewControllerWrapper()}
+                .onAppear {
                 Task {
-                    do { try await center.requestAuthorization(for: .individual)
+                    do {
+                        try await authcenter.requestAuthorization(for: .individual)
                     } catch {print("Failed to enroll user with error: \(error)")}
                 }
             }
-            // ZStack {viewControllerWrapper()}
         }
     }
 }
@@ -59,10 +60,10 @@ struct viewControllerWrapper :UIViewControllerRepresentable{
     }
 }
 
-//class AppDelegate: NSObject, UIApplicationDelegate {
-//    // Make this request when the app launches
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+class AppDelegate: NSObject, UIApplicationDelegate {
+    // Make this request when the app launches
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 //        BeeFreeSchedule.setSchedule()
-//        return true
-//    }
-//}
+        return true
+    }
+}

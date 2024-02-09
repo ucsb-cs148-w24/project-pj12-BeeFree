@@ -19,7 +19,7 @@ struct ContentView: View {
     
     @EnvironmentObject var store : ManagedSettingsStore
     @EnvironmentObject var model : BeeFreeModel
-    
+
     var body: some View {
         VStack {
             ZStack {
@@ -37,7 +37,8 @@ struct ContentView: View {
 
                                     // Main Page Content
                                     if (selectedTab == .home) {
-                                        HomeView(isDarkMode: $isDarkMode)
+                                        HomeView(isDarkMode: $isDarkMode,
+                                                 set: $model.setOfApps)
                                             .environmentObject(model)
                                             .environmentObject(store)
                                     }

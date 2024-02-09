@@ -7,6 +7,8 @@
 
 import Foundation
 import DeviceActivity
+import FamilyControls
+import ManagedSettings
 
 // The Device Activity name is how I can reference the activity from within my extension
 extension DeviceActivityName {
@@ -14,9 +16,9 @@ extension DeviceActivityName {
     static let daily = Self("daily")
 }
 
-// I want to remove the application shield restriction when the child accumulates enough usage for a set of guardian-selected encouraged apps
+// I want to add an application shield restriction when threshold usage for a set of apps is reached
 extension DeviceActivityEvent.Name {
-    // Set the name of the event to "encouraged"
+    // Set the name of the event to "discouraged"
     static let discouraged = Self("discouraged")
 }
 
@@ -35,7 +37,9 @@ class BeeFreeSchedule {
         let events: [DeviceActivityEvent.Name: DeviceActivityEvent] = [
             .discouraged: DeviceActivityEvent(
                 applications: BeeFreeModel.shared.selectionToDiscourage.applicationTokens,
-                threshold: DateComponents(second:5)
+                categories: BeeFreeModel.shared.selectionToDiscourage.categoryTokens,
+                webDomains: BeeFreeModel.shared.selectionToDiscourage.webDomainTokens,
+                threshold: BeeFreeModel.shared.thresholdToDiscourage
             )
         ]
         
