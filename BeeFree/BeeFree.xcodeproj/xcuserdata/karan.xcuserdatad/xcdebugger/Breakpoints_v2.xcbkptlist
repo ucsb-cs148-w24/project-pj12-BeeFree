@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "78C5B185-5F3C-4F67-A285-05E69A2E4EC4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeeFree/BeeFreeApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511 - 438ffe02845253f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in BeeFree.BeeFreeApp.body.getter : some"
+                  moduleName = "BeeFree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karan/Documents/Karan/School/CS148/project-pj12-appblocker/BeeFree/BeeFree/BeeFreeApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511 - 4f3208a6f3d2701f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in BeeFree.BeeFreeApp.body.getter : some"
+                  moduleName = "BeeFree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karan/Documents/Karan/School/CS148/project-pj12-appblocker/BeeFree/BeeFree/BeeFreeApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511 - e1fb56677e2caff1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in BeeFree.BeeFreeApp.body.getter : some"
+                  moduleName = "BeeFree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karan/Documents/Karan/School/CS148/project-pj12-appblocker/BeeFree/BeeFree/BeeFreeApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511 - d6ed0269bd1849f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in BeeFree.BeeFreeApp.body.getter : some"
+                  moduleName = "BeeFree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karan/Documents/Karan/School/CS148/project-pj12-appblocker/BeeFree/BeeFree/BeeFreeApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

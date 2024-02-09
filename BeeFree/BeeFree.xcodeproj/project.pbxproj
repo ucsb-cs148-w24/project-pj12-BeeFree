@@ -82,6 +82,15 @@
 		9E4AD1B12B7586B400EC3992 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCC8CF2B756DE6009985F2 /* DeviceActivity.framework */; };
 		9E4AD1B22B7586B400EC3992 /* DeviceActivity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCC8CF2B756DE6009985F2 /* DeviceActivity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E4AD1B42B75887400EC3992 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
+		9E6B59A92B75D67600DB920E /* BeeFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */; };
+		9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
+		9E6B59AB2B75D68800DB920E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E442B5C777A00EB61B2 /* LoginView.swift */; };
+		9E6B59AC2B75D68B00DB920E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
+		9E6B59AD2B75D68D00DB920E /* LoginUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C29222B60A08F00EED823 /* LoginUtilities.swift */; };
+		9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
+		9E79273B2B75DFC100D3D392 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43536EC22B70DACC00207E52 /* GoogleService-Info.plist */; };
+		9E79273C2B75DFC700D3D392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E112B5C6FFB00EB61B2 /* Assets.xcassets */; };
+		9E79273D2B75DFCC00D3D392 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E142B5C6FFB00EB61B2 /* Preview Assets.xcassets */; };
 		9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */; };
 		9EA34C742B5F255A00F1208D /* AppScreenTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */; };
 		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
@@ -103,14 +112,14 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		9E4AD1B32B7586B400EC3992 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				9E4AD1B22B7586B400EC3992 /* DeviceActivity.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		9EFCC8DC2B756DE7009985F2 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -472,6 +481,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E79273D2B75DFCC00D3D392 /* Preview Assets.xcassets in Resources */,
+				9E79273C2B75DFC700D3D392 /* Assets.xcassets in Resources */,
+				9E79273B2B75DFC100D3D392 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,8 +504,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6B59A92B75D67600DB920E /* BeeFreeApp.swift in Sources */,
+				9E6B59AC2B75D68B00DB920E /* AuthManager.swift in Sources */,
+				9E6B59AD2B75D68D00DB920E /* LoginUtilities.swift in Sources */,
 				9E0BB7E32B758C4D00414DBD /* SharingView.swift in Sources */,
 				9E0BB7E12B758C4800414DBD /* ScreenTimeGoalView.swift in Sources */,
+				9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */,
 				9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */,
 				9E0BB7E82B758C5800414DBD /* CircleProgressBar.swift in Sources */,
 				9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */,
@@ -502,12 +518,14 @@
 				9E0BB7E02B758C4600414DBD /* SummaryView.swift in Sources */,
 				9E0BB7E22B758C4B00414DBD /* AppScreenTimeView.swift in Sources */,
 				9E0BB7DF2B758C4400414DBD /* HomeView.swift in Sources */,
+				9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */,
 				9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */,
 				9E0BB7E92B758C5A00414DBD /* RectangleSection.swift in Sources */,
 				9E0BB7EB2B758C5E00414DBD /* ContentView.swift in Sources */,
 				9E0BB7E62B758C5300414DBD /* AppLimitDisplay.swift in Sources */,
 				9E0BB7E72B758C5600414DBD /* PollenAnimation.swift in Sources */,
 				9E0BB7DE2B758C4200414DBD /* CreateLimitSheetView.swift in Sources */,
+				9E6B59AB2B75D68800DB920E /* LoginView.swift in Sources */,
 				9E4AD1B42B75887400EC3992 /* DeviceActivityMonitorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PUMSBRCBC2;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityMonitorExtension;
@@ -571,6 +590,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeAppBlocker.DeviceActivityMonitorExtension;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -597,6 +617,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeAppBlocker.DeviceActivityMonitorExtension;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -738,6 +759,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BeeFree/Preview Content\"";
 				DEVELOPMENT_TEAM = PUMSBRCBC2;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeeFree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -751,6 +773,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeAppBlocker;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -787,6 +810,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BeeFreeAppBlocker;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
