@@ -14,6 +14,7 @@ import ManagedSettings
 
 class WelcomeViewController: UIViewController{
     
+    @available(iOSApplicationExtension, unavailable)
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -21,6 +22,7 @@ class WelcomeViewController: UIViewController{
         setupSwipe()
     }
     
+    @available(iOSApplicationExtension, unavailable)
     private func setupSubViews(){
         let logoImageView = UIImageView(image: UIImage(named:"AppIcon"))
         logoImageView.contentMode = .scaleAspectFit
@@ -62,12 +64,14 @@ class WelcomeViewController: UIViewController{
         ])
     }
     
+    @available(iOSApplicationExtension, unavailable)
     private func setupSwipe(){
         let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUp))
         swipeUpGesture.direction = .up
         view.addGestureRecognizer(swipeUpGesture)
     }
-
+    
+    @available(iOSApplicationExtension, unavailable)
     @objc private func handleSwipeUp() {
         // Transition to the LoginView
         let loginView = LoginView(showSignInView: .constant(false))

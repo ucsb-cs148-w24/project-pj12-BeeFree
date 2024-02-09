@@ -27,7 +27,7 @@ struct ContentView: View {
                     GeometryReader { proxy in
                         ScrollView {
                             ZStack{
-                                PollenAnimation(isDarkMode: $isDarkMode)
+                                //PollenAnimation(isDarkMode: $isDarkMode)
                                 VStack {
                                     // Top bar
                                     TitleBarModifier(selectedTab: $selectedTab,
@@ -86,7 +86,8 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                        }.scrollDisabled(selectedTab == .home ? false : true)
+                        }
+                        .scrollDisabled(selectedTab == .home ? false : true)
                     }
                     .background(LinearGradient(
                         colors: [Color("Sky"), Color("DarkerSky")],
@@ -126,4 +127,6 @@ struct ViewOffsetKey: PreferenceKey {
 
 #Preview {
     ContentView()
+        .environmentObject(ManagedSettingsStore())
+        .environmentObject(BeeFreeModel.shared)
 }
