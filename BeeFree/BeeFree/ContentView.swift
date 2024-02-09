@@ -17,8 +17,8 @@ struct ContentView: View {
     @State var isPresented = false
     @State private var barHidden = true
     
-    @EnvironmentObject var store : ManagedSettingsStore
-    @EnvironmentObject var model : BeeFreeModel
+    @StateObject var store : ManagedSettingsStore = ManagedSettingsStore()
+    @StateObject var model : BeeFreeModel = BeeFreeModel.shared
 
     var body: some View {
         VStack {

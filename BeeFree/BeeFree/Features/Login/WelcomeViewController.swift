@@ -13,7 +13,6 @@ import FamilyControls
 import ManagedSettings
 
 class WelcomeViewController: UIViewController{
-    
     @available(iOSApplicationExtension, unavailable)
     override func viewDidLoad() {
         super.viewDidLoad()
