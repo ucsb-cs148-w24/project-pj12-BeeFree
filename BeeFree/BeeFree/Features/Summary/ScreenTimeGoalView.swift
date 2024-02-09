@@ -15,7 +15,7 @@ struct ScreenTimeGoalView: View {
                     // pass in trim instead
                     
 //                    let trims = calculateTrims(inputPercents: percents)
-                    CircleProgressBar()
+                    CircleProgressBar().scaleEffect(CGSize(width: 0.8, height: 0.8))
                     Spacer()
                     Spacer()
                     Spacer()

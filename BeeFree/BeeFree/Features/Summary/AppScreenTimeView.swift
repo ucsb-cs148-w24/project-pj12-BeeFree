@@ -44,7 +44,7 @@ struct AppScreenTimeView: View {
                 RectangleSection(isDarkMode: $isDarkMode, height: 100)
                 VStack{
                     //Spacer()
-                    Text("More Coming Soon!").font(.system(size:20, weight: .semibold, design: .default)).foregroundStyle(.white)
+                    Text("More Coming Soon!").font(.system(size:16, weight: .semibold, design: .default)).foregroundStyle(Color("DynamicGray"))
                     
                     Spacer()
                     Spacer()

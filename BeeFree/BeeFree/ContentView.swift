@@ -33,14 +33,6 @@ struct ContentView: View {
                                     else if (selectedTab == .summary) {
                                         ZStack {
                                             SummaryView(isDarkMode: $isDarkMode)
-                                                .overlay(Text("Summary coming soon!")
-                                                    .frame(maxWidth: .infinity,
-                                                           minHeight:
-                                                            proxy.size.height-128)
-                                                    .foregroundColor(Color("DynamicGray"))
-                                                    .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                                                    .fill(.ultraThinMaterial)
-                                                    .offset(y: 32)))
                                         }
                                     }
                                     else if (selectedTab == .sharing) {
