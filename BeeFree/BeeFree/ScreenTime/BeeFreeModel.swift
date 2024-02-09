@@ -25,7 +25,15 @@ class BeeFreeModel: ObservableObject {
     init() {
         selectionToDiscourage = FamilyActivitySelection()
         thresholdToDiscourage = DateComponents()
+        var setOfAppIdentifiers: Set<String?> = Set<String?>()
         setOfApps = [String]()
+        if selectionToDiscourage.applicationTokens.isEmpty {}
+        else {
+            for application in BeeFreeModel.shared.selectionToDiscourage.applications {
+                setOfAppIdentifiers.insert(application.bundleIdentifier)
+                setOfApps = setOfAppIdentifiers.compactMap { $0 }.sorted()
+            }
+        }
     }
     
     class var shared: BeeFreeModel {

@@ -37,8 +37,7 @@ struct ContentView: View {
 
                                     // Main Page Content
                                     if (selectedTab == .home) {
-                                        HomeView(isDarkMode: $isDarkMode,
-                                                 set: $model.setOfApps)
+                                        HomeView(isDarkMode: $isDarkMode)
                                             .environmentObject(model)
                                             .environmentObject(store)
                                     }
