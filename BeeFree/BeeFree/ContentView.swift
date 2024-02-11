@@ -17,7 +17,7 @@ struct ContentView: View {
     @State var isPresented = false
     @State private var barHidden = true
     
-    @StateObject var store : ManagedSettingsStore = ManagedSettingsStore()
+    @StateObject var store : ManagedSettingsStore = ManagedSettingsStore(named: .daily)
     @StateObject var model : BeeFreeModel = BeeFreeModel.shared
 
     var body: some View {

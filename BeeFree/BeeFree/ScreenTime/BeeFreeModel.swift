@@ -12,6 +12,10 @@ import DeviceActivity
 
 private let _BeeFreeModel = BeeFreeModel()
 
+extension ManagedSettingsStore.Name {
+    static let daily = Self("daily")
+}
+
 class BeeFreeModel: ObservableObject {
     // Import ManagedSettings to get access to the application shield restriction
     
@@ -30,7 +34,7 @@ class BeeFreeModel: ObservableObject {
         if selectionToDiscourage.applicationTokens.isEmpty {}
         else {
             for application in BeeFreeModel.shared.selectionToDiscourage.applications {
-                setOfAppIdentifiers.insert(application.bundleIdentifier)
+                setOfAppIdentifiers.insert(application.localizedDisplayName)
                 setOfApps = setOfAppIdentifiers.compactMap { $0 }.sorted()
             }
         }
@@ -40,10 +44,13 @@ class BeeFreeModel: ObservableObject {
         return _BeeFreeModel
     }
     
-    func setShieldRestrictions() {
-        // Pull the selection out of the app's model and configure the application shield restriction accordingly
+    func setSelection() {
         let applications = BeeFreeModel.shared.selectionToDiscourage
-        let store = ManagedSettingsStore()
+    }
+    
+    func setShieldRestrictions() {
+        let applications = BeeFreeModel.shared.selectionToDiscourage
+        let store = ManagedSettingsStore(named: .daily)
         store.shield.applications = applications.applicationTokens.isEmpty ?
             nil : applications.applicationTokens
         store.shield.applicationCategories = applications.categoryTokens.isEmpty ?
@@ -51,7 +58,7 @@ class BeeFreeModel: ObservableObject {
         
         var setOfAppIdentifiers: Set<String?> = Set<String?>()
         for application in BeeFreeModel.shared.selectionToDiscourage.applications {
-            setOfAppIdentifiers.insert(application.bundleIdentifier)
+            setOfAppIdentifiers.insert(application.localizedDisplayName)
             setOfApps = setOfAppIdentifiers.compactMap { $0 }.sorted()
         }
     }

@@ -17,7 +17,7 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(modelobject.setOfApps, id: \.self) {appn in
+            ForEach(model.setOfApps, id: \.self) {appn in
                 AppLimitDisplay(isDarkMode: $isDarkMode, appName: appn)
             }
         }

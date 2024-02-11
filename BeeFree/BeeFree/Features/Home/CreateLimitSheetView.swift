@@ -56,55 +56,46 @@ struct CreateLimitSheetView: View {
                         .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
                     }
                     .onChange(of: model.selectionToDiscourage) {
-                        BeeFreeModel.shared.setShieldRestrictions()
+                        BeeFreeModel.shared.setSelection()
                     }
-//                    Section(header: Text("Time Limit")) {
-//                        HStack{
-//                            Picker("Hours", selection: $hours) {
-//                                ForEach(0..<24, id: \.self) { hour in
-//                                    Text("\(hour) hr").tag(hour)
-//                                }
-//                            }
-//                            .pickerStyle(.wheel)
-//                            
-//                            Picker("Minutes", selection: $minutes) {
-//                                ForEach(0..<60, id: \.self) { minute in
-//                                    Text("\(minute) min").tag(minute)
-//                                }
-//                            }
-//                            .pickerStyle(.wheel)
-//                            
-//                            Picker("Seconds", selection: $seconds) {
-//                                ForEach(0..<60, id: \.self) { second in
-//                                    Text("\(second) sec").tag(second)
-//                                }
-//                            }
-//                            .pickerStyle(.wheel)
-//                        }
-//                        
-//                        Section {
-//                            Button("Save Time") {
-//                                saveTime()
-//                                let new_threshold = DateComponents(hour: savedTime?.hours,
-//                                                                   minute: savedTime?.minutes,
-//                                                                   second: savedTime?.seconds)
-//                                model.changeThreshold(threshold: new_threshold)
-//                            }
-//                        }
-//                        .onChange(of: model.thresholdToDiscourage) {
-//                            BeeFreeSchedule.setSchedule()
-//                        }
-//                        
-//                        if let savedTime = savedTime {
-//                            Section(header: Text("Saved Time")) {
-//                                Text("\(savedTime.hours) hr 
-//                                      \(savedTime.minutes) min
-//                                      \(savedTime.seconds) sec")
-//                            }
-//                        }
-//                    }
+                    Section(header: Text("Time Limit")) {
+                        HStack{
+                            Picker("Hours", selection: $hours) {
+                                ForEach(0..<24, id: \.self) { hour in
+                                    Text("\(hour) hr").tag(hour)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                            
+                            Picker("Minutes", selection: $minutes) {
+                                ForEach(0..<60, id: \.self) { minute in
+                                    Text("\(minute) min").tag(minute)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                            
+                            Picker("Seconds", selection: $seconds) {
+                                ForEach(0..<60, id: \.self) { second in
+                                    Text("\(second) sec").tag(second)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                        }
+                        
+                        Section {
+                            Button("Save Time") {
+                                saveTime()
+                                let new_threshold = DateComponents(hour: savedTime?.hours,
+                                                                   minute: savedTime?.minutes,
+                                                                   second: savedTime?.seconds)
+                                model.changeThreshold(threshold: new_threshold)
+                            }
+                        }
+                        .onChange(of: model.thresholdToDiscourage) {
+                            BeeFreeSchedule.setSchedule()
+                        }
+                    }
                 }
-
                 Spacer()
             }
         }

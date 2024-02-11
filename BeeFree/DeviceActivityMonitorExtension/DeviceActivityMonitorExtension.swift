@@ -11,27 +11,23 @@ import ManagedSettings
 import UserNotifications
 import UserNotificationsUI
 
-// Optionally override any of the functions below.
-// Make sure that your class name matches the NSExtensionPrincipalClass in your Info.plist.
 class DeviceActivityMonitorExtension: DeviceActivityMonitor {
-    let store = ManagedSettingsStore()
 
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
-        // Handle the start of the interval.
+        let store = ManagedSettingsStore(named: .daily)
     }
     
     override func intervalDidEnd(for activity: DeviceActivityName) {
         super.intervalDidEnd(for: activity)
-        
-        // Handle the end of the interval.
+        let store = ManagedSettingsStore(named: .daily)
+        store.clearAllSettings()
     }
-    
+
     override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         super.eventDidReachThreshold(event, activity: activity)
-        
-        // Handle the event reaching its threshold.
-        let model = BeeFreeModel()
+        let store = ManagedSettingsStore(named: .daily)
+        let model = BeeFreeModel.shared
         let applications = model.selectionToDiscourage.applicationTokens
         let categories = model.selectionToDiscourage.categoryTokens
         let webDomains = model.selectionToDiscourage.webDomainTokens
@@ -43,22 +39,4 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
             nil : webDomains
     }
     
-    override func intervalWillStartWarning(for activity: DeviceActivityName) {
-        super.intervalWillStartWarning(for: activity)
-        
-        // Handle the warning before the interval starts.
-    }
-    
-    override func intervalWillEndWarning(for activity: DeviceActivityName) {
-        super.intervalWillEndWarning(for: activity)
-        
-        // Handle the warning before the interval ends.
-    }
-    
-    override func eventWillReachThresholdWarning(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
-        super.eventWillReachThresholdWarning(event, activity: activity)
-        
-        // Handle the warning before the event reaches its threshold.
-
-    }
 }
