@@ -34,6 +34,7 @@
 		116D87782B5CAEBD006CB8C3 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87772B5CAEBD006CB8C3 /* FirebaseRemoteConfigSwift */; };
 		116D877A2B5CAEBD006CB8C3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87792B5CAEBD006CB8C3 /* FirebaseStorage */; };
 		116D877C2B5CAEBD006CB8C3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 116D877B2B5CAEBD006CB8C3 /* FirebaseStorageCombine-Community */; };
+		117ADB372B7B244600A99834 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117ADB362B7B244600A99834 /* GoogleService-Info.plist */; };
 		272C29232B60A08F00EED823 /* LoginUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C29222B60A08F00EED823 /* LoginUtilities.swift */; };
 		276C377E2B60A2C500F7BC5A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 276C377D2B60A2C500F7BC5A /* GoogleSignIn */; };
 		276C37802B60A2C500F7BC5A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 276C377F2B60A2C500F7BC5A /* GoogleSignInSwift */; };
@@ -45,7 +46,6 @@
 		277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
 		27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
 		43536EBF2B70ADC000207E52 /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
-		43536EC32B70DACC00207E52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43536EC22B70DACC00207E52 /* GoogleService-Info.plist */; };
 		9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2922B75781B00858806 /* BeeFreeModel.swift */; };
 		9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */; };
 		9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E392B5C75C300EB61B2 /* ProfileSheetView.swift */; };
@@ -86,7 +86,6 @@
 		9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
 		9E6B59AC2B75D68B00DB920E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
 		9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
-		9E79273B2B75DFC100D3D392 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43536EC22B70DACC00207E52 /* GoogleService-Info.plist */; };
 		9E79273C2B75DFC700D3D392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E112B5C6FFB00EB61B2 /* Assets.xcassets */; };
 		9E79273D2B75DFCC00D3D392 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E142B5C6FFB00EB61B2 /* Preview Assets.xcassets */; };
 		9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */; };
@@ -164,12 +163,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		117ADB362B7B244600A99834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		272C29222B60A08F00EED823 /* LoginUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtilities.swift; sourceTree = "<group>"; };
 		276C378D2B60A31D00F7BC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		27F771522B60A02E00A428F5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		43536EBE2B70ADC000207E52 /* UserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
-		43536EC22B70DACC00207E52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43536EC42B71D09000207E52 /* BeeFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeeFree.entitlements; sourceTree = "<group>"; };
 		9E29D2922B75781B00858806 /* BeeFreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeModel.swift; sourceTree = "<group>"; };
 		9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeSchedule.swift; sourceTree = "<group>"; };
@@ -315,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				43536EC42B71D09000207E52 /* BeeFree.entitlements */,
+				117ADB362B7B244600A99834 /* GoogleService-Info.plist */,
 				276C378D2B60A31D00F7BC5A /* Info.plist */,
-				43536EC22B70DACC00207E52 /* GoogleService-Info.plist */,
 				9EE42ED62B75294C005B06BE /* ScreenTime */,
 				9E395E1B2B5C735300EB61B2 /* Features */,
 				9E395E332B5C747E00EB61B2 /* Modifiers */,
@@ -572,7 +571,6 @@
 			files = (
 				9E79273D2B75DFCC00D3D392 /* Preview Assets.xcassets in Resources */,
 				9E79273C2B75DFC700D3D392 /* Assets.xcassets in Resources */,
-				9E79273B2B75DFC100D3D392 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +580,7 @@
 			files = (
 				9E395E152B5C6FFB00EB61B2 /* Preview Assets.xcassets in Resources */,
 				9E395E122B5C6FFB00EB61B2 /* Assets.xcassets in Resources */,
-				43536EC32B70DACC00207E52 /* GoogleService-Info.plist in Resources */,
+				117ADB372B7B244600A99834 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
