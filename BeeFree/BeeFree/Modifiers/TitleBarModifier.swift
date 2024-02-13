@@ -84,7 +84,7 @@ struct TitleBarModifier: View {
                     }
                     .sheet(isPresented: $isCreateLimitPresented) {
                         // Create a sheet view to create a limit
-                        CreateLimitSheetView(isDarkMode: $isDarkMode)
+                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
                             .environmentObject(model)
                             .environmentObject(store)
                     }

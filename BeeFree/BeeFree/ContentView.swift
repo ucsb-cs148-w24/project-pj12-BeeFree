@@ -43,6 +43,7 @@ struct ContentView: View {
                                             .environmentObject(store)
                                     }
                                     else if (selectedTab == .summary) {
+                                        //NavigationLink(ExampleView())
                                         ZStack {
                                             SummaryView(isDarkMode: $isDarkMode,
                                                         selectedTimePeriod: 0)
