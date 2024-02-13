@@ -84,6 +84,7 @@ struct TitleBarModifier: View {
                             .frame(width: 27, height: 27)
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
                     }
+<<<<<<< HEAD
                     .sheet(isPresented: $isAddFriendPresented) {
                         AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
                             .environmentObject(model)
@@ -105,6 +106,11 @@ struct TitleBarModifier: View {
                     .sheet(isPresented: $isAddFriendPresented) {
                         // Initialize FriendsViewModel without DataManager
                         AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
+=======
+                    .sheet(isPresented: $isCreateLimitPresented) {
+                        // Create a sheet view to create a limit
+                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
+>>>>>>> f4495ef (added device activity report extension and passed in relevant vars)
                             .environmentObject(model)
                             .environmentObject(store)
                     }

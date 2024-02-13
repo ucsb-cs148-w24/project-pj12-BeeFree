@@ -14,11 +14,13 @@ struct CreateLimitSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     @Binding var isDarkMode: Bool
+    @Binding var selectedApps: Set<ApplicationToken>
     @State private var hours: Int = 0
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
     @State private var savedTime: (hours: Int, minutes: Int, seconds: Int)?
     @State private var isDiscouragedPresented = false
+    @State var selection = FamilyActivitySelection()
 
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -57,6 +59,7 @@ struct CreateLimitSheetView: View {
                     }
                     .onChange(of: model.selectionToDiscourage) {
                         BeeFreeModel.shared.setShieldRestrictions()
+                        selectedApps = model.selectionToDiscourage.applicationTokens
                     }
 //                    Section(header: Text("Time Limit")) {
 //                        HStack{
@@ -118,6 +121,6 @@ struct CreateLimitSheetView: View {
 
 
 
-#Preview {
+/*#Preview {
     CreateLimitSheetView(isDarkMode: .constant(false))
-}
+}*/

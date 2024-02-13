@@ -12,6 +12,7 @@ import FamilyControls
 
 struct SummaryView: View {
     @Binding var isDarkMode : Bool
+    //@Binding var selectedApps: Set<ApplicationToken>
     @State var selectedTimePeriod = 0
     
     @EnvironmentObject var store: ManagedSettingsStore
@@ -27,6 +28,7 @@ struct SummaryView: View {
             ScreenTimeGoalView(isDarkMode: $isDarkMode)
             AppScreenTimeView(isDarkMode: $isDarkMode)
             Spacer()
+            
         }
         .pickerStyle(.segmented)
         .padding()
