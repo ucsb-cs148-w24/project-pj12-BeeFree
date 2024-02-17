@@ -17,7 +17,7 @@ Utilizing Chat GPT, I was able to compare and contrast different unit testing fr
 
 
 ### Mike
-The AI tool I used was ChatGPT4. I asked gpt to generate bee themed app icon that also demonstrate blocking of some sort, and was able to get this result. Then Kavi was able to use online photo editing tools to make the icon fit our blue theme more. On top of this I also tried using GPT4 to make frontend changes, where I could upload a screenshot of our mockup and have it product some basic frontend code which I found pretty helpful.
+The AI tool I used was ChatGPT4. I asked gpt to generate bee themed app icon that also demonstrate blocking of some sort, and was able to get this result. Then Kavi was able to use online photo editing tools to make the icon fit our blue theme more. On top of this I also tried using GPT4 to make frontend changes, where I could upload a screenshot of our mockup and have it produce some basic frontend code which I found pretty helpful.
 
 ![image](https://github.com/ucsb-cs148-w24/project-pj12-appblocker/assets/52797797/0f73fe25-71b3-4ee8-9041-f819a76cb45e) ![image](https://github.com/ucsb-cs148-w24/project-pj12-appblocker/assets/52797797/79fa9fd8-99d4-4586-a23e-b4f00434ec6a)
 
