@@ -18,6 +18,7 @@ Utilizing Chat GPT, I was able to compare and contrast different unit testing fr
 
 ### Mike
 The AI tool I used was ChatGPT4. I asked gpt to generate bee themed app icon that also demonstrate blocking of some sort, and was able to get this result. Then Kavi was able to use online photo editing tools to make the icon fit our blue theme more. On top of this I also tried using GPT4 to make frontend changes, where I could upload a screenshot of our mockup and have it product some basic frontend code which I found pretty helpful.
+
 ![image](https://github.com/ucsb-cs148-w24/project-pj12-appblocker/assets/52797797/0f73fe25-71b3-4ee8-9041-f819a76cb45e) ![image](https://github.com/ucsb-cs148-w24/project-pj12-appblocker/assets/52797797/79fa9fd8-99d4-4586-a23e-b4f00434ec6a)
 
 
@@ -28,6 +29,6 @@ I used Gemini to create mockups for our summary page. I used prompts like "can y
 I utilize ChatGPT for working on FreeBee app, I find it tremendously efficient and educational. It helps me swiftly debug issues, generates suggestion design patterns, and guides me through creating the login in page and Firebase connections. This tool is invaluable for quickly resolving coding challenges, sparking new ideas, and advising on best practices. For effective use, I ensure to clearly articulate my coding problems, provide relevant context, and iteratively apply the solutions and insights I gain.
 
 ### Sunhu
-I used Chat GPT to help understand SwiftUI components such as Vstack and Views more clearly now that we are getting into the heart of functionality programming. One of the functionalities I asked Chat GPT to help implement is user input request and storage, which we want to use for the sharing features of our app. I was able to learn more about @State variables which are used by SwiftUI, similar to React and React Native, in keeping track of changes made by users, particularly inputs.
+I used Chat GPT to help understand SwiftUI components such as Vstack and Views more clearly now that we are getting into the heart of functionality programming. One of the functionalities I asked Chat GPT to help implement is user input request and storage, which we want to use for the sharing features of our app. I was able to learn more about @State variables which are used by SwiftUI, similar to React and React Native, in keeping track of changes made by users, particularly inputs. Unfortunately, Chat-GPT 3.5 is a little outdated with its understanding of SwiftUI, meaning I had to make adjustments, particularly with the preview function code, to ensure that it correctly works on new and updated Xcode and SwiftUI.
 
 
