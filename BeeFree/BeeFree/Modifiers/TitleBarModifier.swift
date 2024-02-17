@@ -16,6 +16,7 @@ struct TitleBarModifier: View {
     @Binding var isDarkMode: Bool
     @State private var isCreateLimitPresented = false
     @State private var isAccountSettingsPresented = false
+    @State private var isAddFriendPresented = false
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -90,14 +91,22 @@ struct TitleBarModifier: View {
                     }
                     
                 }
+
                 else if (selectedTab == .sharing) {
-                    Image(systemName: "person.2.badge.gearshape.fill")
-                        .resizable()
-                        .opacity(0.5)
-                        .foregroundColor(.white)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 42, height: 42)
-                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                    Button(action: {self.isAddFriendPresented.toggle()}) {
+                        Image(systemName: "person.2.badge.gearshape.fill")
+                            .resizable()
+                            .opacity(0.5)
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 42, height: 42)
+                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                    }
+                    .sheet(isPresented: $isAddFriendPresented) {
+                        AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
+                            .environmentObject(model)
+                            .environmentObject(store)
+                    }
                 }
                 Button(action: {self.isAccountSettingsPresented.toggle()}) {
                     Image(systemName: "person.circle.fill")
