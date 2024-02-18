@@ -21,7 +21,8 @@ extension DeviceActivityEvent.Name {
 let schedule = DeviceActivitySchedule(
     intervalStart: DateComponents(hour: 0, minute: 0, second: 0),
     intervalEnd: DateComponents(hour: 23, minute: 59, second: 59),
-    repeats: true
+    repeats: true,
+    warningTime: nil
 )
 
 class BeeFreeSchedule {
@@ -41,6 +42,7 @@ class BeeFreeSchedule {
         let center = DeviceActivityCenter()
         do {
             print("Try to start monitoring...")
+            center.stopMonitoring([.daily])
             // Call startMonitoring with the activity name, schedule, and events
             try center.startMonitoring(.daily, during: schedule, events: events)
         } catch {

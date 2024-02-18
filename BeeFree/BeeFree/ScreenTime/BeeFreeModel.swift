@@ -28,7 +28,7 @@ class BeeFreeModel: ObservableObject {
     
     init() {
         selectionToDiscourage = FamilyActivitySelection()
-        thresholdToDiscourage = DateComponents()
+        thresholdToDiscourage = DateComponents(hour: 0, minute: 0, second: 0)
         var setOfAppIdentifiers: Set<String?> = Set<String?>()
         setOfApps = [String]()
         if selectionToDiscourage.applicationTokens.isEmpty {}
@@ -44,10 +44,6 @@ class BeeFreeModel: ObservableObject {
         return _BeeFreeModel
     }
     
-    func setSelection() {
-        let applications = BeeFreeModel.shared.selectionToDiscourage
-    }
-    
     func setShieldRestrictions() {
         let applications = BeeFreeModel.shared.selectionToDiscourage
         let store = ManagedSettingsStore(named: .daily)
@@ -59,7 +55,7 @@ class BeeFreeModel: ObservableObject {
         var setOfAppIdentifiers: Set<String?> = Set<String?>()
         for application in BeeFreeModel.shared.selectionToDiscourage.applications {
             setOfAppIdentifiers.insert(application.localizedDisplayName)
-            setOfApps = setOfAppIdentifiers.compactMap { $0 }.sorted()
+            setOfApps = setOfAppIdentifiers.compactMap{ $0 }.sorted()
         }
     }
     

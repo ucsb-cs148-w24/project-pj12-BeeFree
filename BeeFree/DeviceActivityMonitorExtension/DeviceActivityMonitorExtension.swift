@@ -15,7 +15,6 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
 
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
-        let store = ManagedSettingsStore(named: .daily)
     }
     
     override func intervalDidEnd(for activity: DeviceActivityName) {

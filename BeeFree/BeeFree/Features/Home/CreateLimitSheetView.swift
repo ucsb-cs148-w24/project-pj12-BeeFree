@@ -19,7 +19,7 @@ struct CreateLimitSheetView: View {
     @State private var seconds: Int = 0
     @State private var savedTime: (hours: Int, minutes: Int, seconds: Int)?
     @State private var isDiscouragedPresented = false
-
+    
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
@@ -55,9 +55,6 @@ struct CreateLimitSheetView: View {
                         }
                         .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
                     }
-                    .onChange(of: model.selectionToDiscourage) {
-                        BeeFreeModel.shared.setSelection()
-                    }
                     Section(header: Text("Time Limit")) {
                         HStack{
                             Picker("Hours", selection: $hours) {
@@ -85,25 +82,24 @@ struct CreateLimitSheetView: View {
                         Section {
                             Button("Save Time") {
                                 saveTime()
-                                let new_threshold = DateComponents(hour: savedTime?.hours,
-                                                                   minute: savedTime?.minutes,
-                                                                   second: savedTime?.seconds)
-                                model.changeThreshold(threshold: new_threshold)
                             }
-                        }
-                        .onChange(of: model.thresholdToDiscourage) {
-                            BeeFreeSchedule.setSchedule()
                         }
                     }
                 }
-                Spacer()
             }
+            Spacer()
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
+    
     private func saveTime() {
         savedTime = (hours, minutes, seconds)
+        let new_threshold = DateComponents(hour: savedTime?.hours,
+                                           minute: savedTime?.minutes,
+                                           second: savedTime?.seconds)
+        model.changeThreshold(threshold: new_threshold)
+        BeeFreeSchedule.setSchedule()
     }
 }
 
