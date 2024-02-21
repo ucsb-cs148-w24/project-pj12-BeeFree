@@ -17,13 +17,13 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-//            ForEach(model.selectionToDiscourage.applications.sorted{$0.localizedDisplayName ?? "" < $1.localizedDisplayName ?? ""}, id: \.self) {appn in
-//                var appname = ""
-//                if (appn.bundleIdentifier != nil) {
-//                    appname += appn.bundleIdentifier
-//                }
-//                AppLimitDisplay(isDarkMode: $isDarkMode, appName: Label(appname))
-//            }
+            ForEach(model.selectionToDiscourage.applications.sorted{$0.localizedDisplayName ?? "" < $1.localizedDisplayName ?? ""}, id: \.self) {appn in
+                var appname = ""
+                if (appn.bundleIdentifier != nil) {
+                    appname += appn.bundleIdentifier
+                }
+                AppLimitDisplay(isDarkMode: $isDarkMode, appName: Label(appname))
+            }
             Text("Hello, world! oox ")
         }
         .padding()

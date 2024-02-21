@@ -19,13 +19,13 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     
     override func intervalDidEnd(for activity: DeviceActivityName) {
         super.intervalDidEnd(for: activity)
-        let store = ManagedSettingsStore(named: .daily)
+        let store = ManagedSettingsStore()
         store.clearAllSettings()
     }
 
     override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         super.eventDidReachThreshold(event, activity: activity)
-        let store = ManagedSettingsStore(named: .daily)
+        let store = ManagedSettingsStore()
         let model = BeeFreeModel.shared
         let applications = model.selectionToDiscourage.applicationTokens
         let categories = model.selectionToDiscourage.categoryTokens
