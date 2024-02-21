@@ -344,6 +344,7 @@
 			children = (
 				43536EC42B71D09000207E52 /* BeeFree.entitlements */,
 				117ADB362B7B244600A99834 /* GoogleService-Info.plist */,
+				9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */,
 				276C378D2B60A31D00F7BC5A /* Info.plist */,
 				9EE42ED62B75294C005B06BE /* ScreenTime */,
 				9E395E1B2B5C735300EB61B2 /* Features */,
@@ -440,7 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				9E29D2922B75781B00858806 /* BeeFreeModel.swift */,
-				9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */,
 			);
 			path = ScreenTime;
 			sourceTree = "<group>";
