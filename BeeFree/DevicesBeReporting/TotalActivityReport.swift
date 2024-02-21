@@ -1,8 +1,8 @@
 //
 //  TotalActivityReport.swift
-//  DeviceActivityReportExtension
+//  DevicesBeReporting
 //
-//  Created by Anushka Vijay on 2/12/24.
+//  Created by Anushka Vijay on 2/17/24.
 //
 
 import DeviceActivity
@@ -20,7 +20,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
     // Define which context your scene will represent.
     let context: DeviceActivityReport.Context = .totalActivity
     
-    // Define the custom configuration and the resßulting view for this report.
+    // Define the custom configuration and the resulting view for this report.
     let content: (String) -> TotalActivityView
     
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> String {
