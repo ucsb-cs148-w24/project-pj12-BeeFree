@@ -9,6 +9,13 @@ import SwiftUI
 import DeviceActivity
 import ManagedSettings
 import FamilyControls
+//extension DeviceActivityReport.Context {
+//    // If your app initializes a DeviceActivityReport with this context, then the system will use
+//    // your extension's corresponding DeviceActivityReportScene to render the contents of the
+//    // report.
+//    static let totalActivity = Self("Total Activity")
+//    static let pieChart = Self("pieChart")
+//}
 
 struct CreateLimitSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -20,7 +27,9 @@ struct CreateLimitSheetView: View {
     @State private var seconds: Int = 0
     @State private var savedTime: (hours: Int, minutes: Int, seconds: Int)?
     @State private var isDiscouragedPresented = false
+    @State var filter = DeviceActivityFilter()
     @State var selection = FamilyActivitySelection()
+    @State private var context: DeviceActivityReport.Context = .init(rawValue: "pieChart")
 
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -59,7 +68,10 @@ struct CreateLimitSheetView: View {
                     }
                     .onChange(of: model.selectionToDiscourage) {
                         BeeFreeModel.shared.setShieldRestrictions()
-                        selectedApps = model.selectionToDiscourage.applicationTokens
+                        //var summaryApps = SummarySet
+
+                        
+                        
                     }
 //                    Section(header: Text("Time Limit")) {
 //                        HStack{
@@ -109,6 +121,7 @@ struct CreateLimitSheetView: View {
                 }
 
                 Spacer()
+                DeviceActivityReport(context, filter: filter)
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)

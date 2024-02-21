@@ -1,15 +1,15 @@
 //
-//  DeviceActivityReportExtension.swift
-//  DeviceActivityReportExtension
+//  DevicesBeReporting.swift
+//  DevicesBeReporting
 //
-//  Created by Anushka Vijay on 2/12/24.
+//  Created by Anushka Vijay on 2/17/24.
 //
 
 import DeviceActivity
 import SwiftUI
 
 @main
-struct DeviceActivityReport: DeviceActivityReportExtension {
+struct DevicesBeReporting: DeviceActivityReportExtension {
     var body: some DeviceActivityReportScene {
         // Create a report for each DeviceActivityReport.Context that your app supports.
         TotalActivityReport { totalActivity in
@@ -18,4 +18,3 @@ struct DeviceActivityReport: DeviceActivityReportExtension {
         // Add more reports here...
     }
 }
-
