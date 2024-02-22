@@ -15,7 +15,7 @@ import ManagedSettings
 import UserNotifications
 import UserNotificationsUI
 
-@main
+/*@main
 struct BeeFreeApp: App {
     init() {
         // Configure Firebase
@@ -29,6 +29,8 @@ struct BeeFreeApp: App {
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     
     let authcenter = AuthorizationCenter.shared
+    let dataManager = DataManager()
+
     
     var body: some Scene {
         WindowGroup{
@@ -38,6 +40,33 @@ struct BeeFreeApp: App {
                         do {
                             try await authcenter.requestAuthorization(for: .individual)
                         } catch {print("Failed to enroll user with error: \(error)")}
+                    }
+                }
+                .environmentObject(dataManager) 
+        }
+    }
+}*/
+@main
+struct BeeFreeApp: App {
+    init() {
+        FirebaseApp.configure()
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+    }
+
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    let authcenter = AuthorizationCenter.shared
+
+    var body: some Scene {
+        WindowGroup {
+            ZStack { viewControllerWrapper() }
+                .onAppear {
+                    Task {
+                        do {
+                            try await authcenter.requestAuthorization(for: .individual)
+                        } catch {
+                            print("Failed to enroll user with error: \(error)")
+                        }
                     }
                 }
         }

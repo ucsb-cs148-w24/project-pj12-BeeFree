@@ -17,6 +17,7 @@ struct TitleBarModifier: View {
     @State private var isCreateLimitPresented = false
     @State private var isAccountSettingsPresented = false
     @State private var isAddFriendPresented = false
+
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -24,7 +25,6 @@ struct TitleBarModifier: View {
     var body: some View {
         HStack {
             VStack {
-                // Display title based on selected tab
                 if(selectedTab == .home) {
                     Group {
                         Text("Bee ")
@@ -83,17 +83,17 @@ struct TitleBarModifier: View {
                             .frame(width: 27, height: 27)
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
                     }
-                    .sheet(isPresented: $isCreateLimitPresented) {
-                        // Create a sheet view to create a limit
-                        CreateLimitSheetView(isDarkMode: $isDarkMode)
+                    .sheet(isPresented: $isAddFriendPresented) {
+                    // Assuming FriendsViewModel no longer requires DataManager
+                        AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
                             .environmentObject(model)
                             .environmentObject(store)
-                    }
+                        }
                     
                 }
 
                 else if (selectedTab == .sharing) {
-                    Button(action: {self.isAddFriendPresented.toggle()}) {
+                    Button(action: { self.isAddFriendPresented.toggle() }) {
                         Image(systemName: "person.2.badge.gearshape.fill")
                             .resizable()
                             .opacity(0.5)
@@ -103,11 +103,13 @@ struct TitleBarModifier: View {
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
                     }
                     .sheet(isPresented: $isAddFriendPresented) {
+                        // Initialize FriendsViewModel without DataManager
                         AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
                             .environmentObject(model)
                             .environmentObject(store)
                     }
                 }
+
                 Button(action: {self.isAccountSettingsPresented.toggle()}) {
                     Image(systemName: "person.circle.fill")
                         .resizable()
