@@ -31,10 +31,10 @@ struct SummaryView: View {
         webDomains: Set<WebDomainToken>()
     )
     @State private var context: DeviceActivityReport.Context = .init(rawValue: "pieChart")
-    
+    @State private var reportData: DeviceActivityReport? = nil
     
     var body: some View {
-        
+       // .environmentObject(BeeFreeModel.shared)
 //            Picker("Time Period", selection: $selectedTimePeriod) {
 //                Text("Weekly").tag(selectedTimePeriod)
 //                Text("Daily").tag(selectedTimePeriod)
@@ -46,12 +46,13 @@ struct SummaryView: View {
 //            let categories = model.selectionToDiscourage.categoryTokens
 //            let webDomains = model.selectionToDiscourage.webDomainTokens
         Text("hello world")
-        filter.applications = model.selectionToDiscourage.applicationTokens
-        filter.categories = model.selectionToDiscourage.categoryTokens
-        filter.webDomains = model.selectionToDiscourage.webDomainTokens
-        
-        
-        
+//        filter.applications = model.selectionToDiscourage.applicationTokens
+//        filter.categories = model.selectionToDiscourage.categoryTokens
+//        filter.webDomains = model.selectionToDiscourage.webDomainTokens
+            .onAppear {
+                BeeFreeMonitor.applyFilter(&filter, from:model)
+                
+            }
             
     }
 }

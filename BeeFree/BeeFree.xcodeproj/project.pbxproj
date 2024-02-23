@@ -16,7 +16,6 @@
 		11299F762B8179E300F01672 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
 		11299F782B817B1700F01672 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
 		11299F792B817B1900F01672 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
-		115F913D2B81800600FD252E /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E422B5C769300EB61B2 /* SummaryView.swift */; };
 		115F913F2B8181D500FD252E /* SummaryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F913E2B8181D500FD252E /* SummaryReport.swift */; };
 		115F91402B8181E500FD252E /* SummaryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F913E2B8181D500FD252E /* SummaryReport.swift */; };
 		116D87482B5CAEBD006CB8C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87472B5CAEBD006CB8C3 /* FirebaseAnalytics */; };
@@ -48,6 +47,8 @@
 		116D877C2B5CAEBD006CB8C3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 116D877B2B5CAEBD006CB8C3 /* FirebaseStorageCombine-Community */; };
 		117ADB372B7B244600A99834 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117ADB362B7B244600A99834 /* GoogleService-Info.plist */; };
 		117ADB392B7B2DD800A99834 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117ADB382B7B2DD800A99834 /* ExampleView.swift */; };
+		11CB92972B895566007908A7 /* BeeFreeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB92962B895566007908A7 /* BeeFreeMonitor.swift */; };
+		11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB92962B895566007908A7 /* BeeFreeMonitor.swift */; };
 		272C29232B60A08F00EED823 /* LoginUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C29222B60A08F00EED823 /* LoginUtilities.swift */; };
 		276C377E2B60A2C500F7BC5A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 276C377D2B60A2C500F7BC5A /* GoogleSignIn */; };
 		276C37802B60A2C500F7BC5A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 276C377F2B60A2C500F7BC5A /* GoogleSignInSwift */; };
@@ -203,6 +204,7 @@
 		115F913E2B8181D500FD252E /* SummaryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryReport.swift; sourceTree = "<group>"; };
 		117ADB362B7B244600A99834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117ADB382B7B2DD800A99834 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		11CB92962B895566007908A7 /* BeeFreeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeMonitor.swift; sourceTree = "<group>"; };
 		272C29222B60A08F00EED823 /* LoginUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtilities.swift; sourceTree = "<group>"; };
 		276C378D2B60A31D00F7BC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 			children = (
 				9E29D2922B75781B00858806 /* BeeFreeModel.swift */,
 				9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */,
+				11CB92962B895566007908A7 /* BeeFreeMonitor.swift */,
 			);
 			path = ScreenTime;
 			sourceTree = "<group>";
@@ -688,7 +691,6 @@
 			files = (
 				115F91402B8181E500FD252E /* SummaryReport.swift in Sources */,
 				11299F652B81775100F01672 /* TotalActivityView.swift in Sources */,
-				115F913D2B81800600FD252E /* SummaryView.swift in Sources */,
 				11299F612B81775100F01672 /* DevicesBeReporting.swift in Sources */,
 				11299F632B81775100F01672 /* TotalActivityReport.swift in Sources */,
 			);
@@ -703,6 +705,7 @@
 				9E0BB7E12B758C4800414DBD /* ScreenTimeGoalView.swift in Sources */,
 				9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */,
 				9EFD0F9E2B75FBC000FEA6E6 /* LoginUtilities.swift in Sources */,
+				11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */,
 				9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */,
 				9E0BB7E82B758C5800414DBD /* CircleProgressBar.swift in Sources */,
 				9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */,
@@ -757,6 +760,7 @@
 				11299F792B817B1900F01672 /* TotalActivityReport.swift in Sources */,
 				9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */,
 				9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */,
+				11CB92972B895566007908A7 /* BeeFreeMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
