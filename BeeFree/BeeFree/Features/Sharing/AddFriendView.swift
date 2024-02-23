@@ -314,6 +314,7 @@ struct AddFriendView: View {
             TextField("Friend's Email", text: $friendEmail)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .autocapitalization(.none)
 
             // Button to add a friend
             Button("Add Friend") {
@@ -331,10 +332,22 @@ struct AddFriendView: View {
             }
             
             // Personalized greeting
+//            if let firstName = viewModel.currentUserFirstName{
+//                Text("Dear \(firstName), here is your list of friends:")
+//                    .font(.title2)
+//                    .padding([.top, .bottom])
+//            }
+            
             if let firstName = viewModel.currentUserFirstName {
-                Text("Dear \(firstName), here is your list of friends:")
-                    .font(.title2)
-                    .padding([.top, .bottom])
+                if viewModel.friends.isEmpty {
+                    Text("Time to make new friends!")
+                        .font(.title2)
+                        .padding([.top, .bottom])
+                } else {
+                    Text("Dear \(firstName), here is your list of friends:")
+                        .font(.title2)
+                        .padding([.top, .bottom])
+                }
             }
 
             List(viewModel.friends) { friend in
