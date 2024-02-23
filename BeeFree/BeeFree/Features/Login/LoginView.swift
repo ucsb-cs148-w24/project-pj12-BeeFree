@@ -106,7 +106,7 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
 
-                    Text("Please enter your first name to continue")
+                    Text("Please enter your first name/username to continue")
                         .font(.title3)
                         .foregroundColor(.gray)
                         .padding(.bottom, 30)
