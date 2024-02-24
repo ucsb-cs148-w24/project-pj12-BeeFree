@@ -7,6 +7,8 @@
 
 import Foundation
 import DeviceActivity
+import _DeviceActivity_SwiftUI
+
 
 struct BeeFreeMonitor {
     static func applyFilter(_ filter: inout DeviceActivityFilter, from model: BeeFreeModel) {
