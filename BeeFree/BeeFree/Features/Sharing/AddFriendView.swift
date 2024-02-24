@@ -222,30 +222,7 @@ class FriendsViewModel: ObservableObject {
             }
         }
 
-//    func addFriend(email: String, completion: @escaping (Bool) -> Void) {
-//        guard let userID = currentUserID else {
-//            completion(false)
-//            return
-//        }
-//
-//        guard isValidEmail(email: email), !friends.contains(where: { $0.email == email }) else {
-//            completion(false)
-//            return
-//        }
-//
-//        UserDB.shared.fetchUserByEmail(email: email) { [weak self] firstName in
-//            guard let self = self, let firstName = firstName else {
-//                completion(false)
-//                return
-//            }
-//
-//            let newFriend = Friend(id: UUID(), email: email, firstName: firstName)
-//            self.friends.append(newFriend)
-//
-//            UserDB.shared.addFriendToUser(userID: userID, friendFirstName: firstName)
-//            completion(true)
-//        }
-//    }
+
     func addFriend(email: String, completion: @escaping (Bool) -> Void) {
         guard let userID = currentUserID else {
             completion(false)
@@ -280,22 +257,42 @@ class FriendsViewModel: ObservableObject {
     }
     
     func fetchCurrentUserFriends() {
-            guard let userID = currentUserID else {
-                print("User not logged in")
+        guard let userID = currentUserID else {
+            print("User not logged in")
+            return
+        }
+
+        UserDB.shared.getFriendsOfUser(userID: userID) { [weak self] friendsList in
+            guard let self = self else {
+                print("Time to make new friends!")
                 return
             }
+            
+            self.friends = friendsList.map { Friend(id: UUID(), email: $0, firstName: $0) }
 
-            UserDB.shared.getFriendsOfUser(userID: userID) { [weak self] friendsList in
-                guard let self = self else {
-                    print("Time to make new friends!")
-                    return
+        }
+    }
+    
+    func removeFriend(friendFirstName: String) {
+        guard let userID = currentUserID else {
+            print("User ID not found")
+            return
+        }
+
+        let userRef = Firestore.firestore().collection("BeFreeUsers").document(userID)
+        userRef.updateData([
+            "friends": FieldValue.arrayRemove([friendFirstName])
+        ]) { [weak self] error in
+            if let error = error {
+                print("Error removing friend: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    self?.friends.removeAll { $0.firstName == friendFirstName }
                 }
-                
-                self.friends = friendsList.map { Friend(id: UUID(), email: $0, firstName: $0) }
-
             }
         }
-    
+    }
+
 
     
 }
@@ -350,10 +347,22 @@ struct AddFriendView: View {
                 }
             }
 
+//            List(viewModel.friends) { friend in
+//                VStack(alignment: .leading) {
+//                    Text("Name: \(friend.firstName)")
+//                }
+//            }
+        
             List(viewModel.friends) { friend in
-                VStack(alignment: .leading) {
+                HStack {
                     Text("Name: \(friend.firstName)")
-                    //Text("Email: \(friend.email)")
+                    Spacer()
+                    Button(action: {
+                        viewModel.removeFriend(friendFirstName: friend.firstName)
+                    }) {
+                        Image(systemName: "minus.circle")
+                            .foregroundColor(.red)
+                    }
                 }
             }
             Spacer()
