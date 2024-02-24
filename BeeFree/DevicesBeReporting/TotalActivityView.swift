@@ -11,6 +11,7 @@ struct TotalActivityView: View {
     let totalActivity: String
     
     var body: some View {
+        Text("Screentime")
         Text(totalActivity)
     }
 }
