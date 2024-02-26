@@ -5,7 +5,7 @@
 |01/26| Kaveri Iyer | Planning on leading retro for Sprint 02 |
 |02/16| Mike Wang | leading second retro | 
 
-##Lab 7 Leadership Roles
+## Lab 7 Leadership Roles
 Product Owner: Kaveri Iyer
 Scrum Master: Karankumar Mageswaran
 Testing/QA Coordinator: Sunhu Choi
