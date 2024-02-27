@@ -7,7 +7,6 @@
 
 import SwiftUI
 import FirebaseCore
-import Firebase
 import FirebaseAppCheck
 import FamilyControls
 import DeviceActivity

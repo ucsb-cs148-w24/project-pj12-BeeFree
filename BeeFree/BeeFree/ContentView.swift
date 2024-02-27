@@ -32,7 +32,7 @@ struct ContentView: View {
                                     // Top bar
                                     TitleBarModifier(selectedTab: $selectedTab,
                                                      isDarkMode: $isDarkMode)
-                                    .environmentObject(model)
+                                    .environmentObject(BeeFreeModel.shared)
                                     .environmentObject(store)
 
                                     // Main Page Content
@@ -43,21 +43,24 @@ struct ContentView: View {
                                             .environmentObject(store)
                                     }
                                     else if (selectedTab == .summary) {
-                                        //NavigationLink(ExampleView())
-                                        ZStack {
-                                            SummaryView(isDarkMode: $isDarkMode,
-                                                        selectedTimePeriod: 0)
+                                        SummaryView(isDarkMode: $isDarkMode)
                                             .environmentObject(model)
                                             .environmentObject(store)
-                                                .overlay(Text("Summary coming soon!")
-                                                    .frame(maxWidth: .infinity,
-                                                           minHeight:
-                                                            proxy.size.height-128)
-                                                    .foregroundColor(Color("DynamicGray"))
-                                                    .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                                                    .fill(.ultraThinMaterial)
-                                                    .offset(y: 32)))
-                                        }
+                                        //NavigationLink(ExampleView())
+//                                        ZStack {
+//                                            SummaryView(isDarkMode: $isDarkMode,
+//                                                        selectedTimePeriod: 0)
+//                                            .environmentObject(model)
+//                                            .environmentObject(store)
+//                                                .overlay(Text("Summary coming soon!")
+//                                                    .frame(maxWidth: .infinity,
+//                                                           minHeight:
+//                                                            proxy.size.height-128)
+//                                                    .foregroundColor(Color("DynamicGray"))
+//                                                    .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//                                                    .fill(.ultraThinMaterial)
+//                                                    .offset(y: 32)))
+//                                        }
                                     }
                                     else if (selectedTab == .sharing) {
                                         ZStack{
