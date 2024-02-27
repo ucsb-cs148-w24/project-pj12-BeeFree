@@ -19,6 +19,7 @@
 - [ ] 4
 - [ ] 5
 ## Are there any user functionalities you would like to see added to our mobile application?
+## Any other comments that you couldn't add before?
 
 # Thank you for completing our user feedback survey!
 
