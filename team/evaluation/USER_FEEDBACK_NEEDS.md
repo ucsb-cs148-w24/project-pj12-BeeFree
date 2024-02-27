@@ -20,5 +20,6 @@
 - [ ] 5
 ## Are there any user functionalities you would like to see added to our mobile application?
 
+# Thank you for completing our user feedback survey!
 
 
