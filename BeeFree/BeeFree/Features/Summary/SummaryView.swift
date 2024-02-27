@@ -54,6 +54,9 @@ struct SummaryView: View {
             
         }
         .onAppear {
+            filter.applications = model.selectionToDiscourage.applicationTokens
+            filter.categories = model.selectionToDiscourage.categoryTokens
+            filter.webDomains = model.selectionToDiscourage.webDomainTokens
             BeeFreeMonitor.applyFilter(&filter, from:model)
         }
         //Text("hello world")

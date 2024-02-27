@@ -27,12 +27,22 @@ struct CreateLimitSheetView: View {
     @State private var seconds: Int = 0
     @State private var savedTime: (hours: Int, minutes: Int, seconds: Int)?
     @State private var isDiscouragedPresented = false
-    @State var filter = DeviceActivityFilter()
     @State var selection = FamilyActivitySelection()
-    @State private var context: DeviceActivityReport.Context = .init(rawValue: "pieChart")
 
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
+    
+    @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var reportData: DeviceActivityReport? = nil
+    
+    @State var filter = DeviceActivityFilter.init(
+        segment: .daily(
+            during: Calendar.current.dateInterval(
+                of: .day, for: .now
+            )!
+        ),
+        users: .all,
+        devices: .init([.iPhone, .iPad]))
     
     var body: some View {
         NavigationStack {
@@ -69,9 +79,6 @@ struct CreateLimitSheetView: View {
                     .onChange(of: model.selectionToDiscourage) {
                         BeeFreeModel.shared.setShieldRestrictions()
                         //var summaryApps = SummarySet
-
-                        
-                        
                     }
                     Section(header: Text("Time Limit")) {
                         HStack{
@@ -99,11 +106,11 @@ struct CreateLimitSheetView: View {
                         
                         Section {
                             Button("Save Time") {
-                                saveTime()
                                 let new_threshold = DateComponents(hour: savedTime?.hours,
                                                                    minute: savedTime?.minutes,
                                                                    second: savedTime?.seconds)
                                 model.changeThreshold(threshold: new_threshold)
+                                saveTime()
                             }
                         }
                         .onChange(of: model.thresholdToDiscourage) {
@@ -111,6 +118,7 @@ struct CreateLimitSheetView: View {
                         }
                     }
                 }
+                DeviceActivityReport(context, filter: filter)
 
                 Spacer()
             }
@@ -120,6 +128,8 @@ struct CreateLimitSheetView: View {
     }
     private func saveTime() {
         savedTime = (hours, minutes, seconds)
+        BeeFreeSchedule.setSchedule()
+        BeeFreeMonitor.applyFilter(&filter, from:model)
     }
 }
 
