@@ -59,9 +59,18 @@ struct SummaryView: View {
 //            }
             
         }
+<<<<<<< HEAD
 //        .onAppear {
 //            BeeFreeMonitor.applyFilter(&filter, from:model)
 //        }
+=======
+        .onAppear {
+            filter.applications = model.selectionToDiscourage.applicationTokens
+            filter.categories = model.selectionToDiscourage.categoryTokens
+            filter.webDomains = model.selectionToDiscourage.webDomainTokens
+            BeeFreeMonitor.applyFilter(&filter, from:model)
+        }
+>>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
         //Text("hello world")
     }
 }

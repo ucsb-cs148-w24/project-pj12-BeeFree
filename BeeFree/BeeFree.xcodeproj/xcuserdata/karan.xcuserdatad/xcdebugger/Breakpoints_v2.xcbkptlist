@@ -7,6 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -80,6 +81,19 @@
                   offsetFromSymbolStart = "60">
                </Location>
             </Locations>
+=======
+            uuid = "5E5C385C-0D26-42F4-BAAC-D67B55DDB9E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeeFree/ScreenTime/BeeFreeMonitor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "BeeFreeMonitor"
+            landmarkType = "14">
+>>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
