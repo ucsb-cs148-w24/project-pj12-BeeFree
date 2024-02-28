@@ -27,16 +27,41 @@ final class UserDB {
     private init() { }
 
     // Method to create a new user with the friends field
-    func createNewUser(auth: AuthDataResultModel, firstName: String) async throws {
+   /* func createNewUser(auth: AuthDataResultModel, firstName: String) async throws {
         let userData: [String: Any] = [
             "userID" : auth.uid,
             "email" : auth.email ?? "",
             "firstName" : firstName,
-            "friends" : [] // Initialize friends as an empty array
+            "friends" : []
         ]
         
         try await Firestore.firestore().collection("BeFreeUsers").document(auth.uid).setData(userData, merge: false)
+    }*/
+    
+    func createNewUser(auth: AuthDataResultModel, firstName: String) async -> Bool {
+        let usersCollection = Firestore.firestore().collection("BeFreeUsers")
+        let querySnapshot = try? await usersCollection.whereField("firstName", isEqualTo: firstName).getDocuments()
+
+        if let querySnapshot = querySnapshot, querySnapshot.documents.count > 0 {
+            return false
+        } else {
+            let userData: [String: Any] = [
+                "userID": auth.uid,
+                "email": auth.email ?? "",
+                "firstName": firstName,
+                "friends": []
+            ]
+            do {
+                try await usersCollection.document(auth.uid).setData(userData, merge: false)
+                return true
+            } catch {
+                print("Error creating user: \(error)")
+                return false
+            }
+        }
     }
+
+
 
     func getUser(userid: String, completion: @escaping (Userinfo?) -> Void) {
            let userRef = Firestore.firestore().collection("BeFreeUsers").document(userid)

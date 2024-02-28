@@ -55,7 +55,7 @@ final class LoginviewModel: ObservableObject{
         }
 
         // Function to submit the first name for new users
-        func submitFirstName(completion: @escaping () -> Void) async {
+        /*func submitFirstName(completion: @escaping () -> Void) async {
             guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
                 return
             }
@@ -66,22 +66,22 @@ final class LoginviewModel: ObservableObject{
             } catch {
                 print(error)
             }
-        }
+        }*/
     
-//      func submitFirstName() async {
-//        // logic to submit first name to firestore
-//        guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
-//            return
-//        }
-//        
-//        do{
-//            try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
-//            
-//        } catch {
-//            print(error)
-//        }
-//
-//    }
+        func submitFirstName(completion: @escaping (Bool) -> Void) async {
+            guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
+                completion(false)
+                return
+            }
+
+            let isFirstNameAvailable = await UserDB.shared.createNewUser(auth: user, firstName: firstName)
+            if isFirstNameAvailable {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+
     
 }
 
@@ -90,7 +90,9 @@ final class LoginviewModel: ObservableObject{
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
     @State var isAuthenticated = false
+    @State private var errorMessage: String?
     @Binding var showSignInView: Bool
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -114,11 +116,25 @@ struct LoginView: View {
                     TextField("First Name", text: $viewModel.firstName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+                        .autocapitalization(.none)
 
+                    
+                    if let errorMessage = errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    
                     Button("Submit") {
                         Task {
-                            await viewModel.submitFirstName {
-                                isAuthenticated = true
+                            await viewModel.submitFirstName { success in
+                                if success {
+                                    isAuthenticated = true
+                                    errorMessage = nil
+                                } else {
+                                    isAuthenticated = false
+                                    errorMessage = "This name is already taken. Please choose favorite name."
+                                }
                             }
                         }
                     }
