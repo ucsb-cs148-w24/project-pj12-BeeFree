@@ -11,7 +11,7 @@ import ManagedSettings
 import FamilyControls
 
 struct ContentView: View {
-//    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) var colorScheme
     @State var selectedTab: Tab = .home
     @State var isDarkMode = false
     @State var isPresented = false

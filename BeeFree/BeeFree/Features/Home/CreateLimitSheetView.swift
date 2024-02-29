@@ -32,7 +32,8 @@ struct CreateLimitSheetView: View {
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
-    @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var context1: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var context2: DeviceActivityReport.Context = .init(rawValue: "Top Apps")
     @State private var reportData: DeviceActivityReport? = nil
     
     @State var filter = DeviceActivityFilter.init(
@@ -116,10 +117,10 @@ struct CreateLimitSheetView: View {
 //                        .onChange(of: model.thresholdToDiscourage) {
 //                            BeeFreeSchedule.setSchedule()
 //                        }
+<<<<<<< HEAD
 //                        
 //                        if let savedTime = savedTime {
 //                            Section(header: Text("Saved Time")) {
-//                                Text("\(savedTime.hours) hr 
 //                                      \(savedTime.minutes) min
 //                                      \(savedTime.seconds) sec")
 //                            }
@@ -127,10 +128,10 @@ struct CreateLimitSheetView: View {
 //                    }
                 }
                 DeviceActivityReport(context, filter: filter)
-
-                Spacer()
-                DeviceActivityReport(context, filter: filter)
-            }
+=======
+//                    }
+//                }
+                // DeviceActivityReport(context1, filter: filter)
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color("Background").edgesIgnoringSafeArea(.all))

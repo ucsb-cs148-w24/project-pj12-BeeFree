@@ -47,8 +47,6 @@
 		116D877C2B5CAEBD006CB8C3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 116D877B2B5CAEBD006CB8C3 /* FirebaseStorageCombine-Community */; };
 		117ADB372B7B244600A99834 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117ADB362B7B244600A99834 /* GoogleService-Info.plist */; };
 		117ADB392B7B2DD800A99834 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117ADB382B7B2DD800A99834 /* ExampleView.swift */; };
-		11B1CCA22B8A71380073EA81 /* DevicesBeReportingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1CCA12B8A71380073EA81 /* DevicesBeReportingExtension.swift */; };
-		11B1CCA32B8A71380073EA81 /* DevicesBeReportingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1CCA12B8A71380073EA81 /* DevicesBeReportingExtension.swift */; };
 		11B1CCA62B8A73ED0073EA81 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E422B5C769300EB61B2 /* SummaryView.swift */; };
 		11CB92972B895566007908A7 /* BeeFreeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB92962B895566007908A7 /* BeeFreeMonitor.swift */; };
 		11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB92962B895566007908A7 /* BeeFreeMonitor.swift */; };
@@ -96,6 +94,13 @@
 		9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3F2B5C767200EB61B2 /* SharingView.swift */; };
 		9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E422B5C769300EB61B2 /* SummaryView.swift */; };
 		9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E442B5C777A00EB61B2 /* LoginView.swift */; };
+		9E4798C52B8FF08C008FD765 /* DeviceActivityStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */; };
+		9E4798C72B8FF1D7008FD765 /* TopAppsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */; };
+		9E4798CC2B8FF373008FD765 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4798CB2B8FF373008FD765 /* SwiftUICharts */; };
+		9E4798CE2B8FF37E008FD765 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4798CD2B8FF37E008FD765 /* SwiftUICharts */; };
+		9E4798D02B8FF386008FD765 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4798CF2B8FF386008FD765 /* SwiftUICharts */; };
+		9E4798D62B8FF4FB008FD765 /* TopThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */; };
+		9E4798D82B903656008FD765 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4798D72B903656008FD765 /* CardView.swift */; };
 		9E4AD1B12B7586B400EC3992 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCC8CF2B756DE6009985F2 /* DeviceActivity.framework */; };
 		9E4AD1B22B7586B400EC3992 /* DeviceActivity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCC8CF2B756DE6009985F2 /* DeviceActivity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
@@ -116,9 +121,7 @@
 		9ED853472B8DA8BE004B6937 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853462B8DA8BE004B6937 /* FirebaseAppCheck */; };
 		9ED8534B2B8DA910004B6937 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
 		9ED8534C2B8DA913004B6937 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
-		9ED8534D2B8DA916004B6937 /* DevicesBeReportingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1CCA12B8A71380073EA81 /* DevicesBeReportingExtension.swift */; };
 		9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
-		9ED8534F2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
 		9EFD0F642B75FA0000FEA6E6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F632B75FA0000FEA6E6 /* FirebaseAnalytics */; };
 		9EFD0F662B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F652B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion */; };
 		9EFD0F682B75FA0000FEA6E6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F672B75FA0000FEA6E6 /* FirebaseAnalyticsSwift */; };
@@ -216,7 +219,6 @@
 		115F913E2B8181D500FD252E /* SummaryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryReport.swift; sourceTree = "<group>"; };
 		117ADB362B7B244600A99834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117ADB382B7B2DD800A99834 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
-		11B1CCA12B8A71380073EA81 /* DevicesBeReportingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesBeReportingExtension.swift; sourceTree = "<group>"; };
 		11CB92962B895566007908A7 /* BeeFreeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeMonitor.swift; sourceTree = "<group>"; };
 		272C29222B60A08F00EED823 /* LoginUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtilities.swift; sourceTree = "<group>"; };
 		276C378D2B60A31D00F7BC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -244,6 +246,10 @@
 		9E395E3F2B5C767200EB61B2 /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
 		9E395E422B5C769300EB61B2 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9E395E442B5C777A00EB61B2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityStructs.swift; sourceTree = "<group>"; };
+		9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAppsReport.swift; sourceTree = "<group>"; };
+		9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeView.swift; sourceTree = "<group>"; };
+		9E4798D72B903656008FD765 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeGoalView.swift; sourceTree = "<group>"; };
 		9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenTimeView.swift; sourceTree = "<group>"; };
 		9EA34C752B5F260400F1208D /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleProgressBar.swift; path = BeeFree/Features/Summary/View/CircleProgressBar.swift; sourceTree = SOURCE_ROOT; };
@@ -261,6 +267,7 @@
 				9ED853432B8DA8BE004B6937 /* FirebaseAnalyticsSwift in Frameworks */,
 				9ED8533F2B8DA8BE004B6937 /* FirebaseAnalytics in Frameworks */,
 				9ED853412B8DA8BE004B6937 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				9E4798CC2B8FF373008FD765 /* SwiftUICharts in Frameworks */,
 				9ED853472B8DA8BE004B6937 /* FirebaseAppCheck in Frameworks */,
 				9ED853452B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
@@ -280,6 +287,7 @@
 				9EFD0F6A2B75FA0000FEA6E6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9EFD0F642B75FA0000FEA6E6 /* FirebaseAnalytics in Frameworks */,
 				9EFD0F9A2B75FA0000FEA6E6 /* GoogleSignIn in Frameworks */,
+				9E4798D02B8FF386008FD765 /* SwiftUICharts in Frameworks */,
 				9EFD0F8E2B75FA0000FEA6E6 /* FirebaseMLModelDownloader in Frameworks */,
 				9EFD0F802B75FA0000FEA6E6 /* FirebaseFirestoreSwift in Frameworks */,
 				9EFD0F662B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -316,6 +324,7 @@
 				276C37842B60A2D700F7BC5A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				116D874A2B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				116D87702B5CAEBD006CB8C3 /* FirebaseMLModelDownloader in Frameworks */,
+				9E4798CE2B8FF37E008FD765 /* SwiftUICharts in Frameworks */,
 				276C37802B60A2C500F7BC5A /* GoogleSignInSwift in Frameworks */,
 				9E0BB7ED2B7598D100414DBD /* DeviceActivity.framework in Frameworks */,
 				276C37822B60A2D700F7BC5A /* FirebaseAnalytics in Frameworks */,
@@ -354,7 +363,10 @@
 				11299F602B81775100F01672 /* DevicesBeReporting.swift */,
 				11299F622B81775100F01672 /* TotalActivityReport.swift */,
 				11299F642B81775100F01672 /* TotalActivityView.swift */,
-				11B1CCA12B8A71380073EA81 /* DevicesBeReportingExtension.swift */,
+				9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */,
+				9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */,
+				9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */,
+				9E4798D72B903656008FD765 /* CardView.swift */,
 				11299F662B81775100F01672 /* Info.plist */,
 				11299F672B81775100F01672 /* DevicesBeReporting.entitlements */,
 			);
@@ -525,6 +537,7 @@
 				9ED853422B8DA8BE004B6937 /* FirebaseAnalyticsSwift */,
 				9ED853442B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				9ED853462B8DA8BE004B6937 /* FirebaseAppCheck */,
+				9E4798CB2B8FF373008FD765 /* SwiftUICharts */,
 			);
 			productName = DevicesBeReporting;
 			productReference = 11299F5E2B81775100F01672 /* DevicesBeReporting.appex */;
@@ -574,6 +587,7 @@
 				9EFD0F972B75FA0000FEA6E6 /* FirebaseStorageCombine-Community */,
 				9EFD0F992B75FA0000FEA6E6 /* GoogleSignIn */,
 				9EFD0F9B2B75FA0000FEA6E6 /* GoogleSignInSwift */,
+				9E4798CF2B8FF386008FD765 /* SwiftUICharts */,
 			);
 			productName = DeviceActivityMonitorExtension;
 			productReference = 9E29D29A2B757BE200858806 /* DeviceActivityMonitorExtension.appex */;
@@ -631,6 +645,7 @@
 				276C37852B60A2D700F7BC5A /* FirebaseAnalyticsSwift */,
 				276C37872B60A2D700F7BC5A /* FirebaseAnalyticsWithoutAdIdSupport */,
 				276C37892B60A2D700F7BC5A /* FirebaseAppCheck */,
+				9E4798CD2B8FF37E008FD765 /* SwiftUICharts */,
 			);
 			productName = BeeFree;
 			productReference = 9E395E0A2B5C6FFA00EB61B2 /* BeeFree.app */;
@@ -669,6 +684,7 @@
 			packageReferences = (
 				116D87462B5CAEBD006CB8C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				276C377C2B60A2C500F7BC5A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				9E4798CA2B8FF373008FD765 /* XCRemoteSwiftPackageReference "chartview" */,
 			);
 			productRefGroup = 9E395E0B2B5C6FFA00EB61B2 /* Products */;
 			projectDirPath = "";
@@ -715,15 +731,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				115F91402B8181E500FD252E /* SummaryReport.swift in Sources */,
 				11299F652B81775100F01672 /* TotalActivityView.swift in Sources */,
 				11B1CCA32B8A71380073EA81 /* DevicesBeReportingExtension.swift in Sources */,
 <<<<<<< HEAD
 				11299F612B81775100F01672 /* DevicesBeReporting.swift in Sources */,
 =======
+=======
+				9E2D4B962B8D982A00493A09 /* AppScreenTimeView.swift in Sources */,
+				9E4798D82B903656008FD765 /* CardView.swift in Sources */,
+				9E2D4B952B8D982800493A09 /* ScreenTimeGoalView.swift in Sources */,
+				9E2D4B9D2B8D983900493A09 /* PollenAnimation.swift in Sources */,
+				9E4798D62B8FF4FB008FD765 /* TopThreeView.swift in Sources */,
+				9E2D4B8E2B8D981C00493A09 /* CreateLimitSheetView.swift in Sources */,
+				9E2D4B972B8D982C00493A09 /* SharingView.swift in Sources */,
+				115F91402B8181E500FD252E /* SummaryReport.swift in Sources */,
+				9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */,
+				9E2D4B992B8D983000493A09 /* TabBarModifier.swift in Sources */,
+				9E2D4B932B8D982300493A09 /* HomeView.swift in Sources */,
+				9E4798C72B8FF1D7008FD765 /* TopAppsReport.swift in Sources */,
+				9E2D4B9C2B8D983700493A09 /* RectangleSection.swift in Sources */,
+				11299F652B81775100F01672 /* TotalActivityView.swift in Sources */,
+				9E2D4B922B8D982100493A09 /* SummarySetApps.swift in Sources */,
+				9E2D4B8A2B8D981400493A09 /* BeeFreeModel.swift in Sources */,
+				9E2D4B8B2B8D981600493A09 /* BeeFreeMonitor.swift in Sources */,
+>>>>>>> 353c571 (TOP 3 APPS BEING DISPLAYED)
 				9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */,
 				9E2D4B8D2B8D981A00493A09 /* ProfileSheetView.swift in Sources */,
 				9E2D4B8C2B8D981800493A09 /* BeeFreeSchedule.swift in Sources */,
+				9E4798C52B8FF08C008FD765 /* DeviceActivityStructs.swift in Sources */,
 				9E2D4B9B2B8D983600493A09 /* CircleProgressBar.swift in Sources */,
 				9E2D4B982B8D982E00493A09 /* TitleBarModifier.swift in Sources */,
 				9EA465E02B8D951F007E51EA /* SummaryView.swift in Sources */,
@@ -743,7 +780,6 @@
 				9EFD0F9E2B75FBC000FEA6E6 /* LoginUtilities.swift in Sources */,
 				9ED8534C2B8DA913004B6937 /* TotalActivityView.swift in Sources */,
 				11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */,
-				9ED8534D2B8DA916004B6937 /* DevicesBeReportingExtension.swift in Sources */,
 				9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */,
 <<<<<<< HEAD
 =======
@@ -754,7 +790,6 @@
 				9E0BB7E82B758C5800414DBD /* CircleProgressBar.swift in Sources */,
 				11B1CCA62B8A73ED0073EA81 /* SummaryView.swift in Sources */,
 				9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */,
-				9ED8534F2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */,
 				9EFD0F9D2B75FBBE00FEA6E6 /* LoginView.swift in Sources */,
 				9E0BB7E42B758C4F00414DBD /* TitleBarModifier.swift in Sources */,
 				9E0BB7E52B758C5100414DBD /* TabBarModifier.swift in Sources */,
@@ -1196,6 +1231,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		9E4798CA2B8FF373008FD765 /* XCRemoteSwiftPackageReference "chartview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apppear/chartview.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1368,6 +1411,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 116D87462B5CAEBD006CB8C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
+		};
+		9E4798CB2B8FF373008FD765 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E4798CA2B8FF373008FD765 /* XCRemoteSwiftPackageReference "chartview" */;
+			productName = SwiftUICharts;
+		};
+		9E4798CD2B8FF37E008FD765 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E4798CA2B8FF373008FD765 /* XCRemoteSwiftPackageReference "chartview" */;
+			productName = SwiftUICharts;
+		};
+		9E4798CF2B8FF386008FD765 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E4798CA2B8FF373008FD765 /* XCRemoteSwiftPackageReference "chartview" */;
+			productName = SwiftUICharts;
 		};
 		9ED8533E2B8DA8BE004B6937 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

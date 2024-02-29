@@ -13,6 +13,7 @@ extension DeviceActivityReport.Context {
     // your extension's corresponding DeviceActivityReportScene to render the contents of the
     // report.
     static let totalActivity = Self("Total Activity")
+    static let topApps = Self("Top Apps")
 //    static let pieChart = Self("pieChart")
 //    static let barGraph = Self("barGraph")
 }

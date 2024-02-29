@@ -15,6 +15,9 @@ struct DevicesBeReportingExtension: DeviceActivityReportExtension {
             TotalActivityReport { totalActivity in
                 TotalActivityView(totalActivity: totalActivity)
             }
+            TopAppsReport { topApps in
+                TopThreeView(topApps: topApps)
+            }
             // Add more reports here...
         }
 }
