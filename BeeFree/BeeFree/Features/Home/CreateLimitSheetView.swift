@@ -32,7 +32,8 @@ struct CreateLimitSheetView: View {
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
-    @State private var context: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var context1: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var context2: DeviceActivityReport.Context = .init(rawValue: "Top Apps")
     @State private var reportData: DeviceActivityReport? = nil
     
     @State var filter = DeviceActivityFilter.init(
@@ -68,57 +69,58 @@ struct CreateLimitSheetView: View {
                     }
                     
                 }
-                // Settings
-                Form {
-                    Section(header: Text("Applications")) {
-                        Button("Select Apps to Discourage") {
-                            isDiscouragedPresented = true
-                        }
-                        .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
-                    }
-                    .onChange(of: model.selectionToDiscourage) {
-                        BeeFreeModel.shared.setShieldRestrictions()
-                        //var summaryApps = SummarySet
-                    }
-                    Section(header: Text("Time Limit")) {
-                        HStack{
-                            Picker("Hours", selection: $hours) {
-                                ForEach(0..<24, id: \.self) { hour in
-                                    Text("\(hour) hr").tag(hour)
-                                }
-                            }
-                            .pickerStyle(.wheel)
-                            
-                            Picker("Minutes", selection: $minutes) {
-                                ForEach(0..<60, id: \.self) { minute in
-                                    Text("\(minute) min").tag(minute)
-                                }
-                            }
-                            .pickerStyle(.wheel)
-                            
-                            Picker("Seconds", selection: $seconds) {
-                                ForEach(0..<60, id: \.self) { second in
-                                    Text("\(second) sec").tag(second)
-                                }
-                            }
-                            .pickerStyle(.wheel)
-                        }
-                        
-                        Section {
-                            Button("Save Time") {
-                                let new_threshold = DateComponents(hour: savedTime?.hours,
-                                                                   minute: savedTime?.minutes,
-                                                                   second: savedTime?.seconds)
-                                model.changeThreshold(threshold: new_threshold)
-                                saveTime()
-                            }
-                        }
-                        .onChange(of: model.thresholdToDiscourage) {
-                            BeeFreeSchedule.setSchedule()
-                        }
-                    }
-                }
-                DeviceActivityReport(context, filter: filter)
+//                // Settings
+//                Form {
+//                    Section(header: Text("Applications")) {
+//                        Button("Select Apps to Discourage") {
+//                            isDiscouragedPresented = true
+//                        }
+//                        .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
+//                    }
+//                    .onChange(of: model.selectionToDiscourage) {
+//                        BeeFreeModel.shared.setShieldRestrictions()
+//                        //var summaryApps = SummarySet
+//                    }
+//                    Section(header: Text("Time Limit")) {
+//                        HStack{
+//                            Picker("Hours", selection: $hours) {
+//                                ForEach(0..<24, id: \.self) { hour in
+//                                    Text("\(hour) hr").tag(hour)
+//                                }
+//                            }
+//                            .pickerStyle(.wheel)
+//                            
+//                            Picker("Minutes", selection: $minutes) {
+//                                ForEach(0..<60, id: \.self) { minute in
+//                                    Text("\(minute) min").tag(minute)
+//                                }
+//                            }
+//                            .pickerStyle(.wheel)
+//                            
+//                            Picker("Seconds", selection: $seconds) {
+//                                ForEach(0..<60, id: \.self) { second in
+//                                    Text("\(second) sec").tag(second)
+//                                }
+//                            }
+//                            .pickerStyle(.wheel)
+//                        }
+//                        
+//                        Section {
+//                            Button("Save Time") {
+//                                let new_threshold = DateComponents(hour: savedTime?.hours,
+//                                                                   minute: savedTime?.minutes,
+//                                                                   second: savedTime?.seconds)
+//                                model.changeThreshold(threshold: new_threshold)
+//                                saveTime()
+//                            }
+//                        }
+//                        .onChange(of: model.thresholdToDiscourage) {
+//                            BeeFreeSchedule.setSchedule()
+//                        }
+//                    }
+//                }
+                // DeviceActivityReport(context1, filter: filter)
+                DeviceActivityReport(context2, filter: filter)
 
                 Spacer()
             }
