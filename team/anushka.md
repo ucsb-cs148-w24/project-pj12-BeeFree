@@ -1,2 +1,0 @@
-###Anushka Vijay
-Hi, I'm Anushka and I'm excited to explore using Swift and Apple Developer APIs to build this time tracker app that users share with their friends. I don't have much experience with UI/UX so I look forward to learning to approach software development from different directions such as backend and frontend. 
