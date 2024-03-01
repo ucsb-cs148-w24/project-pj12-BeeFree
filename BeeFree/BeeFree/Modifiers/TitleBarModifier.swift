@@ -85,7 +85,6 @@ struct TitleBarModifier: View {
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
                     }
                     .sheet(isPresented: $isAddFriendPresented) {
-                    // Assuming FriendsViewModel no longer requires DataManager
                         AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
                             .environmentObject(model)
                             .environmentObject(store)

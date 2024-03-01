@@ -54,19 +54,6 @@ final class LoginviewModel: ObservableObject{
             }
         }
 
-        // Function to submit the first name for new users
-        /*func submitFirstName(completion: @escaping () -> Void) async {
-            guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
-                return
-            }
-            
-            do {
-                try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
-                completion() // Complete the sign-in process after submitting the first name
-            } catch {
-                print(error)
-            }
-        }*/
     
         func submitFirstName(completion: @escaping (Bool) -> Void) async {
             guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {

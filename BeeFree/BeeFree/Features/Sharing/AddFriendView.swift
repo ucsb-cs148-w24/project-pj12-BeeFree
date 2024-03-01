@@ -141,12 +141,6 @@ struct AddFriendView: View {
                     .padding()
             }
             
-            // Personalized greeting
-//            if let firstName = viewModel.currentUserFirstName{
-//                Text("Dear \(firstName), here is your list of friends:")
-//                    .font(.title2)
-//                    .padding([.top, .bottom])
-//            }
             
             if let firstName = viewModel.currentUserFirstName {
                 if viewModel.friends.isEmpty {
@@ -160,11 +154,6 @@ struct AddFriendView: View {
                 }
             }
 
-//            List(viewModel.friends) { friend in
-//                VStack(alignment: .leading) {
-//                    Text("Name: \(friend.firstName)")
-//                }
-//            }
         
             List(viewModel.friends) { friend in
                 HStack {
@@ -195,7 +184,6 @@ struct AddFriendView: View {
 
 struct AddFriendView_Previews: PreviewProvider {
     static var previews: some View {
-        // Sample preview with mock data or bindings
         AddFriendView(isDarkMode: .constant(false), viewModel: FriendsViewModel())
     }
 }
