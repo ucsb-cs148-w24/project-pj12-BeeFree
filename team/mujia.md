@@ -1,3 +1,0 @@
-I'm Mujia and I'm a second year cs major.
-
-Our project is named "AppBlocker," an application designed to control the usage of other apps by setting a timer to restrict access. It boasts a unique group feature, enabling users to create a circle with friends to monitor daily app usage time, both spent and remaining. AppBlocker also facilitates group interactions, allowing users to view their friends' daily app usage, engage in chats, and send considerate alerts to encourage reduced screen time when excessive phone use is detected.

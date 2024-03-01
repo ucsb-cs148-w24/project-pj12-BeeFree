@@ -1,3 +1,0 @@
-Hi! I'm Kaveri Iyer. You can call me Kavi if that's easier. 
-
-I'm a third year CS major, and I have a few ideas for this project. One thing I think would be interesting to have is a feature in which a notification is sent to all your friends when your app timer is close to reaching 0. The notification allows your friends to send you a friendly reminder that you're almost done for the day. Thus it creates a sort of constructive peer-pressure element that encourages our users to abide by their timers. 
