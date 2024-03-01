@@ -9,6 +9,7 @@ import SwiftUI
 import FamilyControls
 import ManagedSettings
 import DeviceActivity
+import FirebaseAuth
 
 struct TitleBarModifier: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -17,7 +18,7 @@ struct TitleBarModifier: View {
     @State private var isCreateLimitPresented = false
     @State private var isAccountSettingsPresented = false
     @State private var isAddFriendPresented = false
-
+    @State private var currentUserInfo: Userinfo?
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -119,13 +120,39 @@ struct TitleBarModifier: View {
                         .frame(width: 32, height: 32)
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
                 }
+                
+                .onAppear {
+                    getUserData()
+                }
+                
                 .sheet(isPresented: $isAccountSettingsPresented) {
                     // Create a sheet view with profile details and settings
-                    ProfileSheetView(isDarkMode: $isDarkMode)
+                    ProfileSheetView(isDarkMode: $isDarkMode, userInfo: $currentUserInfo) 
                 }
             }
+            
         }
         Spacer()
+    }
+    
+    var currentUserID: String? {
+        return Auth.auth().currentUser?.uid
+    }
+
+    func getUserData() {
+        guard let userID = currentUserID else {
+            print("No current user ID available")
+            return
+        }
+
+        UserDB.shared.getUser(userid: userID) { userinfo in
+            if let userinfo = userinfo {
+                print("User data fetched: \(userinfo)")
+                self.currentUserInfo = userinfo
+            } else {
+                print("Failed to fetch user info or user info not found")
+            }
+        }
     }
 }
 

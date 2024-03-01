@@ -208,19 +208,19 @@ class FriendsViewModel: ObservableObject {
     }
     
     func fetchCurrentUserName() {
-            guard let userID = currentUserID else {
-                print("User not logged in")
+        guard let userID = currentUserID else {
+            print("User not logged in")
+            return
+        }
+
+        UserDB.shared.getUser(userid: userID) { [weak self] (userinfo: Userinfo?) in
+            guard let self = self, let userinfo = userinfo else {
+                print("Failed to fetch user info or user info not found")
                 return
             }
-
-            UserDB.shared.getUser(userid: userID) { [weak self] (userinfo: Userinfo?) in
-                guard let self = self, let userinfo = userinfo else {
-                    print("Failed to fetch user info or user info not found")
-                    return
-                }
-                self.currentUserFirstName = userinfo.firstName
-            }
+            self.currentUserFirstName = userinfo.firstName
         }
+    }
 
 
     func addFriend(email: String, completion: @escaping (Bool) -> Void) {
