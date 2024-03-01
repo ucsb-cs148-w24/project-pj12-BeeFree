@@ -167,6 +167,9 @@ struct AddFriendView: View {
                     }
                 }
             }
+            .listStyle(PlainListStyle())
+            .background(colorScheme == .dark ? Color("DarkerSky") : Color("LighterSky"))
+            
             Spacer()
 
             Button("Done adding friends") {
@@ -174,6 +177,7 @@ struct AddFriendView: View {
             }
             .padding()
         }
+        .background(colorScheme == .dark ? Color("DarkerSky") : Color("LighterSky"))
         .navigationTitle("Add Friend")
         .onAppear {
             viewModel.fetchCurrentUserFriends()
