@@ -7,7 +7,7 @@
 - [ ] 3
 - [ ] 4
 - [ ] 5
-## Are there any user functionalities you would like to see added to our mobile application?
+## What do you think of our blocking and summary features? Are there any user functionalities you would like to see added to our mobile application?
 
 # Thank you for completing our user feedback survey!
 
