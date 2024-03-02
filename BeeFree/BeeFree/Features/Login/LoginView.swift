@@ -54,34 +54,21 @@ final class LoginviewModel: ObservableObject{
             }
         }
 
-        // Function to submit the first name for new users
-        func submitFirstName(completion: @escaping () -> Void) async {
+    
+        func submitFirstName(completion: @escaping (Bool) -> Void) async {
             guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
+                completion(false)
                 return
             }
-            
-            do {
-                try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
-                completion() // Complete the sign-in process after submitting the first name
-            } catch {
-                print(error)
+
+            let isFirstNameAvailable = await UserDB.shared.createNewUser(auth: user, firstName: firstName)
+            if isFirstNameAvailable {
+                completion(true)
+            } else {
+                completion(false)
             }
         }
-    
-//      func submitFirstName() async {
-//        // logic to submit first name to firestore
-//        guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
-//            return
-//        }
-//        
-//        do{
-//            try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
-//            
-//        } catch {
-//            print(error)
-//        }
-//
-//    }
+
     
 }
 
@@ -90,7 +77,9 @@ final class LoginviewModel: ObservableObject{
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
     @State var isAuthenticated = false
+    @State private var errorMessage: String?
     @Binding var showSignInView: Bool
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -106,7 +95,7 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
 
-                    Text("Please enter your first name to continue")
+                    Text("Please enter your first name/username to continue")
                         .font(.title3)
                         .foregroundColor(.gray)
                         .padding(.bottom, 30)
@@ -114,11 +103,25 @@ struct LoginView: View {
                     TextField("First Name", text: $viewModel.firstName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+                        .autocapitalization(.none)
 
+                    
+                    if let errorMessage = errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    
                     Button("Submit") {
                         Task {
-                            await viewModel.submitFirstName {
-                                isAuthenticated = true
+                            await viewModel.submitFirstName { success in
+                                if success {
+                                    isAuthenticated = true
+                                    errorMessage = nil
+                                } else {
+                                    isAuthenticated = false
+                                    errorMessage = "This name is already taken. Please choose favorite name."
+                                }
                             }
                         }
                     }

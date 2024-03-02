@@ -9,6 +9,7 @@ import SwiftUI
 import FamilyControls
 import ManagedSettings
 import DeviceActivity
+import FirebaseAuth
 
 struct TitleBarModifier: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -16,6 +17,8 @@ struct TitleBarModifier: View {
     @Binding var isDarkMode: Bool
     @State private var isCreateLimitPresented = false
     @State private var isAccountSettingsPresented = false
+    @State private var isAddFriendPresented = false
+    @State private var currentUserInfo: Userinfo?
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -23,7 +26,6 @@ struct TitleBarModifier: View {
     var body: some View {
         HStack {
             VStack {
-                // Display title based on selected tab
                 if(selectedTab == .home) {
                     Group {
                         Text("Bee ")
@@ -82,23 +84,32 @@ struct TitleBarModifier: View {
                             .frame(width: 27, height: 27)
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
                     }
-                    .sheet(isPresented: $isCreateLimitPresented) {
-                        // Create a sheet view to create a limit
-                        CreateLimitSheetView(isDarkMode: $isDarkMode)
+                    .sheet(isPresented: $isAddFriendPresented) {
+                        AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
+                            .environmentObject(model)
+                            .environmentObject(store)
+                        }
+                    
+                }
+
+                else if (selectedTab == .sharing) {
+                    Button(action: { self.isAddFriendPresented.toggle() }) {
+                        Image(systemName: "person.2.badge.gearshape.fill")
+                            .resizable()
+                            .opacity(0.5)
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 42, height: 42)
+                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                    }
+                    .sheet(isPresented: $isAddFriendPresented) {
+                        // Initialize FriendsViewModel without DataManager
+                        AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
                             .environmentObject(model)
                             .environmentObject(store)
                     }
-                    
                 }
-                else if (selectedTab == .sharing) {
-                    Image(systemName: "person.2.badge.gearshape.fill")
-                        .resizable()
-                        .opacity(0.5)
-                        .foregroundColor(.white)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 42, height: 42)
-                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
-                }
+
                 Button(action: {self.isAccountSettingsPresented.toggle()}) {
                     Image(systemName: "person.circle.fill")
                         .resizable()
@@ -108,13 +119,39 @@ struct TitleBarModifier: View {
                         .frame(width: 32, height: 32)
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
                 }
+                
+                .onAppear {
+                    getUserData()
+                }
+                
                 .sheet(isPresented: $isAccountSettingsPresented) {
                     // Create a sheet view with profile details and settings
-                    ProfileSheetView(isDarkMode: $isDarkMode)
+                    ProfileSheetView(isDarkMode: $isDarkMode, userInfo: $currentUserInfo) 
                 }
             }
+            
         }
         Spacer()
+    }
+    
+    var currentUserID: String? {
+        return Auth.auth().currentUser?.uid
+    }
+
+    func getUserData() {
+        guard let userID = currentUserID else {
+            print("No current user ID available")
+            return
+        }
+
+        UserDB.shared.getUser(userid: userID) { userinfo in
+            if let userinfo = userinfo {
+                print("User data fetched: \(userinfo)")
+                self.currentUserInfo = userinfo
+            } else {
+                print("Failed to fetch user info or user info not found")
+            }
+        }
     }
 }
 

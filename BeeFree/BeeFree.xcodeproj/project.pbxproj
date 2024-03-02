@@ -45,6 +45,8 @@
 		276C378A2B60A2D700F7BC5A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 276C37892B60A2D700F7BC5A /* FirebaseAppCheck */; };
 		277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
 		27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
+		43209C142B817D8900EC1D4C /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43209C132B817D8900EC1D4C /* AddFriendView.swift */; };
+		43209C152B8182D500EC1D4C /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43209C132B817D8900EC1D4C /* AddFriendView.swift */; };
 		43536EBF2B70ADC000207E52 /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
 		9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2922B75781B00858806 /* BeeFreeModel.swift */; };
 		9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */; };
@@ -168,6 +170,7 @@
 		276C378D2B60A31D00F7BC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		27F771522B60A02E00A428F5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		43209C132B817D8900EC1D4C /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		43536EBE2B70ADC000207E52 /* UserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
 		43536EC42B71D09000207E52 /* BeeFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeeFree.entitlements; sourceTree = "<group>"; };
 		9E29D2922B75781B00858806 /* BeeFreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeModel.swift; sourceTree = "<group>"; };
@@ -370,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				9E395E3F2B5C767200EB61B2 /* SharingView.swift */,
+				43209C132B817D8900EC1D4C /* AddFriendView.swift */,
 			);
 			path = Sharing;
 			sourceTree = "<group>";
@@ -609,6 +613,7 @@
 				9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */,
 				9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */,
 				9E0BB7E92B758C5A00414DBD /* RectangleSection.swift in Sources */,
+				43209C152B8182D500EC1D4C /* AddFriendView.swift in Sources */,
 				9E0BB7EB2B758C5E00414DBD /* ContentView.swift in Sources */,
 				9E0BB7E62B758C5300414DBD /* AppLimitDisplay.swift in Sources */,
 				9E0BB7E72B758C5600414DBD /* PollenAnimation.swift in Sources */,
@@ -639,6 +644,7 @@
 				9E395E3A2B5C75C300EB61B2 /* ProfileSheetView.swift in Sources */,
 				277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */,
 				9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */,
+				43209C142B817D8900EC1D4C /* AddFriendView.swift in Sources */,
 				9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */,
 				9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */,
 				9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */,

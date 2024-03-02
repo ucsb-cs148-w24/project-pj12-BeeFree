@@ -18,26 +18,24 @@ import UserNotificationsUI
 @main
 struct BeeFreeApp: App {
     init() {
-        // Configure Firebase
         FirebaseApp.configure()
-        
-        // Initialize the App Check with the debug provider
         let providerFactory = AppCheckDebugProviderFactory()
         AppCheck.setAppCheckProviderFactory(providerFactory)
-    };
-    
+    }
+
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-    
     let authcenter = AuthorizationCenter.shared
-    
+
     var body: some Scene {
-        WindowGroup{
-            ZStack{viewControllerWrapper()}
+        WindowGroup {
+            ZStack { viewControllerWrapper() }
                 .onAppear {
                     Task {
                         do {
                             try await authcenter.requestAuthorization(for: .individual)
-                        } catch {print("Failed to enroll user with error: \(error)")}
+                        } catch {
+                            print("Failed to enroll user with error: \(error)")
+                        }
                     }
                 }
         }
