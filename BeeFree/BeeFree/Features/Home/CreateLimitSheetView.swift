@@ -32,6 +32,7 @@ struct CreateLimitSheetView: View {
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
+<<<<<<< HEAD
     @State private var context1: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var context2: DeviceActivityReport.Context = .init(rawValue: "Top Apps")
     @State private var reportData: DeviceActivityReport? = nil
@@ -45,6 +46,8 @@ struct CreateLimitSheetView: View {
         users: .all,
         devices: .init([.iPhone, .iPad]))
     
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
     var body: some View {
         NavigationStack {
             VStack {
@@ -81,6 +84,7 @@ struct CreateLimitSheetView: View {
                         BeeFreeModel.shared.setShieldRestrictions()
                         //var summaryApps = SummarySet
                     }
+<<<<<<< HEAD
 //                    Section(header: Text("Time Limit")) {
 //                        HStack{
 //                            Picker("Hours", selection: $hours) {
@@ -132,6 +136,49 @@ struct CreateLimitSheetView: View {
 //                    }
 //                }
                 // DeviceActivityReport(context1, filter: filter)
+=======
+                    Section(header: Text("Time Limit")) {
+                        HStack{
+                            Picker("Hours", selection: $hours) {
+                                ForEach(0..<24, id: \.self) { hour in
+                                    Text("\(hour) hr").tag(hour)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                            
+                            Picker("Minutes", selection: $minutes) {
+                                ForEach(0..<60, id: \.self) { minute in
+                                    Text("\(minute) min").tag(minute)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                            
+                            Picker("Seconds", selection: $seconds) {
+                                ForEach(0..<60, id: \.self) { second in
+                                    Text("\(second) sec").tag(second)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                        }
+                        
+                        Section {
+                            Button("Save Time") {
+                                let new_threshold = DateComponents(hour: savedTime?.hours,
+                                                                   minute: savedTime?.minutes,
+                                                                   second: savedTime?.seconds)
+                                model.changeThreshold(threshold: new_threshold)
+                                saveTime()
+                            }
+                        }
+                        .onChange(of: model.thresholdToDiscourage) {
+                            BeeFreeSchedule.setSchedule()
+                        }
+                    }
+                }
+                DeviceActivityReport(.init("Top Apps"))
+                Spacer()
+            }
+>>>>>>> 6d2671a (IT WORKSgit add .)
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color("Background").edgesIgnoringSafeArea(.all))
@@ -139,6 +186,7 @@ struct CreateLimitSheetView: View {
     private func saveTime() {
         savedTime = (hours, minutes, seconds)
         BeeFreeSchedule.setSchedule()
+<<<<<<< HEAD
         BeeFreeMonitor.applyFilter(&filter, from:model)
     }
 }
@@ -148,3 +196,7 @@ struct CreateLimitSheetView: View {
 /*#Preview {
     CreateLimitSheetView(isDarkMode: .constant(false))
 }*/
+=======
+    }
+}
+>>>>>>> 6d2671a (IT WORKSgit add .)

@@ -11,7 +11,10 @@ struct ProfileSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     @Binding var isDarkMode: Bool
+<<<<<<< HEAD
     @Binding var userInfo: Userinfo? 
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 
     var body: some View {
         NavigationStack {
@@ -47,8 +50,13 @@ struct ProfileSheetView: View {
                                 .frame(width: 48, height: 48)
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16))
                             VStack{
+<<<<<<< HEAD
                                 Text(userInfo?.displayName ?? "Unknown name").font(.title3).frame(maxWidth: .infinity, alignment: .leading)
                                 Text(userInfo?.email ?? "Unknown email").frame(maxWidth: .infinity, alignment: .leading)
+=======
+                                Text("Name").font(.title3).frame(maxWidth: .infinity, alignment: .leading)
+                                Text("Email").frame(maxWidth: .infinity, alignment: .leading)
+>>>>>>> 6d2671a (IT WORKSgit add .)
                             }
                         }
                     })
@@ -88,6 +96,7 @@ struct ProfileSheetView: View {
     }
 }
 
+<<<<<<< HEAD
 //#Preview {
 //    ProfileSheetView(isDarkMode: .constant(false))
 //}
@@ -99,4 +108,8 @@ struct ProfileSheetView_Previews: PreviewProvider {
         ProfileSheetView(isDarkMode: .constant(false), userInfo: .constant(dummyUserInfo))
             .previewLayout(.sizeThatFits)
     }
+=======
+#Preview {
+    ProfileSheetView(isDarkMode: .constant(false))
+>>>>>>> 6d2671a (IT WORKSgit add .)
 }

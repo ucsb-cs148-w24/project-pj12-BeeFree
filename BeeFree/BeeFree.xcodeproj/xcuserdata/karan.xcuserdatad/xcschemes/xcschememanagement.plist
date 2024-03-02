@@ -10,6 +10,7 @@
 			<integer>0</integer>
 		</dict>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<key>BeeFreeDeviceActivityMonitor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,19 +18,27 @@
 		</dict>
 =======
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		<key>DeviceActivityMonitorExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		<key>DevicesBeReporting.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+<<<<<<< HEAD
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,6 +53,7 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+<<<<<<< HEAD
 <<<<<<< HEAD
 		<key>Promises (Playground) 3.xcscheme</key>
 		<dict>
@@ -68,6 +78,8 @@
 		</dict>
 =======
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		<key>Promises (Playground).xcscheme</key>
 		<dict>
 			<key>isShown</key>

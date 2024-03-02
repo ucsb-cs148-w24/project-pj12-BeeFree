@@ -8,6 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
 <<<<<<< HEAD
+<<<<<<< HEAD
             uuid = "D0B149A0-4B0C-4C2F-AFB4-6B0145781511"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -82,6 +83,8 @@
                </Location>
             </Locations>
 =======
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
             uuid = "5E5C385C-0D26-42F4-BAAC-D67B55DDB9E4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -93,7 +96,10 @@
             endingLineNumber = "20"
             landmarkName = "BeeFreeMonitor"
             landmarkType = "14">
+<<<<<<< HEAD
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

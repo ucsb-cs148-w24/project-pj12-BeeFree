@@ -54,6 +54,7 @@ final class LoginviewModel: ObservableObject{
             }
         }
 
+<<<<<<< HEAD
     
         func submitFirstName(completion: @escaping (Bool) -> Void) async {
             guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
@@ -69,6 +70,36 @@ final class LoginviewModel: ObservableObject{
             }
         }
 
+=======
+        // Function to submit the first name for new users
+        func submitFirstName(completion: @escaping () -> Void) async {
+            guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
+                return
+            }
+            
+            do {
+                try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
+                completion() // Complete the sign-in process after submitting the first name
+            } catch {
+                print(error)
+            }
+        }
+    
+//      func submitFirstName() async {
+//        // logic to submit first name to firestore
+//        guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
+//            return
+//        }
+//        
+//        do{
+//            try await UserDB.shared.createNewUser(auth: user, firstName: firstName)
+//            
+//        } catch {
+//            print(error)
+//        }
+//
+//    }
+>>>>>>> 6d2671a (IT WORKSgit add .)
     
 }
 
@@ -95,7 +126,11 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
 
+<<<<<<< HEAD
                     Text("Please enter your first name/username to continue")
+=======
+                    Text("Please enter your first name to continue")
+>>>>>>> 6d2671a (IT WORKSgit add .)
                         .font(.title3)
                         .foregroundColor(.gray)
                         .padding(.bottom, 30)
@@ -103,6 +138,7 @@ struct LoginView: View {
                     TextField("First Name", text: $viewModel.firstName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+<<<<<<< HEAD
                         .autocapitalization(.none)
 
                     
@@ -122,6 +158,13 @@ struct LoginView: View {
                                     isAuthenticated = false
                                     errorMessage = "This name is already taken. Please choose favorite name."
                                 }
+=======
+
+                    Button("Submit") {
+                        Task {
+                            await viewModel.submitFirstName {
+                                isAuthenticated = true
+>>>>>>> 6d2671a (IT WORKSgit add .)
                             }
                         }
                     }
@@ -164,7 +207,11 @@ struct LoginView: View {
                     }
                     .padding()
                 }
+<<<<<<< HEAD
                 NavigationLink(destination: ContentView()
+=======
+                NavigationLink(destination: ContentView(isDarkMode: false)
+>>>>>>> 6d2671a (IT WORKSgit add .)
                     .navigationBarBackButtonHidden(true),
                     isActive: $isAuthenticated) {
                     EmptyView()

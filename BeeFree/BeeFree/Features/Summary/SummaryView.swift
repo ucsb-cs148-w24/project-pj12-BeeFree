@@ -12,12 +12,24 @@ import FamilyControls
 
 struct SummaryView: View {
     @Binding var isDarkMode : Bool
+<<<<<<< HEAD
     //var summarySelectedApps: Set<ApplicationToken>
     @State var selectedTimePeriod = 0
+=======
+    @Binding var selectedApps: Set<ApplicationToken>
+//    @State var selectedTimePeriod = 0
+>>>>>>> 6d2671a (IT WORKSgit add .)
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
+<<<<<<< HEAD
+=======
+    @State private var context1: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+    @State private var context2: DeviceActivityReport.Context = .init(rawValue: "Top Apps")
+    @State private var reportData: DeviceActivityReport? = nil
+
+>>>>>>> 6d2671a (IT WORKSgit add .)
     @State var filter = DeviceActivityFilter.init(
         segment: .daily(
             during: Calendar.current.dateInterval(
@@ -26,6 +38,7 @@ struct SummaryView: View {
         ),
         users: .all,
         devices: .init([.iPhone, .iPad]))
+<<<<<<< HEAD
 //        applications: Set<ApplicationToken>(),
 //        categories: Set<ActivityCategoryToken>(),
 //        webDomains: Set<WebDomainToken>()
@@ -72,5 +85,18 @@ struct SummaryView: View {
         }
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
         //Text("hello world")
+=======
+    
+    var body: some View {
+        ZStack{
+            VStack{
+                //ScreenTimeGoalView(isDarkMode: $isDarkMode)
+                AppScreenTimeView(isDarkMode: $isDarkMode)
+                    .environmentObject(store)
+                    .environmentObject(model)
+                Spacer()
+            }
+        }
+>>>>>>> 6d2671a (IT WORKSgit add .)
     }
 }

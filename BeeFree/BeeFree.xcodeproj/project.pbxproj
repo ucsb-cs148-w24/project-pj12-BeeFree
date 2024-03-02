@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		11299F4B2B816A4B00F01672 /* SummarySetApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F4A2B816A4B00F01672 /* SummarySetApps.swift */; };
 		11299F612B81775100F01672 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		11299F632B81775100F01672 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
 		11299F652B81775100F01672 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
 		11299F6A2B81775100F01672 /* DevicesBeReporting.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 11299F5E2B81775100F01672 /* DevicesBeReporting.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -16,8 +19,11 @@
 		11299F762B8179E300F01672 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
 		11299F782B817B1700F01672 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
 		11299F792B817B1900F01672 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
+<<<<<<< HEAD
 		115F913F2B8181D500FD252E /* SummaryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F913E2B8181D500FD252E /* SummaryReport.swift */; };
 		115F91402B8181E500FD252E /* SummaryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F913E2B8181D500FD252E /* SummaryReport.swift */; };
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		116D87482B5CAEBD006CB8C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87472B5CAEBD006CB8C3 /* FirebaseAnalytics */; };
 		116D874A2B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87492B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion */; };
 		116D874C2B5CAEBD006CB8C3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 116D874B2B5CAEBD006CB8C3 /* FirebaseAnalyticsSwift */; };
@@ -60,8 +66,11 @@
 		276C378A2B60A2D700F7BC5A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 276C37892B60A2D700F7BC5A /* FirebaseAppCheck */; };
 		277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
 		27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
+<<<<<<< HEAD
 		43209C142B817D8900EC1D4C /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43209C132B817D8900EC1D4C /* AddFriendView.swift */; };
 		43209C152B8182D500EC1D4C /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43209C132B817D8900EC1D4C /* AddFriendView.swift */; };
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		43536EBF2B70ADC000207E52 /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
 		9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2922B75781B00858806 /* BeeFreeModel.swift */; };
 		9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */; };
@@ -82,7 +91,26 @@
 		9E29D2932B75781B00858806 /* BeeFreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2922B75781B00858806 /* BeeFreeModel.swift */; };
 		9E29D2952B75782E00858806 /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */; };
 		9E29D2A32B757BE200858806 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9E29D29A2B757BE200858806 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+<<<<<<< HEAD
 		9E395E0E2B5C6FFA00EB61B2 /* BeeFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */; };
+=======
+		9E2D4B8A2B8D981400493A09 /* BeeFreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2922B75781B00858806 /* BeeFreeModel.swift */; };
+		9E2D4B8C2B8D981800493A09 /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */; };
+		9E2D4B8D2B8D981A00493A09 /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E392B5C75C300EB61B2 /* ProfileSheetView.swift */; };
+		9E2D4B8E2B8D981C00493A09 /* CreateLimitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3B2B5C75DC00EB61B2 /* CreateLimitSheetView.swift */; };
+		9E2D4B8F2B8D981E00493A09 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117ADB382B7B2DD800A99834 /* ExampleView.swift */; };
+		9E2D4B902B8D981F00493A09 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117ADB382B7B2DD800A99834 /* ExampleView.swift */; };
+		9E2D4B932B8D982300493A09 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3D2B5C766000EB61B2 /* HomeView.swift */; };
+		9E2D4B952B8D982800493A09 /* ScreenTimeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */; };
+		9E2D4B962B8D982A00493A09 /* AppScreenTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */; };
+		9E2D4B972B8D982C00493A09 /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3F2B5C767200EB61B2 /* SharingView.swift */; };
+		9E2D4B982B8D982E00493A09 /* TitleBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E352B5C757500EB61B2 /* TitleBarModifier.swift */; };
+		9E2D4B992B8D983000493A09 /* TabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E372B5C758C00EB61B2 /* TabBarModifier.swift */; };
+		9E2D4B9A2B8D983200493A09 /* AppLimitDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */; };
+		9E2D4B9B2B8D983600493A09 /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
+		9E2D4B9C2B8D983700493A09 /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
+		9E2D4B9D2B8D983900493A09 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0F2B5C6FFA00EB61B2 /* ContentView.swift */; };
 		9E395E122B5C6FFB00EB61B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E112B5C6FFB00EB61B2 /* Assets.xcassets */; };
 		9E395E152B5C6FFB00EB61B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E142B5C6FFB00EB61B2 /* Preview Assets.xcassets */; };
@@ -112,8 +140,18 @@
 		9EA34C742B5F255A00F1208D /* AppScreenTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */; };
 		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
+<<<<<<< HEAD
 		9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */; };
 		9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
+=======
+		9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0F2B5C6FFA00EB61B2 /* ContentView.swift */; };
+		9EA465DF2B8D94F9007E51EA /* BeeFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */; };
+		9EA465E02B8D951F007E51EA /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E422B5C769300EB61B2 /* SummaryView.swift */; };
+		9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */; };
+		9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB1A5EF2B5FB21200F6D408 /* PollenAnimation.swift */; };
+		9EB46C5C2B929265009FC546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E112B5C6FFB00EB61B2 /* Assets.xcassets */; };
+		9ECAAC7E2B91912E00BD106C /* BeeFreeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB92962B895566007908A7 /* BeeFreeMonitor.swift */; };
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		9ED8533F2B8DA8BE004B6937 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED8533E2B8DA8BE004B6937 /* FirebaseAnalytics */; };
 		9ED853412B8DA8BE004B6937 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853402B8DA8BE004B6937 /* FirebaseAnalyticsOnDeviceConversion */; };
 		9ED853432B8DA8BE004B6937 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853422B8DA8BE004B6937 /* FirebaseAnalyticsSwift */; };
@@ -209,14 +247,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		11299F4A2B816A4B00F01672 /* SummarySetApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySetApps.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		11299F5E2B81775100F01672 /* DevicesBeReporting.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = DevicesBeReporting.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		11299F602B81775100F01672 /* DevicesBeReporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesBeReporting.swift; sourceTree = "<group>"; };
 		11299F622B81775100F01672 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
 		11299F642B81775100F01672 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
 		11299F662B81775100F01672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11299F672B81775100F01672 /* DevicesBeReporting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevicesBeReporting.entitlements; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		115F913E2B8181D500FD252E /* SummaryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryReport.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		117ADB362B7B244600A99834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117ADB382B7B2DD800A99834 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		11CB92962B895566007908A7 /* BeeFreeMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeMonitor.swift; sourceTree = "<group>"; };
@@ -224,7 +268,10 @@
 		276C378D2B60A31D00F7BC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		27F771522B60A02E00A428F5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		43209C132B817D8900EC1D4C /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 		43536EBE2B70ADC000207E52 /* UserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
 		43536EC42B71D09000207E52 /* BeeFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeeFree.entitlements; sourceTree = "<group>"; };
 		9E29D2922B75781B00858806 /* BeeFreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeModel.swift; sourceTree = "<group>"; };
@@ -361,9 +408,15 @@
 			isa = PBXGroup;
 			children = (
 				11299F602B81775100F01672 /* DevicesBeReporting.swift */,
+<<<<<<< HEAD
 				11299F622B81775100F01672 /* TotalActivityReport.swift */,
 				11299F642B81775100F01672 /* TotalActivityView.swift */,
 				9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */,
+=======
+				9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */,
+				11299F622B81775100F01672 /* TotalActivityReport.swift */,
+				11299F642B81775100F01672 /* TotalActivityView.swift */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */,
 				9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */,
 				9E4798D72B903656008FD765 /* CardView.swift */,
@@ -446,7 +499,10 @@
 				9E395E392B5C75C300EB61B2 /* ProfileSheetView.swift */,
 				9E395E3B2B5C75DC00EB61B2 /* CreateLimitSheetView.swift */,
 				117ADB382B7B2DD800A99834 /* ExampleView.swift */,
+<<<<<<< HEAD
 				11299F4A2B816A4B00F01672 /* SummarySetApps.swift */,
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E395E3D2B5C766000EB61B2 /* HomeView.swift */,
 			);
 			path = Home;
@@ -455,7 +511,10 @@
 		9E395E1D2B5C735F00EB61B2 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				115F913E2B8181D500FD252E /* SummaryReport.swift */,
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E395E422B5C769300EB61B2 /* SummaryView.swift */,
 				9EA34C712B5F254E00F1208D /* ScreenTimeGoalView.swift */,
 				9EA34C732B5F255A00F1208D /* AppScreenTimeView.swift */,
@@ -467,7 +526,10 @@
 			isa = PBXGroup;
 			children = (
 				9E395E3F2B5C767200EB61B2 /* SharingView.swift */,
+<<<<<<< HEAD
 				43209C132B817D8900EC1D4C /* AddFriendView.swift */,
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 			);
 			path = Sharing;
 			sourceTree = "<group>";
@@ -702,6 +764,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+=======
+				9EB46C5C2B929265009FC546 /* Assets.xcassets in Resources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				115F91402B8181E500FD252E /* SummaryReport.swift in Sources */,
 				11299F652B81775100F01672 /* TotalActivityView.swift in Sources */,
 				11B1CCA32B8A71380073EA81 /* DevicesBeReportingExtension.swift in Sources */,
@@ -739,6 +806,8 @@
 				11299F612B81775100F01672 /* DevicesBeReporting.swift in Sources */,
 =======
 =======
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E2D4B962B8D982A00493A09 /* AppScreenTimeView.swift in Sources */,
 				9E4798D82B903656008FD765 /* CardView.swift in Sources */,
 				9E2D4B952B8D982800493A09 /* ScreenTimeGoalView.swift in Sources */,
@@ -746,17 +815,27 @@
 				9E4798D62B8FF4FB008FD765 /* TopThreeView.swift in Sources */,
 				9E2D4B8E2B8D981C00493A09 /* CreateLimitSheetView.swift in Sources */,
 				9E2D4B972B8D982C00493A09 /* SharingView.swift in Sources */,
+<<<<<<< HEAD
 				115F91402B8181E500FD252E /* SummaryReport.swift in Sources */,
 				9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */,
 				9E2D4B992B8D983000493A09 /* TabBarModifier.swift in Sources */,
+=======
+				9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */,
+				9E2D4B992B8D983000493A09 /* TabBarModifier.swift in Sources */,
+				9ECAAC7E2B91912E00BD106C /* BeeFreeMonitor.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E2D4B932B8D982300493A09 /* HomeView.swift in Sources */,
 				9E4798C72B8FF1D7008FD765 /* TopAppsReport.swift in Sources */,
 				9E2D4B9C2B8D983700493A09 /* RectangleSection.swift in Sources */,
 				11299F652B81775100F01672 /* TotalActivityView.swift in Sources */,
+<<<<<<< HEAD
 				9E2D4B922B8D982100493A09 /* SummarySetApps.swift in Sources */,
 				9E2D4B8A2B8D981400493A09 /* BeeFreeModel.swift in Sources */,
 				9E2D4B8B2B8D981600493A09 /* BeeFreeMonitor.swift in Sources */,
 >>>>>>> 353c571 (TOP 3 APPS BEING DISPLAYED)
+=======
+				9E2D4B8A2B8D981400493A09 /* BeeFreeModel.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */,
 				9E2D4B8D2B8D981A00493A09 /* ProfileSheetView.swift in Sources */,
 				9E2D4B8C2B8D981800493A09 /* BeeFreeSchedule.swift in Sources */,
@@ -764,8 +843,14 @@
 				9E2D4B9B2B8D983600493A09 /* CircleProgressBar.swift in Sources */,
 				9E2D4B982B8D982E00493A09 /* TitleBarModifier.swift in Sources */,
 				9EA465E02B8D951F007E51EA /* SummaryView.swift in Sources */,
+<<<<<<< HEAD
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
 				11299F632B81775100F01672 /* TotalActivityReport.swift in Sources */,
+=======
+				11299F632B81775100F01672 /* TotalActivityReport.swift in Sources */,
+				9E2D4B902B8D981F00493A09 /* ExampleView.swift in Sources */,
+				9E2D4B9A2B8D983200493A09 /* AppLimitDisplay.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,11 +867,15 @@
 				11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */,
 				9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				9E2D4B912B8D982100493A09 /* SummarySetApps.swift in Sources */,
 				9E2D4B942B8D982500493A09 /* SummaryReport.swift in Sources */,
 				9ED8534B2B8DA910004B6937 /* TotalActivityReport.swift in Sources */,
 >>>>>>> 6550f37 (SHOWING SCREENTIME NUMBER!!!!!")
+=======
+				9ED8534B2B8DA910004B6937 /* TotalActivityReport.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E0BB7E82B758C5800414DBD /* CircleProgressBar.swift in Sources */,
 				11B1CCA62B8A73ED0073EA81 /* SummaryView.swift in Sources */,
 				9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */,
@@ -798,7 +887,11 @@
 				9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */,
 				9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */,
 				9E0BB7E92B758C5A00414DBD /* RectangleSection.swift in Sources */,
+<<<<<<< HEAD
 				43209C152B8182D500EC1D4C /* AddFriendView.swift in Sources */,
+=======
+				9E2D4B8F2B8D981E00493A09 /* ExampleView.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E0BB7EB2B758C5E00414DBD /* ContentView.swift in Sources */,
 				9E0BB7E62B758C5300414DBD /* AppLimitDisplay.swift in Sources */,
 				9E0BB7E72B758C5600414DBD /* PollenAnimation.swift in Sources */,
@@ -811,6 +904,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+=======
+				9E395E382B5C758C00EB61B2 /* TabBarModifier.swift in Sources */,
+				9E29D2932B75781B00858806 /* BeeFreeModel.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				272C29232B60A08F00EED823 /* LoginUtilities.swift in Sources */,
 				9E395E3C2B5C75DC00EB61B2 /* CreateLimitSheetView.swift in Sources */,
 				9EA34C742B5F255A00F1208D /* AppScreenTimeView.swift in Sources */,
@@ -818,6 +916,7 @@
 				11299F782B817B1700F01672 /* TotalActivityView.swift in Sources */,
 				9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */,
 				9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */,
+<<<<<<< HEAD
 				11B1CCA22B8A71380073EA81 /* DevicesBeReportingExtension.swift in Sources */,
 				11299F4B2B816A4B00F01672 /* SummarySetApps.swift in Sources */,
 				9E395E0E2B5C6FFA00EB61B2 /* BeeFreeApp.swift in Sources */,
@@ -825,6 +924,9 @@
 				9E29D2932B75781B00858806 /* BeeFreeModel.swift in Sources */,
 				27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */,
 				115F913F2B8181D500FD252E /* SummaryReport.swift in Sources */,
+=======
+				27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				117ADB392B7B2DD800A99834 /* ExampleView.swift in Sources */,
 				9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */,
 				9E395E362B5C757500EB61B2 /* TitleBarModifier.swift in Sources */,
@@ -834,8 +936,13 @@
 				9E395E3A2B5C75C300EB61B2 /* ProfileSheetView.swift in Sources */,
 				277A63882B7438FB00D21FE6 /* WelcomeViewController.swift in Sources */,
 				9EB1A5F02B5FB21200F6D408 /* PollenAnimation.swift in Sources */,
+<<<<<<< HEAD
 				43209C142B817D8900EC1D4C /* AddFriendView.swift in Sources */,
 				9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */,
+=======
+				9EA34C722B5F254E00F1208D /* ScreenTimeGoalView.swift in Sources */,
+				9EA465DF2B8D94F9007E51EA /* BeeFreeApp.swift in Sources */,
+>>>>>>> 6d2671a (IT WORKSgit add .)
 				9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */,
 				9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */,
 				11299F792B817B1900F01672 /* TotalActivityReport.swift in Sources */,

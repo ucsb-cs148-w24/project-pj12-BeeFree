@@ -9,7 +9,10 @@ import SwiftUI
 import FamilyControls
 import ManagedSettings
 import DeviceActivity
+<<<<<<< HEAD
 import FirebaseAuth
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 
 struct TitleBarModifier: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -17,8 +20,11 @@ struct TitleBarModifier: View {
     @Binding var isDarkMode: Bool
     @State private var isCreateLimitPresented = false
     @State private var isAccountSettingsPresented = false
+<<<<<<< HEAD
     @State private var isAddFriendPresented = false
     @State private var currentUserInfo: Userinfo?
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -26,6 +32,10 @@ struct TitleBarModifier: View {
     var body: some View {
         HStack {
             VStack {
+<<<<<<< HEAD
+=======
+                // Display title based on selected tab
+>>>>>>> 6d2671a (IT WORKSgit add .)
                 if(selectedTab == .home) {
                     Group {
                         Text("Bee ")
@@ -85,6 +95,7 @@ struct TitleBarModifier: View {
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .sheet(isPresented: $isAddFriendPresented) {
                         AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
                             .environmentObject(model)
@@ -116,6 +127,25 @@ struct TitleBarModifier: View {
                     }
                 }
 
+=======
+                    .sheet(isPresented: $isCreateLimitPresented) {
+                        // Create a sheet view to create a limit
+                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
+                            .environmentObject(model)
+                            .environmentObject(store)
+                    }
+                    
+                }
+                else if (selectedTab == .sharing) {
+                    Image(systemName: "person.2.badge.gearshape.fill")
+                        .resizable()
+                        .opacity(0.5)
+                        .foregroundColor(.white)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 42, height: 42)
+                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                }
+>>>>>>> 6d2671a (IT WORKSgit add .)
                 Button(action: {self.isAccountSettingsPresented.toggle()}) {
                     Image(systemName: "person.circle.fill")
                         .resizable()
@@ -125,6 +155,7 @@ struct TitleBarModifier: View {
                         .frame(width: 32, height: 32)
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
                 }
+<<<<<<< HEAD
                 
                 .onAppear {
                     getUserData()
@@ -159,6 +190,16 @@ struct TitleBarModifier: View {
             }
         }
     }
+=======
+                .sheet(isPresented: $isAccountSettingsPresented) {
+                    // Create a sheet view with profile details and settings
+                    ProfileSheetView(isDarkMode: $isDarkMode)
+                }
+            }
+        }
+        Spacer()
+    }
+>>>>>>> 6d2671a (IT WORKSgit add .)
 }
 
 #Preview {

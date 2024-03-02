@@ -7,7 +7,10 @@
 
 import SwiftUI
 import FirebaseCore
+<<<<<<< HEAD
 import Firebase
+=======
+>>>>>>> 6d2671a (IT WORKSgit add .)
 import FirebaseAppCheck
 import FamilyControls
 import DeviceActivity
@@ -18,6 +21,7 @@ import UserNotificationsUI
 @main
 struct BeeFreeApp: App {
     init() {
+<<<<<<< HEAD
         FirebaseApp.configure()
         let providerFactory = AppCheckDebugProviderFactory()
         AppCheck.setAppCheckProviderFactory(providerFactory)
@@ -38,6 +42,31 @@ struct BeeFreeApp: App {
                         }
                     }
                 }
+=======
+        // Configure Firebase
+        FirebaseApp.configure()
+        
+        // Initialize the App Check with the debug provider
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+    };
+    
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    
+    let authcenter = AuthorizationCenter.shared
+    
+    var body: some Scene {
+        WindowGroup{
+//            ZStack{viewControllerWrapper()}
+//                .onAppear {
+//                    Task {
+//                        do {
+//                            try await authcenter.requestAuthorization(for: .individual)
+//                        } catch {print("Failed to enroll user with error: \(error)")}
+//                    }
+//                }
+            ContentView(isDarkMode: true)
+>>>>>>> 6d2671a (IT WORKSgit add .)
         }
     }
 }
