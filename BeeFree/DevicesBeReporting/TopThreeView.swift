@@ -31,8 +31,8 @@ import SwiftUI
                               .frame(maxWidth: .infinity)
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                               .multilineTextAlignment(.trailing)
-                      }
-                    }
+                      }                     }
+                  
                   card
                   Spacer()
                   }
