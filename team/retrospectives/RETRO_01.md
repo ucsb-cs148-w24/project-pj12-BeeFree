@@ -17,4 +17,4 @@
 ## Experiment/Change
 * We did more thorough discussion regarding what changes were made to different features, and split branches by feature in order to localize frequent changes.
 * We had no merge issues this week, thanks to increased PR descriptions, discussions, and testing criteria.
-* We should keep these changes ,oving forward, and further concretize feature changes and testing criteria as they get more and more complicated.
+* We should keep these changes moving forward, and further concretize feature changes and testing criteria as they get more and more complicated.
