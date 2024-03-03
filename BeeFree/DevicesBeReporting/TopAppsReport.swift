@@ -8,6 +8,13 @@
 import DeviceActivity
 import SwiftUI
 
+extension DeviceActivityReport.Context {
+    // If your app initializes a DeviceActivityReport with this context, then the system will use
+    // your extension's corresponding DeviceActivityReportScene to render the contents of the
+    // report.
+    static let topApps = Self("Top Apps")
+}
+
 struct TopAppsReport: DeviceActivityReportScene {
     
     // Define which context your scene will represent.
@@ -76,19 +83,19 @@ struct TopAppsReport: DeviceActivityReportScene {
             }
         }
         list.sort(by: sortApps)
-        if list.count < 3{
-            if list.count == 2{
-                return TopThreeReport(apps: [list[0], list[1]], totalActivityData: totalActivityOutput)
-            }
-            if list.count == 1{
-                return TopThreeReport(apps: [list[0]], totalActivityData: totalActivityOutput)
-            }
-            if list.count == 0{
-                return TopThreeReport(apps: [], totalActivityData: totalActivityOutput)
-            }
-        }
+//        if list.count < 3{
+//            if list.count == 2{
+//                return TopThreeReport(apps: [list[0], list[1]], totalActivityData: totalActivityOutput)
+//            }
+//            if list.count == 1{
+//                return TopThreeReport(apps: [list[0]], totalActivityData: totalActivityOutput)
+//            }
+//            if list.count == 0{
+//                return TopThreeReport(apps: [], totalActivityData: totalActivityOutput)
+//            }
+//        }
 
-        return TopThreeReport(apps: [list[0], list[1], list[2]], totalActivityData: totalActivityOutput)
+        return TopThreeReport(apps: [list[0], list[1], list[2], list[3], list[4]], totalActivityData: totalActivityOutput)
     }
     
     func sortApps(this:AppDeviceActivity, that:AppDeviceActivity) -> Bool {

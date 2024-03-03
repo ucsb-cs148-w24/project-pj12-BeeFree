@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RectangleSection: View {
-    @Binding var isDarkMode : Bool
     var height : CGFloat
     var body: some View {
         Rectangle()
@@ -21,6 +20,6 @@ struct RectangleSection: View {
     }
 }
 
-#Preview {
-    RectangleSection(isDarkMode: .constant(false), height: 100)
-}
+//#Preview {
+//    RectangleSection(isDarkMode: .constant(false), height: 100)
+//}

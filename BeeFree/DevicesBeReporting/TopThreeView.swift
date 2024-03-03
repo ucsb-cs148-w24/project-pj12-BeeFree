@@ -15,8 +15,15 @@ import SwiftUI
           ZStack{
               LinearGradient(gradient: Gradient(colors:[Color("Sky"), Color("DarkerSky")]), startPoint:.top, endPoint: .bottom)
               VStack{
+                  RectangleSection(height: 250)
+                  RectangleSection(height: 250)
+                  Spacer()
+
+              }
+              VStack{
                   HStack {
-                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 36000) , size:100) // fixed
+                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 5) , size:100) // fixed
+                          .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                       VStack{
                           Text("Total Screentime")
                               .font(.title2)
@@ -31,27 +38,49 @@ import SwiftUI
                               .frame(maxWidth: .infinity)
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                               .multilineTextAlignment(.trailing)
-                      }                     }
-                  
-                  card
-                  Spacer()
+                      }
                   }
+                  VStack{
+                      Text("Top Apps")
+                          .font(.title3)
+                          .foregroundColor(Color.white)
+                      ForEach(topThreeReport.apps) { app in
+                          ZStack {
+                              RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                  .fill(.clear)
+                                  .shadow(radius: 10)
+                                  .shadow(radius: 10)
+                              
+                              HStack {
+                                  Label(app.token)
+                                      .labelStyle(.iconOnly)
+                                      .scaleEffect(2)
+
+                                  VStack {
+                                      Text(app.displayName)
+                                          .scaledToFill()
+                                          .lineLimit(1)
+                                          .foregroundColor(Color("BlackWhite"))
+                                          .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                      Text(app.duration)
+                                          .scaledToFill()
+                                          .lineLimit(1)
+                                          .foregroundColor(Color.gray)
+                                          .font(.footnote)
+                                          .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                  }
+                                  .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                              }
+                              .padding()
+                          }
+                      }
+                      .frame(height: 300)
+                      .background(.clear)
+                      Spacer()
+                  }
+                  Spacer()
+              }
           }
-          .background(LinearGradient(gradient: Gradient(colors: [Color.clear, Color.clear]), startPoint: .top, endPoint: .bottom))
       }
-     
-     var card: some View{
-         VStack{
-             Text("Top Apps")
-                 .font(.title3)
-                 .foregroundColor(Color.white)
-             LazyVGrid(columns:fixedColumns, spacing:3){
-                 ForEach(topThreeReport.apps){ app in
-                     CardView(app:app, disablePopover: true)
-                 }
-             }
-             Spacer()
-         }
-     }
  }
 

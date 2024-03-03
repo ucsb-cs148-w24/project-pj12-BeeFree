@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11299F632B81775100F01672 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
-		11299F652B81775100F01672 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
 		11299F6A2B81775100F01672 /* DevicesBeReporting.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 11299F5E2B81775100F01672 /* DevicesBeReporting.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11299F752B8179C400F01672 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
 		11299F762B8179E300F01672 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
-		11299F782B817B1700F01672 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
-		11299F792B817B1900F01672 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
 		116D87482B5CAEBD006CB8C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87472B5CAEBD006CB8C3 /* FirebaseAnalytics */; };
 		116D874A2B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 116D87492B5CAEBD006CB8C3 /* FirebaseAnalyticsOnDeviceConversion */; };
 		116D874C2B5CAEBD006CB8C3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 116D874B2B5CAEBD006CB8C3 /* FirebaseAnalyticsSwift */; };
@@ -133,8 +129,6 @@
 		9ED853432B8DA8BE004B6937 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853422B8DA8BE004B6937 /* FirebaseAnalyticsSwift */; };
 		9ED853452B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853442B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9ED853472B8DA8BE004B6937 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853462B8DA8BE004B6937 /* FirebaseAppCheck */; };
-		9ED8534B2B8DA910004B6937 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F622B81775100F01672 /* TotalActivityReport.swift */; };
-		9ED8534C2B8DA913004B6937 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F642B81775100F01672 /* TotalActivityView.swift */; };
 		9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
 		9EFD0F642B75FA0000FEA6E6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F632B75FA0000FEA6E6 /* FirebaseAnalytics */; };
 		9EFD0F662B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F652B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -225,8 +219,6 @@
 /* Begin PBXFileReference section */
 		11299F5E2B81775100F01672 /* DevicesBeReporting.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = DevicesBeReporting.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		11299F602B81775100F01672 /* DevicesBeReporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesBeReporting.swift; sourceTree = "<group>"; };
-		11299F622B81775100F01672 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
-		11299F642B81775100F01672 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
 		11299F662B81775100F01672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11299F672B81775100F01672 /* DevicesBeReporting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevicesBeReporting.entitlements; sourceTree = "<group>"; };
 		117ADB362B7B244600A99834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -373,8 +365,6 @@
 			children = (
 				11299F602B81775100F01672 /* DevicesBeReporting.swift */,
 				9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */,
-				11299F622B81775100F01672 /* TotalActivityReport.swift */,
-				11299F642B81775100F01672 /* TotalActivityView.swift */,
 				9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */,
 				9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */,
 				9E4798D72B903656008FD765 /* CardView.swift */,
@@ -753,7 +743,6 @@
 				9E2D4B932B8D982300493A09 /* HomeView.swift in Sources */,
 				9E4798C72B8FF1D7008FD765 /* TopAppsReport.swift in Sources */,
 				9E2D4B9C2B8D983700493A09 /* RectangleSection.swift in Sources */,
-				11299F652B81775100F01672 /* TotalActivityView.swift in Sources */,
 				9E2D4B8A2B8D981400493A09 /* BeeFreeModel.swift in Sources */,
 				9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */,
 				9E2D4B8D2B8D981A00493A09 /* ProfileSheetView.swift in Sources */,
@@ -762,7 +751,6 @@
 				9E2D4B9B2B8D983600493A09 /* CircleProgressBar.swift in Sources */,
 				9E2D4B982B8D982E00493A09 /* TitleBarModifier.swift in Sources */,
 				9EA465E02B8D951F007E51EA /* SummaryView.swift in Sources */,
-				11299F632B81775100F01672 /* TotalActivityReport.swift in Sources */,
 				9E2D4B902B8D981F00493A09 /* ExampleView.swift in Sources */,
 				9E2D4B9A2B8D983200493A09 /* AppLimitDisplay.swift in Sources */,
 			);
@@ -777,10 +765,8 @@
 				9E0BB7E12B758C4800414DBD /* ScreenTimeGoalView.swift in Sources */,
 				9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */,
 				9EFD0F9E2B75FBC000FEA6E6 /* LoginUtilities.swift in Sources */,
-				9ED8534C2B8DA913004B6937 /* TotalActivityView.swift in Sources */,
 				11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */,
 				9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */,
-				9ED8534B2B8DA910004B6937 /* TotalActivityReport.swift in Sources */,
 				9E0BB7E82B758C5800414DBD /* CircleProgressBar.swift in Sources */,
 				11B1CCA62B8A73ED0073EA81 /* SummaryView.swift in Sources */,
 				9E0BB7D62B758C2D00414DBD /* BeeFreeModel.swift in Sources */,
@@ -811,7 +797,6 @@
 				9E395E3C2B5C75DC00EB61B2 /* CreateLimitSheetView.swift in Sources */,
 				9EA34C742B5F255A00F1208D /* AppScreenTimeView.swift in Sources */,
 				9E395E3E2B5C766000EB61B2 /* HomeView.swift in Sources */,
-				11299F782B817B1700F01672 /* TotalActivityView.swift in Sources */,
 				9E395E102B5C6FFA00EB61B2 /* ContentView.swift in Sources */,
 				9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */,
 				27F771532B60A02E00A428F5 /* AuthManager.swift in Sources */,
@@ -828,7 +813,6 @@
 				9EA465DF2B8D94F9007E51EA /* BeeFreeApp.swift in Sources */,
 				9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */,
 				9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */,
-				11299F792B817B1900F01672 /* TotalActivityReport.swift in Sources */,
 				9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */,
 				9EB1A5EE2B5FA2DE00F6D408 /* AppLimitDisplay.swift in Sources */,
 				11CB92972B895566007908A7 /* BeeFreeMonitor.swift in Sources */,

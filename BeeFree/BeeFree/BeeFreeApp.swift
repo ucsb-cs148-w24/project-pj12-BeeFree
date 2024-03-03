@@ -31,22 +31,14 @@ struct BeeFreeApp: App {
     
     var body: some Scene {
         WindowGroup{
-//        ZStack{viewControllerWrapper()}
-//            .onAppear {
-//                Task {
-//                    do {
-//                        try await authcenter.requestAuthorization(for: .individual)
-//                    } catch {print("Failed to enroll user with error: \(error)")}
-//                }
-//            }
-            ZStack{ContentView(isDarkMode: true)}
-            .onAppear {
-                Task {
-                    do {
-                        try await authcenter.requestAuthorization(for: .individual)
-                    } catch {print("Failed to enroll user with error: \(error)")}
+            ZStack{viewControllerWrapper()}
+                .onAppear {
+                    Task {
+                        do {
+                            try await authcenter.requestAuthorization(for: .individual)
+                        } catch {print("Failed to enroll user with error: \(error)")}
+                    }
                 }
-            }
         }
     }
 }

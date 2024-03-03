@@ -40,7 +40,6 @@ struct CardView: View {
             }
             .padding()
             .multilineTextAlignment(.center)
-            
         }
 //        .frame(width: 90, height:60)
 //        .padding()
