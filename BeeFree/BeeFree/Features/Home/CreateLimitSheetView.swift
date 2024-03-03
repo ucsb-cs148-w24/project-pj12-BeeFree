@@ -106,7 +106,6 @@ struct CreateLimitSheetView: View {
                         }
                     }
                 }
-                DeviceActivityReport(.init("Top Apps"))
                 Spacer()
             }
         }
