@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController{
     
     @available(iOSApplicationExtension, unavailable)
     private func setupSubViews(){
-        let logoImageView = UIImageView(image: UIImage(named:"AppIcon"))
+        let logoImageView = UIImageView(image: UIImage(named:"TransparentImage"))
         logoImageView.contentMode = .scaleAspectFit
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false

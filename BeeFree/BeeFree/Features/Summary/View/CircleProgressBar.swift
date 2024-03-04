@@ -17,15 +17,17 @@ struct CircleProgressBar: View {
         ZStack {
             Circle()
                 .stroke(
-                    Color("GreenAccent").opacity(0.5),
-                    lineWidth: 30
+                    (progress < 0.50 ? Color("GreenAccent") :
+                        (progress < 0.75 ? Color("YellowAccent") : Color("RedAccent"))).opacity(0.5),
+                    lineWidth: 24
                 )
             Circle()
-                .trim(from: 0, to: progress)
+                .trim(from: 0, to: (progress > 1.0 ? 1.0 : progress))
                 .stroke(
-                    Color("GreenAccent"),
+                    (progress < 0.50 ? Color("GreenAccent") :
+                        (progress < 0.75 ? Color("YellowAccent") : Color("RedAccent"))),
                     style: StrokeStyle(
-                        lineWidth: 30,
+                        lineWidth: 24,
                         lineCap: .round
                     )
                 )

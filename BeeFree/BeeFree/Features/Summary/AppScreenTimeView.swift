@@ -6,14 +6,24 @@
 //
 
 import SwiftUI
+import DeviceActivity
+import ManagedSettings
+import FamilyControls
 
 struct AppScreenTimeView: View {
     @Binding var isDarkMode : Bool
     var body: some View {
-        RectangleSection(isDarkMode: $isDarkMode, height: 200)
+        ZStack {
+            VStack {
+                 DeviceActivityReport(.init("Top Apps"))
+                     .frame(maxWidth: .infinity)
+                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                Spacer()
+            }
+        }
     }
+    
 }
+    
+    
 
-#Preview {
-    AppScreenTimeView(isDarkMode: .constant(false))
-}

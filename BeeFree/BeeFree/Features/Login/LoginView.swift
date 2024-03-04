@@ -164,7 +164,7 @@ struct LoginView: View {
                     }
                     .padding()
                 }
-                NavigationLink(destination: ContentView()
+                NavigationLink(destination: ContentView(isDarkMode: false)
                     .navigationBarBackButtonHidden(true),
                     isActive: $isAuthenticated) {
                     EmptyView()
