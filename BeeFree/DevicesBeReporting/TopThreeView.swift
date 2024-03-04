@@ -15,18 +15,19 @@ import SwiftUI
           ZStack{
               LinearGradient(gradient: Gradient(colors:[Color("Sky"), Color("DarkerSky")]), startPoint:.top, endPoint: .bottom)
               VStack{
-                  RectangleSection(height: 250)
-                  RectangleSection(height: 250)
+                  RectangleSection(height: 170)
+                  RectangleSection(height: 385)
                   Spacer()
 
               }
               VStack{
                   HStack {
-                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 5) , size:100) // fixed
+                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 120) , size:100) // fixed
                           .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                       VStack{
                           Text("Total Screentime")
                               .font(.title2)
+                              .bold()
                               .foregroundColor(.white)
                               .frame(maxWidth: .infinity)
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
@@ -39,10 +40,11 @@ import SwiftUI
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                               .multilineTextAlignment(.trailing)
                       }
-                  }
-                  VStack{
+                  }.padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+                  VStack(alignment: .leading){
                       Text("Top Apps")
-                          .font(.title3)
+                          .font(.title2)
+                          .bold()
                           .foregroundColor(Color.white)
                       ForEach(topThreeReport.apps) { app in
                           ZStack {
@@ -69,15 +71,16 @@ import SwiftUI
                                           .font(.footnote)
                                           .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                                   }
-                                  .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                              }
-                              .padding()
+                                  
+                                  Spacer()
+                              }.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                           }
                       }
-                      .frame(height: 300)
+                      .frame(height: 30)
                       .background(.clear)
+                      .padding()
                       Spacer()
-                  }
+                  }.padding(EdgeInsets(top: 45, leading: 8, bottom: 0, trailing: 0))
                   Spacer()
               }
           }

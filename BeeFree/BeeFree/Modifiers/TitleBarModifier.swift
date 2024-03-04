@@ -87,12 +87,7 @@ struct TitleBarModifier: View {
                     .sheet(isPresented: $isCreateLimitPresented) {
                         // Create a sheet view to create a limit
                         CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
-                    .sheet(isPresented: $isAddFriendPresented) {
-                        AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
-                            .environmentObject(model)
-                            .environmentObject(store)
-                        }
-                    
+                    }
                 }
 
                 else if (selectedTab == .sharing) {

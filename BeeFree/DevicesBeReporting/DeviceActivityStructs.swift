@@ -22,14 +22,14 @@ struct TotalActivityReportData{
     let totalDuration: TimeInterval
     let totalActivity: String
 }
-
-struct MoreInsightsReport{
-    var apps: [AppDeviceActivity]
-    var categories: [CategoryDeviceActivity]
-    var longestActivity: String?
-    var notifsChartData: [(String, Double)]
-    var notifsAppChartData: [(String, Double)]
-}
+//
+//struct MoreInsightsReport{
+//    var apps: [AppDeviceActivity]
+//    var categories: [CategoryDeviceActivity]
+//    var longestActivity: String?
+//    var notifsChartData: [(String, Double)]
+//    var notifsAppChartData: [(String, Double)]
+//}
 
 struct TopThreeReport {
     let apps: [AppDeviceActivity]
@@ -46,19 +46,19 @@ struct AppDeviceActivity: Identifiable {
     var numberOfNotifs: Int
 }
 
-struct ChartAndTopThreeReport{
-    var totalDuration:TimeInterval
-    var categoryChartData: [(String, Double)]
-    var appChartData: [(String, Double)]
-    var topApps: [AppDeviceActivity]
-}
-
-struct CategoryDeviceActivity: Identifiable {
-    var id:Int
-    var category:String
-    var duration: TimeInterval
-    var token: ActivityCategoryToken
-}
+//struct ChartAndTopThreeReport{
+//    var totalDuration:TimeInterval
+//    var categoryChartData: [(String, Double)]
+//    var appChartData: [(String, Double)]
+//    var topApps: [AppDeviceActivity]
+//}
+//
+//struct CategoryDeviceActivity: Identifiable {
+//    var id:Int
+//    var category:String
+//    var duration: TimeInterval
+//    var token: ActivityCategoryToken
+//}
 
 
 extension TimeInterval{

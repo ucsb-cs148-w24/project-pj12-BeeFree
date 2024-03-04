@@ -1,11 +1,10 @@
-//
 //  ContentView.swift
 //  BeeFree
 //
 //  Created by Karankumar Mageswaran on 1/20/24.
 //
 
-import SwiftUI 
+import SwiftUI
 import DeviceActivity
 import ManagedSettings
 import FamilyControls
@@ -75,7 +74,7 @@ struct ContentView: View {
 //                                        barHidden = false
 //                                    }
 //                                }
-//            
+//
                 .background(Color("Sky"))
 //          }
 //                        .scrollDisabled(selectedTab == .sharing ? true : false)

@@ -94,7 +94,6 @@ struct TopAppsReport: DeviceActivityReportScene {
 //                return TopThreeReport(apps: [], totalActivityData: totalActivityOutput)
 //            }
 //        }
-
         return TopThreeReport(apps: [list[0], list[1], list[2], list[3], list[4]], totalActivityData: totalActivityOutput)
     }
     

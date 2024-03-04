@@ -25,9 +25,23 @@ struct BeeFreeApp: App {
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     let authcenter = AuthorizationCenter.shared
 
+//    var body: some Scene {
+//        WindowGroup {
+//            ZStack { viewControllerWrapper() }
+//                .onAppear {
+//                    Task {
+//                        do {
+//                            try await authcenter.requestAuthorization(for: .individual)
+//                        } catch {
+//                            print("Failed to enroll user with error: \(error)")
+//                        }
+//                    }
+//                }
+//        }
+//    }
     var body: some Scene {
         WindowGroup {
-            ZStack { viewControllerWrapper() }
+            ZStack { ContentView(isDarkMode: true) }
                 .onAppear {
                     Task {
                         do {
