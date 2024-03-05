@@ -22,7 +22,7 @@ import SwiftUI
               }
               VStack{
                   HStack {
-                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 120) , size:100) // fixed
+                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 7200) , size:100) // fixed
                           .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                       VStack{
                           Text("Total Screentime")
@@ -41,7 +41,7 @@ import SwiftUI
                               .multilineTextAlignment(.trailing)
                       }
                   }.padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
-                  VStack(alignment: .leading){
+                  VStack(alignment: .leading){  
                       Text("Top Apps")
                           .font(.title2)
                           .bold()
@@ -76,11 +76,11 @@ import SwiftUI
                               }.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                           }
                       }
-                      .frame(height: 30)
+                      .frame(height: 28)
                       .background(.clear)
                       .padding()
                       Spacer()
-                  }.padding(EdgeInsets(top: 45, leading: 8, bottom: 0, trailing: 0))
+                  }.padding(EdgeInsets(top: 44, leading: 8, bottom: 0, trailing: 0))
                   Spacer()
               }
           }
