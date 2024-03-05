@@ -21,11 +21,21 @@ class BeeFreeModel: ObservableObject {
     @Published var selectionToDiscourage: FamilyActivitySelection
     @Published var thresholdToDiscourage: DateComponents
     @Published var setOfApps: [String]
+    @Published var screenTimeGoal: Int
+    
+    func setScreenTimeGoal(x: Int) {
+        screenTimeGoal = x
+    }
+    
+    func getScreenTimeGoal(x: Int) -> Int {
+        return screenTimeGoal
+    }
     
     init() {
         selectionToDiscourage = FamilyActivitySelection()
         thresholdToDiscourage = DateComponents()
         setOfApps = [String]()
+        screenTimeGoal = 7200
     }
     
     class var shared: BeeFreeModel {

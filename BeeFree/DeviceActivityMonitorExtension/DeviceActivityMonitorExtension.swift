@@ -29,7 +29,6 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     
     override func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         super.eventDidReachThreshold(event, activity: activity)
-        
         // Handle the event reaching its threshold.
         let model = BeeFreeModel()
         let applications = model.selectionToDiscourage.applicationTokens
