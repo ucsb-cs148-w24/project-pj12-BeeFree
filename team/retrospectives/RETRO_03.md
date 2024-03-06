@@ -15,3 +15,4 @@
 ## Experiment/Change:
 - As aforementioned, everyone in the group agreed that we must all hone in on specific things that we believe are guaranteed to be doable, and drop anything we are uncertain of. 
 
+![image](https://github.com/ucsb-cs148-w24/project-pj12-appblocker/assets/91865075/f9f027d0-01c8-4bae-9eb2-611fe4475acd)
