@@ -62,7 +62,7 @@ import SwiftUI
                                       Text(app.displayName)
                                           .scaledToFill()
                                           .lineLimit(1)
-                                          .foregroundColor(Color("BlackWhite"))
+                                          .foregroundColor(.white)
                                           .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                                       Text(app.duration)
                                           .scaledToFill()
