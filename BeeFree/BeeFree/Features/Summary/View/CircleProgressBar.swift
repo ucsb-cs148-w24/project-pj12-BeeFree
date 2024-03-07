@@ -18,14 +18,14 @@ struct CircleProgressBar: View {
             Circle()
                 .stroke(
                     (progress < 0.50 ? Color("GreenAccent") :
-                        (progress < 0.75 ? Color("YellowAccent") : Color("RedAccent"))).opacity(0.5),
+                        (progress < 0.75 ? Color("DynamicYellow") : Color("RedAccent"))).opacity(0.5),
                     lineWidth: 24
                 )
             Circle()
                 .trim(from: 0, to: (progress > 1.0 ? 1.0 : progress))
                 .stroke(
                     (progress < 0.50 ? Color("GreenAccent") :
-                        (progress < 0.75 ? Color("YellowAccent") : Color("RedAccent"))),
+                        (progress < 0.75 ? Color("DynamicYellow") : Color("RedAccent"))),
                     style: StrokeStyle(
                         lineWidth: 24,
                         lineCap: .round
