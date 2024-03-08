@@ -39,7 +39,7 @@ struct HomeView: View {
             }
             .sheet(isPresented: $isScreenTimeGoalPresented) {
                 // Create a sheet view to create a limit
-                ScreenTimeGoalSheetView(isDarkMode: $isDarkMode)
+                ScreenTimeGoalSheetView(isDarkMode: $isDarkMode, goal: model.getScreenTimeGoal())
                     .environmentObject(BeeFreeModel.shared)
                     .environmentObject(store)
             }

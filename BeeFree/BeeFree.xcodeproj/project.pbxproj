@@ -133,12 +133,16 @@
 		9E4AD1B22B7586B400EC3992 /* DeviceActivity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCC8CF2B756DE6009985F2 /* DeviceActivity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43536EBE2B70ADC000207E52 /* UserDB.swift */; };
 		9E6B59AC2B75D68B00DB920E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F771522B60A02E00A428F5 /* AuthManager.swift */; };
-		9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
 		9E79273C2B75DFC700D3D392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E112B5C6FFB00EB61B2 /* Assets.xcassets */; };
 		9E79273D2B75DFCC00D3D392 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E395E142B5C6FFB00EB61B2 /* Preview Assets.xcassets */; };
 		9E8EE27E2B9A715F00EBDECB /* ScreenTimeGoalSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8EE27D2B9A715F00EBDECB /* ScreenTimeGoalSheetView.swift */; };
 		9E8EE27F2B9A71A100EBDECB /* ScreenTimeGoalSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8EE27D2B9A715F00EBDECB /* ScreenTimeGoalSheetView.swift */; };
 		9E8EE2802B9A71A200EBDECB /* ScreenTimeGoalSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8EE27D2B9A715F00EBDECB /* ScreenTimeGoalSheetView.swift */; };
+		9E96FEF02B9A8D30005E7EE0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
+		9E96FEF12B9A8D31005E7EE0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
+		9E96FEF72B9A8DE3005E7EE0 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
+		9E96FEFC2B9A8ED6005E7EE0 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
+		9E96FEFD2B9A8EEF005E7EE0 /* BeeFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */; };
 		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 		9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0F2B5C6FFA00EB61B2 /* ContentView.swift */; };
@@ -153,7 +157,6 @@
 		9ED853432B8DA8BE004B6937 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853422B8DA8BE004B6937 /* FirebaseAnalyticsSwift */; };
 		9ED853452B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853442B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9ED853472B8DA8BE004B6937 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853462B8DA8BE004B6937 /* FirebaseAppCheck */; };
-		9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
 		9EFD0F642B75FA0000FEA6E6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F632B75FA0000FEA6E6 /* FirebaseAnalytics */; };
 		9EFD0F662B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F652B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion */; };
 		9EFD0F682B75FA0000FEA6E6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F672B75FA0000FEA6E6 /* FirebaseAnalyticsSwift */; };
@@ -491,8 +494,8 @@
 			children = (
 				9E395E392B5C75C300EB61B2 /* ProfileSheetView.swift */,
 				9E395E3B2B5C75DC00EB61B2 /* CreateLimitSheetView.swift */,
-				9E395E3D2B5C766000EB61B2 /* HomeView.swift */,
 				9E8EE27D2B9A715F00EBDECB /* ScreenTimeGoalSheetView.swift */,
+				9E395E3D2B5C766000EB61B2 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E96FEF02B9A8D30005E7EE0 /* WelcomeViewController.swift in Sources */,
 				9E2D4B9D2B8D983900493A09 /* PollenAnimation.swift in Sources */,
 				9E063DAA2B9658F300437736 /* LoginUtilities.swift in Sources */,
 				9E4798D62B8FF4FB008FD765 /* TopThreeView.swift in Sources */,
@@ -807,12 +811,13 @@
 				9E2D4B992B8D983000493A09 /* TabBarModifier.swift in Sources */,
 				9ECAAC7E2B91912E00BD106C /* BeeFreeMonitor.swift in Sources */,
 				9E2D4B932B8D982300493A09 /* HomeView.swift in Sources */,
+				9E96FEFC2B9A8ED6005E7EE0 /* DevicesBeReporting.swift in Sources */,
 				9E4798C72B8FF1D7008FD765 /* TopAppsReport.swift in Sources */,
 				9E063DA22B96582100437736 /* UserDB.swift in Sources */,
 				9E2D4B9C2B8D983700493A09 /* RectangleSection.swift in Sources */,
 				9E2D4B8A2B8D981400493A09 /* BeeFreeModel.swift in Sources */,
-				9ED8534E2B8DA95D004B6937 /* DevicesBeReporting.swift in Sources */,
 				9E2D4B8D2B8D981A00493A09 /* ProfileSheetView.swift in Sources */,
+				9E96FEF72B9A8DE3005E7EE0 /* DeviceActivityMonitorExtension.swift in Sources */,
 				9E2D4B8C2B8D981800493A09 /* BeeFreeSchedule.swift in Sources */,
 				9E4798C52B8FF08C008FD765 /* DeviceActivityStructs.swift in Sources */,
 				9E2D4B9B2B8D983600493A09 /* CircleProgressBar.swift in Sources */,
@@ -832,10 +837,10 @@
 			files = (
 				9E6B59AC2B75D68B00DB920E /* AuthManager.swift in Sources */,
 				9E0BB7E32B758C4D00414DBD /* SharingView.swift in Sources */,
-				9E6B59AE2B75D68F00DB920E /* WelcomeViewController.swift in Sources */,
 				9EFD0F9E2B75FBC000FEA6E6 /* LoginUtilities.swift in Sources */,
 				11CB92982B895566007908A7 /* BeeFreeMonitor.swift in Sources */,
 				9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */,
+				9E96FEF12B9A8D31005E7EE0 /* WelcomeViewController.swift in Sources */,
 				9E0BB7E82B758C5800414DBD /* CircleProgressBar.swift in Sources */,
 				11B1CCA62B8A73ED0073EA81 /* SummaryView.swift in Sources */,
 				9E8EE27F2B9A71A100EBDECB /* ScreenTimeGoalSheetView.swift in Sources */,
@@ -848,6 +853,7 @@
 				9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */,
 				9E0BB7E92B758C5A00414DBD /* RectangleSection.swift in Sources */,
 				43209C152B8182D500EC1D4C /* AddFriendView.swift in Sources */,
+				9E96FEFD2B9A8EEF005E7EE0 /* BeeFreeApp.swift in Sources */,
 				9E0BB7EB2B758C5E00414DBD /* ContentView.swift in Sources */,
 				9E0BB7E62B758C5300414DBD /* AppLimitDisplay.swift in Sources */,
 				9E0BB7E72B758C5600414DBD /* PollenAnimation.swift in Sources */,

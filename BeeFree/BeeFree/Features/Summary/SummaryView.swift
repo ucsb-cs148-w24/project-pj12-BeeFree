@@ -33,10 +33,18 @@ struct SummaryView: View {
     
     var body: some View {
         VStack {
-             DeviceActivityReport(.init("Top Apps"))
+            DeviceActivityReport(.init("Top Apps"))
                  .frame(maxWidth: .infinity)
-                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                 .environmentObject(store)
+                 .environmentObject(model)
             Spacer()
+        }
+        .onAppear {
+            let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup")
+            let defaultValue = ["seconds" : model.getScreenTimeGoalSecs()]
+            defaults!.register(defaults: defaultValue)
+            defaults!.set(model.getScreenTimeGoalSecs(), forKey: "seconds")
+            defaults!.synchronize()
         }
     }
 }
