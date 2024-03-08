@@ -39,6 +39,7 @@ struct TopAppsReport: DeviceActivityReportScene {
         
         // Reformat the data into a configuration that can be used
         var list: [AppDeviceActivity] = []
+        var set = Set<AppDeviceActivity>()
         
         for await d in data {
             for await a in d.activitySegments{
@@ -77,23 +78,36 @@ struct TopAppsReport: DeviceActivityReportScene {
                        
                         let notifs = ap.numberOfNotifications
                         let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, category: category, numberOfNotifs: notifs)
-                        list.append(app)
+                        var v = true
+                        for other_app in set {
+                            if (other_app.id == app.id) { v = false }
+                        }
+                        if (v) { set.insert(app) }
                     }
                 }
             }
         }
+        for app in set {
+            list.append(app)
+        }
         list.sort(by: sortApps)
-//        if list.count < 3{
-//            if list.count == 2{
-//                return TopThreeReport(apps: [list[0], list[1]], totalActivityData: totalActivityOutput)
-//            }
-//            if list.count == 1{
-//                return TopThreeReport(apps: [list[0]], totalActivityData: totalActivityOutput)
-//            }
-//            if list.count == 0{
-//                return TopThreeReport(apps: [], totalActivityData: totalActivityOutput)
-//            }
-//        }
+        if list.count < 5{
+            if list.count == 4{
+                return TopThreeReport(apps: [list[0], list[1], list[2], list[3]] , totalActivityData: totalActivityOutput)
+            }
+            if list.count == 3{
+                return TopThreeReport(apps: [list[0], list[1], list[2]] , totalActivityData: totalActivityOutput)
+            }
+            if list.count == 2{
+                return TopThreeReport(apps: [list[0], list[1]], totalActivityData: totalActivityOutput)
+            }
+            if list.count == 1{
+                return TopThreeReport(apps: [list[0]], totalActivityData: totalActivityOutput)
+            }
+            if list.count == 0{
+                return TopThreeReport(apps: [], totalActivityData: totalActivityOutput)
+            }
+        }
         return TopThreeReport(apps: [list[0], list[1], list[2], list[3], list[4]], totalActivityData: totalActivityOutput)
     }
     

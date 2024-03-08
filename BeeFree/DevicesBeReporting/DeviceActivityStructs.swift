@@ -36,7 +36,7 @@ struct TopThreeReport {
     let totalActivityData: TotalActivityReportData
 }
 
-struct AppDeviceActivity: Identifiable {
+struct AppDeviceActivity: Identifiable, Hashable {
     var id: String
     var token: ApplicationToken
     var displayName: String

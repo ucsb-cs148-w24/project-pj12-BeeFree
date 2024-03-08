@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import DeviceActivity
+import ManagedSettings
+import FamilyControls
 
  struct TopThreeView: View {
      var topThreeReport: TopThreeReport
@@ -16,14 +19,14 @@ import SwiftUI
               LinearGradient(gradient: Gradient(colors:[Color("Sky"), Color("DarkerSky")]), startPoint:.top, endPoint: .bottom)
               VStack{
                   RectangleSection(height: 170)
-                  RectangleSection(height: 385)
+                  RectangleSection(height: 396)
                   Spacer()
 
               }
               VStack{
                   HStack {
-                      CircleProgressBar(progress: Double(topThreeReport.totalActivityData.totalDuration / 120) , size:100) // fixed
-                          .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+                      CircleProgressBar(progress: (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)), size:100) // fixed
+                          .padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 16))
                       VStack{
                           Text("Total Screentime")
                               .font(.title2)
@@ -46,34 +49,28 @@ import SwiftUI
                           .font(.title2)
                           .bold()
                           .foregroundColor(Color.white)
+                          .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
                       ForEach(topThreeReport.apps) { app in
                           ZStack {
-                              RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                  .fill(.clear)
-                                  .shadow(radius: 10)
-                                  .shadow(radius: 10)
-                              
                               HStack {
                                   Label(app.token)
                                       .labelStyle(.iconOnly)
                                       .scaleEffect(2)
-
                                   VStack {
                                       Text(app.displayName)
                                           .scaledToFill()
                                           .lineLimit(1)
-                                          .foregroundColor(Color("BlackWhite"))
                                           .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                                       Text(app.duration)
                                           .scaledToFill()
                                           .lineLimit(1)
-                                          .foregroundColor(Color.gray)
+                                          .foregroundColor(Color("DynamicGray"))
                                           .font(.footnote)
                                           .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                                   }
-                                  
                                   Spacer()
-                              }.multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                              }
+                              .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                           }
                       }
                       .frame(height: 30)
@@ -85,5 +82,11 @@ import SwiftUI
               }
           }
       }
+     
+     func getSeconds() -> Any {
+         let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup") //replace suiteName with your container name
+         let secs = defaults!.object(forKey: "seconds")
+         return secs!
+     }
  }
 
