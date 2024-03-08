@@ -5,7 +5,9 @@
 
 ## Action Items:
 - Goal: Begin finalization of features that we believe we can implement and leave out features we are not certain that we can do. Final bits of functionality and UI improvements should be top priority going into the last 2 weeks. 
-- Change: Start cutting down on a lot of issues on the project Kanban Board to only include issues that we can guarantee are doable. Any blocked issues should be quickly assessed to determine whether they should be dropped or not. 
+- Change: Start cutting down on a lot of issues on the project Kanban Board to only include issues that we can guarantee are doable. Any blocked issues should be quickly assessed to determine whether they should be dropped or not.
+- Commitment: The team pledges to get together as frequently as possible, particularly this Saturday, to work on all issues that are guaranteed to be doable and do not require API calls. 
+- Measurement: The team will use GitHub contributions and work together to keep each other accountable on reaching our goals.
 
 ## Retro Assessment:
 - Just like the previous 2 retros, we used the website easyretro.io with the original 3 columns start/stop/continue, and also a new column called "Venting Frustrations" for team members to make comments on certain things that have caused them problems throughout the past weeks inbetween retro 2 and retro 3 that don't fit well into the other categories.
