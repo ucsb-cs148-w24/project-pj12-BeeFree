@@ -33,38 +33,37 @@ struct ContentView: View {
                     .environmentObject(store)
 
                     // Main Page Content
-                    if (selectedTab == .home) {
+                    ZStack {
                         HomeView(isDarkMode: $isDarkMode,
                                  set: $model.setOfApps)
                             .environmentObject(model)
                             .environmentObject(store)
-                    }
-                    if (selectedTab == .summary) {
-                        VStack{
-                            SummaryView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
-                                .environmentObject(model)
-                                .environmentObject(store)
-                        }
 
-                    }
-                    if (selectedTab == .sharing) {
-                        ZStack{
-                            SharingView(isDarkMode: isDarkMode)
-                                .environmentObject(model)
-                                .environmentObject(store)
+                            .opacity(selectedTab == .home ? 1.0 : 0.0)
+                            .disabled(selectedTab == .home ? false : true)
+                        SummaryView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
+                            .environmentObject(model)
+                            .environmentObject(store)
+                            .opacity(selectedTab == .summary ? 1.0 : 0.0)
+                            .disabled(selectedTab == .sharing ? false : true)
+                        SharingView()
+                            .opacity(selectedTab == .sharing ? 1.0 : 0.0)
+                            .disabled(selectedTab == .sharing ? false : true)
+//                            .environmentObject(model)
+//                            .environmentObject(store)
 //                            .overlay(Text("Sharing coming soon!")
 //                                .offset(y: 262.4)
 //                                .frame(maxWidth: .infinity,
-//                                   minHeight:
-//                                    proxy.size.height-128)
-//                                .foregroundColor(Color("DynamicGray"))
-//                                .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-//                                .fill(.ultraThinMaterial)
-//                                .offset(y: 294.2)))
-                        }
+//                                       minHeight:
+//                                        proxy.size.height-128)
+//                                    .foregroundColor(Color("DynamicGray"))
+//                                    .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+//                                        .fill(.ultraThinMaterial)
+//                                        .offset(y: 294.2)))
                     }
+                        
                 }
-//              .background(GeometryReader {
+            //              .background(GeometryReader {
 //                                    Color.clear.preference(key: ViewOffsetKey.self,
 //                                                           value: -$0.frame(in: .named("scroll")).origin.y)})
 //                                .onPreferenceChange(ViewOffsetKey.self) {

@@ -5,7 +5,12 @@
 //  Created by Karankumar Mageswaran on 1/20/24.
 //
 
+
+import DeviceActivity
+import ManagedSettings
+import FamilyControls
 import SwiftUI
+
 struct AsyncImage<Placeholder: View>: View {
     @State private var data: Data?
 
@@ -53,6 +58,10 @@ struct ProfileSheetView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var isDarkMode: Bool
     @Binding var userInfo: Userinfo? 
+    @State var isScreenTimeGoalPresented: Bool = false
+    @EnvironmentObject var store: ManagedSettingsStore
+    @EnvironmentObject var model: BeeFreeModel
+    
 
     var body: some View {
         NavigationStack {
@@ -66,7 +75,6 @@ struct ProfileSheetView: View {
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
                     }
                     HStack {
-                        Spacer()
                         Text("Done")
                             .onTapGesture {
                                 dismiss()
@@ -75,6 +83,7 @@ struct ProfileSheetView: View {
                             .font(.title3)
                             .foregroundColor(Color("AccentColor"))
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
+                        Spacer()
                     }
                 }
                 // Settings
@@ -88,7 +97,15 @@ struct ProfileSheetView: View {
                     })
                     Section(content: {
                         HStack{
-                            Text("Change Screen Time Goal").font(.title3)
+                            Button(action: {self.isScreenTimeGoalPresented.toggle()}) {
+                                Text("Change Screen Time Goal").font(.title3)
+                            }
+                            .sheet(isPresented: $isScreenTimeGoalPresented) {
+                                // Create a sheet view to create a limit
+                                ScreenTimeGoalSheetView(isDarkMode: $isDarkMode, goal: model.getScreenTimeGoal())
+                                    .environmentObject(BeeFreeModel.shared)
+                                    .environmentObject(store)
+                            }
                         }
                     })
                     Section(content: {

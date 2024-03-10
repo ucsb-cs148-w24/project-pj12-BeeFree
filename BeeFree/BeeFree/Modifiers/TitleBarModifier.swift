@@ -32,7 +32,8 @@ struct TitleBarModifier: View {
                 if(selectedTab == .home) {
                     Group {
                         Text("Bee ")
-                            .foregroundColor(Color("DynamicYellow"))
+//                            .foregroundColor(Color("DynamicYellow"))
+                            .foregroundColor(.white)
                             .font(.largeTitle)
                             .bold() +
                         Text("Free")
@@ -143,6 +144,8 @@ struct TitleBarModifier: View {
                 .sheet(isPresented: $isAccountSettingsPresented) {
                     // Create a sheet view with profile details and settings
                     ProfileSheetView(isDarkMode: $isDarkMode, userInfo: $currentUserInfo) 
+                        .environmentObject(store)
+                        .environmentObject(model)
                 }
             }
             

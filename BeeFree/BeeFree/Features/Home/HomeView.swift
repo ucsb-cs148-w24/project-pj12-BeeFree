@@ -16,12 +16,33 @@ struct HomeView: View {
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
+    @State private var isScreenTimeGoalPresented = false
+    
     var body: some View {
-        VStack(spacing: 0) {
-            ForEach($set, id: \.self) {$appn in
-                AppLimitDisplay(isDarkMode: $isDarkMode, appName: appn)
+        VStack{
+            Spacer()
+            Button(action: {self.isScreenTimeGoalPresented.toggle()}) {
+                Rectangle()
+                    .fill(Color("LighterSky"))
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 64)
+                    .cornerRadius(16.0)
+                    .overlay(HStack {
+                        Image(systemName: "hourglass")
+                            .foregroundColor(Color("DynamicGray"))
+                        Text("Change your screen time goal")
+                            .foregroundColor(Color("DynamicGray"))
+                            .font(.subheadline)
+                            .bold()
+                    }, alignment: .center)
+                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 76, trailing: 16))
+            }
+            .sheet(isPresented: $isScreenTimeGoalPresented) {
+                // Create a sheet view to create a limit
+                ScreenTimeGoalSheetView(isDarkMode: $isDarkMode, goal: model.getScreenTimeGoal())
+                    .environmentObject(BeeFreeModel.shared)
+                    .environmentObject(store)
             }
         }
-        .padding()
     }
 }

@@ -18,28 +18,33 @@ struct SummaryView: View {
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
     
-    @State private var context1: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
-    @State private var context2: DeviceActivityReport.Context = .init(rawValue: "Top Apps")
-    @State private var reportData: DeviceActivityReport? = nil
-
-    @State var filter = DeviceActivityFilter.init(
-        segment: .daily(
-            during: Calendar.current.dateInterval(
-                of: .day, for: .now
-            )!
-        ),
-        users: .all,
-        devices: .init([.iPhone, .iPad]))
+//    @State private var context1: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
+//    @State private var context2: DeviceActivityReport.Context = .init(rawValue: "Top Apps")
+//    @State private var reportData: DeviceActivityReport? = nil
+//
+//    @State var filter = DeviceActivityFilter.init(
+//        segment: .daily(
+//            during: Calendar.current.dateInterval(
+//                of: .day, for: .now
+//            )!
+//        ),
+//        users: .all,
+//        devices: .init([.iPhone, .iPad]))
     
     var body: some View {
-        ZStack{
-            VStack{
-                //ScreenTimeGoalView(isDarkMode: $isDarkMode)
-                AppScreenTimeView(isDarkMode: $isDarkMode)
-                    .environmentObject(store)
-                    .environmentObject(model)
-                Spacer()
-            }
+        VStack {
+            DeviceActivityReport(.init("Top Apps"))
+                 .frame(maxWidth: .infinity)
+                 .environmentObject(store)
+                 .environmentObject(model)
+            Spacer()
+        }
+        .onAppear {
+            let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup")
+            let defaultValue = ["seconds" : model.getScreenTimeGoalSecs()]
+            defaults!.register(defaults: defaultValue)
+            defaults!.set(model.getScreenTimeGoalSecs(), forKey: "seconds")
+            defaults!.synchronize()
         }
     }
 }
