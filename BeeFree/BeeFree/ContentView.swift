@@ -49,9 +49,9 @@ struct ContentView: View {
                     }
                     if (selectedTab == .sharing) {
                         ZStack{
-                            SharingView()
-//                            .environmentObject(model)
-//                            .environmentObject(store)
+                            SharingView(isDarkMode: isDarkMode)
+                                .environmentObject(model)
+                                .environmentObject(store)
 //                            .overlay(Text("Sharing coming soon!")
 //                                .offset(y: 262.4)
 //                                .frame(maxWidth: .infinity,
