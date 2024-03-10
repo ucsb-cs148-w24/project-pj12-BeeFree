@@ -4,7 +4,6 @@
 //
 //  Created by Hongye Liang on 1/25/24.
 //
-
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
@@ -17,17 +16,15 @@ struct Userinfo {
     let displayName: String
     let firstName: String?
     var friends: [String]?
+    var googleProfileImageUrl: String? // Added this line
 }
 
 // UserDB class
 final class UserDB {
-    
     static let shared = UserDB()
-
     private init() { }
 
-    
-    func createNewUser(auth: AuthDataResultModel, firstName: String) async -> Bool {
+    func createNewUser(auth: AuthDataResultModel, firstName: String, googleProfileImageUrl: String) async -> Bool {
         let usersCollection = Firestore.firestore().collection("BeFreeUsers")
         let querySnapshot = try? await usersCollection.whereField("firstName", isEqualTo: firstName).getDocuments()
 
@@ -35,11 +32,12 @@ final class UserDB {
             return false
         } else {
             let userData: [String: Any] = [
-                "userID": auth.uid,
-                "email": auth.email ?? "",
-                "firstName": firstName,
-                "friends": []
-            ]
+                    "userID": auth.uid,
+                    "email": auth.email ?? "",
+                    "firstName": firstName,
+                    "friends": [],
+                    "googleProfileImageUrl": googleProfileImageUrl
+                ]
             do {
                 try await usersCollection.document(auth.uid).setData(userData, merge: false)
                 return true
@@ -50,33 +48,46 @@ final class UserDB {
         }
     }
 
-
-
     func getUser(userid: String, completion: @escaping (Userinfo?) -> Void) {
-       let userRef = Firestore.firestore().collection("BeFreeUsers").document(userid)
-       userRef.getDocument { document, error in
-           guard let document = document, error == nil else {
-               print("Error fetching user: \(error?.localizedDescription ?? "Unknown error")")
-               completion(nil)
-               return
-           }
+        let userRef = Firestore.firestore().collection("BeFreeUsers").document(userid)
+        userRef.getDocument { document, error in
+            guard let document = document, error == nil else {
+                print("Error fetching user: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
+                return
+            }
 
-           let data = document.data()
-           let userinfo = self.parseUser(data: data)
-           completion(userinfo)
-       }
-   }
+            let data = document.data()
+            let userinfo = self.parseUser(data: data)
+            completion(userinfo)
+        }
+    }
 
-   private func parseUser(data: [String: Any]?) -> Userinfo? {
-       guard let data = data,
-             let userID = data["userID"] as? String,
-             let email = data["email"] as? String,
-             let displayName = data["firstName"] as? String else {
-           return nil
-       }
-       let firstName = data["firstName"] as? String
-       let friends = data["friends"] as? [String] ?? []
-       return Userinfo(userID: userID, email: email, displayName: displayName, firstName: firstName, friends: friends)
+    private func parseUser(data: [String: Any]?) -> Userinfo? {
+        guard let data = data,
+              let userID = data["userID"] as? String,
+              let email = data["email"] as? String,
+              let displayName = data["firstName"] as? String else {
+            return nil
+        }
+
+        let firstName = data["firstName"] as? String
+        let friends = data["friends"] as? [String] ?? []
+        let googleProfileImageUrl = data["googleProfileImageUrl"] as? String
+        return Userinfo(userID: userID, email: email, displayName: displayName, firstName: firstName, friends: friends, googleProfileImageUrl: googleProfileImageUrl)
+    }
+    
+    func updateGoogleProfileImageUrl(userID: String, imageUrl: String) {
+        let userRef = Firestore.firestore().collection("BeFreeUsers").document(userID)
+        userRef.updateData([
+            "googleProfileImageUrl": imageUrl
+        ]) { error in
+            if let error = error {
+                print("Error updating user's Google profile image URL: \(error)")
+            } else {
+                print("User's Google profile image URL successfully updated")
+            }
+        }
     }
     
     // Method to check if a user exists
@@ -146,9 +157,32 @@ final class UserDB {
             }
         }
     }
+    
+    func fetchUserByFirstName(firstName: String, completion: @escaping (Userinfo?) -> Void) {
+        let db = Firestore.firestore()
+        let collection = db.collection("BeFreeUsers")
+
+        collection.whereField("firstName", isEqualTo: firstName).getDocuments { snapshot, error in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion(nil)
+            } else if let document = snapshot?.documents.first {
+                let data = document.data()
+                let userinfo = Userinfo(
+                    userID: document.documentID,
+                    email: data["email"] as? String ?? "",
+                    displayName: data["displayName"] as? String ?? "",
+                    firstName: data["firstName"] as? String,
+                    friends: data["friends"] as? [String] ?? []
+                )
+                completion(userinfo)
+            } else {
+                completion(nil)
+            }
+        }
+    }
 
 
-    // Method to add a friend to a user's friends list
     func addFriendToUser(userID: String, friendFirstName: String) {
         let db = Firestore.firestore()
         let userRef = db.collection("BeFreeUsers").document(userID)
@@ -176,5 +210,4 @@ final class UserDB {
         }
     }
 }
-
 

@@ -1,3 +1,4 @@
+
 import Foundation
 import SwiftUI
 import FirebaseFirestore
@@ -35,9 +36,9 @@ class FriendsViewModel: ObservableObject {
         }
     }
 
-
+    
     func addFriend(email: String, completion: @escaping (Bool) -> Void) {
-        guard let userID = currentUserID else {
+        guard let userID = currentUserID, let currentUserEmail = Auth.auth().currentUser?.email else {
             completion(false)
             return
         }
@@ -56,7 +57,13 @@ class FriendsViewModel: ObservableObject {
             let newFriend = Friend(id: UUID(), email: email, firstName: userinfo.firstName ?? "Unknown")
             self.friends.append(newFriend)
 
+            // Add friend to user
             UserDB.shared.addFriendToUser(userID: userID, friendFirstName: userinfo.firstName ?? "Unknown")
+            
+            //add current user's first name to the friend's friendlist
+            UserDB.shared.addFriendToUser(userID: userinfo.userID, friendFirstName: currentUserFirstName ?? "Unknown")
+
+
             completion(true)
         }
     }
@@ -86,26 +93,66 @@ class FriendsViewModel: ObservableObject {
         }
     }
     
+//    func removeFriend(friendFirstName: String) {
+//        guard let userID = currentUserID else {
+//            print("User ID not found")
+//            return
+//        }
+//
+//        let userRef = Firestore.firestore().collection("BeFreeUsers").document(userID)
+//        userRef.updateData([
+//            "friends": FieldValue.arrayRemove([friendFirstName])
+//        ]) { [weak self] error in
+//            if let error = error {
+//                print("Error removing friend: \(error)")
+//            } else {
+//                DispatchQueue.main.async {
+//                    self?.friends.removeAll { $0.firstName == friendFirstName }
+//                }
+//            }
+//        }
+//    }
+    
     func removeFriend(friendFirstName: String) {
-        guard let userID = currentUserID else {
-            print("User ID not found")
+        guard let currentUserID = currentUserID, let currentUserFirstName = self.currentUserFirstName else {
+            print("User ID or first name not found")
             return
         }
 
-        let userRef = Firestore.firestore().collection("BeFreeUsers").document(userID)
-        userRef.updateData([
+        // Remove the friend from the current user's friend list
+        let currentUserRef = Firestore.firestore().collection("BeFreeUsers").document(currentUserID)
+        currentUserRef.updateData([
             "friends": FieldValue.arrayRemove([friendFirstName])
         ]) { [weak self] error in
             if let error = error {
-                print("Error removing friend: \(error)")
+                print("Error removing friend from current user: \(error)")
             } else {
                 DispatchQueue.main.async {
                     self?.friends.removeAll { $0.firstName == friendFirstName }
                 }
+                print("Friend removed from current user's list")
+            }
+        }
+
+        // Remove the current user from the friend's friend list
+        UserDB.shared.fetchUserByFirstName(firstName: friendFirstName) { [weak self] friendInfo in
+                guard let self = self, let friendInfo = friendInfo else {
+                    print("Could not find friend's user info for first name: \(friendFirstName)")
+                    return
+                }
+                let friendUserID = friendInfo.userID
+            let friendUserRef = Firestore.firestore().collection("BeFreeUsers").document(friendUserID)
+            friendUserRef.updateData([
+                "friends": FieldValue.arrayRemove([currentUserFirstName])
+            ]) { error in
+                if let error = error {
+                    print("Error removing current user from friend's list: \(error)")
+                } else {
+                    print("Current user's first name removed from friend's list")
+                }
             }
         }
     }
-
 
     
 }
@@ -155,7 +202,19 @@ struct AddFriendView: View {
             }
 
         
-            List(viewModel.friends) { friend in
+//            List(viewModel.friends) { friend in
+//                HStack {
+//                    Text("Name: \(friend.firstName)")
+//                    Spacer()
+//                    Button(action: {
+//                        viewModel.removeFriend(friendFirstName: friend.firstName)
+//                    }) {
+//                        Image(systemName: "minus.circle")
+//                            .foregroundColor(.red)
+//                    }
+//                }
+//            }
+            List(viewModel.friends, id: \.id) { friend in
                 HStack {
                     Text("Name: \(friend.firstName)")
                     Spacer()

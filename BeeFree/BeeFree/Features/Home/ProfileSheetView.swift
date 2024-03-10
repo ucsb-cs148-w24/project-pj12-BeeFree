@@ -5,10 +5,53 @@
 //  Created by Karankumar Mageswaran on 1/20/24.
 //
 
-import SwiftUI
+
 import DeviceActivity
 import ManagedSettings
 import FamilyControls
+import SwiftUI
+
+struct AsyncImage<Placeholder: View>: View {
+    @State private var data: Data?
+
+    private let url: URL
+    private let placeholder: Placeholder
+    private let frameSize: CGSize
+
+    init(url: URL, frameSize: CGSize, @ViewBuilder placeholder: () -> Placeholder) {
+        self.url = url
+        self.frameSize = frameSize
+        self.placeholder = placeholder()
+    }
+
+    var body: some View {
+        if let data = data, let uiImage = UIImage(data: data) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: frameSize.width, height: frameSize.height)
+        } else {
+            placeholder
+                .frame(width: frameSize.width, height: frameSize.height)
+                .onAppear(perform: loadImage)
+        }
+    }
+
+    private func loadImage() {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("Error downloading image: \(error)")
+                } else if let data = data, UIImage(data: data) != nil {
+                    self.data = data
+                } else {
+                    print("Invalid image data or format")
+                }
+            }
+        }.resume()
+    }
+}
+
 
 struct ProfileSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -46,18 +89,11 @@ struct ProfileSheetView: View {
                 // Settings
                 Form {
                     Section(content: {
-                        HStack{
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .foregroundColor(Color("DynamicGray"))
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 48, height: 48)
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16))
-                            VStack{
-                                Text(userInfo?.displayName ?? "Unknown name").font(.title3).frame(maxWidth: .infinity, alignment: .leading)
-                                Text(userInfo?.email ?? "Unknown email").frame(maxWidth: .infinity, alignment: .leading)
-                            }
+                        HStack {
+                            profileImageView()
+                            userInfoView()
                         }
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16))
                     })
                     Section(content: {
                         HStack{
@@ -101,11 +137,41 @@ struct ProfileSheetView: View {
         .preferredColorScheme(isDarkMode ? .dark : .light)
         .edgesIgnoringSafeArea(.all)
     }
-}
+    
+    private func profileImageView() -> some View {
+        Group {
+            if let imageUrl = userInfo?.googleProfileImageUrl, let url = URL(string: imageUrl) {
+                AsyncImage(url: url, frameSize: CGSize(width: 48, height: 48), placeholder: { defaultImageView() })
+            } else {
+                defaultImageView()
+            }
+        }
+        .foregroundColor(Color("DynamicGray")) // Apply the modifier to the Group
+    }
+
+
+       private func defaultImageView() -> some View {
+           Image(systemName: "person.circle.fill")
+               .resizable()
+               .aspectRatio(contentMode: .fit)
+               .frame(width: 48, height: 48)
+       }
+
+       @ViewBuilder
+       private func userInfoView() -> some View {
+           VStack {
+               Text(userInfo?.displayName ?? "Unknown name").font(.title3).frame(maxWidth: .infinity, alignment: .leading)
+               Text(userInfo?.email ?? "Unknown email").frame(maxWidth: .infinity, alignment: .leading)
+           }
+       }
+   }
+
 
 //#Preview {
 //    ProfileSheetView(isDarkMode: .constant(false))
 //}
+
+
 
 struct ProfileSheetView_Previews: PreviewProvider {
     static var previews: some View {

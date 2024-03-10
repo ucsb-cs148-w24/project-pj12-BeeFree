@@ -19,6 +19,9 @@ struct TitleBarModifier: View {
     @State private var isAccountSettingsPresented = false
     @State private var isAddFriendPresented = false
     @State private var currentUserInfo: Userinfo?
+    var googleProfileImageUrl: String?
+    @State private var bounce = false
+
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -76,14 +79,22 @@ struct TitleBarModifier: View {
             Spacer()
             HStack{
                 if (selectedTab == .home) {
-                    Button(action: {self.isCreateLimitPresented.toggle()}) {
-                        Image(systemName: "plus")
+                    Button(action: { self.isCreateLimitPresented.toggle() }) {
+                        Image(systemName: "lock.square")
                             .resizable()
-                            .opacity(0.5)
-                            .foregroundColor(.white)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 27, height: 27)
+                            .foregroundColor(.white)
+                            .opacity(0.5)
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                            .scaleEffect(bounce ? 1.1 : 1.0) // Increased scale factor for more noticeable effect
+                    }
+                    .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: bounce)
+                    .onAppear {
+                        // Start the bounce effect after a short delay
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            self.bounce.toggle()
+                        }
                     }
                     .sheet(isPresented: $isCreateLimitPresented) {
                         // Create a sheet view to create a limit
@@ -109,16 +120,23 @@ struct TitleBarModifier: View {
                     }
                 }
 
-                Button(action: {self.isAccountSettingsPresented.toggle()}) {
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .opacity(0.5)
-                        .foregroundColor(.white)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 32, height: 32)
-                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
+                Button(action: { self.isAccountSettingsPresented.toggle() }) {
+                    Group {
+                        if let imageUrl = currentUserInfo?.googleProfileImageUrl, let url = URL(string: imageUrl) {
+                            AsyncImage(url: url, frameSize: CGSize(width: 32, height: 32), placeholder: {
+                                Image(systemName: "person.circle.fill")
+                                    .resizable()
+                            })
+                        } else {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()                        }
+                    }
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 32, height: 32)
+                    .opacity(0.5)
+                    .foregroundColor(.white)
+                    .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
                 }
-                
                 .onAppear {
                     getUserData()
                 }
@@ -154,6 +172,7 @@ struct TitleBarModifier: View {
             }
         }
     }
+    
 }
 
 #Preview {

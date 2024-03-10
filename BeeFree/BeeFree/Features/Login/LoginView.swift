@@ -14,6 +14,7 @@ import GoogleSignIn
 struct GoogleSignInResultModel {
     let idToken: String
     let accessToken: String
+    let googleProfileImageUrl: String?
 }
 
 @available(iOSApplicationExtension, unavailable)
@@ -23,51 +24,51 @@ final class LoginviewModel: ObservableObject{
     @Published var isNewUser = false
     @Published var firstName = ""
     @Published var uid:String = ""
+    var googleProfileImageUrl: String?
 
     @available(iOSApplicationExtension, unavailable)
     func signInGoogle(completion: @escaping (Bool) -> Void) async {
-            do {
-                guard let topVC = LoginUtilities.shared.topViewController() else {
-                    throw URLError(.cannotFindHost)
-                }
-                let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
-                guard let idToken = gidSignInResult.user.idToken?.tokenString else{
-                    throw URLError(.badServerResponse)
-                }
-                let accessToken = gidSignInResult.user.accessToken.tokenString
-                let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken)
-                
-                let authResult = try await AuthManager.shared.signInWithGoogle(tokens: tokens)
-                
-                // Check if the user exists in your database
-                let userExists = try? await UserDB.shared.checkExistUser(uid: authResult.uid)
-                isNewUser = !(userExists ?? false)
-                uid = authResult.uid
-                // If the user exists, complete the sign-in process
-                if !isNewUser {
-                    completion(true)
-                }
-                // For new users, defer the completion until the first name is submitted
-            } catch {
-                print(error)
-                completion(false)
+        do {
+            guard let topVC = LoginUtilities.shared.topViewController() else {
+                throw URLError(.cannotFindHost)
             }
+            let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
+
+            let idToken = gidSignInResult.user.idToken?.tokenString ?? ""
+            let accessToken = gidSignInResult.user.accessToken.tokenString
+
+            let profileImageUrl = gidSignInResult.user.profile?.imageURL(withDimension: 200)?.absoluteString
+            self.googleProfileImageUrl = profileImageUrl
+
+            let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken, googleProfileImageUrl: profileImageUrl)
+            
+            let authResult = try await AuthManager.shared.signInWithGoogle(tokens: tokens)
+            
+            let userExists = try await UserDB.shared.checkExistUser(uid: authResult.uid)
+            isNewUser = !(userExists ?? false)
+            uid = authResult.uid
+
+            completion(!isNewUser)
+        } catch {
+            print(error)
+            completion(false)
         }
+    }
+
+
 
     
-        func submitFirstName(completion: @escaping (Bool) -> Void) async {
-            guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
-                completion(false)
-                return
-            }
-
-            let isFirstNameAvailable = await UserDB.shared.createNewUser(auth: user, firstName: firstName)
-            if isFirstNameAvailable {
-                completion(true)
-            } else {
-                completion(false)
-            }
+    func submitFirstName(completion: @escaping (Bool) -> Void) async {
+        guard let user = try? await AuthManager.shared.getAuthUser(), !firstName.isEmpty else {
+            completion(false)
+            return
         }
+
+        let googleProfileImageUrl = self.googleProfileImageUrl ?? "" // Use default value if nil
+        let isFirstNameAvailable = await UserDB.shared.createNewUser(auth: user, firstName: firstName, googleProfileImageUrl: googleProfileImageUrl)
+        completion(isFirstNameAvailable)
+    }
+
 
     
 }

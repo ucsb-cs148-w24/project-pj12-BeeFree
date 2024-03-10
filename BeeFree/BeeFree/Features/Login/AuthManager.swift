@@ -12,15 +12,17 @@ import GoogleSignInSwift
 import GoogleSignIn
 import FirebaseAuth
 
-struct AuthDataResultModel{
+struct AuthDataResultModel {
     let uid: String
     let email: String?
     let displayName: String?
-    
-    init(user:User){
+    let googleProfileImageUrl: String?
+
+    init(user: User, googleProfileImageUrl: String? = nil) {
         self.uid = user.uid
         self.email = user.email
         self.displayName = user.displayName
+        self.googleProfileImageUrl = googleProfileImageUrl
     }
 }
 
@@ -40,16 +42,20 @@ final class AuthManager{
         try Auth.auth().signOut()
     }
     @discardableResult
-    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel{
-        
+    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
         let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
-        return try await signIn(credential: credential)
+        let authResult = try await Auth.auth().signIn(with: credential)
+        let user = authResult.user
+
+        let googleProfileImageUrl = tokens.googleProfileImageUrl
+
+        return AuthDataResultModel(user: user, googleProfileImageUrl: googleProfileImageUrl)
     }
+
     
     func signIn(credential: AuthCredential) async throws -> AuthDataResultModel{
         let authDataResult = try await Auth.auth().signIn(with: credential)
         
-        //try await UserDB.shared.createNewUser(auth: authDataResult)
         return AuthDataResultModel(user: authDataResult.user)
     }
 }
