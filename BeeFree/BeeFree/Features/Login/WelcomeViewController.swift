@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController{
     @available(iOSApplicationExtension, unavailable)
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+//        view.backgroundColor = UIColor(LinearGradient(gradient: Gradient(colors:[Color("LighterSky"), Color("Sky")]), startPoint:.top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
         setupSubViews()
         setupSwipe()
     }
@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController{
         welcomeLabel.text = "Welcome to Bee Free!"
         welcomeLabel.textAlignment = .center
         welcomeLabel.numberOfLines = 0
-        welcomeLabel.textColor = UIColor(Color("Sky"))
+        welcomeLabel.textColor = UIColor(Color(.white))
         view.addSubview(welcomeLabel)
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -52,7 +52,7 @@ class WelcomeViewController: UIViewController{
         swipeLabel.text = "Swipe up to continue"
         swipeLabel.textAlignment = .center
         swipeLabel.numberOfLines = 0 // Allows for multiple lines
-        swipeLabel.textColor = UIColor(Color("DynamicGray"))
+        swipeLabel.textColor = UIColor(Color(.white))
         view.addSubview(swipeLabel)
         swipeLabel.translatesAutoresizingMaskIntoConstraints = false
         

@@ -46,7 +46,7 @@ struct ContentView: View {
                             .environmentObject(store)
                             .opacity(selectedTab == .summary ? 1.0 : 0.0)
                             .disabled(selectedTab == .sharing ? false : true)
-                        SharingView()
+                        SharingView(isDarkMode: $isDarkMode)
                             .opacity(selectedTab == .sharing ? 1.0 : 0.0)
                             .disabled(selectedTab == .sharing ? false : true)
 //                            .environmentObject(model)

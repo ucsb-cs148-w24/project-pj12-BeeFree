@@ -82,97 +82,118 @@ struct LoginView: View {
     @Binding var showSignInView: Bool
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                Image("app_logo") // Replace with your actual logo image name
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150, height: 150)
 
-                if viewModel.isNewUser {
-                    // Display for new users to enter their first name
-                    Text("Welcome, New User!")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 20)
-
-                    Text("Please enter your first name/username to continue")
-                        .font(.title3)
-                        .foregroundColor(.gray)
-                        .padding(.bottom, 30)
-
-                    TextField("First Name", text: $viewModel.firstName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .autocapitalization(.none)
-
-                    
-                    if let errorMessage = errorMessage {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                            .padding()
-                    }
-                    
-                    Button("Submit") {
-                        Task {
-                            await viewModel.submitFirstName { success in
-                                if success {
-                                    isAuthenticated = true
-                                    errorMessage = nil
-                                } else {
-                                    isAuthenticated = false
-                                    errorMessage = "This name is already taken. Please choose favorite name."
+            NavigationView {
+                ZStack{
+                    LinearGradient(gradient: Gradient(colors:[Color("LighterSky"), Color("Sky")]), startPoint:.top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+                    VStack(spacing: 20) {
+                        Image("TransparentImage") // Replace with your actual logo image name
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 150, height: 150)
+                        
+                        if viewModel.isNewUser {
+                            // Display for new users to enter their first name
+                            Text("Welcome, New User!")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .padding(.bottom, 20)
+                                .foregroundColor(.white)
+                            
+                            Text("Please enter your first name/username to continue")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .padding(.bottom, 30)
+                                .multilineTextAlignment(.center)
+                            
+                            TextField("First Name", text: $viewModel.firstName)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding()
+                                .autocapitalization(.none)
+                            
+                            
+                            if let errorMessage = errorMessage {
+                                Text(errorMessage)
+                                    .foregroundColor(.red)
+                                    .padding()
+                            }
+                            
+                            Button("Submit") {
+                                Task {
+                                    await viewModel.submitFirstName { success in
+                                        if success {
+                                            isAuthenticated = true
+                                            errorMessage = nil
+                                        } else {
+                                            isAuthenticated = false
+                                            errorMessage = "This name is already taken. Please choose favorite name."
+                                        }
+                                    }
                                 }
                             }
-                        }
-                    }
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .padding()
-                } else {
-                    // Display for users to sign in
-                    Text("Welcome to BeeFree")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 20)
-
-                    Text("Please Sign in to continue")
-                        .font(.title3)
-                        .foregroundColor(.gray)
-                        .padding(.bottom, 30)
-
-                    // Google Sign-in Button
-                    Button(action: {
-                        Task {
-                            
-                            await viewModel.signInGoogle { success in
-                                isAuthenticated = success
-                            }
-                        }
-                    }) {
-                        HStack {
-                            Image("google_icon") // Replace with your Google icon asset
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                            Text("Sign in with Google")
+                            .frame(maxWidth: .infinity, maxHeight: 44)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+                                    .stroke(.white, lineWidth:2)
+                            ) 
+                            .padding(EdgeInsets(top: 16, leading: 100, bottom: 76, trailing: 100))
+                            .foregroundColor(.white)
+                            //                        .padding()
+                        } else {
+                            // Display for users to sign in
+                            Text("Welcome to BeeFree")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .padding(.bottom, 20)
                                 .foregroundColor(.white)
+                            
+                            Text("Please Sign in to continue")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .padding(.bottom, 30)
+                            
+                            // Google Sign-in Button
+                            Button(action: {
+                                Task {
+                                    
+                                    await viewModel.signInGoogle { success in
+                                        isAuthenticated = success
+                                    }
+                                }
+                            }) {
+                                HStack {
+                                    Image("googleIcon") // Replace with your Google icon asset
+                                        .resizable()
+                                        .frame(width: 24, height: 24)
+                                    Text("Sign in with Google")
+                                        .foregroundColor(.white)
+                                }
+                                .frame(maxWidth: .infinity, maxHeight: 44)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+                                        .stroke(.white, lineWidth:2)
+                                )
+                                .padding(EdgeInsets(top: 16, leading: 60, bottom: 76, trailing: 60))
+                            }
+                            //                        .padding()
                         }
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                        .background(Color.blue)
-                        .cornerRadius(8)
+                        NavigationLink(destination: ContentView(isDarkMode: true)
+                            .navigationBarBackButtonHidden(true),
+                                       isActive: $isAuthenticated) {
+                            EmptyView()
+                        }
                     }
-                    .padding()
+                    //                .padding()
+                    .navigationBarHidden(true)
+                    .background(.clear)
+                    
                 }
-                NavigationLink(destination: ContentView(isDarkMode: false)
-                    .navigationBarBackButtonHidden(true),
-                    isActive: $isAuthenticated) {
-                    EmptyView()
-                }
+                .background(LinearGradient(gradient: Gradient(colors:[Color("LighterSky"), Color("Sky")]), startPoint:.top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+
             }
-            .padding()
-            .navigationBarHidden(true)
-        }
-    }   
+                
+
+    }
 }
+
+

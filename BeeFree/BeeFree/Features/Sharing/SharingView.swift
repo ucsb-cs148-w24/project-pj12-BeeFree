@@ -14,7 +14,7 @@ struct SharingView: View {
     @State private var selectedHours = 0
     @State private var selectedMinutes = 0
     @State private var navigateToFriends = false
-    @State var isDarkMode : Bool
+    @Binding var isDarkMode : Bool
     
     
     // Define the ranges for hours and minutes
