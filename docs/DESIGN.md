@@ -11,11 +11,22 @@ During the first weeks(lecture 2 in particular) of our project development, we e
 
 The next step included distributing out tasks to each member, with Peter and Mike focusing on Firebase login features for both front-end and back-end. Karan was tasked with many UI/UX tasks alongside research on Apple's ScreenTimeAPI, and Sunhu, Anushka, and Kavi worked on summary page implementation. Mujia was tasked with dealing with user inputs, particularly with time limits for apps. This decision was also made during our 1/20/2024 daily scrum.
 
+Our first Retrospective on 1/24/2024, we went over the initial weeks of progress that we had gone through and emphasizing a goal of ensuring proper documentation whenever team members work on the project on their own or with a partner but not with the entirety of the team. The team also focused on ensuring everyone had a strong understanding of branching and the use of the Kanban Board and what issues to work on in the coming weeks. 
+
 During the MVP creation process, roles were assigned regarding voiceovers for the video presentation and finalizing documentation on our first MVP. The team discussed what functions could be included in the MVP and what needed more time to be developed. This all occurred during sprint03 from lecture06 to lecture08.
 
-As of our most recent meetings, we have been discussing what to continue working on and what to cut, especially regarding ScreenTimeAPI for our summary page which has been causing many difficulties. Our most recent daily scrum as of the time of this writing has been 2/24/2024.
+Our second Retrospective on 2/16/2024, we reviewed the results of our first Code Freeze and MVP, congratulating everyone on the work they have worked on. For future goals and what to work on, the team agreed that better accountability and communication was needed if any member was not sure they would make it to a meeting, lecture, or section. The team also boiled down on what features should be cut and what can be done in the last upcoming weeks. 
+
+During our 2/24/2024 meeting, we discussed on what to continue working on and what needed to be cut, especially regarding ScreenTimeAPI for our summary page which has been causing many difficulties. 
+
+The following meetings and lectures largely focused on working on Apple's ScreenTimeAPI to get the main summary view functionality working. Anushka and Karan largely worked on this aspect of the app. Before the 3rd Retrospective, Anushka and Karan managed to get much of the ScreenTimeAPI working that now provides a summary page.
+
+In the 3rd and final retrospective on 3/6/2024, the team once again looked back on the current progress, what should be focused on, and what should be scrapped. The team agreed to conclude any issues that required the use of ScreenTimeAPI and focus on UI and other functionalities, such as sharing, that do not require any API usage that would be too risky to use given only about a week and a half of time remaining.
+
+In our final Monday meeting at 7:30 PM 3/11/2024, the team split into 3 groups, one working on UI in our login and default entrance page, another working on adding home page funcionality, and the last group finishing up the sharing page. 
 ## UX + UserFlow
 Our team wanted to make BeeFree as intuitive as possible so new users who are on the fence can easily navigate through our app and immediately get a good feel and understanding of how things work. We chose to have 3 quickly accessible tabs; the home page, the summary page, and the sharing page that each clearly define their puproses. A user flow below shows how the app works:
 https://www.figma.com/proto/ODOuk0ZjYnNDZBpqao3gnA/UXFlow---BeeFree?type=design&node-id=5-22&t=B7cAUpqWfCNJYXXq-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=5%3A22&show-proto-sidebar=1&mode=design
 
 This Figma flow shows the basic UX tasks a user would go through. It leads them from the welcome page to the login page, where they can select a Google account to login with. From there they can update their blocked apps and dailyscreentime limit. they can also view their summary, which displays their top apps and screentime usage for the day. The sharing page allows them to add and delete friends using their email. We also have a profile page where they can view their username and email, change privacy and notification setttings, and switch between dark mode and light mode
+
