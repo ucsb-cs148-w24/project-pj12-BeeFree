@@ -10,7 +10,18 @@ struct Friend: Identifiable {
     let id: UUID
     var email: String
     var firstName: String
+    var screenTimeGoal: Double?
+    var userScreenTime: (hours: Int, minutes: Int)?
+
 }
+
+extension Friend {
+    func calculateProgress(goalHours: Double) -> Double {
+        let totalHours = Double(userScreenTime?.hours ?? 0) + Double(userScreenTime?.minutes ?? 0) / 60.0
+        return totalHours / goalHours
+    }
+}
+
 
 class FriendsViewModel: ObservableObject {
     @Published var friends: [Friend] = []
@@ -92,26 +103,7 @@ class FriendsViewModel: ObservableObject {
 
         }
     }
-    
-//    func removeFriend(friendFirstName: String) {
-//        guard let userID = currentUserID else {
-//            print("User ID not found")
-//            return
-//        }
-//
-//        let userRef = Firestore.firestore().collection("BeFreeUsers").document(userID)
-//        userRef.updateData([
-//            "friends": FieldValue.arrayRemove([friendFirstName])
-//        ]) { [weak self] error in
-//            if let error = error {
-//                print("Error removing friend: \(error)")
-//            } else {
-//                DispatchQueue.main.async {
-//                    self?.friends.removeAll { $0.firstName == friendFirstName }
-//                }
-//            }
-//        }
-//    }
+
     
     func removeFriend(friendFirstName: String) {
         guard let currentUserID = currentUserID, let currentUserFirstName = self.currentUserFirstName else {
@@ -153,6 +145,60 @@ class FriendsViewModel: ObservableObject {
             }
         }
     }
+    
+//    func fetchFriendsScreenTime() {
+//        guard let currentUserID = Auth.auth().currentUser?.uid else { return }
+//
+//        UserDB.shared.getUser(userid: currentUserID) { [weak self] userinfo in
+//            guard let self = self, let userinfo = userinfo, let friendsList = userinfo.friends else { return }
+//
+//            for friendFirstName in friendsList {
+//                self.fetchFriendScreenTimeByFirstName(friendFirstName)
+//            }
+//        }
+//    }
+//
+//    private func fetchFriendScreenTimeByFirstName(_ firstName: String) {
+//        UserDB.shared.fetchUserByFirstName(firstName: firstName) { [weak self] friendInfo in
+//            guard let self = self, let friendInfo = friendInfo else { return }
+//
+//            let friendEmail = friendInfo.email
+//            let screenTime = (hours: friendInfo.userScreenTime?.hours ?? 0, minutes: friendInfo.userScreenTime?.minutes ?? 0)
+//            let friend = Friend(id: UUID(), email: friendEmail, firstName: firstName, userScreenTime: screenTime)
+//            
+//            DispatchQueue.main.async {
+//                self.friends.append(friend)
+//            }
+//        }
+//    }
+
+    func fetchFriendsScreenTime() {
+        guard let currentUserID = Auth.auth().currentUser?.uid else { return }
+
+        UserDB.shared.getUser(userid: currentUserID) { [weak self] userinfo in
+            guard let self = self, let userinfo = userinfo, let friendsList = userinfo.friends else { return }
+
+            for friendFirstName in friendsList {
+                self.fetchFriendScreenTimeAndGoalByFirstName(friendFirstName)
+            }
+        }
+    }
+
+    private func fetchFriendScreenTimeAndGoalByFirstName(_ firstName: String) {
+        UserDB.shared.fetchUserByFirstName(firstName: firstName) { [weak self] friendInfo in
+            guard let self = self, let friendInfo = friendInfo else { return }
+
+            let friendEmail = friendInfo.email
+            let screenTime = (hours: friendInfo.userScreenTime?.hours ?? 0, minutes: friendInfo.userScreenTime?.minutes ?? 0)
+            let screenTimeGoal = friendInfo.screenTimeGoal // Fetch the screen time goal
+            let friend = Friend(id: UUID(), email: friendEmail, firstName: firstName, screenTimeGoal: screenTimeGoal, userScreenTime: screenTime)
+            
+            DispatchQueue.main.async {
+                self.friends.append(friend)
+            }
+        }
+    }
+
 
     
 }
@@ -201,19 +247,6 @@ struct AddFriendView: View {
                 }
             }
 
-        
-//            List(viewModel.friends) { friend in
-//                HStack {
-//                    Text("Name: \(friend.firstName)")
-//                    Spacer()
-//                    Button(action: {
-//                        viewModel.removeFriend(friendFirstName: friend.firstName)
-//                    }) {
-//                        Image(systemName: "minus.circle")
-//                            .foregroundColor(.red)
-//                    }
-//                }
-//            }
             List(viewModel.friends, id: \.id) { friend in
                 HStack {
                     Text("Name: \(friend.firstName)")

@@ -101,13 +101,23 @@ struct ScreenTimeGoalSheetView: View {
                     }, alignment: .center)
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 64, trailing: 16))
                     .onTapGesture {
-                        model.setScreenTimeGoal(x: goal)
-                        let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup")
-                        let defaultValue = ["seconds" : model.getScreenTimeGoalSecs()]
-                        defaults!.register(defaults: defaultValue)
-                        defaults!.set(model.getScreenTimeGoalSecs(), forKey: "seconds")
-                        defaults!.synchronize()
-                        dismiss()
+                        if let userID = model.currentUserID {
+                            model.setScreenTimeGoal(x: goal)
+                            UserDB.shared.updateUserScreenTimeGoal(userID: userID, screenTimeGoal: goal)
+                            let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup")
+                            let defaultValue = ["seconds" : model.getScreenTimeGoalSecs()]
+                            defaults!.register(defaults: defaultValue)
+                            defaults!.set(model.getScreenTimeGoalSecs(), forKey: "seconds")
+                            defaults!.synchronize()
+                            dismiss()
+                            }
+//                        model.setScreenTimeGoal(x: goal)
+//                        let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup")
+//                        let defaultValue = ["seconds" : model.getScreenTimeGoalSecs()]
+//                        defaults!.register(defaults: defaultValue)
+//                        defaults!.set(model.getScreenTimeGoalSecs(), forKey: "seconds")
+//                        defaults!.synchronize()
+//                        dismiss()
                     }
             }
         }

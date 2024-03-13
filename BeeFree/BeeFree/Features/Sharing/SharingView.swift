@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct SharingView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -15,6 +16,10 @@ struct SharingView: View {
     @State private var selectedMinutes = 0
     @State private var navigateToFriends = false
     @Binding var isDarkMode : Bool
+    
+    var currentUserID: String? {
+        Auth.auth().currentUser?.uid
+    }
 
     
     // Define the ranges for hours and minutes
@@ -69,7 +74,10 @@ struct SharingView: View {
                     .padding(.vertical, 10)
                     Section {
                         Button(action: {
-                            self.navigateToFriends = true
+                            if let userID = currentUserID {
+                                UserDB.shared.updateUserScreenTime(userID: userID, hours: selectedHours, minutes: selectedMinutes)
+                                self.navigateToFriends = true
+                            }
                         }) {
                             HStack {
                                 Spacer()
