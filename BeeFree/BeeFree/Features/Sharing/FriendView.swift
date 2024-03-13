@@ -30,6 +30,7 @@ struct FriendView: View {
                 viewModel.fetchFriendsScreenTime()
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
