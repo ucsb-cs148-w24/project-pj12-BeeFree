@@ -27,7 +27,7 @@ struct BeeFreeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ZStack { viewControllerWrapper() }
+            ZStack { LoginView(isDarkMode: true, showSignInView: .constant(true))}
                 .onAppear {
                     Task {
                         do {
@@ -56,15 +56,15 @@ struct BeeFreeApp: App {
 }
 
 
-struct viewControllerWrapper :UIViewControllerRepresentable{
-    func makeUIViewController(context: Context) -> some UIViewController {
-        WelcomeViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
-    }
-}
-
+//struct viewControllerWrapper :UIViewControllerRepresentable{
+//    func makeUIViewController(context: Context) -> some UIViewController {
+//        WelcomeViewController()
+//    }
+//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+//        
+//    }
+//}
+//
 class AppDelegate: NSObject, UIApplicationDelegate {
     // Make this request when the app launches
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

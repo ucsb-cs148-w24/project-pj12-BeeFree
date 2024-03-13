@@ -1,82 +1,41 @@
+////
+////  welcomeViewController.swift
+////  BeeFree
+////
+////  Created by Mike Wang on 1/31/24.
+////
 //
-//  welcomeViewController.swift
-//  BeeFree
+//import Foundation
+//import UIKit
+//import SwiftUI
+//import DeviceActivity
+//import FamilyControls
+//import ManagedSettings
 //
-//  Created by Mike Wang on 1/31/24.
+//class WelcomeViewController: UIViewController{
+//    @available(iOSApplicationExtension, unavailable)
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        self.view.backgroundColor = UIColor.red
+//        let loginView = LoginView(showSignInView: .constant(false), isDarkMode: <#T##Bool#>).edgesIgnoringSafeArea(.all)
+//        let hostingController = UIHostingController(rootView: loginView)
+//        
+//        // Add the hosting controller as a child of the view controller
+//        addChild(hostingController)
+//        view.addSubview(hostingController.view)
+//        hostingController.didMove(toParent: self)
 //
-
-import Foundation
-import UIKit
-import SwiftUI
-import DeviceActivity
-import FamilyControls
-import ManagedSettings
-
-class WelcomeViewController: UIViewController{
-    @available(iOSApplicationExtension, unavailable)
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        view.backgroundColor = UIColor(LinearGradient(gradient: Gradient(colors:[Color("LighterSky"), Color("Sky")]), startPoint:.top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-        setupSubViews()
-        setupSwipe()
-    }
-    
-    @available(iOSApplicationExtension, unavailable)
-    private func setupSubViews(){
-        let logoImageView = UIImageView(image: UIImage(named:"TransparentImage"))
-        logoImageView.contentMode = .scaleAspectFit
-        view.addSubview(logoImageView)
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
-            logoImageView.heightAnchor.constraint(equalToConstant: 100),
-            logoImageView.widthAnchor.constraint(equalToConstant: 100)
-        ])
-        
-        let welcomeLabel = UILabel()
-        welcomeLabel.text = "Welcome to Bee Free!"
-        welcomeLabel.textAlignment = .center
-        welcomeLabel.numberOfLines = 0
-        welcomeLabel.textColor = UIColor(Color(.white))
-        view.addSubview(welcomeLabel)
-        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            welcomeLabel.bottomAnchor.constraint(equalTo: logoImageView.topAnchor, constant: -20), // Adjust constant for your layout
-        ])
-        
-        let swipeLabel = UILabel()
-        swipeLabel.text = "Swipe up to continue"
-        swipeLabel.textAlignment = .center
-        swipeLabel.numberOfLines = 0 // Allows for multiple lines
-        swipeLabel.textColor = UIColor(Color(.white))
-        view.addSubview(swipeLabel)
-        swipeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Set constraints for the swipe up label
-        NSLayoutConstraint.activate([
-            swipeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            swipeLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30) // Adjust constant for your layout
-        ])
-    }
-    
-    @available(iOSApplicationExtension, unavailable)
-    private func setupSwipe(){
-        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUp))
-        swipeUpGesture.direction = .up
-        view.addGestureRecognizer(swipeUpGesture)
-    }
-    
-    @available(iOSApplicationExtension, unavailable)
-    @objc private func handleSwipeUp() {
-        // Transition to the LoginView
-        let loginView = LoginView(showSignInView: .constant(false))
-        let hostingController = UIHostingController(rootView: loginView)
-        hostingController.modalPresentationStyle = .fullScreen
-        hostingController.modalTransitionStyle = .coverVertical
-        present(hostingController, animated: true, completion: nil)
-    }
-}
+//        // Set up constraints or frame to respect safe area
+//        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            hostingController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            hostingController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+//            hostingController.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//            hostingController.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//        ])
+//
+//        
+//    }
+//
+//}

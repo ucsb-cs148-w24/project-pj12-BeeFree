@@ -145,7 +145,6 @@
 		9E96FEF12B9A8D31005E7EE0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277A63872B7438FB00D21FE6 /* WelcomeViewController.swift */; };
 		9E96FEF72B9A8DE3005E7EE0 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
 		9E96FEFC2B9A8ED6005E7EE0 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
-		9E96FEFD2B9A8EEF005E7EE0 /* BeeFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0D2B5C6FFA00EB61B2 /* BeeFreeApp.swift */; };
 		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 		9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0F2B5C6FFA00EB61B2 /* ContentView.swift */; };
@@ -860,7 +859,6 @@
 				9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */,
 				9E0BB7E92B758C5A00414DBD /* RectangleSection.swift in Sources */,
 				43209C152B8182D500EC1D4C /* AddFriendView.swift in Sources */,
-				9E96FEFD2B9A8EEF005E7EE0 /* BeeFreeApp.swift in Sources */,
 				9E0BB7EB2B758C5E00414DBD /* ContentView.swift in Sources */,
 				9E0BB7E62B758C5300414DBD /* AppLimitDisplay.swift in Sources */,
 				9E0BB7E72B758C5600414DBD /* PollenAnimation.swift in Sources */,

@@ -78,6 +78,7 @@ final class LoginviewModel: ObservableObject{
 struct LoginView: View {
     @StateObject private var viewModel = LoginviewModel()
     @State var isAuthenticated = false
+    @State var isDarkMode : Bool
     @State private var errorMessage: String?
     @Binding var showSignInView: Bool
     
@@ -177,7 +178,7 @@ struct LoginView: View {
                             }
                             //                        .padding()
                         }
-                        NavigationLink(destination: ContentView(isDarkMode: true)
+                        NavigationLink(destination: ContentView(isDarkMode: false)
                             .navigationBarBackButtonHidden(true),
                                        isActive: $isAuthenticated) {
                             EmptyView()
@@ -189,6 +190,7 @@ struct LoginView: View {
                     
                 }
                 .background(LinearGradient(gradient: Gradient(colors:[Color("LighterSky"), Color("Sky")]), startPoint:.top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+                .preferredColorScheme(isDarkMode ? .light : .dark)
 
             }
                 
