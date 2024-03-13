@@ -67,7 +67,6 @@ struct HomeView: View {
                             .font(.subheadline)
                             .bold()
                     }, alignment: .center)
-                    m
             }
             .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
             .onChange(of: model.selectionToDiscourage) {
