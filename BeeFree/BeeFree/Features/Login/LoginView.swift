@@ -190,7 +190,6 @@ struct LoginView: View {
                     
                 }
                 .background(LinearGradient(gradient: Gradient(colors:[Color("LighterSky"), Color("Sky")]), startPoint:.top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
-                .preferredColorScheme(isDarkMode ? .light : .dark)
 
             }
                 

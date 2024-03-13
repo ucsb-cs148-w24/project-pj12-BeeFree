@@ -93,7 +93,6 @@ struct ContentView: View {
             TabBarModifier(selectedTab: $selectedTab)
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 

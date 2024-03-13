@@ -134,7 +134,6 @@ struct ProfileSheetView: View {
                 Spacer()
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
         .edgesIgnoringSafeArea(.all)
     }
     

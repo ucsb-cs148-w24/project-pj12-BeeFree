@@ -109,7 +109,6 @@ struct CreateLimitSheetView: View {
                 Spacer()
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
     private func saveTime() {

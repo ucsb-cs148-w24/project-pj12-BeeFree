@@ -111,7 +111,6 @@ struct ScreenTimeGoalSheetView: View {
                     }
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
         .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
     
