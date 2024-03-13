@@ -1,25 +1,41 @@
-import Foundation
 import SwiftUI
 
 struct FriendView: View {
-    // Example friend data
-    let friendsScreenTime = [
-        "Alex": "4 hours, 30 minutes",
-        "Jordan": "5 hours, 15 minutes",
-        "Sam": "3 hours, 45 minutes"
-    ]
-    
+    @StateObject var viewModel = FriendsViewModel()
+
     var body: some View {
-        List(friendsScreenTime.sorted(by: >), id: \.key) { name, time in
-            HStack {
-                Text(name)
-                Spacer()
-                Text(time)
+        NavigationView {
+            List(viewModel.friends) { friend in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(friend.firstName)
+                            .font(.headline)
+                        if let screenTime = friend.userScreenTime {
+                            Text("\(screenTime.hours) hours, \(screenTime.minutes) minutes")
+                                .font(.subheadline)
+                        } else {
+                            Text("No screen time recorded")
+                                .font(.subheadline)
+                        }
+                    }
+                    Spacer()
+                    if let screenTime = friend.userScreenTime {
+                        let progress = friend.calculateProgress(goalHours: friend.screenTimeGoal ?? 4.0)
+                        CircleProgressBar(progress: progress, size: 50)
+                    }
+                }
+            }
+            .navigationBarTitle("Friends' Screen Time", displayMode: .inline)
+            .onAppear {
+                viewModel.fetchFriendsScreenTime()
             }
         }
-        .navigationBarTitle("Friends' Screen Time", displayMode: .inline)
     }
 }
+
+
+
+
 
 struct FriendView_Previews: PreviewProvider {
     static var previews: some View {

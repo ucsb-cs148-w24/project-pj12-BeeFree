@@ -9,6 +9,7 @@ import Foundation
 import FamilyControls
 import ManagedSettings
 import DeviceActivity
+import FirebaseAuth
 
 private let _BeeFreeModel = BeeFreeModel()
 
@@ -21,13 +22,21 @@ class BeeFreeModel: ObservableObject {
     @Published var selectionToDiscourage: FamilyActivitySelection
     @Published var thresholdToDiscourage: DateComponents
     @Published var setOfApps: [String]
-    @Published var screenTimeGoal: Double
+    //@Published var screenTimeGoal: Double
+    @Published var screenTimeGoal: Double = 4.0 // default value
+    @Published var isLoading: Bool = true
+    
+    var currentUserID: String? {
+        Auth.auth().currentUser?.uid
+    }
+
     
     init() {
         selectionToDiscourage = FamilyActivitySelection()
         thresholdToDiscourage = DateComponents()
         setOfApps = [String]()
-        screenTimeGoal = 4.0
+        fetchScreenTimeGoalFromDatabase()
+
     }
     
     class var shared: BeeFreeModel {
@@ -70,5 +79,24 @@ class BeeFreeModel: ObservableObject {
     
     func changeThreshold(threshold: DateComponents) {
         thresholdToDiscourage = threshold
+    }
+    
+    func fetchScreenTimeGoalFromDatabase() {
+        isLoading = true
+        guard let userID = currentUserID else {
+            isLoading = false
+            return
+        }
+
+        UserDB.shared.getUser(userid: userID) { [weak self] userinfo in
+            DispatchQueue.main.async {
+                guard let self = self, let userinfo = userinfo else {
+                    self?.isLoading = false
+                    return
+                }
+                self.screenTimeGoal = userinfo.screenTimeGoal
+                self.isLoading = false
+            }
+        }
     }
 }

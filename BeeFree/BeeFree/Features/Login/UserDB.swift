@@ -16,7 +16,9 @@ struct Userinfo {
     let displayName: String
     let firstName: String?
     var friends: [String]?
-    var googleProfileImageUrl: String? // Added this line
+    var googleProfileImageUrl: String?
+    var screenTimeGoal: Double
+    var userScreenTime: (hours: Int, minutes: Int)?
 }
 
 // UserDB class
@@ -36,7 +38,9 @@ final class UserDB {
                     "email": auth.email ?? "",
                     "firstName": firstName,
                     "friends": [],
-                    "googleProfileImageUrl": googleProfileImageUrl
+                    "googleProfileImageUrl": googleProfileImageUrl,
+                    "screenTimeGoal": 4.0,
+                    "userScreenTime": ["hours": 0, "minutes": 0]
                 ]
             do {
                 try await usersCollection.document(auth.uid).setData(userData, merge: false)
@@ -74,7 +78,11 @@ final class UserDB {
         let firstName = data["firstName"] as? String
         let friends = data["friends"] as? [String] ?? []
         let googleProfileImageUrl = data["googleProfileImageUrl"] as? String
-        return Userinfo(userID: userID, email: email, displayName: displayName, firstName: firstName, friends: friends, googleProfileImageUrl: googleProfileImageUrl)
+        let screenTimeGoal = data["screenTimeGoal"] as? Double ?? 4.0
+        let screenTimeData = data["userScreenTime"] as? [String: Int]
+        let userScreenTime = (hours: screenTimeData?["hours"] ?? 0, minutes: screenTimeData?["minutes"] ?? 0)
+
+        return Userinfo(userID: userID, email: email, displayName: displayName, firstName: firstName, friends: friends, googleProfileImageUrl: googleProfileImageUrl, screenTimeGoal: screenTimeGoal, userScreenTime: userScreenTime)
     }
     
     func updateGoogleProfileImageUrl(userID: String, imageUrl: String) {
@@ -119,19 +127,17 @@ final class UserDB {
             completion(users)
         }
     }
-
-    // Helper method to parse user data
-    private func parseUser(data: [String: Any]) -> Userinfo? {
-        guard let userID = data["userID"] as? String,
-              let email = data["email"] as? String,
-              let displayName = data["firstName"] as? String else {
-            return nil
-        }
-
-        let firstName = data["firstName"] as? String
-        let friends = data["friends"] as? [String] ?? []
-        return Userinfo(userID: userID, email: email, displayName: displayName, firstName: firstName, friends: friends)
-    }
+//    private func parseUser(data: [String: Any]) -> Userinfo? {
+//        guard let userID = data["userID"] as? String,
+//              let email = data["email"] as? String,
+//              let displayName = data["firstName"] as? String else {
+//            return nil
+//        }
+//
+//        let firstName = data["firstName"] as? String
+//        let friends = data["friends"] as? [String] ?? []
+//        return Userinfo(userID: userID, email: email, displayName: displayName, firstName: firstName, friends: friends)
+//    }
 
     
     func fetchUserByEmail(email: String, completion: @escaping (Userinfo?) -> Void) {
@@ -144,13 +150,7 @@ final class UserDB {
                 completion(nil)
             } else if let document = snapshot?.documents.first {
                 let data = document.data()
-                let userinfo = Userinfo(
-                    userID: document.documentID,
-                    email: data["email"] as? String ?? "",
-                    displayName: data["displayName"] as? String ?? "",
-                    firstName: data["firstName"] as? String,
-                    friends: data["friends"] as? [String] ?? []
-                )
+                let userinfo = self.parseUser(data: data)
                 completion(userinfo)
             } else {
                 completion(nil)
@@ -168,13 +168,8 @@ final class UserDB {
                 completion(nil)
             } else if let document = snapshot?.documents.first {
                 let data = document.data()
-                let userinfo = Userinfo(
-                    userID: document.documentID,
-                    email: data["email"] as? String ?? "",
-                    displayName: data["displayName"] as? String ?? "",
-                    firstName: data["firstName"] as? String,
-                    friends: data["friends"] as? [String] ?? []
-                )
+                let userinfo = self.parseUser(data: data)
+
                 completion(userinfo)
             } else {
                 completion(nil)
@@ -209,5 +204,35 @@ final class UserDB {
             completion(friendsList)
         }
     }
+    
+    func updateUserScreenTimeGoal(userID: String, screenTimeGoal: Double) {
+        let db = Firestore.firestore()
+        let userRef = db.collection("BeFreeUsers").document(userID)
+        userRef.updateData([
+            "screenTimeGoal": screenTimeGoal
+        ]) { error in
+            if let error = error {
+                print("Error updating user's screen time goal: \(error)")
+            } else {
+                print("User's screen time goal successfully updated")
+            }
+        }
+    }
+    
+    func updateUserScreenTime(userID: String, hours: Int, minutes: Int) {
+        let db = Firestore.firestore()
+        let userRef = db.collection("BeFreeUsers").document(userID)
+        userRef.updateData([
+            "userScreenTime": ["hours": hours, "minutes": minutes]
+        ]) { error in
+            if let error = error {
+                print("Error updating user's screen time: \(error)")
+            } else {
+                print("User's screen time successfully updated")
+            }
+        }
+    }
+
+
 }
 

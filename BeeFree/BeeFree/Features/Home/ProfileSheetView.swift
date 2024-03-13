@@ -175,7 +175,7 @@ struct ProfileSheetView: View {
 
 struct ProfileSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        let dummyUserInfo = Userinfo(userID: "123", email: "goodExample@example.com", displayName: "Big Boy", firstName: "Boy", friends: [])
+        let dummyUserInfo = Userinfo(userID: "123", email: "goodExample@example.com", displayName: "Big Boy", firstName: "Boy", friends: [], screenTimeGoal: 4, userScreenTime: (2,30))
 
         ProfileSheetView(isDarkMode: .constant(false), userInfo: .constant(dummyUserInfo))
             .previewLayout(.sizeThatFits)
