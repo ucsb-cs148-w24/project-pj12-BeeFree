@@ -75,6 +75,7 @@ struct ProfileSheetView: View {
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
                     }
                     HStack {
+                        Spacer()
                         Text("Done")
                             .onTapGesture {
                                 dismiss()
@@ -83,7 +84,6 @@ struct ProfileSheetView: View {
                             .font(.title3)
                             .foregroundColor(Color("AccentColor"))
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
-                        Spacer()
                     }
                 }
                 // Settings

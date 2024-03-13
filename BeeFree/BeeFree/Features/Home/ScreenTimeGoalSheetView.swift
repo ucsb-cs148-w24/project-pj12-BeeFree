@@ -112,7 +112,6 @@ struct ScreenTimeGoalSheetView: View {
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
-        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
     
     func formatDouble(_ value: Double) -> String {

@@ -46,6 +46,12 @@ class BeeFreeModel: ObservableObject {
         return screenTimeGoal * 3600
     }
     
+    func getFormattedScreenTimeGoal() -> String {
+        return ((screenTimeGoal*60).truncatingRemainder(dividingBy: 60) == 0 ?
+                 String(screenTimeGoal.rounded(.towardZero)) + " hrs" :
+                 String(screenTimeGoal.rounded(.towardZero)) + " hrs " + String((screenTimeGoal*60).truncatingRemainder(dividingBy: 60)) + " mins")
+    }
+    
     func setShieldRestrictions() {
         // Pull the selection out of the app's model and configure the application shield restriction accordingly
         let applications = BeeFreeModel.shared.selectionToDiscourage

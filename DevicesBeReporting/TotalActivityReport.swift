@@ -1,8 +1,8 @@
 //
 //  TotalActivityReport.swift
-//  DeviceActivityReportExtension
+//  DevicesBeReporting
 //
-//  Created by Anushka Vijay on 2/12/24.
+//  Created by Anushka Vijay on 2/17/24.
 //
 
 import DeviceActivity
@@ -13,24 +13,26 @@ extension DeviceActivityReport.Context {
     // your extension's corresponding DeviceActivityReportScene to render the contents of the
     // report.
     static let totalActivity = Self("Total Activity")
-    static let pieChart = Self("pieChart")
+    static let topApps = Self("Top Apps")
+//    static let pieChart = Self("pieChart")
+//    static let barGraph = Self("barGraph")
 }
 
 struct TotalActivityReport: DeviceActivityReportScene {
     // Define which context your scene will represent.
     let context: DeviceActivityReport.Context = .totalActivity
     
-    // Define the custom configuration and the resßulting view for this report.
+    // Define the custom configuration and the resulting view for this report.
     let content: (String) -> TotalActivityView
     
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> String {
         // Reformat the data into a configuration that can be used to create
         // the report's view.
         let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.day, .hour, .minute, .second]
+        formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .abbreviated
         formatter.zeroFormattingBehavior = .dropAll
-        
+                
         let totalActivityDuration = await data.flatMap { $0.activitySegments }.reduce(0, {
             $0 + $1.totalActivityDuration
         })

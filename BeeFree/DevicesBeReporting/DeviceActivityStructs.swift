@@ -36,6 +36,10 @@ struct TopThreeReport {
     let totalActivityData: TotalActivityReportData
 }
 
+struct SelectedAppsReport {
+    let apps: [AppDeviceActivity]
+}
+
 struct AppDeviceActivity: Identifiable, Hashable {
     var id: String
     var token: ApplicationToken
@@ -46,19 +50,19 @@ struct AppDeviceActivity: Identifiable, Hashable {
     var numberOfNotifs: Int
 }
 
-//struct ChartAndTopThreeReport{
-//    var totalDuration:TimeInterval
-//    var categoryChartData: [(String, Double)]
-//    var appChartData: [(String, Double)]
-//    var topApps: [AppDeviceActivity]
-//}
-//
-//struct CategoryDeviceActivity: Identifiable {
-//    var id:Int
-//    var category:String
-//    var duration: TimeInterval
-//    var token: ActivityCategoryToken
-//}
+struct ChartAndTopThreeReport{
+    var totalDuration:TimeInterval
+    var categoryChartData: [(String, Double)]
+    var appChartData: [(String, Double)]
+    var topApps: [AppDeviceActivity]
+}
+
+struct CategoryDeviceActivity: Identifiable {
+    var id:Int
+    var category:String
+    var duration: TimeInterval
+    var token: ActivityCategoryToken
+}
 
 
 extension TimeInterval{

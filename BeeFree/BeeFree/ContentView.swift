@@ -34,19 +34,21 @@ struct ContentView: View {
 
                     // Main Page Content
                     ZStack {
-                        HomeView(isDarkMode: $isDarkMode,
-                                 set: $model.setOfApps)
+                        if (selectedTab == .home) {
+                            HomeView(isDarkMode: $isDarkMode,
+                                     set: $model.setOfApps)
                             .environmentObject(model)
                             .environmentObject(store)
 
                             .opacity(selectedTab == .home ? 1.0 : 0.0)
                             .disabled(selectedTab == .home ? false : true)
+                        }
                         SummaryView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
                             .environmentObject(model)
                             .environmentObject(store)
                             .opacity(selectedTab == .summary ? 1.0 : 0.0)
                             .disabled(selectedTab == .sharing ? false : true)
-                        SharingView()
+                        SharingView(isDarkMode: $isDarkMode)
                             .opacity(selectedTab == .sharing ? 1.0 : 0.0)
                             .disabled(selectedTab == .sharing ? false : true)
 //                            .environmentObject(model)

@@ -19,6 +19,16 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
         // Handle the start of the interval.
+        let model = BeeFreeModel.shared
+        let applications = model.selectionToDiscourage.applicationTokens
+        let categories = model.selectionToDiscourage.categoryTokens
+        let webDomains = model.selectionToDiscourage.webDomainTokens
+        store.shield.applications = applications.isEmpty ?
+            nil : applications
+        store.shield.applicationCategories = categories.isEmpty ?
+            nil : ShieldSettings.ActivityCategoryPolicy.specific(categories)
+        store.shield.webDomains = webDomains.isEmpty ?
+            nil : webDomains
     }
     
     override func intervalDidEnd(for activity: DeviceActivityName) {
@@ -31,7 +41,7 @@ class DeviceActivityMonitorExtension: DeviceActivityMonitor {
         super.eventDidReachThreshold(event, activity: activity)
         
         // Handle the event reaching its threshold.
-        let model = BeeFreeModel()
+        let model = BeeFreeModel.shared
         let applications = model.selectionToDiscourage.applicationTokens
         let categories = model.selectionToDiscourage.categoryTokens
         let webDomains = model.selectionToDiscourage.webDomainTokens
