@@ -24,6 +24,15 @@ The following meetings and lectures largely focused on working on Apple's Screen
 In the 3rd and final retrospective on 3/6/2024, the team once again looked back on the current progress, what should be focused on, and what should be scrapped. The team agreed to conclude any issues that required the use of ScreenTimeAPI and focus on UI and other functionalities, such as sharing, that do not require any API usage that would be too risky to use given only about a week and a half of time remaining.
 
 In our final Monday meeting at 7:30 PM 3/11/2024, the team split into 3 groups, one working on UI in our login and default entrance page, another working on adding home page funcionality, and the last group finishing up the sharing page. 
+
+## Coding Process
+The first Kanban Board issues that we created were setting up login functionalities via Firebase in our app. Initially, the issue focused on both Google and Apple ID authentication, but overtime the acceptance criteria changed so only Google authentication needed to be implemented. We also had many of our main app functionalities as issues on the Kanban board, such as summary page setup, app limit storing, and creating app blocking. Any issues that needed database access were blocked under a Firestore issue that was set up by Sunhu and Peter. The issue regarding skeleton code for the Swift app that contained simple UI was the first major issue to be completed. 
+
+Overtime we realized a lot of our issues were difficult or impossible to complete, leaving to a graveyard of issues, such as a very early issue that focused on storing app limit information into a database. To see the compromises we made, many issues under Peter and Mujia show the workaround we had to do, such as just asking the user for input on their screentime usage instead of relying on the ScreenTimeAPI to do it for us. Other issues relying on ScreenTimeAPI needed to be retconned to better match our discoveries and research overtime during the Code Process 
+
+Issues towards the beginning of the coding process did not have many clear acceptance criteria, but many did have explcit connections to User Stories. Overtime, we began to add acceptance criteria to each of our issues as well. 
+
+We made sure to connect almost every PR we make to a specific issue in our Kanban board so team members could easily determine what the team member was working on. Explanations in PR messages were clear and simple, as well as commit messages which appropriately and explicity described the main changes the team members made. 
 ## UX + UserFlow
 Our team wanted to make BeeFree as intuitive as possible so new users who are on the fence can easily navigate through our app and immediately get a good feel and understanding of how things work. We chose to have 3 quickly accessible tabs; the home page, the summary page, and the sharing page that each clearly define their puproses. A user flow below shows how the app works:
 https://www.figma.com/proto/ODOuk0ZjYnNDZBpqao3gnA/UXFlow---BeeFree?type=design&node-id=5-22&t=B7cAUpqWfCNJYXXq-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=5%3A22&show-proto-sidebar=1&mode=design
