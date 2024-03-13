@@ -17,5 +17,8 @@ struct DevicesBeReporting: DeviceActivityReportExtension {
         TopAppsReport { topApps in
             TopThreeView(topThreeReport: topApps)
         }
+        HomeReport { selectedApps in
+            HomeReportView(homeReport: selectedApps)
+        }
     }
 }

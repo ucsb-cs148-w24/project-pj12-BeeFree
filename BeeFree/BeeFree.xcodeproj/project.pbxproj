@@ -90,7 +90,6 @@
 		9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */; };
 		9E0BB7DD2B758C4100414DBD /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E392B5C75C300EB61B2 /* ProfileSheetView.swift */; };
 		9E0BB7DE2B758C4200414DBD /* CreateLimitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3B2B5C75DC00EB61B2 /* CreateLimitSheetView.swift */; };
-		9E0BB7DF2B758C4400414DBD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3D2B5C766000EB61B2 /* HomeView.swift */; };
 		9E0BB7E32B758C4D00414DBD /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3F2B5C767200EB61B2 /* SharingView.swift */; };
 		9E0BB7E42B758C4F00414DBD /* TitleBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E352B5C757500EB61B2 /* TitleBarModifier.swift */; };
 		9E0BB7E52B758C5100414DBD /* TabBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E372B5C758C00EB61B2 /* TabBarModifier.swift */; };
@@ -126,6 +125,9 @@
 		9E395E402B5C767200EB61B2 /* SharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3F2B5C767200EB61B2 /* SharingView.swift */; };
 		9E395E432B5C769300EB61B2 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E422B5C769300EB61B2 /* SummaryView.swift */; };
 		9E395E452B5C777A00EB61B2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E442B5C777A00EB61B2 /* LoginView.swift */; };
+		9E43DBF02B9BCDAE003EC3E2 /* HomeReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43DBEF2B9BCDAE003EC3E2 /* HomeReport.swift */; };
+		9E43DBF22B9BCDCE003EC3E2 /* HomeReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43DBF12B9BCDCE003EC3E2 /* HomeReportView.swift */; };
+		9E43DBF42B9BD2ED003EC3E2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43DBF32B9BD2ED003EC3E2 /* CardView.swift */; };
 		9E4798C52B8FF08C008FD765 /* DeviceActivityStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */; };
 		9E4798C72B8FF1D7008FD765 /* TopAppsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */; };
 		9E4798CC2B8FF373008FD765 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9E4798CB2B8FF373008FD765 /* SwiftUICharts */; };
@@ -160,6 +162,7 @@
 		9ED853432B8DA8BE004B6937 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853422B8DA8BE004B6937 /* FirebaseAnalyticsSwift */; };
 		9ED853452B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853442B8DA8BE004B6937 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9ED853472B8DA8BE004B6937 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED853462B8DA8BE004B6937 /* FirebaseAppCheck */; };
+		9EE449142BA00FE3008F42EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E3D2B5C766000EB61B2 /* HomeView.swift */; };
 		9EFD0F642B75FA0000FEA6E6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F632B75FA0000FEA6E6 /* FirebaseAnalytics */; };
 		9EFD0F662B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F652B75FA0000FEA6E6 /* FirebaseAnalyticsOnDeviceConversion */; };
 		9EFD0F682B75FA0000FEA6E6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9EFD0F672B75FA0000FEA6E6 /* FirebaseAnalyticsSwift */; };
@@ -280,6 +283,9 @@
 		9E395E3F2B5C767200EB61B2 /* SharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingView.swift; sourceTree = "<group>"; };
 		9E395E422B5C769300EB61B2 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9E395E442B5C777A00EB61B2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9E43DBEF2B9BCDAE003EC3E2 /* HomeReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReport.swift; sourceTree = "<group>"; };
+		9E43DBF12B9BCDCE003EC3E2 /* HomeReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReportView.swift; sourceTree = "<group>"; };
+		9E43DBF32B9BD2ED003EC3E2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityStructs.swift; sourceTree = "<group>"; };
 		9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAppsReport.swift; sourceTree = "<group>"; };
 		9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeView.swift; sourceTree = "<group>"; };
@@ -420,6 +426,9 @@
 				9E4798C42B8FF08C008FD765 /* DeviceActivityStructs.swift */,
 				9E4798C62B8FF1D7008FD765 /* TopAppsReport.swift */,
 				9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */,
+				9E43DBEF2B9BCDAE003EC3E2 /* HomeReport.swift */,
+				9E43DBF12B9BCDCE003EC3E2 /* HomeReportView.swift */,
+				9E43DBF32B9BD2ED003EC3E2 /* CardView.swift */,
 				11299F662B81775100F01672 /* Info.plist */,
 				11299F672B81775100F01672 /* DevicesBeReporting.entitlements */,
 			);
@@ -810,6 +819,7 @@
 				9E2D4B9D2B8D983900493A09 /* PollenAnimation.swift in Sources */,
 				9E063DAA2B9658F300437736 /* LoginUtilities.swift in Sources */,
 				9E4798D62B8FF4FB008FD765 /* TopThreeView.swift in Sources */,
+				9E43DBF42B9BD2ED003EC3E2 /* CardView.swift in Sources */,
 				9E2D4B8E2B8D981C00493A09 /* CreateLimitSheetView.swift in Sources */,
 				9E2D4B972B8D982C00493A09 /* SharingView.swift in Sources */,
 				9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */,
@@ -831,6 +841,8 @@
 				9E063DA92B9658E800437736 /* LoginView.swift in Sources */,
 				9EA465E02B8D951F007E51EA /* SummaryView.swift in Sources */,
 				9E2D4B9A2B8D983200493A09 /* AppLimitDisplay.swift in Sources */,
+				9E43DBF02B9BCDAE003EC3E2 /* HomeReport.swift in Sources */,
+				9E43DBF22B9BCDCE003EC3E2 /* HomeReportView.swift in Sources */,
 				9E063DA82B9658DA00437736 /* AddFriendView.swift in Sources */,
 				9E8EE2802B9A71A200EBDECB /* ScreenTimeGoalSheetView.swift in Sources */,
 				9E063DA32B96582F00437736 /* AuthManager.swift in Sources */,
@@ -855,7 +867,6 @@
 				9EFD0F9D2B75FBBE00FEA6E6 /* LoginView.swift in Sources */,
 				9E0BB7E42B758C4F00414DBD /* TitleBarModifier.swift in Sources */,
 				9E0BB7E52B758C5100414DBD /* TabBarModifier.swift in Sources */,
-				9E0BB7DF2B758C4400414DBD /* HomeView.swift in Sources */,
 				9E6B59AA2B75D68600DB920E /* UserDB.swift in Sources */,
 				9E0BB7D72B758C2F00414DBD /* BeeFreeSchedule.swift in Sources */,
 				9E0BB7E92B758C5A00414DBD /* RectangleSection.swift in Sources */,
@@ -864,6 +875,7 @@
 				9E0BB7EB2B758C5E00414DBD /* ContentView.swift in Sources */,
 				9E0BB7E62B758C5300414DBD /* AppLimitDisplay.swift in Sources */,
 				9E0BB7E72B758C5600414DBD /* PollenAnimation.swift in Sources */,
+				9EE449142BA00FE3008F42EB /* HomeView.swift in Sources */,
 				9E0BB7DE2B758C4200414DBD /* CreateLimitSheetView.swift in Sources */,
 				11299F752B8179C400F01672 /* DeviceActivityMonitorExtension.swift in Sources */,
 			);

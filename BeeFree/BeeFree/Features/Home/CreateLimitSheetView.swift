@@ -44,6 +44,7 @@ struct CreateLimitSheetView: View {
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
                     }
                     HStack {
+                        Spacer()
                         Text("Done")
                             .onTapGesture {
                                 dismiss()
@@ -52,7 +53,6 @@ struct CreateLimitSheetView: View {
                             .font(.title3)
                             .foregroundColor(Color("AccentColor"))
                             .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
-                        Spacer()
                     }
                     
                 }
@@ -64,10 +64,10 @@ struct CreateLimitSheetView: View {
                         }
                         .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
                     }
-                    .onChange(of: model.selectionToDiscourage) {
-                        BeeFreeModel.shared.setShieldRestrictions()
-                        //var summaryApps = SummarySet
-                    }
+//                    .onChange(of: model.selectionToDiscourage) {
+//                        BeeFreeModel.shared.setShieldRestrictions()
+//                        //var summaryApps = SummarySet
+//                    }
                     Section(header: Text("Time Limit")) {
                         HStack{
                             Picker("Hours", selection: $hours) {
@@ -99,21 +99,30 @@ struct CreateLimitSheetView: View {
                                                                    second: savedTime?.seconds)
                                 model.changeThreshold(threshold: new_threshold)
                                 saveTime()
+                                DeviceActivityReport(.init("Home Report"))
+                                     .frame(maxWidth: .infinity)
+                                     .environmentObject(store)
+                                     .environmentObject(model)
                             }
-                        }
-                        .onChange(of: model.thresholdToDiscourage) {
-                            BeeFreeSchedule.setSchedule()
                         }
                     }
                 }
+                DeviceActivityReport(.init("Home Report"))
+                     .frame(maxWidth: .infinity)
+                     .environmentObject(store)
+                     .environmentObject(model)
                 Spacer()
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
-        .background(Color("Background").edgesIgnoringSafeArea(.all))
     }
     private func saveTime() {
         savedTime = (hours, minutes, seconds)
         BeeFreeSchedule.setSchedule()
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(model.selectionToDiscourage) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "selection")
+        }
     }
 }

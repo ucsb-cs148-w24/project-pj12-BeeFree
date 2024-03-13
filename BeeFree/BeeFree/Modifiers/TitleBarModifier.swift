@@ -79,27 +79,19 @@ struct TitleBarModifier: View {
             Spacer()
             HStack{
                 if (selectedTab == .home) {
-                    Button(action: { self.isCreateLimitPresented.toggle() }) {
-                        Image(systemName: "lock.square")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 27, height: 27)
-                            .foregroundColor(.white)
-                            .opacity(0.5)
-                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
-                            .scaleEffect(bounce ? 1.1 : 1.0) // Increased scale factor for more noticeable effect
-                    }
-                    .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: bounce)
-                    .onAppear {
-                        // Start the bounce effect after a short delay
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            self.bounce.toggle()
-                        }
-                    }
-                    .sheet(isPresented: $isCreateLimitPresented) {
-                        // Create a sheet view to create a limit
-                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
-                    }
+//                    Button(action: {self.isCreateLimitPresented.toggle()}) {
+//                        Image(systemName: "plus")
+//                            .resizable()
+//                            .opacity(0.5)
+//                            .foregroundColor(.white)
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 27, height: 27)
+//                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+//                    }
+//                    .sheet(isPresented: $isCreateLimitPresented) {
+//                        // Create a sheet view to create a limit
+//                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
+//                    }
                 }
 
                 else if (selectedTab == .sharing) {
