@@ -41,7 +41,11 @@ struct BeeFreeApp: App {
     }
 //    var body: some Scene {
 //        WindowGroup {
+<<<<<<< HEAD
 //            ZStack { ContentView(isDarkMode: true) }
+=======
+//            ZStack { ContentView(isDarkMode: false) }
+>>>>>>> 388c548 (brought back login view)
 //                .onAppear {
 //                    Task {
 //                        do {
@@ -53,6 +57,10 @@ struct BeeFreeApp: App {
 //                }
 //        }
 //    }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 388c548 (brought back login view)
 }
 
 
