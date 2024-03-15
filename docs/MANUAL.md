@@ -19,4 +19,4 @@ Users can see their total activity report and the top 5 apps they have used the 
 ### Sharing Page
 Users can set their total screen time given by their summary page(in hours and minutes), which will then be shared with their list of friends. To do this, navigate to the Sharing page and press the "Update Your Screen Time" button at the bottom. You will be redirected to a new page that allows you to adjust your screen time information that you wish to publicize to your friends. Go ahead and press "Save and View Friends" to view your friends' screen time information. 
 ### Home Page
-Besides the aforementioned app blocking and screentime goal settings, the Home Page also offers users a helpful list of trusty links that can aid users on managing their screen time.
+Besides the aforementioned app blocking and screen time goal settings, the Home Page also offers users a helpful list of trusty links that can aid users on managing their screen time.
