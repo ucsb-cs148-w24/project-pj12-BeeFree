@@ -14,7 +14,7 @@ struct RectangleSection: View {
             .fill(Color("LighterSky"))
             .frame(maxWidth: .infinity)
             .frame(height: height)
-            .cornerRadius(12.0)
+            .cornerRadius(10.0)
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
     }
 }

@@ -76,7 +76,7 @@ struct TopAppsReport: DeviceActivityReportScene {
                                 formatedDuration = "\(numberOfHours)hrs \(numberOfMins)min"
                             }
                         }
-                       
+                        let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
                         let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, category: category, numberOfNotifs: notifs)
                         var v = true

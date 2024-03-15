@@ -26,6 +26,7 @@ final class UserDB {
     static let shared = UserDB()
     private init() { }
 
+//    @available(iOSApplicationExtension, unavailable)
     func createNewUser(auth: AuthDataResultModel, firstName: String, googleProfileImageUrl: String) async -> Bool {
         let usersCollection = Firestore.firestore().collection("BeFreeUsers")
         let querySnapshot = try? await usersCollection.whereField("firstName", isEqualTo: firstName).getDocuments()

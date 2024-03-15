@@ -1,3 +1,9 @@
+//
+//  AddFriendView.swift
+//  BeeFree
+//
+//  Created by Karankumar Mageswaran on 1/20/24.
+//
 
 import Foundation
 import SwiftUI
@@ -165,7 +171,7 @@ class FriendsViewModel: ObservableObject {
 //            let friendEmail = friendInfo.email
 //            let screenTime = (hours: friendInfo.userScreenTime?.hours ?? 0, minutes: friendInfo.userScreenTime?.minutes ?? 0)
 //            let friend = Friend(id: UUID(), email: friendEmail, firstName: firstName, userScreenTime: screenTime)
-//            
+//
 //            DispatchQueue.main.async {
 //                self.friends.append(friend)
 //            }
@@ -216,8 +222,10 @@ struct AddFriendView: View {
             // Text field for adding a new friend
             TextField("Friend's Email", text: $friendEmail)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+                .padding(EdgeInsets(top: 48, leading: 16, bottom: 0, trailing: 16))
+
                 .autocapitalization(.none)
+            
 
             // Button to add a friend
             Button("Add Friend") {
@@ -226,7 +234,6 @@ struct AddFriendView: View {
                 }
             }
             .padding()
-
             // Display feedback message
             if let friendAdded = friendAddedSuccess {
                 Text(friendAdded ? "Friend added successfully!" : "Failed to add friend. Please enter a valid email.")
@@ -243,7 +250,8 @@ struct AddFriendView: View {
                 } else {
                     Text("Dear \(firstName), here is your list of friends:")
                         .font(.title2)
-                        .padding([.top, .bottom])
+                        .multilineTextAlignment(.center)
+                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                 }
             }
 
@@ -260,7 +268,7 @@ struct AddFriendView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .background(colorScheme == .dark ? Color("DarkerSky") : Color("LighterSky"))
+//            .background(colorScheme == .dark ? .black : .white)
             
             Spacer()
 
@@ -269,7 +277,7 @@ struct AddFriendView: View {
             }
             .padding()
         }
-        .background(colorScheme == .dark ? Color("DarkerSky") : Color("LighterSky"))
+//        .background(colorScheme == .dark ? .black : .white)
         .navigationTitle("Add Friend")
         .onAppear {
             viewModel.fetchCurrentUserFriends()

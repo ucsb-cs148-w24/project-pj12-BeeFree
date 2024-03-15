@@ -21,7 +21,11 @@ struct TitleBarModifier: View {
     @State private var currentUserInfo: Userinfo?
     var googleProfileImageUrl: String?
     @State private var bounce = false
-
+    
+    @State private var padding = 16.0
+    @State private var padding_2 = 100.0
+    @State private var opacity = 0.0
+    
     
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -32,19 +36,47 @@ struct TitleBarModifier: View {
             HStack {
                 VStack {
                     if(selectedTab == .home) {
-                        Group {
-                            Text("Bee ")
-                            //                            .foregroundColor(Color("DynamicYellow"))
-                                .foregroundColor(.white)
-                                .font(.largeTitle)
-                                .bold() +
-                            Text("Free")
-                                .foregroundColor(.white)
-                                .font(.largeTitle)
-                                .bold()
+                        ZStack {
+                            HStack {
+                                Image("TransparentCrop")
+                                    .resizable()
+                                    .frame(width: 80, height: 60)
+                                    .padding(EdgeInsets(top: padding_2, leading: 16, bottom: 0, trailing: 0))
+                                    .opacity(opacity)
+                                    .animation(.bouncy.delay(0.0), value: padding_2)
+                                    .animation(.easeIn.delay(0.0), value: opacity)
+                                    .onTapGesture {
+                                        padding -= 84
+                                        padding_2 += 84
+                                        opacity -= 1
+                                    }
+                                Spacer()
+                            }
+                            Text("BeeFree")
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 32, leading: padding, bottom: 0, trailing: 16))
+                            .animation(.bouncy.delay(0.0), value: padding)
+                            .onTapGesture {
+                                if (padding == 16.0) {
+                                    padding += 84
+                                    padding_2 -= 84
+                                    opacity += 1
+                                }
+                            }
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
+                        .onAppear {
+                            padding += 84
+                            padding_2 -= 84
+                            opacity += 1
+                        }
+                        .onDisappear {
+                            padding = 16.0
+                            padding_2 = 100.0
+                            opacity = 0.0
+                        }
                     }
                     else if(selectedTab == .summary) {
                         Text(Date().formatted(.dateTime.weekday(.wide).month().day()))

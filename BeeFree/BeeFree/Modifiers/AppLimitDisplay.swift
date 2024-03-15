@@ -22,12 +22,12 @@ struct AppLimitDisplay: View {
                 .fill(Color("LighterSky"))
                 .background(.ultraThinMaterial)
                 .frame(maxWidth: .infinity)
-                .cornerRadius(16.0)
+                .cornerRadius(10.0)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)))
 
     }
 }
 
 #Preview {
-    AppLimitDisplay(isDarkMode: .constant(false), appName: "Bee Free")
+    AppLimitDisplay(isDarkMode: .constant(false), appName: "BeeFree")
 }
