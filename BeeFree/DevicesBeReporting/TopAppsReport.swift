@@ -59,26 +59,26 @@ struct TopAppsReport: DeviceActivityReportScene {
                         var formatedDuration = ""
                         if numberOfHours == 0 {
                             if numberOfMins != 1{
-                                formatedDuration = "\(numberOfMins)mins"
+                                formatedDuration = "\(numberOfMins) mins"
                             }else{
-                                formatedDuration = "\(numberOfMins)min"
+                                formatedDuration = "\(numberOfMins) min"
                             }
                         }else if numberOfHours == 1{
                             if numberOfMins != 1{
-                                formatedDuration = "\(numberOfHours)hr \(numberOfMins)mins"
+                                formatedDuration = "\(numberOfHours) hr \(numberOfMins) mins"
                             }else{
-                                formatedDuration = "\(numberOfHours)hr \(numberOfMins)min"
+                                formatedDuration = "\(numberOfHours) hr \(numberOfMins) min"
                             }
                         }else{
                             if numberOfMins != 1{
-                                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)mins"
+                                formatedDuration = "\(numberOfHours) hrs \(numberOfMins) mins"
                             }else{
-                                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)min"
+                                formatedDuration = "\(numberOfHours) hrs \(numberOfMins) min"
                             }
                         }
                         let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
-                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, category: category, numberOfNotifs: notifs)
+                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, numberOfPickups: numberOfPickups, category: category, numberOfNotifs: notifs)
                         var v = true
                         for other_app in set {
                             if (other_app.id == app.id) { v = false }

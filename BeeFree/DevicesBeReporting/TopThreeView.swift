@@ -83,13 +83,14 @@ import FamilyControls
                                   Label(app.token)
                                       .labelStyle(.iconOnly)
                                       .scaleEffect(2)
+                                      .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 4))
                                   VStack {
                                       Text(app.displayName)
                                           .scaledToFill()
                                           .lineLimit(1)
                                           .foregroundColor(.white)
                                           .frame(maxWidth: .infinity, alignment: .leading)
-                                      Text(app.duration)
+                                      Text(app.category)
                                           .scaledToFill()
                                           .lineLimit(1)
                                           .foregroundColor(Color("DynamicGray"))
@@ -97,6 +98,20 @@ import FamilyControls
                                           .frame(maxWidth: .infinity, alignment: .leading)
                                   }
                                   Spacer()
+                                  VStack(alignment: .trailing) {
+                                      Text(app.duration)
+                                          .scaledToFill()
+                                          .lineLimit(1)
+                                          .foregroundColor(.white)
+                                          .font(.footnote)
+                                          .frame(maxWidth: .infinity, alignment: .trailing)
+                                      Text(String(app.numberOfPickups) +  " pickups")
+                                          .scaledToFill()
+                                          .lineLimit(1)
+                                          .foregroundColor(.white)
+                                          .font(.footnote)
+                                          .frame(maxWidth: .infinity, alignment: .trailing)
+                                  }
                               }
                               .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                           }
