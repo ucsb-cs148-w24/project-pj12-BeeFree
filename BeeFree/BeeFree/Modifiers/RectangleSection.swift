@@ -12,10 +12,9 @@ struct RectangleSection: View {
     var body: some View {
         Rectangle()
             .fill(Color("LighterSky"))
-            .background(.ultraThinMaterial)
             .frame(maxWidth: .infinity)
             .frame(height: height)
-            .cornerRadius(16.0)
+            .cornerRadius(12.0)
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
     }
 }

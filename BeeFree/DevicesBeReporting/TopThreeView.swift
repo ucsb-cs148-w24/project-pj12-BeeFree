@@ -16,11 +16,14 @@ import FamilyControls
      
      var body: some View {
           ZStack{
-              LinearGradient(gradient: Gradient(colors:[Color("Sky"), Color("DarkerSky")]), startPoint:.top, endPoint: .bottom)
+              Color("Sky")
+                  .edgesIgnoringSafeArea(.all)
               VStack{
-                  RectangleSection(height: 170)
-                  RectangleSection(height: 396)
                   Spacer()
+                  RectangleSection(height: 170)
+                      .padding(EdgeInsets(top: 32, leading: 0, bottom: 0, trailing: 0))
+                  RectangleSection(height: 380)
+                      .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
 
               }
               VStack{
@@ -43,13 +46,13 @@ import FamilyControls
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                               .multilineTextAlignment(.trailing)
                       }
-                  }.padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+                  }.padding(EdgeInsets(top: 64, leading: 0, bottom: 0, trailing: 0))
                   VStack(alignment: .leading){
                       Text("Top Apps")
                           .font(.title2)
                           .bold()
                           .foregroundColor(Color.white)
-                          .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
+                          .padding(EdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 16))
                       ForEach(topThreeReport.apps) { app in
                           ZStack {
                               HStack {
@@ -60,13 +63,14 @@ import FamilyControls
                                       Text(app.displayName)
                                           .scaledToFill()
                                           .lineLimit(1)
-                                          .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                          .foregroundColor(.white)
+                                          .frame(maxWidth: .infinity, alignment: .leading)
                                       Text(app.duration)
                                           .scaledToFill()
                                           .lineLimit(1)
                                           .foregroundColor(Color("DynamicGray"))
                                           .font(.footnote)
-                                          .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                          .frame(maxWidth: .infinity, alignment: .leading)
                                   }
                                   Spacer()
                               }
@@ -75,7 +79,7 @@ import FamilyControls
                       }
                       .frame(height: 30)
                       .background(.clear)
-                      .padding()
+                      .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
                       Spacer()
                   }.padding(EdgeInsets(top: 45, leading: 8, bottom: 0, trailing: 0))
                   Spacer()

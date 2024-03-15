@@ -26,7 +26,6 @@ struct ScreenTimeGoalSheetView: View {
                         .onTapGesture {
                             dismiss()
                         }
-                        .bold()
                         .font(.title3)
                         .foregroundColor(Color("AccentColor"))
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 8, trailing: 16))
@@ -38,9 +37,14 @@ struct ScreenTimeGoalSheetView: View {
                         .bold()
                         .multilineTextAlignment(.center)
                         .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-                    Text("Set a total screen time goal for your device.")
+                    Text("Set a total screen time goal for your device. The screen time goal will not affect how Bee Free blocks your app usage. Experts recommend 2 hours/day")
                         .multilineTextAlignment(.center)
                         .padding(EdgeInsets(top: 4, leading: 16, bottom: 0, trailing: 16))
+//                    Text("The screen time goal will not affect how Bee Free blocks your app usage.")
+//                        .foregroundColor(Color("DynamicGray"))
+//                        .font(.footnote)
+//                        .multilineTextAlignment(.center)
+//                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 20, trailing: 16))
                 }
                 Spacer()
                 VStack {
@@ -82,7 +86,7 @@ struct ScreenTimeGoalSheetView: View {
                     }
                     Text("HOURS / DAY")
                         .bold()
-                        .font(.system(size: 20))
+                        .font(.system(size: 20, design: .rounded))
                 }
                 .frame(maxWidth: .infinity, maxHeight: 500)
                 Spacer()
