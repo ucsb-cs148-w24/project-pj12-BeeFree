@@ -27,122 +27,125 @@ struct TitleBarModifier: View {
     @EnvironmentObject var model: BeeFreeModel
     
     var body: some View {
-        HStack {
-            VStack {
-                if(selectedTab == .home) {
-                    Group {
-                        Text("Bee ")
-//                            .foregroundColor(Color("DynamicYellow"))
-                            .foregroundColor(.white)
-                            .font(.largeTitle)
-                            .bold() +
-                        Text("Free")
-                            .foregroundColor(.white)
+        VStack {
+            Spacer()
+            HStack {
+                VStack {
+                    if(selectedTab == .home) {
+                        Group {
+                            Text("Bee ")
+                            //                            .foregroundColor(Color("DynamicYellow"))
+                                .foregroundColor(.white)
+                                .font(.largeTitle)
+                                .bold() +
+                            Text("Free")
+                                .foregroundColor(.white)
+                                .font(.largeTitle)
+                                .bold()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
+                    }
+                    else if(selectedTab == .summary) {
+                        Text(Date().formatted(.dateTime.weekday(.wide).month().day()))
+                            .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+                            .font(.footnote)
+                            .bold()
+                            .foregroundColor(Color("DynamicGray"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+                        Text("Summary")
                             .font(.largeTitle)
                             .bold()
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
-                }
-                else if(selectedTab == .summary) {
-                    Text(Date().formatted(.dateTime.weekday(.wide).month().day()))
-                        .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                        .font(.footnote)
-                        .bold()
-                        .foregroundColor(Color("DynamicGray"))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-                    Text("Summary")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                }
-                else if(selectedTab == .sharing) {
-                    Text(Date().formatted(.dateTime.weekday(.wide).month().day()))
-                        .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                        .font(.footnote)
-                        .bold()
-                        .foregroundColor(Color("DynamicGray"))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-                    Text("Sharing")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                }
-                else {}
-            }
-            Spacer()
-            HStack{
-                if (selectedTab == .home) {
-//                    Button(action: {self.isCreateLimitPresented.toggle()}) {
-//                        Image(systemName: "plus")
-//                            .resizable()
-//                            .opacity(0.5)
-//                            .foregroundColor(.white)
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 27, height: 27)
-//                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
-//                    }
-//                    .sheet(isPresented: $isCreateLimitPresented) {
-//                        // Create a sheet view to create a limit
-//                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
-//                    }
-                }
-
-                else if (selectedTab == .sharing) {
-                    Button(action: { self.isAddFriendPresented.toggle() }) {
-                        Image(systemName: "person.2.badge.gearshape.fill")
-                            .resizable()
-                            .opacity(0.5)
                             .foregroundColor(.white)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 42, height: 42)
-                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                     }
-                    .sheet(isPresented: $isAddFriendPresented) {
-                        // Initialize FriendsViewModel without DataManager
-                        AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
-                            .environmentObject(model)
-                            .environmentObject(store)
+                    else if(selectedTab == .sharing) {
+                        Text(Date().formatted(.dateTime.weekday(.wide).month().day()))
+                            .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+                            .font(.footnote)
+                            .bold()
+                            .foregroundColor(Color("DynamicGray"))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+                        Text("Sharing")
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                     }
+                    else {}
                 }
-
-                Button(action: { self.isAccountSettingsPresented.toggle() }) {
-                    Group {
-                        if let imageUrl = currentUserInfo?.googleProfileImageUrl, let url = URL(string: imageUrl) {
-                            AsyncImage(url: url, frameSize: CGSize(width: 32, height: 32), placeholder: {
+                Spacer()
+                HStack{
+                    if (selectedTab == .home) {
+                        //                    Button(action: {self.isCreateLimitPresented.toggle()}) {
+                        //                        Image(systemName: "plus")
+                        //                            .resizable()
+                        //                            .opacity(0.5)
+                        //                            .foregroundColor(.white)
+                        //                            .aspectRatio(contentMode: .fit)
+                        //                            .frame(width: 27, height: 27)
+                        //                            .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                        //                    }
+                        //                    .sheet(isPresented: $isCreateLimitPresented) {
+                        //                        // Create a sheet view to create a limit
+                        //                        CreateLimitSheetView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
+                        //                    }
+                    }
+                    
+                    else if (selectedTab == .sharing) {
+                        Button(action: { self.isAddFriendPresented.toggle() }) {
+                            Image(systemName: "person.2.badge.gearshape.fill")
+                                .resizable()
+                                .opacity(0.5)
+                                .foregroundColor(.white)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 42, height: 42)
+                                .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 0))
+                        }
+                        .sheet(isPresented: $isAddFriendPresented) {
+                            // Initialize FriendsViewModel without DataManager
+                            AddFriendView(isDarkMode: $isDarkMode, viewModel: FriendsViewModel())
+                                .environmentObject(model)
+                                .environmentObject(store)
+                        }
+                    }
+                    
+                    Button(action: { self.isAccountSettingsPresented.toggle() }) {
+                        Group {
+                            if let imageUrl = currentUserInfo?.googleProfileImageUrl, let url = URL(string: imageUrl) {
+                                AsyncImage(url: url, frameSize: CGSize(width: 32, height: 32), placeholder: {
+                                    Image(systemName: "person.circle.fill")
+                                        .resizable()
+                                })
+                            } else {
                                 Image(systemName: "person.circle.fill")
-                                    .resizable()
-                            })
-                        } else {
-                            Image(systemName: "person.circle.fill")
                                 .resizable()                        }
+                        }
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 32, height: 32)
+                        .opacity(0.5)
+                        .foregroundColor(.white)
+                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
                     }
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 32, height: 32)
-                    .opacity(0.5)
-                    .foregroundColor(.white)
-                    .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
-                }
-                .onAppear {
-                    getUserData()
+                    .onAppear {
+                        getUserData()
+                    }
+                    
+                    .sheet(isPresented: $isAccountSettingsPresented) {
+                        // Create a sheet view with profile details and settings
+                        ProfileSheetView(isDarkMode: $isDarkMode, userInfo: $currentUserInfo)
+                            .environmentObject(store)
+                            .environmentObject(model)
+                    }
                 }
                 
-                .sheet(isPresented: $isAccountSettingsPresented) {
-                    // Create a sheet view with profile details and settings
-                    ProfileSheetView(isDarkMode: $isDarkMode, userInfo: $currentUserInfo) 
-                        .environmentObject(store)
-                        .environmentObject(model)
-                }
             }
-            
+            .padding(EdgeInsets(top: 48, leading:0, bottom: 16, trailing: 0))
         }
-        Spacer()
     }
     
     var currentUserID: String? {
