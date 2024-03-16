@@ -136,7 +136,6 @@ struct HomeReport: DeviceActivityReportScene {
                         if durationInMins > 2.0 {
                             appChartData.append((appName, durationInMins))
                         }
-                        
                         let duration = Int(ap.totalActivityDuration)
                         let durationInterval = ap.totalActivityDuration
                         let category = c.category.localizedDisplayName!
@@ -146,7 +145,7 @@ struct HomeReport: DeviceActivityReportScene {
                         
                         let numberOfPickups = ap.numberOfPickups
                         let notifs = ap.numberOfNotifications
-                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval,category: category, numberOfNotifs: notifs)
+                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, numberOfPickups: numberOfPickups, category: category, numberOfNotifs: notifs)
                         appList.append(app)
                     }
                 }
