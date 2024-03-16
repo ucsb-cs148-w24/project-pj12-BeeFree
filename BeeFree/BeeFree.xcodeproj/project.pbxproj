@@ -98,7 +98,6 @@
 		9E0DD6212BA4D4FD00DF48BB /* UserManualSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DD6202BA4D4FD00DF48BB /* UserManualSheetView.swift */; };
 		9E0DD6222BA4D5E600DF48BB /* UserManualSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DD6202BA4D4FD00DF48BB /* UserManualSheetView.swift */; };
 		9E0DD6232BA4D5E700DF48BB /* UserManualSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DD6202BA4D4FD00DF48BB /* UserManualSheetView.swift */; };
-		9E0DD6252BA4E67D00DF48BB /* Viga-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E0DD6242BA4E67D00DF48BB /* Viga-Regular.ttf */; };
 		9E170D082BA43FD700122EF2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E442B5C777A00EB61B2 /* LoginView.swift */; };
 		9E170D092BA4409300122EF2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E442B5C777A00EB61B2 /* LoginView.swift */; };
 		9E170D0C2BA4428A00122EF2 /* LoginUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C29222B60A08F00EED823 /* LoginUtilities.swift */; };
@@ -153,7 +152,6 @@
 		9E947E492BA4560400F08485 /* ExcuseSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E947E462BA455CF00F08485 /* ExcuseSheetView.swift */; };
 		9E96FEF72B9A8DE3005E7EE0 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D29D2B757BE200858806 /* DeviceActivityMonitorExtension.swift */; };
 		9E96FEFC2B9A8ED6005E7EE0 /* DevicesBeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11299F602B81775100F01672 /* DevicesBeReporting.swift */; };
-		9E99E5312BA48589006F2B67 /* Chickens Lovers.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E99E5302BA48589006F2B67 /* Chickens Lovers.ttf */; };
 		9EA34C762B5F260400F1208D /* CircleProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C752B5F260400F1208D /* CircleProgressBar.swift */; };
 		9EA34C792B5F29A300F1208D /* RectangleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA34C782B5F29A300F1208D /* RectangleSection.swift */; };
 		9EA465DD2B8D94DB007E51EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E395E0F2B5C6FFA00EB61B2 /* ContentView.swift */; };
@@ -268,7 +266,6 @@
 		43536EBE2B70ADC000207E52 /* UserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
 		43536EC42B71D09000207E52 /* BeeFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeeFree.entitlements; sourceTree = "<group>"; };
 		9E0DD6202BA4D4FD00DF48BB /* UserManualSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManualSheetView.swift; sourceTree = "<group>"; };
-		9E0DD6242BA4E67D00DF48BB /* Viga-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Viga-Regular.ttf"; path = "../../../../../../../Downloads/Viga/Viga-Regular.ttf"; sourceTree = "<group>"; };
 		9E29D2922B75781B00858806 /* BeeFreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeModel.swift; sourceTree = "<group>"; };
 		9E29D2942B75782E00858806 /* BeeFreeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeFreeSchedule.swift; sourceTree = "<group>"; };
 		9E29D29A2B757BE200858806 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,7 +293,6 @@
 		9E4798D52B8FF4FB008FD765 /* TopThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeView.swift; sourceTree = "<group>"; };
 		9E8EE27D2B9A715F00EBDECB /* ScreenTimeGoalSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeGoalSheetView.swift; sourceTree = "<group>"; };
 		9E947E462BA455CF00F08485 /* ExcuseSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcuseSheetView.swift; sourceTree = "<group>"; };
-		9E99E5302BA48589006F2B67 /* Chickens Lovers.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Chickens Lovers.ttf"; path = "../../../../../../../Downloads/chickens_lovers 2/Chickens Lovers.ttf"; sourceTree = "<group>"; };
 		9EA34C752B5F260400F1208D /* CircleProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleProgressBar.swift; path = BeeFree/Features/Summary/View/CircleProgressBar.swift; sourceTree = SOURCE_ROOT; };
 		9EA34C782B5F29A300F1208D /* RectangleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleSection.swift; sourceTree = "<group>"; };
 		9EB1A5ED2B5FA2DE00F6D408 /* AppLimitDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLimitDisplay.swift; sourceTree = "<group>"; };
@@ -479,8 +475,6 @@
 				43536EC42B71D09000207E52 /* BeeFree.entitlements */,
 				117ADB362B7B244600A99834 /* GoogleService-Info.plist */,
 				276C378D2B60A31D00F7BC5A /* Info.plist */,
-				9E0DD6242BA4E67D00DF48BB /* Viga-Regular.ttf */,
-				9E99E5302BA48589006F2B67 /* Chickens Lovers.ttf */,
 				9EE42ED62B75294C005B06BE /* ScreenTime */,
 				9E395E1B2B5C735300EB61B2 /* Features */,
 				9E395E332B5C747E00EB61B2 /* Modifiers */,
@@ -813,9 +807,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E395E152B5C6FFB00EB61B2 /* Preview Assets.xcassets in Resources */,
-				9E0DD6252BA4E67D00DF48BB /* Viga-Regular.ttf in Resources */,
 				9E395E122B5C6FFB00EB61B2 /* Assets.xcassets in Resources */,
-				9E99E5312BA48589006F2B67 /* Chickens Lovers.ttf in Resources */,
 				117ADB372B7B244600A99834 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

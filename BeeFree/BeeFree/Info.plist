@@ -3,10 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UIAppFonts</key>
-	<array>
-		<string>Chickens Lovers.ttf</string>
-		<string>Viga-Regular.ttf</string>
-	</array>
+	<array/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
