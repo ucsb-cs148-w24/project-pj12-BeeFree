@@ -159,9 +159,11 @@ struct TitleBarModifier: View {
                         }
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32, height: 32)
-                        .opacity(0.5)
                         .foregroundColor(.white)
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
+                        .mask {
+                            Circle()
+                        }
                     }
                     .onAppear {
                         getUserData()

@@ -23,8 +23,8 @@ import FamilyControls
               VStack{
                   RectangleSection(height: 170)
                       .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                  RectangleSection(height: 380)
-                      .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                  RectangleSection(height: 322)
+                      .padding(EdgeInsets(top: 64, leading: 0, bottom: 16, trailing: 0))
                  Spacer()
 
               }
@@ -60,68 +60,93 @@ import FamilyControls
                               .font(.subheadline)
                               .foregroundColor(.white)
                               .frame(maxWidth: .infinity)
-                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                              .multilineTextAlignment(.trailing)
+                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
+                              .frame(alignment: .trailing)
                           Text(topThreeReport.totalActivityData.totalActivity)
                               .font(.system(.title, design: .rounded))
                               .bold()
                               .foregroundColor(.yellow)
                               .frame(maxWidth: .infinity)
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
-                              .multilineTextAlignment(.trailing)
-                      }
-                  }.padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+                              .frame(alignment: .trailing)
+                          
+                          Text("Top Categories")
+                              .textCase(.uppercase)
+                              .font(.subheadline)
+                              .foregroundColor(.white)
+                              .frame(maxWidth: .infinity)
+                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
+                              .frame(alignment: .trailing)
+                          Text(topThreeReport.totalActivityData.totalActivity)
+                              .font(.system(.title, design: .rounded))
+                              .bold()
+                              .foregroundColor(.yellow)
+                              .frame(maxWidth: .infinity)
+                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                              .frame(alignment: .trailing)
+                      }.padding(EdgeInsets(top: -8, leading: 0, bottom: 0, trailing: 0))
+                  }.padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
                   VStack(alignment: .leading){
                       Text("Top Apps")
                           .font(.title2)
                           .bold()
                           .foregroundColor(Color.white)
-                          .padding(EdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 16))
-                      ForEach(topThreeReport.apps) { app in
-                          ZStack {
-                              HStack {
-                                  Label(app.token)
-                                      .labelStyle(.iconOnly)
-                                      .scaleEffect(2)
-                                      .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 4))
-                                  VStack {
-                                      Text(app.displayName)
-                                          .scaledToFill()
-                                          .lineLimit(1)
-                                          .foregroundColor(.white)
-                                          .frame(maxWidth: .infinity, alignment: .leading)
-                                      Text(app.category)
-                                          .scaledToFill()
-                                          .lineLimit(1)
-                                          .foregroundColor(Color("DynamicGray"))
-                                          .font(.footnote)
-                                          .frame(maxWidth: .infinity, alignment: .leading)
-                                  }
-                                  Spacer()
-                                  VStack(alignment: .trailing) {
-                                      Text(app.duration)
-                                          .scaledToFill()
-                                          .lineLimit(1)
-                                          .foregroundColor(.white)
-                                          .font(.footnote)
-                                          .frame(maxWidth: .infinity, alignment: .trailing)
-                                      Text(String(app.numberOfPickups) +  " pickups")
-                                          .scaledToFill()
-                                          .lineLimit(1)
-                                          .foregroundColor(.white)
-                                          .font(.footnote)
-                                          .frame(maxWidth: .infinity, alignment: .trailing)
+                          .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                      ZStack {
+                          VStack {
+                              Divider().padding(EdgeInsets(top: 80, leading: 0, bottom: 27, trailing: 0))
+                              Divider().padding(EdgeInsets(top: 28, leading: 0, bottom: 27, trailing: 0))
+                              Divider().padding(EdgeInsets(top: 28, leading: 0, bottom: 27, trailing: 0))
+                              Divider().padding(EdgeInsets(top: 28, leading: 0, bottom: 27, trailing: 0))
+                              Spacer()
+                          }
+                          VStack {
+                              ForEach(topThreeReport.apps) { app in
+                                  ZStack {
+                                      HStack {
+                                          Label(app.token)
+                                              .labelStyle(.iconOnly)
+                                              .scaleEffect(2)
+                                              .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 4))
+                                          VStack {
+                                              Text(app.displayName)
+                                                  .scaledToFill()
+                                                  .lineLimit(1)
+                                                  .foregroundColor(.white)
+                                                  .frame(maxWidth: .infinity, alignment: .leading)
+                                              Text(app.category)
+                                                  .scaledToFill()
+                                                  .lineLimit(1)
+                                                  .foregroundColor(Color("DynamicGray"))
+                                                  .font(.footnote)
+                                                  .frame(maxWidth: .infinity, alignment: .leading)
+                                          }
+                                          Spacer()
+                                          VStack(alignment: .trailing) {
+                                              Text(app.duration)
+                                                  .scaledToFill()
+                                                  .lineLimit(1)
+                                                  .foregroundColor(.white)
+                                                  .font(.footnote)
+                                                  .frame(maxWidth: .infinity, alignment: .trailing)
+                                              Text(String(app.numberOfPickups) +  " pickups")
+                                                  .scaledToFill()
+                                                  .lineLimit(1)
+                                                  .foregroundColor(.white)
+                                                  .font(.footnote)
+                                                  .frame(maxWidth: .infinity, alignment: .trailing)
+                                          }
+                                      }
+                                      .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                                   }
                               }
-                              .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                          }
-                      }
-                      .frame(height: 30)
-                      .background(.clear)
-                      .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
-                      Spacer()
-                  }.padding(EdgeInsets(top: 45, leading: 8, bottom: 0, trailing: 0))
-                  
+                              .frame(height: 30)
+                              .background(.clear)
+                              .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
+                              Spacer()
+                          }.padding(EdgeInsets(top: 10, leading: 8, bottom: -64, trailing: 0))
+                      }.padding(EdgeInsets(top: 4, leading: 0, bottom: -24, trailing: 0))
+                  }
                   Spacer()
                   Spacer()
               }

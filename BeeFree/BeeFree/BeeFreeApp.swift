@@ -39,31 +39,7 @@ struct BeeFreeApp: App {
                 }
         }
     }
-//    var body: some Scene {
-//        WindowGroup {
-//            ZStack { ContentView(isDarkMode: false) }
-//                .onAppear {
-//                    Task {
-//                        do {
-//                            try await authcenter.requestAuthorization(for: .individual)
-//                        } catch {
-//                            print("Failed to enroll user with error: \(error)")
-//                        }
-//                    }
-//                }
-//        }
-//    }
 }
-
-
-//struct viewControllerWrapper :UIViewControllerRepresentable{
-//    func makeUIViewController(context: Context) -> some UIViewController {
-//        WelcomeViewController()
-//    }
-//    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-//
-//    }
-//}
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     // Make this request when the app launches

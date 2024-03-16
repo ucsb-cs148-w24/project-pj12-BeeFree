@@ -170,21 +170,12 @@ struct HomeView: View {
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 0))
             
             ZStack {
-                UnevenRoundedRectangle()
+                RoundedRectangle(cornerRadius: 12.0)
                     .fill(Color("LighterSky"))
                     .frame(maxWidth: .infinity)
-                    .frame(height: 290) // 270 - 290
-                    .clipShape(
-                        .rect(
-                            topLeadingRadius: 12,
-                            bottomLeadingRadius: 0,
-                            bottomTrailingRadius: 0,
-                            topTrailingRadius: 12
-                        )
-                    )
-                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    .frame(height: 232) // 270 - 290
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 66, trailing: 16))
                 
-                ScrollView {
                     VStack {
                         Label("BeeFree User Manual", systemImage: "info.circle")
                             .frame(maxWidth: .infinity)
@@ -223,7 +214,7 @@ struct HomeView: View {
                                 .animation(.bouncy.delay(0.2 + delay), value: padding_3)
                                 .animation(.easeIn.delay(0.2 + delay), value: opacity_3)
                         }
-                        Link(destination: URL(string: "https://www.nhlbi.nih.gov/health/educational/wecan/reduce-screen-time/index.htm")!) {
+                        Link(destination: URL(string: "https://www.nhlbi.nih.gov/health/seducational/wecan/reduce-screen-time/index.htm")!) {
                             Label("NIH: Reduce Screen Time", systemImage: "clock.arrow.circlepath")
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 40)
@@ -235,30 +226,30 @@ struct HomeView: View {
                                 .animation(.bouncy.delay(0.3 + delay), value: padding_4)
                                 .animation(.easeIn.delay(0.3 + delay), value: opacity_4)
                         }
-                        Link(destination: URL(string: "https://www.health.harvard.edu/healthbeat/safeguarding-your-sight#:~:text=Myth%3A%20Staring%20at%20a%20computer,harsh%20reflection%20on%20the%20screen.")!) {
-                            Label("Safeguard Your Sight", systemImage: "eye")
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 40)
-                                .foregroundColor(Color("WhyYellow")) // Use appropriate color here
-                                .background(Color(.secondarySystemGroupedBackground))
-                                .opacity(opacity_5)
-                                .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 5, leading: padding_5, bottom: 0, trailing: 32))
-                                .animation(.bouncy.delay(0.4 + delay), value: padding_5)
-                                .animation(.easeIn.delay(0.4 + delay), value: opacity_5)
-                        }
-                        Link(destination: URL(string: "https://nymag.com/intelligencer/2023/08/a-better-way-to-think-about-young-kids-and-screen-time.html")!) {
-                            Label("Young Kids and Screen Time", systemImage: "figure.and.child.holdinghands")
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 40)
-                                .foregroundColor(Color("WhyRed")) // Use appropriate color here
-                                .background(Color(.secondarySystemGroupedBackground))
-                                .opacity(opacity_6)
-                                .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 7, leading: padding_6, bottom: 60, trailing: 32))
-                                .animation(.bouncy.delay(0.5 + delay), value: padding_6)
-                                .animation(.easeIn.delay(0.5 + delay), value: opacity_6)
-                        }
+//                        Link(destination: URL(string: "https://www.health.harvard.edu/healthbeat/safeguarding-your-sight#:~:text=Myth%3A%20Staring%20at%20a%20computer,harsh%20reflection%20on%20the%20screen.")!) {
+//                            Label("Safeguard Your Sight", systemImage: "eye")
+//                                .frame(maxWidth: .infinity)
+//                                .frame(height: 40)
+//                                .foregroundColor(Color("WhyYellow")) // Use appropriate color here
+//                                .background(Color(.secondarySystemGroupedBackground))
+//                                .opacity(opacity_5)
+//                                .cornerRadius(10.0)
+//                                .padding(EdgeInsets(top: 5, leading: padding_5, bottom: 0, trailing: 32))
+//                                .animation(.bouncy.delay(0.4 + delay), value: padding_5)
+//                                .animation(.easeIn.delay(0.4 + delay), value: opacity_5)
+//                        }
+//                        Link(destination: URL(string: "https://nymag.com/intelligencer/2023/08/a-better-way-to-think-about-young-kids-and-screen-time.html")!) {
+//                            Label("Young Kids and Screen Time", systemImage: "figure.and.child.holdinghands")
+//                                .frame(maxWidth: .infinity)
+//                                .frame(height: 40)
+//                                .foregroundColor(Color("WhyRed")) // Use appropriate color here
+//                                .background(Color(.secondarySystemGroupedBackground))
+//                                .opacity(opacity_6)
+//                                .cornerRadius(10.0)
+//                                .padding(EdgeInsets(top: 7, leading: padding_6, bottom: 60, trailing: 32))
+//                                .animation(.bouncy.delay(0.5 + delay), value: padding_6)
+//                                .animation(.easeIn.delay(0.5 + delay), value: opacity_6)
+//                        }
                         Spacer() // Spacer to push buttons to the top
                     }
                     .onAppear {
@@ -298,9 +289,8 @@ struct HomeView: View {
                         
                         padding_6 += 8
                         opacity_6 -= 1
-                    }
                 }
-            }
+            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
         }
     }
 }
