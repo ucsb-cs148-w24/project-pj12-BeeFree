@@ -32,8 +32,9 @@ struct TotalActivityReportData{
 //}
 
 struct TopThreeReport {
-    let apps: [AppDeviceActivity]
-    let totalActivityData: TotalActivityReportData
+    var appsTime: [AppDeviceActivity]
+    var appsPickups: [AppDeviceActivity]
+    var totalActivityData: TotalActivityReportData
 }
 
 struct SelectedAppsReport {

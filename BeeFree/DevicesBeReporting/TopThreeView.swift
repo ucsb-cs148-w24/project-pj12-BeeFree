@@ -15,6 +15,7 @@ import FamilyControls
      private let fixedColumns =  [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))]
      
      @State private var shownProgress : Double = 0.0
+     @State private var sortByTime: Bool = true
      
      var body: some View {
           ZStack{
@@ -34,15 +35,15 @@ import FamilyControls
                       ZStack {
                           Circle()
                               .stroke(
-                                  ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) < 0.50 ? Color("GreenAccent") :
-                                      ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) < 0.75 ? Color("DynamicYellow") : Color("RedAccent"))).opacity(0.5),
+                                  ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) < 0.75 ? Color("GreenAccent") :
+                                        ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) <= 1.0 ? Color("DynamicYellow") : Color("RedAccent"))).opacity(0.5),
                                   lineWidth: 24
                               )
                           Circle()
                               .trim(from: 0, to: ((Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) > 1.0 ? 1.0 : (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double))))
                               .stroke(
-                                  ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) < 0.50 ? Color("GreenAccent") :
-                                      ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) < 0.75 ? Color("DynamicYellow") : Color("RedAccent"))),
+                                  ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) < 0.75 ? Color("GreenAccent") :
+                                        ( (Double(topThreeReport.totalActivityData.totalDuration) / (getSeconds() as! Double)) <= 1.0 ? Color("DynamicYellow") : Color("RedAccent"))),
                                   style: StrokeStyle(
                                       lineWidth: 24,
                                       lineCap: .round
@@ -53,7 +54,6 @@ import FamilyControls
                       }
                       .frame(width: 96, height: 96)
                       .padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 16))
-//                          .padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 16))
                       VStack{
                           Text("Total Screentime")
                               .textCase(.uppercase)
@@ -70,28 +70,43 @@ import FamilyControls
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                               .frame(alignment: .trailing)
                           
-                          Text("Top Categories")
+                          Text("Your Goal")
                               .textCase(.uppercase)
                               .font(.subheadline)
                               .foregroundColor(.white)
                               .frame(maxWidth: .infinity)
                               .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                               .frame(alignment: .trailing)
-                          Text(topThreeReport.totalActivityData.totalActivity)
+//                          Text(topThreeReport.totalActivityData.totalActivity)
+//                              .font(.system(.title, design: .rounded))
+//                              .bold()
+//                              .foregroundColor(.yellow)
+//                              .frame(maxWidth: .infinity)
+//                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+//                              .frame(alignment: .trailing)
+                          Text(formatTime(seconds: (getSeconds() as! Int)))
                               .font(.system(.title, design: .rounded))
-                              .bold()
                               .foregroundColor(.yellow)
                               .frame(maxWidth: .infinity)
-                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                              .padding(EdgeInsets(top: -4, leading: 16, bottom: 16, trailing: 16))
                               .frame(alignment: .trailing)
-                      }.padding(EdgeInsets(top: -8, leading: 0, bottom: 0, trailing: 0))
+                      }.padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
                   }.padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
                   VStack(alignment: .leading){
-                      Text("Top Apps")
-                          .font(.title2)
-                          .bold()
-                          .foregroundColor(Color.white)
-                          .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                      HStack {
+                          Text("Top Apps")
+                              .font(.title2)
+                              .bold()
+                              .foregroundColor(Color.white)
+                              .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                          Spacer()
+                          Picker(selection: $sortByTime, label: Text("Sort By:")) {
+                              Text("Time").tag(true).foregroundColor(.white)
+                              Text("Pickups").tag(false).foregroundColor(.white)
+                          }
+                          .pickerStyle(SegmentedPickerStyle())
+                          .tint(Color("LighterSky"))
+                      }
                       ZStack {
                           VStack {
                               Divider().padding(EdgeInsets(top: 80, leading: 0, bottom: 27, trailing: 0))
@@ -101,7 +116,7 @@ import FamilyControls
                               Spacer()
                           }
                           VStack {
-                              ForEach(topThreeReport.apps) { app in
+                              ForEach(sortByTime ? topThreeReport.appsTime : topThreeReport.appsPickups) { app in
                                   ZStack {
                                       HStack {
                                           Label(app.token)
@@ -129,7 +144,7 @@ import FamilyControls
                                                   .foregroundColor(.white)
                                                   .font(.footnote)
                                                   .frame(maxWidth: .infinity, alignment: .trailing)
-                                              Text(String(app.numberOfPickups) +  " pickups")
+                                              Text(String(app.numberOfPickups) +  (String(app.numberOfPickups) == "1" ? " pickup" : " pickups"))
                                                   .scaledToFill()
                                                   .lineLimit(1)
                                                   .foregroundColor(.white)
@@ -142,11 +157,11 @@ import FamilyControls
                               }
                               .frame(height: 30)
                               .background(.clear)
-                              .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
+                              .padding(EdgeInsets(top: 16, leading: 16, bottom: 10, trailing: 16))
                               Spacer()
                           }.padding(EdgeInsets(top: 10, leading: 8, bottom: -64, trailing: 0))
-                      }.padding(EdgeInsets(top: 4, leading: 0, bottom: -24, trailing: 0))
-                  }
+                      }.padding(EdgeInsets(top: 0, leading: 0, bottom: -24, trailing: 0))
+                  }.padding(EdgeInsets(top: 36, leading: 0, bottom: 0, trailing: 0))
                   Spacer()
                   Spacer()
               }
@@ -157,6 +172,19 @@ import FamilyControls
          let defaults = UserDefaults(suiteName: "group.com.BeeFreeAppBlocker.mygroup") //replace suiteName with your container name
          let secs = defaults!.object(forKey: "seconds")
          return secs!
+     }
+     
+     func formatTime(seconds: Int) -> String {
+         let hours = seconds / 3600
+         let minutes = (seconds % 3600) / 60
+
+         if minutes == 0 {
+             return "\(hours)h"
+         } else if minutes == 30 {
+             return "\(hours)h 30m"
+         } else {
+             return "\(hours)h"
+         }
      }
  }
 
