@@ -152,7 +152,7 @@ struct TitleBarModifier: View {
                                 AsyncImage(url: url, frameSize: CGSize(width: 32, height: 32), placeholder: {
                                     Image(systemName: "person.circle.fill")
                                         .resizable()
-                                })
+                                }).clipShape(Circle())
                             } else {
                                 Image(systemName: "person.circle.fill")
                                 .resizable()                        }
@@ -161,9 +161,7 @@ struct TitleBarModifier: View {
                         .frame(width: 32, height: 32)
                         .foregroundColor(.white)
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 16, trailing: 16))
-                        .mask {
-                            Circle()
-                        }
+                        .clipShape(Circle())
                     }
                     .onAppear {
                         getUserData()
