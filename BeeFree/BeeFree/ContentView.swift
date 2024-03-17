@@ -23,9 +23,12 @@ struct ContentView: View {
         ZStack {
             Color("Sky")
             .edgesIgnoringSafeArea(.all)
+            
+//            if (selectedTab == .home) {
+//                PollenAnimation(isDarkMode: $isDarkMode)
+//            }
+//            
             VStack {
-                // PollenAnimation(isDarkMode: $isDarkMode)
-                
                 // Top bar
                 TitleBarModifier(selectedTab: $selectedTab,
                                  isDarkMode: $isDarkMode)
@@ -36,12 +39,18 @@ struct ContentView: View {
                 
                 // Main Page Content
                 ZStack {
-                    HomeView(isDarkMode: $isDarkMode,
-                             set: $model.setOfApps)
-                    .environmentObject(model)
-                    .environmentObject(store)
-                    .opacity(selectedTab == .home ? 1.0 : 0.0)
-                    .disabled(selectedTab == .home ? false : true)
+//                    HomeView(isDarkMode: $isDarkMode,
+//                             set: $model.setOfApps)
+//                    .environmentObject(model)
+//                    .environmentObject(store)
+//                    .opacity(selectedTab == .home ? 1.0 : 0.0)
+//                    .disabled(selectedTab == .home ? false : true)
+                    if (selectedTab == .home) {
+                        HomeView(isDarkMode: $isDarkMode,
+                                 set: $model.setOfApps)
+                        .environmentObject(model)
+                        .environmentObject(store)
+                    }
                     SummaryView(isDarkMode: $isDarkMode, selectedApps: $model.selectionToDiscourage.applicationTokens)
                         .environmentObject(model)
                         .environmentObject(store)
@@ -54,10 +63,11 @@ struct ContentView: View {
                 }
             }
             .preferredColorScheme(isDarkMode ? .dark : .light)
-                
+                            
             // Tab Selector
             TabBarModifier(selectedTab: $selectedTab)
             .frame(maxHeight: .infinity, alignment: .bottom)
+            
         }
     }
 }

@@ -70,7 +70,6 @@ class WelcomeViewController: UIViewController{
         view.addGestureRecognizer(swipeUpGesture)
     }
     
-    @available(iOSApplicationExtension, unavailable)
     @objc private func handleSwipeUp() {
         // Transition to the LoginView
         let loginView = LoginView(showSignInView: .constant(false))

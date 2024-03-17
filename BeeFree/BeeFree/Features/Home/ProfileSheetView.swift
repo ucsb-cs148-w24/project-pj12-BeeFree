@@ -57,7 +57,7 @@ struct ProfileSheetView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     @Binding var isDarkMode: Bool
-    @Binding var userInfo: Userinfo? 
+    @Binding var userInfo: Userinfo?
     @State var isScreenTimeGoalPresented: Bool = false
     @EnvironmentObject var store: ManagedSettingsStore
     @EnvironmentObject var model: BeeFreeModel
@@ -110,24 +110,9 @@ struct ProfileSheetView: View {
                     })
                     Section(content: {
                         HStack{
-                            Text("Privacy").font(.title3)
-                        }
-                        HStack{
-                            Text("Notifications").font(.title3)
-                        }
-                    })
-                    Section(content: {
-                        HStack{
                             Toggle(isOn: $isDarkMode) {
                                 Text("Dark Mode").font(.title3)
                             }
-                        }
-                    })
-                    Section(content: {
-                        HStack{
-                            Text("Sign Out")
-                                .font(.title3)
-                                .foregroundColor(.red)
                         }
                     })
                 }

@@ -27,6 +27,30 @@ struct HomeView: View {
     
     @State private var isScreenTimeGoalPresented = false
     @State private var isDiscouragedPresented = false
+    @State private var isUserManualPresented = false
+    
+    @State var delay = 0.0
+    
+    @State private var padding_0 : Double = 40.0
+    @State private var opacity_0 : Double = 0.0
+    
+    @State private var padding_1 : Double = 40.0
+    @State private var opacity_1 : Double = 0.0
+    
+    @State private var padding_2 : Double = 40.0
+    @State private var opacity_2 : Double = 0.0
+    
+    @State private var padding_3 : Double = 40.0
+    @State private var opacity_3 : Double = 0.0
+    
+    @State private var padding_4 : Double = 40.0
+    @State private var opacity_4 : Double = 0.0
+    
+    @State private var padding_5 : Double = 40.0
+    @State private var opacity_5 : Double = 0.0
+    
+    @State private var padding_6 : Double = 40.0
+    @State private var opacity_6 : Double = 0.0
     
     
     func getScreenTimeText() -> String {
@@ -38,6 +62,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             VStack {
+                Spacer()
                 HStack {
                     Text("Screen Time Goal")
                         .bold()
@@ -46,7 +71,7 @@ struct HomeView: View {
                         .multilineTextAlignment(.leading)
                     Spacer()
                 }
-                .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+                .padding(EdgeInsets(top: 32, leading: 0, bottom: 0, trailing: 0))
                 
                 ZStack {
                     RectangleSection(height: 180)
@@ -64,7 +89,7 @@ struct HomeView: View {
                                         .foregroundColor(Color("DynamicYellow"))
                                         .bold()
                                         .multilineTextAlignment(.leading)
-                                    Text("HOURS / DAY")
+                                    Text((model.screenTimeGoal == 1 ? "HOUR / DAY" : "HOURS / DAY"))
                                         .bold()
                                         .foregroundColor(Color("DynamicYellow"))
                                         .font(.system(.title3, design: .rounded))
@@ -73,7 +98,7 @@ struct HomeView: View {
                                 }
                                 Text(model.screenTimeGoal <= 2 ? "Bravo! With this goal, you're paving the way for a healthier and more balanced life. Be free from your phone!"
                                      : "Experts say adults should limit screen time outside of work to less than 2 hours/day. Be free from your phone!")
-                                .foregroundColor(Color("DynamicGray"))
+                                .foregroundColor(.white)
                                 .font(.footnote)
                                 .multilineTextAlignment(.leading)
                                 Spacer()
@@ -82,10 +107,11 @@ struct HomeView: View {
                         .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                         Button(action: {self.isScreenTimeGoalPresented.toggle()}) {
                             Rectangle()
-                                .fill(Color("LighterSky"))
+                                .fill(Color(.secondarySystemGroupedBackground))
+                                .opacity(0.5)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 50)
-                                .cornerRadius(12.0)
+                                .cornerRadius(10)
                                 .overlay(
                                     Text("Change your screen time goal")
                                         .foregroundColor(.white)
@@ -115,7 +141,7 @@ struct HomeView: View {
                     .fill(Color("RedAccent"))
                     .frame(maxWidth: .infinity)
                     .frame(height: 64)
-                    .cornerRadius(12.0)
+                    .cornerRadius(10.0)
                     .overlay(HStack {
                         Image(systemName: "lock.square")
                             .foregroundColor(.white)
@@ -126,7 +152,7 @@ struct HomeView: View {
                             .bold()
                     }, alignment: .center)
             }
-            .padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+            .padding(EdgeInsets(top: 16, leading: 16, bottom: 10, trailing: 16))
             .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
             .onChange(of: model.selectionToDiscourage) {
                 BeeFreeModel.shared.setShieldRestrictions()
@@ -144,83 +170,127 @@ struct HomeView: View {
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 0))
             
             ZStack {
-                UnevenRoundedRectangle()
+                RoundedRectangle(cornerRadius: 12.0)
                     .fill(Color("LighterSky"))
                     .frame(maxWidth: .infinity)
-                    .frame(height: 290) // 270 - 290
-                    .clipShape(
-                        .rect(
-                            topLeadingRadius: 12,
-                            bottomLeadingRadius: 0,
-                            bottomTrailingRadius: 0,
-                            topTrailingRadius: 12
-                        )
-                    )
-                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    .frame(height: 232) // 270 - 290
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 66, trailing: 16))
                 
-                ScrollView {
                     VStack {
-                        Link(destination: URL(string: "https://github.com/ucsb-cs148-w24/project-pj12-appblocker/blob/main/docs/MANUAL.md")!) {
-                            Label("Bee Free User Manual", systemImage: "info.circle")
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 40)
-                                .background(Color("WhyViolet"))
-                                .foregroundColor(.white)
-                                .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 16, leading: 32, bottom: 0, trailing: 32))
-                        }
+                        Label("BeeFree User Manual", systemImage: "info.circle")
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 40)
+                            .foregroundColor(Color("WhyViolet"))
+                            .background(Color(.secondarySystemGroupedBackground))
+                            .cornerRadius(10.0)
+                            .padding(EdgeInsets(top: 16, leading: padding_1, bottom: 0, trailing: 32))
+                            .onTapGesture {
+                                self.isUserManualPresented.toggle()
+                            }
+                            .sheet(isPresented: $isUserManualPresented) {
+                                UserManualSheetView()
+                            }
                         Link(destination: URL(string: "https://www.becomingminimalist.com/break-your-cell-phone-habit/")!) {
                             Label("Setting Healthy Phone Habits", systemImage: "apps.iphone")
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 40)
-                                .background(Color("WhyGreen"))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("WhyGreen"))
+                                .background(Color(.secondarySystemGroupedBackground))
+                                .opacity(opacity_2)
                                 .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 5, leading: 32, bottom: 0, trailing: 32))
+                                .padding(EdgeInsets(top: 5, leading: padding_2, bottom: 0, trailing: 32))
+                                .animation(.bouncy.delay(0.1 + delay), value: padding_2)
+                                .animation(.easeIn.delay(0.1 + delay), value: opacity_2)
                         }
                         Link(destination: URL(string: "https://www.thegoodtrade.com/features/digital-detox-ideas/")!) {
                             Label("99 Ways To Not Use Your Phone", systemImage: "figure.walk")
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 40)
-                                .background(Color("WhyBlue"))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("WhyBlue"))
+                                .background(Color(.secondarySystemGroupedBackground))
+                                .opacity(opacity_3)
                                 .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 5, leading: 32, bottom: 0, trailing: 32))
+                                .padding(EdgeInsets(top: 5, leading: padding_3, bottom: 0, trailing: 32))
+                                .animation(.bouncy.delay(0.2 + delay), value: padding_3)
+                                .animation(.easeIn.delay(0.2 + delay), value: opacity_3)
                         }
-                        Link(destination: URL(string: "https://www.nhlbi.nih.gov/health/educational/wecan/reduce-screen-time/index.htm")!) {
+                        Link(destination: URL(string: "https://www.nhlbi.nih.gov/health/seducational/wecan/reduce-screen-time/index.htm")!) {
                             Label("NIH: Reduce Screen Time", systemImage: "clock.arrow.circlepath")
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 40)
-                                .background(Color("WhyOrange"))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("WhyOrange"))
+                                .background(Color(.secondarySystemGroupedBackground))
+                                .opacity(opacity_4)
                                 .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 5, leading: 32, bottom: 0, trailing: 32))
+                                .padding(EdgeInsets(top: 5, leading: padding_4, bottom: 0, trailing: 32))
+                                .animation(.bouncy.delay(0.3 + delay), value: padding_4)
+                                .animation(.easeIn.delay(0.3 + delay), value: opacity_4)
                         }
-                        Link(destination: URL(string: "https://www.health.harvard.edu/healthbeat/safeguarding-your-sight#:~:text=Myth%3A%20Staring%20at%20a%20computer,harsh%20reflection%20on%20the%20screen.")!) {
-                            Label("Safeguard Your Sight", systemImage: "eye")
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 40)
-                                .background(Color("WhyYellow")) // Use appropriate color here
-                                .foregroundColor(.white)
-                                .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 5, leading: 32, bottom: 0, trailing: 32))
-                        }
-                        Link(destination: URL(string: "https://nymag.com/intelligencer/2023/08/a-better-way-to-think-about-young-kids-and-screen-time.html")!) {
-                            Label("Young Kids and Screen Time", systemImage: "figure.and.child.holdinghands")
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 40)
-                                .background(Color("WhyRed")) // Use appropriate color here
-                                .foregroundColor(.white)
-                                .cornerRadius(10.0)
-                                .padding(EdgeInsets(top: 7, leading: 32, bottom: 80, trailing: 32))
-                        }
+//                        Link(destination: URL(string: "https://www.health.harvard.edu/healthbeat/safeguarding-your-sight#:~:text=Myth%3A%20Staring%20at%20a%20computer,harsh%20reflection%20on%20the%20screen.")!) {
+//                            Label("Safeguard Your Sight", systemImage: "eye")
+//                                .frame(maxWidth: .infinity)
+//                                .frame(height: 40)
+//                                .foregroundColor(Color("WhyYellow")) // Use appropriate color here
+//                                .background(Color(.secondarySystemGroupedBackground))
+//                                .opacity(opacity_5)
+//                                .cornerRadius(10.0)
+//                                .padding(EdgeInsets(top: 5, leading: padding_5, bottom: 0, trailing: 32))
+//                                .animation(.bouncy.delay(0.4 + delay), value: padding_5)
+//                                .animation(.easeIn.delay(0.4 + delay), value: opacity_5)
+//                        }
+//                        Link(destination: URL(string: "https://nymag.com/intelligencer/2023/08/a-better-way-to-think-about-young-kids-and-screen-time.html")!) {
+//                            Label("Young Kids and Screen Time", systemImage: "figure.and.child.holdinghands")
+//                                .frame(maxWidth: .infinity)
+//                                .frame(height: 40)
+//                                .foregroundColor(Color("WhyRed")) // Use appropriate color here
+//                                .background(Color(.secondarySystemGroupedBackground))
+//                                .opacity(opacity_6)
+//                                .cornerRadius(10.0)
+//                                .padding(EdgeInsets(top: 7, leading: padding_6, bottom: 60, trailing: 32))
+//                                .animation(.bouncy.delay(0.5 + delay), value: padding_6)
+//                                .animation(.easeIn.delay(0.5 + delay), value: opacity_6)
+//                        }
                         Spacer() // Spacer to push buttons to the top
                     }
+                    .onAppear {
+                        padding_1 -= 8
+                        opacity_1 += 1
+                        
+                        padding_2 -= 8
+                        opacity_2 += 1
+                        
+                        padding_3 -= 8
+                        opacity_3 += 1
+                        
+                        padding_4 -= 8
+                        opacity_4 += 1
+                        
+                        padding_5 -= 8
+                        opacity_5 += 1
+                        
+                        padding_6 -= 8
+                        opacity_6 += 1
+                    }
+                    .onDisappear {
+                        padding_1 += 8
+                        opacity_1 -= 1
+                        
+                        padding_2 += 8
+                        opacity_2 -= 1
+                        
+                        padding_3 += 8
+                        opacity_3 -= 1
+                        
+                        padding_4 += 8
+                        opacity_4 -= 1
+                        
+                        padding_5 += 8
+                        opacity_5 -= 1
+                        
+                        padding_6 += 8
+                        opacity_6 -= 1
                 }
-            }
-            
-            Spacer()
-            Spacer()
+            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
         }
     }
 }

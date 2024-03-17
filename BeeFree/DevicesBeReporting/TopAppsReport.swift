@@ -39,7 +39,8 @@ struct TopAppsReport: DeviceActivityReportScene {
         
         
         // Reformat the data into a configuration that can be used
-        var list: [AppDeviceActivity] = []
+        var listTime: [AppDeviceActivity] = []
+        var listPickups: [AppDeviceActivity] = []
         var set = Set<AppDeviceActivity>()
         
         for await d in data {
@@ -59,26 +60,26 @@ struct TopAppsReport: DeviceActivityReportScene {
                         var formatedDuration = ""
                         if numberOfHours == 0 {
                             if numberOfMins != 1{
-                                formatedDuration = "\(numberOfMins)mins"
+                                formatedDuration = "\(numberOfMins) mins"
                             }else{
-                                formatedDuration = "\(numberOfMins)min"
+                                formatedDuration = "\(numberOfMins) min"
                             }
                         }else if numberOfHours == 1{
                             if numberOfMins != 1{
-                                formatedDuration = "\(numberOfHours)hr \(numberOfMins)mins"
+                                formatedDuration = "\(numberOfHours) hr \(numberOfMins) mins"
                             }else{
-                                formatedDuration = "\(numberOfHours)hr \(numberOfMins)min"
+                                formatedDuration = "\(numberOfHours) hr \(numberOfMins) min"
                             }
                         }else{
                             if numberOfMins != 1{
-                                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)mins"
+                                formatedDuration = "\(numberOfHours) hrs \(numberOfMins) mins"
                             }else{
-                                formatedDuration = "\(numberOfHours)hrs \(numberOfMins)min"
+                                formatedDuration = "\(numberOfHours) hrs \(numberOfMins) min"
                             }
                         }
-                       
+                        let numberOfPickups = ap.numberOfPickups + 1
                         let notifs = ap.numberOfNotifications
-                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, category: category, numberOfNotifs: notifs)
+                        let app = AppDeviceActivity(id: bundle, token: token, displayName: appName, duration: formatedDuration, durationInterval: durationInterval, numberOfPickups: numberOfPickups, category: category, numberOfNotifs: notifs)
                         var v = true
                         for other_app in set {
                             if (other_app.id == app.id) { v = false }
@@ -89,30 +90,36 @@ struct TopAppsReport: DeviceActivityReportScene {
             }
         }
         for app in set {
-            list.append(app)
+            listTime.append(app)
+            listPickups.append(app)
         }
-        list.sort(by: sortApps)
-        if list.count < 5{
-            if list.count == 4{
-                return TopThreeReport(apps: [list[0], list[1], list[2], list[3]] , totalActivityData: totalActivityOutput)
+        listTime.sort(by: sortAppsTime)
+        listPickups.sort(by: sortAppsPickups)
+        if listTime.count < 5{
+            if listTime.count == 4{
+                return TopThreeReport(appsTime: [listTime[0], listTime[1], listTime[2], listTime[3]], appsPickups: [listPickups[0], listPickups[1], listPickups[2], listPickups[3]] , totalActivityData: totalActivityOutput)
             }
-            if list.count == 3{
-                return TopThreeReport(apps: [list[0], list[1], list[2]] , totalActivityData: totalActivityOutput)
+            if listTime.count == 3{
+                return TopThreeReport(appsTime: [listTime[0], listTime[1], listTime[2]], appsPickups: [listPickups[0], listPickups[1], listPickups[2]] , totalActivityData: totalActivityOutput)
             }
-            if list.count == 2{
-                return TopThreeReport(apps: [list[0], list[1]], totalActivityData: totalActivityOutput)
+            if listTime.count == 2{
+                return TopThreeReport(appsTime: [listTime[0], listTime[1]], appsPickups: [listPickups[0], listPickups[1]] , totalActivityData: totalActivityOutput)
             }
-            if list.count == 1{
-                return TopThreeReport(apps: [list[0]], totalActivityData: totalActivityOutput)
+            if listTime.count == 1{
+                return TopThreeReport(appsTime: [listTime[0]], appsPickups: [listPickups[0]] , totalActivityData: totalActivityOutput)
             }
-            if list.count == 0{
-                return TopThreeReport(apps: [], totalActivityData: totalActivityOutput)
+            if listTime.count == 0{
+                return TopThreeReport(appsTime: [], appsPickups: [] , totalActivityData: totalActivityOutput)
             }
         }
-        return TopThreeReport(apps: [list[0], list[1], list[2], list[3], list[4]], totalActivityData: totalActivityOutput)
+        return TopThreeReport(appsTime: [listTime[0], listTime[1], listTime[2], listTime[3], listTime[4]], appsPickups: [listPickups[0], listPickups[1], listPickups[2], listPickups[3], listPickups[4]] , totalActivityData: totalActivityOutput)
     }
     
-    func sortApps(this:AppDeviceActivity, that:AppDeviceActivity) -> Bool {
+    func sortAppsTime(this:AppDeviceActivity, that:AppDeviceActivity) -> Bool {
         return this.durationInterval > that.durationInterval
+    }
+    
+    func sortAppsPickups(this:AppDeviceActivity, that:AppDeviceActivity) -> Bool {
+        return (this.numberOfPickups == that.numberOfPickups ? this.durationInterval > that.durationInterval : this.numberOfPickups > that.numberOfPickups)
     }
 }

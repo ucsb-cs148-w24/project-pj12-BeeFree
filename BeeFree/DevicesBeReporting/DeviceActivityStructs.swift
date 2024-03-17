@@ -32,8 +32,9 @@ struct TotalActivityReportData{
 //}
 
 struct TopThreeReport {
-    let apps: [AppDeviceActivity]
-    let totalActivityData: TotalActivityReportData
+    var appsTime: [AppDeviceActivity]
+    var appsPickups: [AppDeviceActivity]
+    var totalActivityData: TotalActivityReportData
 }
 
 struct SelectedAppsReport {
@@ -46,6 +47,7 @@ struct AppDeviceActivity: Identifiable, Hashable {
     var displayName: String
     var duration: String
     var durationInterval: TimeInterval
+    var numberOfPickups: Int
     var category: String
     var numberOfNotifs: Int
 }

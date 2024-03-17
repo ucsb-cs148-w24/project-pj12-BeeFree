@@ -27,7 +27,7 @@ struct BeeFreeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ZStack { viewControllerWrapper() }
+            ZStack { /*ContentView(isDarkMode: false)*/ LoginView(isDarkMode: false, showSignInView: .constant(true)) }
                 .onAppear {
                     Task {
                         do {
@@ -38,38 +38,6 @@ struct BeeFreeApp: App {
                     }
                 }
         }
-    }
-//    var body: some Scene {
-//        WindowGroup {
-<<<<<<< HEAD
-//            ZStack { ContentView(isDarkMode: true) }
-=======
-//            ZStack { ContentView(isDarkMode: false) }
->>>>>>> 388c548 (brought back login view)
-//                .onAppear {
-//                    Task {
-//                        do {
-//                            try await authcenter.requestAuthorization(for: .individual)
-//                        } catch {
-//                            print("Failed to enroll user with error: \(error)")
-//                        }
-//                    }
-//                }
-//        }
-//    }
-<<<<<<< HEAD
-=======
-
->>>>>>> 388c548 (brought back login view)
-}
-
-
-struct viewControllerWrapper :UIViewControllerRepresentable{
-    func makeUIViewController(context: Context) -> some UIViewController {
-        WelcomeViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
     }
 }
 
