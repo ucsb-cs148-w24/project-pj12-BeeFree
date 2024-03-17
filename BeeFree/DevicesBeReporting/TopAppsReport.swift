@@ -105,7 +105,7 @@ struct TopAppsReport: DeviceActivityReportScene {
             if listTime.count == 2{
                 return TopThreeReport(appsTime: [listTime[0], listTime[1]], appsPickups: [listPickups[0], listPickups[1]] , totalActivityData: totalActivityOutput)
             }
-            if listTime.count == 1{
+            if listTime.count == 1{ 
                 return TopThreeReport(appsTime: [listTime[0]], appsPickups: [listPickups[0]] , totalActivityData: totalActivityOutput)
             }
             if listTime.count == 0{

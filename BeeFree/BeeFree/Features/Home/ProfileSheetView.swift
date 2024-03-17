@@ -126,7 +126,7 @@ struct ProfileSheetView: View {
     private func profileImageView() -> some View {
         Group {
             if let imageUrl = userInfo?.googleProfileImageUrl, let url = URL(string: imageUrl) {
-                AsyncImage(url: url, frameSize: CGSize(width: 48, height: 48), placeholder: { defaultImageView() })
+                AsyncImage(url: url, frameSize: CGSize(width: 48, height: 48), placeholder: { defaultImageView() }).clipShape(Circle())
             } else {
                 defaultImageView()
             }

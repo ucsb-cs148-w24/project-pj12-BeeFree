@@ -89,23 +89,34 @@ struct LoginView: View {
                             .frame(width: 150, height: 150)
                         
                         if viewModel.isNewUser {
-                            // Display for new users to enter their first name
-                            Text("Welcome, New User!")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .padding(.bottom, 20)
-                                .foregroundColor(.white)
-                            
-                            Text("Please enter a username")
-                                .font(.title3)
-                                .foregroundColor(.white)
-                                .padding(.bottom, 30)
-                                .multilineTextAlignment(.center)
-                            
-                            TextField("Username", text: $viewModel.firstName)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .padding()
-                                .autocapitalization(.none)
+                            ZStack {
+                                Rectangle()
+                                    .fill(Color(.systemBackground))
+                                    .opacity(0.25)
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 300)
+                                    .cornerRadius(10.0)
+                                    .padding()
+                                // Display for new users to enter their first name
+                                VStack {
+                                    Text("Welcome, new user!")
+                                        .font(.largeTitle)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom, 32)
+                                        .foregroundColor(.white)
+                                    
+                                    Text("Please enter a username")
+                                        .font(.title3)
+                                        .foregroundColor(.white)
+                                        .padding(.bottom, 16)
+                                        .multilineTextAlignment(.center)
+                                    
+                                    TextField("Username", text: $viewModel.firstName)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
+                                        .autocapitalization(.none)
+                                }
+                            }
                             
                             
                             if let errorMessage = errorMessage {
@@ -129,10 +140,10 @@ struct LoginView: View {
                             }
                             .frame(maxWidth: .infinity, maxHeight: 44)
                             .background(
-                                RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                                    .stroke(.white, lineWidth:2)
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("DynamicYellow"))
                             )
-                            .padding(EdgeInsets(top: 16, leading: 100, bottom: 76, trailing: 100))
+                            .padding(EdgeInsets(top: 16, leading: 50, bottom: 76, trailing: 50))
                             .foregroundColor(.white)
                             //                        .padding()
                         } else {
