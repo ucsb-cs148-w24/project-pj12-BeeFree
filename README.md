@@ -31,3 +31,5 @@ Users can install the beta version of our app according to the instructions prov
 To begin, you will be directed to accept or deny permissions required for the BeeFree app to manage app information and block apps from users. Then, you will be asked to log in via Google or you can create an account if you are new to the app. Once you have logged in or created an app, you will be directed to the home page where all the main functionalities exist. A navigation bar at the bottom allows you to move to other pages, such as your profile, summary, and app blocking pages. For now, BeeFree only contains a general outline of these functionalities, as the APIs have currently not been called yet for full functionality.
 ## Known Problems
 After logging in, the home page currently displays a back button that allows the user to go back to the login page which should not be displayed.
+## Deployment
+Currently, deployment through the App Store and TestFlight are unavailable due to ScreenTimeAPI permissions. We will hopefully update this in the future!
