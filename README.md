@@ -32,4 +32,4 @@ To begin, you will be directed to accept or deny permissions required for the Be
 ## Known Problems
 After logging in, the home page currently displays a back button that allows the user to go back to the login page which should not be displayed.
 ## Deployment
-Currently, deployment through the App Store and TestFlight are unavailable due to ScreenTimeAPI permissions. We will hopefully update this in the future!
+Currently, deployment through the App Store and TestFlight are unavailable due to ScreenTimeAPI permissions. Apple is very careful with how ScreenTimeAPI is to be used and monitored in SwiftUI applications and thus, requires special permissions to both be used and published publicly for users online to use. As of now, the best way of deployment is through an Apple Developer Account and connecting with Karan. However, this is something we wish to change. We will hopefully update this in the future!
