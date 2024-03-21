@@ -50,7 +50,7 @@
 - Created animations for the app to make it look and feel better
 
 ### Summary and Final Notes
-Karan and Anushka largely worked on getting ScreenTimeAPI to work, while Mujia and Peter worked largely on Firebase storage for the app's sharing and friends functionality, while Mike and Kavi worked a lot on polishing the app to make it look as good as possible and as close to the app's initial mock up design as possible. Sunhu largely worked on documentation and presentation for the app. Everyone participated in pair programming, which may not be visible in the GitHubs contribution page.
+Karan and Anushka largely worked on getting ScreenTimeAPI to work, Mujia and Peter worked largely on Firebase storage for the app's sharing and friends functionality, Mike and Kavi worked a lot on polishing the app to make it look as good as possible and as close to the app's initial mock up design as possible, and Sunhu largely worked on documentation and presentation for the app. Everyone participated in pair programming, which may not be visible in the GitHubs contribution page.
 
 The number of bullet points or lines above do not indicate everything regarding the amount of work everyone put in into this project. There were a lot of miscellaneous issues team members worked on that may not show up on the GitHub contributions graph. For example, Mujia provided us her office hours to help work together on the app every week after Friday 148 sections. Everyone put a lot of time and consistently came to meetings to help complete the app. We met every Saturday and Monday for 2 hours to help brainstorm and work on the app, and because of the commitment everyone provided, we were able to create BeeFree and have something as close to our initial goals as possible. 
 
