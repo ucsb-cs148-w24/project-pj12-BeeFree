@@ -43,8 +43,11 @@
 - Helped implement AddFriendView page with Peter
 
 ### Karankumar Mageswaran:
-I worked on the code skeleton, which were mainly the tabs, title bar, and background colors for both the day and night modes of the app. 
-I created the limit sheet view, the fuctionality that allows you to select and block apps, making it block with device activity monitor (beefree model and beefree schedule). The dark mode/light mode was buggy at first, but I managed to recently get it working again. Anushka and I worked alongside eachother to make the summary page show screentime with device activity report from Apple's ScreenTimeAPI. Currently, it shows the top 5 apps. I also added a function that allows users to select their screen time goals, which are then reflected on a pi chart that changes colors depending on how close the user is to passing their screen time limit. 
+- Was the main coder and developer for the entire app
+- Created the skeleton code for the app and provided much of the initial UI/UX
+- Was a massive contributor of all the ScreenTimeAPI, using Apple's DeviceActicityReport features
+- Worked on demos in the initial and final MVP, presenting live to the class on 3/18
+- Created animations for a lot of animations for the app to make it look and feel better
 
 ### Summary and Final Notes
 Karan and Anushka largely worked on getting ScreenTimeAPI to work, while Mujia and Peter worked largely on Firebase storage for the app's sharing and friends functionality, while Mike and Kavi worked a lot on polishing the app to make it look as good as possible and as close to the app's initial mock up design as possible. Sunhu largely worked on documentation and presentation for the app. Everyone participated in pair programming, which may not be visible in the GitHubs contribution page.
