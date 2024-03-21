@@ -47,7 +47,7 @@
 - Created the skeleton code for the app and provided much of the initial UI/UX
 - Was a massive contributor of all the ScreenTimeAPI, using Apple's DeviceActicityReport features
 - Worked on demos in the initial and final MVP, presenting live to the class on 3/18
-- Created animations for a lot of animations for the app to make it look and feel better
+- Created animations for the app to make it look and feel better
 
 ### Summary and Final Notes
 Karan and Anushka largely worked on getting ScreenTimeAPI to work, while Mujia and Peter worked largely on Firebase storage for the app's sharing and friends functionality, while Mike and Kavi worked a lot on polishing the app to make it look as good as possible and as close to the app's initial mock up design as possible. Sunhu largely worked on documentation and presentation for the app. Everyone participated in pair programming, which may not be visible in the GitHubs contribution page.
