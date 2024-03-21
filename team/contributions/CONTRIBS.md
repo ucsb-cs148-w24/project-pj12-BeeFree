@@ -2,37 +2,53 @@
 - Worked on much of the documentation for the project, creating user manual, deployment, presentations, and more
 - Worked alongside Anushka and Peter to pair program to implement Apple's ScreenTimeAPI and backend Firebase storage
 - Voiced and co-scripted final project video lines
+- Worked largely on testing features of the app, particularly XCTest, alongside Mike
 - Led Retrospective 3
 
 ### Kaveri Iyer: 
-I think my contributions graph is not necessarily indicative of my actual contributions to the codebase. For some of my listed contributions, I was actually a reviewer, and not the person who made the code changes. This is shown in commits such as https://github.com/ucsb-cs148-w24/project-pj12-appblocker/commit/aac0a37bafe20796ad5386cf442d3bc562bdf395. My main tasks on the team was documenting meetings and leading the UX/UI decisions. Mujia and I worked together on the initial mockup, and I took over for the MVP as well as the User Flow. 
-I consistently kept our figma mockup up to date, and created design guidelines through that. I also did quite a bit of pair programming with Anushka and Karan throughout the summary page development process. Thus I do not have many lines of code added in my name, though I do have several commits of sprint documentation updates.
+- Was one of the main reviewers for pull requests
+- Helped Anushka assign issues and monitor the Kanban Board
+- Worked alongside Mujia to design the initial mock up and design for BeeFree
+- Helped lead Retrospective 1 and some documentation 
+- Alongside Mike, worked a lot on UI/UX featuers of the app through pair programming which is not necessarily reflected on GitHub contributions
+- Worked on video editing and recordings for both the initial MVP and final release
 
 ### Anushka Vijay: 
 - Worked on a massive part of the ScreenTimeAPI of the app
 - Helped monitor and set up the Kanban Board, setting up, creating, and assigning issues to team members
-- Worked alongside Karan to get a majority of the features of the app completed
+- Worked alongside Karan to get a majority of the features of the app completed, spending a lot of time outside of SCRUM meetings to work on it 
 - Helped format, organize, and render the summary page
 - Changed up the home page by adding helpful links and organized buttons 
 
 ### Mike Wang:
-The contribution graph on the GitHub repo is not very accurate. GitHub gives the credit to the person who merges the changes rather than who writes and commits the code, so I think it's easier to ignore the graph and explain it here. For this project, I mainly worked on 4 different parts. First I helped everyone set up xcode and clone the github repo because the process is very different and a little confusing. Then I mainly worked on the login page. I first followed the firebase documentations to setup logging in with google authentication, then added the welcome page where the user can swipe up and access the login page. Then I focused on testing, and wrote unit tests and integration tests for the login features. Lastly my job is to make sure the UI is consistant across the whole app.
+- Provided many plans and opinions on app's direction as the one who came up with the initial app idea
+- Worked on login page, particularly front end, alongside Peter and on his own time
+- Also helped set up some parts of Google Authentication for login
+- Added a welcome page for users when they first open the app
+- Helped with testing using XCTest alongside Sunhu
+- Worked alongside Kavi to polish and finish up the app's UI/UX for final presentation.
 
-### Peter Liang: 
-Contributed to set up firestore database to hold user's information and connect it to our app. Created a sign in page to guide users to sign up with their username and store in database, also making sure unique username for each user. Connect users to the content view after a successful login. Finished add friend page to allow users to add and remove other users as friends by searching up their emails in the database. Improved user experience by making add/remove friends appears in both user's end. Updated profile page by fetching user's name and email and displaying in profile page. Worked on file userDB, LoginView, addFriendView, TitleBarModifier.
+### Peter(Hongye) Liang: 
+- Worked on setting up Firestore database to hold user's information
+- Helped to create sign in page
+- Finished much of the summary page functionality
+- Set up friends page, allowing users to add and remove people using gmail as a search keyword
+- Set up setting to allow users to see friend screentime, which is stored on Firestore
 
 ### Mujia Chen: 
-I implement a time selection feature which is used later in SharingView. I also implement the AddFriendView page with Peter (I coded the swift file and he works on the backend stuff). I implement the SharingView so that users can enter their total screen time and this jumps to FriendView which I'm doing right row.
-And I adjust the background color for these files to make UI consistent.
+- Worked a large amount alongside Peter on summary page functionality
+- Made and fixed a lot of UI/UX on the app
+- Worked alongside Kavi on initial mock up design, which can be seen in mockup link
+- Implemented time selection feature and button that jumps to FriendView
+- Helped implement AddFriendView page with Peter
 
 ### Karankumar Mageswaran:
 I worked on the code skeleton, which were mainly the tabs, title bar, and background colors for both the day and night modes of the app. 
 I created the limit sheet view, the fuctionality that allows you to select and block apps, making it block with device activity monitor (beefree model and beefree schedule). The dark mode/light mode was buggy at first, but I managed to recently get it working again. Anushka and I worked alongside eachother to make the summary page show screentime with device activity report from Apple's ScreenTimeAPI. Currently, it shows the top 5 apps. I also added a function that allows users to select their screen time goals, which are then reflected on a pi chart that changes colors depending on how close the user is to passing their screen time limit. 
 
-### Summary of Additional Work up to BeeFree's official completion on 3/18/2024
-- Both Anushka and Karan continued to work on ScreenTimeAPI, changing the Summary page features by providing more functionality with a new "pick up" feature that displays to users how many times they opened up the app. Karan also worked on animations to make the app look and feel more smooth. 
-- Mujia and Peter both worked on the Sharing feature more, polishing the page and adjusting functionality to show a user their friend's screentime information via a pie chart
-- Mike and Kavi worked on polishing the BeeFree's UI, making it look both consistent and clean. The color scheme of the app was made consistent. Both of them worked to change the login page design and add our BeeFree logo to it. Kavi also helped to create the final BeeFree app video, which was displayed to the rest of the class.
-- Sunhu worked on creating the presentation and polishing up all the documentation needed for the app. He helped create the script and voiced all the lines in the video, which was later edited together by Kavi. 
+### Summary and Final Notes
+Karan and Anushka largely worked on getting ScreenTimeAPI to work, while Mujia and Peter worked largely on Firebase storage for the app's sharing and friends functionality, while Mike and Kavi worked a lot on polishing the app to make it look as good as possible and as close to the app's initial mock up design as possible. 
+
+The number of bullet points or lines above do not indicate everything regarding the amount of work everyone put in into this project. There were a lot of miscellaneous issues team members worked on that may not show up on the GitHub contributions graph. For example, Mujia provided us her office hours to help work together on the app every week after Friday 148 sections. Everyone put a lot of time and consistently came to meetings to help complete the app. We met every Saturday and Monday for 2 hours to help brainstorm and work on the app, and because of the commitment everyone provided, we were able to create BeeFree and have something as close to our initial goals as possible. 
 
 I'd like to give a special congratulations to all teammates who worked on this project, everyone worked really hard and did everything in the best of their abilities!
