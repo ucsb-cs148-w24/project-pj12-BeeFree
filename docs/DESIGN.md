@@ -25,6 +25,8 @@ In the 3rd and final retrospective on 3/6/2024, the team once again looked back 
 
 In our final Monday meeting at 7:30 PM 3/11/2024, the team split into 3 groups, one working on UI in our login and default entrance page, another working on adding home page funcionality, and the last group finishing up the sharing page. 
 
+On 3/15, the team finalized all features and UI/UX of the app and posted the final app on GitHub.
+
 ## Coding Process
 The first Kanban Board issues that we created were setting up login functionalities via Firebase in our app. Initially, the issue focused on both Google and Apple ID authentication, but overtime the acceptance criteria changed so only Google authentication needed to be implemented. We also had many of our main app functionalities as issues on the Kanban board, such as summary page setup, app limit storing, and creating app blocking. Any issues that needed database access were blocked under a Firestore issue that was set up by Sunhu and Peter. The issue regarding skeleton code for the Swift app that contained simple UI was the first major issue to be completed. 
 
