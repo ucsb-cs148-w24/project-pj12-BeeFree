@@ -51,4 +51,4 @@ Karan and Anushka largely worked on getting ScreenTimeAPI to work, while Mujia a
 
 The number of bullet points or lines above do not indicate everything regarding the amount of work everyone put in into this project. There were a lot of miscellaneous issues team members worked on that may not show up on the GitHub contributions graph. For example, Mujia provided us her office hours to help work together on the app every week after Friday 148 sections. Everyone put a lot of time and consistently came to meetings to help complete the app. We met every Saturday and Monday for 2 hours to help brainstorm and work on the app, and because of the commitment everyone provided, we were able to create BeeFree and have something as close to our initial goals as possible. 
 
-I'd like to give a special congratulations to all teammates who worked on this project, everyone worked really hard and did everything in the best of their abilities!
+I'd like to give a special congratulations to all teammates who worked on this project, everyone worked really hard and did everything to the best of their abilities!
