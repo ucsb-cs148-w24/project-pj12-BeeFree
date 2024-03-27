@@ -1,4 +1,4 @@
-# App Blocker
+# BeeFree
 
 Kaveri Iyer: iyerkaveri \
 Karankumar Mageswaran: mageswarankk \
@@ -9,7 +9,7 @@ Peter Liang: hongye-liang \
 Sunhu Choi: SunhuChoi 
 
 ## Application Description 
-Our app allows you to choose, from the apps you have downloaded, what apps you would like to set a limit on. This limit is imposed on a per-day basis. Our app allows you to create an account via Google. Once in, you are greeted with a Home Page that allows you to block any app of your choice and set up a screentime goal. Our summary page shows you the top 5 apps that you have opened and the top 5 apps that you have used based on screentime. Our sharing feature, which sets us apart from other competition, allows you to connect with friends and see their screen time usage, which is inputed by the user. 
+BeeFree is a screentime management app that allows you to choose apps to block, view your screentime data, and even share it with your friends! Our app allows you to create an account via Google. Once in, you are greeted with a Home Page that allows you to block any app of your choice and set up a screentime goal. Our summary page shows you the top 5 apps that you have opened and the top 5 apps that you have used based on screentime. Our sharing feature, which sets us apart from other competition, allows you to connect with friends and see their screen time usage, which is inputed by the user. 
 
 ### User Roles:
 Our app likely only has one kind of user, which is the general user of the app. Everyone using our app will have the same goal, blocking their app usage. 
